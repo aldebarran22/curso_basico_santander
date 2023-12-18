@@ -18,8 +18,23 @@ print("fin de programa")
 # Comprobar si un número se encuentra en un rango:
 ini = 10
 fin = 40
-numero = 9
+numero = 19
 if numero >= ini and numero <= fin:
     print("Cumple el rango")
 else:
     print(numero, "no lo cumple")
+
+if ini <= numero <= fin:
+    print("Cumple el rango")
+else:
+    print(numero, "no lo cumple")
+
+if not (ini <= numero <= fin):
+    print(numero, "no lo cumple")
+else:
+    print("Cumple el rango")
+
+if numero < ini or numero > fin:
+    print(numero, "no lo cumple")
+else:
+    print("Cumple el rango")
