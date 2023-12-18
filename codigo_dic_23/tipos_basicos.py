@@ -19,3 +19,6 @@ print ("Sum is", suma)          # print sum
 
 L = [1,3,4]
 print(sum(L))
+    
+if suma > 10:
+    print(suma)
