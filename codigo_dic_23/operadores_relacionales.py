@@ -38,3 +38,14 @@ if numero < ini or numero > fin:
     print(numero, "no lo cumple")
 else:
     print("Cumple el rango")
+
+print("hex: ", hex(numero))
+print("bin:", bin(numero))
+print("oct:", oct(numero))
+# Rotaciones de bits:
+# 0xAF: 1010 1111
+# >> 2
+# 0010 1011 0x2B
+# 0xAF: 1010 1111
+# << 2
+# 1011 1100
