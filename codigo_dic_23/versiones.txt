@@ -1,0 +1,6 @@
+Python: 
+X.y.z
+
+z: bugs
+y: nuevas funcionalidades
+X: core (gestión de memoria)
