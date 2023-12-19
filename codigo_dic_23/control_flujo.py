@@ -27,3 +27,12 @@ while numero2 <= 0 or numero2 % 10 != 0:
     else:
         print('Solo se admiten multiplos de 10')
 print("numero2: ", numero2)
+
+while True:
+    snumero2 = input("numero: ")
+    if snumero2.isnumeric():
+        numero2 = int(snumero2)
+        if numero2 % 10 == 0:
+            break
+    else:
+        print('Solo se admiten multiplos de 10')

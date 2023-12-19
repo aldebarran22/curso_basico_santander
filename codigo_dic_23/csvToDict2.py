@@ -1,7 +1,16 @@
 """
-Cargar una lista de diccionarios con un bloque
-de texto en formato csv
+Implementar dos funciones:
+csvToJson
+jsonToCSV
 """
+
+
+def csvToJson():
+    pass
+
+
+def jsonToCSV():
+    pass
 
 
 csv = """idpedido;cliente;idempleado;idempresa;importe;pais
@@ -21,18 +30,18 @@ csv = """idpedido;cliente;idempleado;idempresa;importe;pais
 L = csv.split("\n")
 
 # Colocar las cabeceras en una lista
-cabs = L[0].split(';')
+cabs = L[0].split(";")
 
 # Iterar por el resto de filas creando los dicts
 registros = []
 for fila in L[1:]:
-    valores = fila.split(';')
+    valores = fila.split(";")
     dicc = dict(zip(cabs, valores))
     registros.append(dicc)
 
 print(registros)
 
-print('-' * 10)
+print("-" * 10)
 
 # Proceso invertido: lista de diccionarios -> texto en CSV
 # Las claves del primer diccionario:
@@ -44,6 +53,3 @@ for reg in registros:
 csv2 = "\n".join(L2)
 print(csv2)
 print(csv == csv2)
-
-
-

@@ -21,3 +21,11 @@ if __name__ == "__main__":
     print("con un diccionario:", sumar(**d))
     L = [1, 2]
     print("con una lista: ", sumar(*L))
+
+    L = [(1,2), (8,9), (3,4), (5,7)]
+    L2 = []
+    for t in L:
+        L2.append(sumar(*t))
+    print(L2)
+    
+
