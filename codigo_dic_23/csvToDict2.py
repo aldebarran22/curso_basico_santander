@@ -3,7 +3,6 @@ Implementar dos funciones:
 csvToJson
 jsonToCSV
 """
-
 texto = """idpedido;cliente;idempleado;idempresa;importe;pais
 10248;WILMK;5;3;32.38;Finlandia
 10249;TOMSP;6;1;11.61;Alemania
@@ -29,7 +28,6 @@ def csvToJson(csv, sep=";"):
         valores = fila.split(sep)
         dicc = dict(zip(cabs, valores))
         registros.append(dicc)
-
     return registros
 
 
