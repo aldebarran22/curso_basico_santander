@@ -19,12 +19,28 @@ L = csv.split("\n")
 
 # Colocar las cabeceras en una lista
 cabs = L[0].split(';')
-print(cabs)
 
 # Iterar por el resto de filas creando los dicts
+registros = []
 for fila in L[1:]:
     valores = fila.split(';')
     dicc = dict(zip(cabs, valores))
-    print(dicc)
+    registros.append(dicc)
+
+print(registros)
+
+print('-' * 10)
+
+# Proceso invertido: lista de diccionarios -> texto en CSV
+# Las claves del primer diccionario:
+cabs2 = ";".join(registros[0].keys())
+L2 = [cabs2]
+for reg in registros:
+    fila = ";".join(reg.values())
+    L2.append(fila)
+csv2 = "\n".join(L2)
+print(csv2)
+print(csv == csv2)
+
 
 
