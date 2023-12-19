@@ -4,16 +4,7 @@ csvToJson
 jsonToCSV
 """
 
-
-def csvToJson():
-    pass
-
-
-def jsonToCSV():
-    pass
-
-
-csv = """idpedido;cliente;idempleado;idempresa;importe;pais
+texto = """idpedido;cliente;idempleado;idempresa;importe;pais
 10248;WILMK;5;3;32.38;Finlandia
 10249;TOMSP;6;1;11.61;Alemania
 10250;HANAR;4;2;65.83;Brasil
@@ -26,30 +17,34 @@ csv = """idpedido;cliente;idempleado;idempresa;importe;pais
 10257;HILAA;4;3;81.91;Venezuela
 10258;ERNSH;1;1;140.51;Austria"""
 
-# Partir el bloque de texto en lineas: \n
-L = csv.split("\n")
 
-# Colocar las cabeceras en una lista
-cabs = L[0].split(";")
+def csvToJson(csv, sep=";"):
+    # Partir el bloque de texto en lineas: \n
+    L = csv.split("\n")
+    # Colocar las cabeceras en una lista
+    cabs = L[0].split(sep)
+    # Iterar por el resto de filas creando los dicts
+    registros = []
+    for fila in L[1:]:
+        valores = fila.split(sep)
+        dicc = dict(zip(cabs, valores))
+        registros.append(dicc)
 
-# Iterar por el resto de filas creando los dicts
-registros = []
-for fila in L[1:]:
-    valores = fila.split(";")
-    dicc = dict(zip(cabs, valores))
-    registros.append(dicc)
+    return registros
 
-print(registros)
 
-print("-" * 10)
+def jsonToCSV(registros, sep=";"):
+    cabs2 = sep.join(registros[0].keys())
+    L2 = [cabs2]
+    for reg in registros:
+        fila = sep.join(reg.values())
+        L2.append(fila)
+    csv2 = "\n".join(L2)
+    return csv2
 
-# Proceso invertido: lista de diccionarios -> texto en CSV
-# Las claves del primer diccionario:
-cabs2 = ";".join(registros[0].keys())
-L2 = [cabs2]
-for reg in registros:
-    fila = ";".join(reg.values())
-    L2.append(fila)
-csv2 = "\n".join(L2)
-print(csv2)
-print(csv == csv2)
+
+if __name__ == "__main__":
+    Ljson = csvToJson(texto)
+    print(Ljson[:2])  # imprimir los dos primeros
+    csv = jsonToCSV(Ljson)
+    print(csv == texto)
