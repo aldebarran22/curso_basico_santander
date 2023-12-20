@@ -36,6 +36,32 @@ class Persona:
         # print("Se está eliminando a: ", self.nombre)
 
 
+class Grupo:
+    def __init__(self, identificador="", *personas):
+        self.identificador = identificador
+        self.grupo = []
+        self.grupo.extend(personas)
+        self.indice = 0
+
+    def addPersona(self, *personas):
+        self.grupo.extend(personas)
+
+    def __len__(self):
+        return len(self.grupo)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.indice == len(self.grupo):
+            self.indice = 0
+            raise StopIteration
+        else:
+            p = self.grupo[self.indice]
+            self.indice += 1
+            return p
+
+
 class Guia(Persona):
     def __init__(self, nombre="", edad=0, altura=0.0, ambito="", idiomas=[]):
         Persona.__init__(self, nombre, edad, altura)
@@ -92,8 +118,24 @@ def testGuia():
     L.sort()
     print(L)
     g1.hablarCon(g2)
+    L2 = [o.__dict__ for o in L]
+    print(L2)
+    print(g1.__class__)
+    obj = g1.__class__("Felipe", ambito="I")
+    print(obj)
+
+
+def testGrupo():
+    g = Grupo("Grupo Navidad", "Ana", "Miguel")
+    g.addPersona("Isabel", "Gema")
+    print(len(g), "personas")
+    for i in g:
+        print(i, end=" ")
+    for i in g:
+        print(i, end=" ")
 
 
 if __name__ == "__main__":
     # testPersona()
-    testGuia()
+    # testGuia()
+    testGrupo()
