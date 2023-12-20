@@ -2,11 +2,32 @@
 # ejemplos de objetos:
 
 
+class TimeError(Exception):
+    def __init__(self, mensaje=""):
+        Exception.__init__(self, mensaje)
+
+
 class Time:
     def __init__(self, hh=0, mm=0, ss=0):
+        if not (0 <= hh <= 23):
+            raise TimeError(f"El valor {hh} no es correcto en las horas")
+        if not (0 <= mm <= 59):
+            raise TimeError(f"El valor {mm} no es correcto en los minutos")
+        if not (0 <= ss <= 59):
+            raise TimeError(f"El valor {ss} no es correcto en las segundos")
+        
         self.__hh = hh
         self.__mm = mm
         self.__ss = ss
+
+    @staticmethod
+    def horaActual():
+        return ""
+
+    @classmethod
+    def horaGMT(cls):
+        print(cls)
+        return ""
 
     # Getters, Setters.
     def getHH(self):
@@ -55,6 +76,11 @@ class Time:
     def __str__(self):
         return "%02d:%02d:%02d" % (self.__hh, self.__mm, self.__ss)
 
+    # Definición de propiedades:
+    hh = property(getHH, setHH)
+    mm = property(getMM, setMM)
+    ss = property(getSS, setSS)
+
 
 class Date:
     def __init__(self, dd, mm, yy):
@@ -84,9 +110,16 @@ class DateTime(Time, Date):
 
 if __name__ == "__main__":
     # pruebas con la clase Time
-    h1 = Time(8, 39)
+    h1 = Time(8, 78)
     h2 = Time(5, 23, 7)
 
+    h1.horaGMT()
+    Time.horaGMT()
+
+    print("h1.hh:", h1.hh)
+    h1.hh = 10
+    print("h1.hh:", h1.hh)
+    exit()
     # 8:39:45 + 5:23:07 = 14:02:52
 
     print("h1 " + str(h1) + " h2 " + str(h2))
@@ -100,8 +133,7 @@ if __name__ == "__main__":
     # pruebas con la clase Date:
     d1 = Date(8, 5, 2020)
     if d1.esBisiesto():
-        print(str(d1.yy) + " es un año bisiesto")
-    print(d1)
+        print(d1, " es un año bisiesto")
 
     # pruebas con la clase DateTime:
     dt = DateTime(31, 5, 2015, 6, 8, 34)
