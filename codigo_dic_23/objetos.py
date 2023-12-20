@@ -26,7 +26,8 @@ class Persona:
         return str(self)
 
     def __str__(self):
-        return self.nombre + " " + str(self.edad) + " " + str(self.altura)
+        return "\n".join([k + "=" + str(v) for k, v in self.__dict__.items()])
+        # return self.nombre + " " + str(self.edad) + " " + str(self.altura)
 
     def __lt__(self, other):
         return self.edad < other.edad
@@ -135,7 +136,16 @@ def testGrupo():
         print(i, end=" ")
 
 
+def testPersona2():
+    p = Persona("Ana", 34, 1.8)
+    p.__dict__["apellido"] = "Sanz"
+    p.__dict__["telefono"] = 699887788
+    p.calle = "Gran Via"
+    print(p)
+
+
 if __name__ == "__main__":
     # testPersona()
     # testGuia()
-    testGrupo()
+    # testGrupo()
+    testPersona2()
