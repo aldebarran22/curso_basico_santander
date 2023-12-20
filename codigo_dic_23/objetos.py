@@ -43,6 +43,14 @@ class Guia(Persona):
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def __str__(self):
+        return super().__str__() + " " + self.ambito + \
+            " " + ",".join(self.idiomas)
+    
+    def hablarCon(self, otro=None):
+        # Comprobar si tienen un idioma en común 
+        return super().hablarCon(otro)
+
 
 def testPersona():
     p1 = Persona("Sandra", 30, 1.7)
@@ -65,7 +73,16 @@ def testPersona():
 
 
 def testGuia():
-    pass
+    g1 = Guia("Ana", 34, 1.77, "I", ["inglés", "alemán"])
+    g2 = Guia("Sonia", 32, 1.87, "N", ["inglés", "francés"])
+    g3 = Guia("Victor", 28, 1.85, "L", ["inglés"])
+    print(g1)
+    g1.cumple()
+    print(g1)
+    g1.hablarCon(g2)
+    L = [g1, g2, g3]
+    L.sort()
+    print(L)
 
 
 if __name__ == "__main__":
