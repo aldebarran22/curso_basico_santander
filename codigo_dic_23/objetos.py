@@ -36,7 +36,15 @@ class Persona:
         # print("Se está eliminando a: ", self.nombre)
 
 
-if __name__ == "__main__":
+class Guia(Persona):
+    def __init__(self, nombre="", edad=0, altura=0.0, ambito="", idiomas=[]):
+        Persona.__init__(self, nombre, edad, altura)
+        # super().__init__(nombre, edad, altura)
+        self.ambito = ambito
+        self.idiomas = idiomas
+
+
+def testPersona():
     p1 = Persona("Sandra", 30, 1.7)
     p2 = Persona("Jose", 44, 1.76)
     print(p1.nombre)
@@ -54,3 +62,12 @@ if __name__ == "__main__":
     print(L)
     L.sort()
     print(L)
+
+
+def testGuia():
+    pass
+
+
+if __name__ == "__main__":
+    # testPersona()
+    testGuia()
