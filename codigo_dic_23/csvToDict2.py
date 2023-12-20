@@ -43,6 +43,17 @@ def jsonToCSV(registros, sep=";"):
 
 if __name__ == "__main__":
     Ljson = csvToJson(texto)
+    print('Sin ordenar:')
+    for d in Ljson:
+        print(d)
+    print('-' * 20)
+    Ljson.sort(key=lambda d : d['cliente'])
+    print('Ordenado:')
+    for d in Ljson:
+        print(d)
+    print([d['cliente'] for d  in Ljson])
+    """
     print(Ljson[:2])  # imprimir los dos primeros
     csv = jsonToCSV(Ljson)
     print(csv == texto)
+    """
