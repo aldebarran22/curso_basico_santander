@@ -33,11 +33,22 @@ class Time:
             and (self.__mm == hora.__mm)
             and (self.__ss == hora.__ss)
         )
-    
+
+    def toSegundos(self):
+        return self.__hh * 3600 + self.__mm * 60 + self.__ss
+
+    def ajustar(self):
+        minutos = self.__ss // 60
+        self.__ss %= 60
+        self.__mm += minutos
+        horas = self.__mm // 60
+        self.__mm %= 60
+        self.__hh = (self.__hh + horas) % 24
+
     def __add__(self, other):
-        suma = Time(self.__hh+other.__hh, \
-                    self.__mm+other.__mm, \
-                        self.__ss + other.__ss)
+        suma = Time(
+            self.__hh + other.__hh, self.__mm + other.__mm, self.__ss + other.__ss
+        )
         suma.ajustar()
         return suma
 
@@ -78,10 +89,9 @@ if __name__ == "__main__":
 
     # 8:39:45 + 5:23:07 = 14:02:52
 
-    
     print("h1 " + str(h1) + " h2 " + str(h2))
-    #print("segundos de h1: " + str(h1.ss))
-    suma = h1 + h2 # suma = h1.__add__(h2)
+    # print("segundos de h1: " + str(h1.ss))
+    suma = h1 + h2  # suma = h1.__add__(h2)
     print("suma: " + str(suma))
     print("suma en sg: " + str(suma.toSegundos()))
     suma.hh = 20
@@ -92,7 +102,7 @@ if __name__ == "__main__":
     if d1.esBisiesto():
         print(str(d1.yy) + " es un año bisiesto")
     print(d1)
-    
+
     # pruebas con la clase DateTime:
     dt = DateTime(31, 5, 2015, 6, 8, 34)
     print(str(dt))  # 31/05/2015 06:08:34
