@@ -2,89 +2,9 @@
 POO en Python. Definición de clases
 """
 
-
-class Persona:
-    """
-    Clase persona. Propiedades y métodos
-    """
-
-    def __init__(self, nombre="", edad=0, altura=0.0):
-        self.nombre = nombre
-        self.edad = edad
-        self.altura = altura
-
-    def cumple(self):
-        self.edad += 1
-
-    def hablarCon(self, otro=None):
-        if otro:
-            print(self.nombre, "habla con ", otro.nombre)
-        else:
-            print(self.nombre, "habla solo")
-
-    def __repr__(self):
-        return str(self)
-
-    def __str__(self):
-        return "\n".join([k + "=" + str(v) for k, v in self.__dict__.items()])
-        # return self.nombre + " " + str(self.edad) + " " + str(self.altura)
-
-    def __lt__(self, other):
-        return self.edad < other.edad
-
-    def __del__(self):
-        pass
-        # print("Se está eliminando a: ", self.nombre)
-
-
-class Grupo:
-    def __init__(self, identificador="", *personas):
-        self.identificador = identificador
-        self.grupo = []
-        self.grupo.extend(personas)
-        self.indice = 0
-
-    def addPersona(self, *personas):
-        self.grupo.extend(personas)
-
-    def __len__(self):
-        return len(self.grupo)
-
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        if self.indice == len(self.grupo):
-            self.indice = 0
-            raise StopIteration
-        else:
-            p = self.grupo[self.indice]
-            self.indice += 1
-            return p
-
-
-class Guia(Persona):
-    def __init__(self, nombre="", edad=0, altura=0.0, ambito="", idiomas=[]):
-        Persona.__init__(self, nombre, edad, altura)
-        # super().__init__(nombre, edad, altura)
-        self.ambito = ambito
-        self.idiomas = idiomas
-
-    def __str__(self):
-        return super().__str__() + " " + self.ambito + " " + ",".join(self.idiomas)
-
-    def hablarCon(self, otro=None):
-        # Comprobar si tienen un idioma en común
-        if not otro:
-            return super().hablarCon(otro)
-        else:
-            c1 = set(self.idiomas)
-            c2 = set(otro.idiomas)
-            comun = c1 & c2
-            if len(comun) == 0:
-                raise Exception("No tienen un idioma en común")
-            else:
-                print(self.nombre, "y", otro.nombre, "pueden hablar en", comun)
+from modulos.persona import Persona
+from modulos.guia import Guia
+from modulos.grupo import Grupo
 
 
 def testPersona():
@@ -145,7 +65,7 @@ def testPersona2():
 
 
 if __name__ == "__main__":
-    # testPersona()
-    # testGuia()
-    # testGrupo()
+    testPersona()
+    testGuia()
+    testGrupo()
     testPersona2()
