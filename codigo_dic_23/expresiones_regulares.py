@@ -22,5 +22,5 @@ if __name__ == "__main__":
 
     # Validar matrícula europea: 5678FGT
     consonantes = "".join([letra for letra in string.ascii_uppercase if letra not in "AEIOU"])
-    patron = r"\d{4}" + f"[{consonantes}]{3}"
-    
+    patron = r"\d{4}" + f"[{consonantes}]"+"{3}$"
+    testPatron(patron, ['1234JYH','12344AS','1234bgt','1234KI'])
