@@ -17,9 +17,10 @@ def csvToJson(fich, sep=";"):
         # Iterar por el resto de filas creando los dicts
         registros = []
         for fila in L[1:]:
-            valores = fila.split(sep)
-            dicc = dict(zip(cabs, valores))
-            registros.append(dicc)
+            if len(fila) > 1:
+                valores = fila.split(sep)
+                dicc = dict(zip(cabs, valores))
+                registros.append(dicc)
         return registros
     except Exception as e:
         print(e.__class__.__name__, e)
@@ -39,10 +40,9 @@ def jsonToCSV(registros, sep=";"):
 
 
 if __name__ == "__main__":
-    Ljson = csvToJson("../ficheros/Empleados.txt")    
+    Ljson = csvToJson("../ficheros/Empresas.txt")
     for d in Ljson:
         print(d)
-    
 
-    #csv = jsonToCSV(Ljson)
-   
+    csv = jsonToCSV(Ljson)
+    print(csv)
