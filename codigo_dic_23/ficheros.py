@@ -9,6 +9,7 @@ def testStdout():
         {"id": 2, "producto": "HP", "precio": 2250.6},
         {"id": 3, "producto": "Impresora", "precio": 566.0},
     ]
+    print("%-5s\t%-15s\t%8s" % tuple(productos[0].keys()))
     for d in productos:
         # print("%05d\t%-15s\t%8.2f" % (d["id"], d["producto"],  d["precio"]))
         print("%05d\t%-15s\t%8.2f" % tuple(d.values()))
