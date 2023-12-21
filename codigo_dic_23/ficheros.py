@@ -31,9 +31,21 @@ def leerFichero(path):
             f.close()
 
 
+def isFloat(numero):
+    if type(numero) == str:
+        if "." in numero:
+            aux = numero.replace(".", "")
+            return aux.isnumeric()
+        else:
+            return False
+    else:
+        return False
+
+
 def leerEscribirFichero(path, pais):
     f = None
     fout = None
+    cabs = False
     try:
         pathPais = f"../ficheros/{pais}.csv"
         f = open(path, "r")
@@ -41,6 +53,10 @@ def leerEscribirFichero(path, pais):
         for linea in f:
             # Limpiar el \n de cada linea:
             linea = linea.rstrip()
+            if not cabs:
+                fout.write(linea + "\n")
+                cabs = True
+
             if pais in linea:
                 print(linea)
                 fout.write(linea + "\n")
