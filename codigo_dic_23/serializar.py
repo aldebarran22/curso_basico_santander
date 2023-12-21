@@ -50,14 +50,14 @@ def testPickle():
 
 
 def serializarShelve(path, L):
-    shelf = shelve.open(path)
+    shelf = shelve.open(path, protocol=2)
     for obj in L:
         shelf[obj.nombre] = obj
     shelf.close()
 
 
 def deserializarShelve(path):
-    shelf = shelve.open(path)
+    shelf = shelve.open(path, protocol=2)
     print(shelf["CCC"])
     print(shelf["AAA"])
     print(shelf["BBB"])
@@ -67,6 +67,7 @@ def deserializarShelve(path):
 def testShelve(L):
     serializarShelve("personal", L)
     deserializarShelve("personal")
+
 
 if __name__ == "__main__":
     L = generarLista()
