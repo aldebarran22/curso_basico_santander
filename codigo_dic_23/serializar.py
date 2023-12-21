@@ -7,11 +7,30 @@ from random import randint
 
 
 def serializar(path, L):
-    pass
+    f = None
+    try:
+        f = open(path, "wb")
+        p.dump(L, f, 2)
+
+    except Exception as e:
+        print(e)
+    finally:
+        if f:
+            f.close()
 
 
 def deserializar(path):
-    pass
+    f = None
+    try:
+        f = open(path, "rb")
+        L = p.load(f)
+        return L
+
+    except Exception as e:
+        print(e)
+    finally:
+        if f:
+            f.close()
 
 
 def generarLista():
