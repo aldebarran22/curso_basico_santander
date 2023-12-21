@@ -2,9 +2,9 @@
 Serializar un lista de objetos y deserializar
 """
 import pickle as p
+import shelve
 from objetos import Persona
 from random import randint
-
 
 def serializar(path, L):
     f = None
@@ -40,10 +40,23 @@ def generarLista():
         L.append(p)
     return L
 
-
-if __name__ == "__main__":
-    L = generarLista()
+def testPickle():
     serializar("personas.dat", L)
     L2 = deserializar("personas.dat")
     for p in L2:
         print(p)
+
+def serializarShelve(path, L):
+    shelf = shelve.open(path)
+    for obj in L:
+        shelf[obj.nombre] = obj
+    shelf.close()
+
+def testShelve(L):
+    serializarShelve("personal", L)
+
+if __name__ == "__main__":
+    L = generarLista()
+    testShelve(L[:3])
+    
+
