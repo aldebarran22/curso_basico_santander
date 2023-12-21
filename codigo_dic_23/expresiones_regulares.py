@@ -21,6 +21,14 @@ if __name__ == "__main__":
                 "12345678A", "12345678AB"])
 
     # Validar matrícula europea: 5678FGT
-    consonantes = "".join([letra for letra in string.ascii_uppercase if letra not in "AEIOU"])
+    consonantes = "".join([letra for letra in string.ascii_uppercase \
+                            if letra not in "AEIOU"])
     patron = r"\d{4}" + f"[{consonantes}]"+"{3}$"
     testPatron(patron, ['1234JYH','12344AS','1234bgt','1234KI'])
+
+    # Validar una hora y coger h, m, y s
+    hora  = "03:45:36"
+    patron = r"([0-2][0-9]):([0-5][0-9]):([0-5][0-9])"
+    obj = re.match(patron, hora)
+    if obj:
+        print(obj.groups())
