@@ -18,7 +18,7 @@ def test2():
     # para cada excepción
     try:
         L = [1, 2, 3, 4]
-        d = {"a":1, "b":2, "c":3}
+        d = {"a": 1, "b": 2, "c": 3}
 
         print(L[1])
         print("mas código")
@@ -30,9 +30,21 @@ def test2():
     except ZeroDivisionError as e:
         print("Div 0: ", e)
     except Exception as e:
-        print('Error general:', e.__class__.__name__, e)
-    
+        print("Error general:", e.__class__.__name__, e)
+
+
+def testFinally():
+    try:
+        numero = 10
+        print(numero / 2)
+        return True
+
+    except Exception as e:
+        print(e)
+
+    finally:
+        print("Salta finally")
 
 
 if __name__ == "__main__":
-    test2()
+    testFinally()

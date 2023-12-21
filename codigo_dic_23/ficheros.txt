@@ -1,0 +1,9 @@
+f = None
+try:
+  f = abrirFichero() <--- error
+  f.leer()  
+ 
+except ...:
+
+finally:
+   if f: f.cerrar()
