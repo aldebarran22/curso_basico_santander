@@ -1,6 +1,6 @@
 Python: 
 X.y.z
 
-z: bugs
+z: correcciones de bugs
 y: nuevas funcionalidades
 X: core (gestión de memoria)
