@@ -3,7 +3,7 @@ Cliente de socket en Python
 """
 import socket
 
-puerto = 8888
+puerto = 8889
 
 s = socket.socket()
 print("Se ha creado el socket en el cliente ...")

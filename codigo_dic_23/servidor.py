@@ -3,7 +3,7 @@ Servidor de sockets.
 """
 import socket
 
-puerto = 8888
+puerto = 8889
 
 s = socket.socket()
 print("Se ha creado el socket...")
