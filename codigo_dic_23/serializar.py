@@ -6,6 +6,7 @@ import shelve
 from objetos import Persona
 from random import randint
 
+
 def serializar(path, L):
     f = None
     try:
@@ -40,11 +41,13 @@ def generarLista():
         L.append(p)
     return L
 
+
 def testPickle():
     serializar("personas.dat", L)
     L2 = deserializar("personas.dat")
     for p in L2:
         print(p)
+
 
 def serializarShelve(path, L):
     shelf = shelve.open(path)
@@ -52,11 +55,19 @@ def serializarShelve(path, L):
         shelf[obj.nombre] = obj
     shelf.close()
 
+
+def deserializarShelve(path):
+    shelf = shelve.open(path)
+    print(shelf["CCC"])
+    print(shelf["AAA"])
+    print(shelf["BBB"])
+    shelf.close()
+
+
 def testShelve(L):
     serializarShelve("personal", L)
+    deserializarShelve("personal")
 
 if __name__ == "__main__":
     L = generarLista()
     testShelve(L[:3])
-    
-
