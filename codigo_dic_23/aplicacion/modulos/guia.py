@@ -1,4 +1,7 @@
-from modulos.persona import Persona
+try:
+    from modulos.persona import Persona
+except: 
+    from persona import Persona
 
 
 class Guia(Persona):
