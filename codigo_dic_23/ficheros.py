@@ -21,6 +21,8 @@ def leerFichero(path):
     try:
         f = open(path, "r")
         for linea in f:
+            # Limpiar el \n de cada linea:
+            linea = linea.rstrip()
             print(linea)
     except Exception as e:
         print(e)
@@ -29,8 +31,31 @@ def leerFichero(path):
             f.close()
 
 
+def leerEscribirFichero(path, pais):
+    f = None
+    fout = None
+    try:
+        pathPais = f"../ficheros/{pais}.csv"
+        f = open(path, "r")
+        fout = open(pathPais, "w")
+        for linea in f:
+            # Limpiar el \n de cada linea:
+            linea = linea.rstrip()
+            if pais in linea:
+                print(linea)
+                fout.write(linea + "\n")
+    except Exception as e:
+        print(e)
+    finally:
+        if f:
+            f.close()
+        if fout:
+            fout.close()
+
+
 if __name__ == "__main__":
-    leerFichero("../ficheros/Empleados.txt")
+    # leerFichero("../ficheros/Empleados.txt")
+    leerEscribirFichero("../ficheros/Pedidos.txt", "Suiza")
     """
     f = open("productos.txt", "w")
     testStdout(f)
