@@ -42,6 +42,14 @@ def isFloat(numero):
         return False
 
 
+def replaceFloat(linea, sep=";"):
+    # Partir la linea con split. Comprobar si una columna es un float
+    # se cambia el . por la ,
+    cols = linea.split(sep)
+    L = [col.replace(".", ",") if isFloat(col) else col for col in cols]
+    return sep.join(L)
+
+
 def leerEscribirFichero(path, pais):
     f = None
     fout = None
@@ -58,7 +66,7 @@ def leerEscribirFichero(path, pais):
                 cabs = True
 
             if pais in linea:
-                print(linea)
+                linea = replaceFloat(linea)
                 fout.write(linea + "\n")
     except Exception as e:
         print(e)
