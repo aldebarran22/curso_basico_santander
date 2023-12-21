@@ -7,11 +7,12 @@ puerto = 8888
 
 s = socket.socket()
 print("Se ha creado el socket...")
-s.bind("localhost", puerto)
+s.bind(("localhost", puerto))
 print("bind configurado!")
 s.listen(1)
 print("Servidor ok, a la espera de clientes")
 sc, addr = s.accept()
+print("Se ha conectado un cliente: ", addr)
 while True:
     # Espera un mensaje del cliente
     recibido = sc.recv(1024)
