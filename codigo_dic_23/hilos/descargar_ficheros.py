@@ -18,7 +18,7 @@ class Downloader(threading.Thread):
 		
 	def run(self):
 		for i in range(self.__ini, self.__fin+1):
-			url = "http://www.dpii.es/files/fich" + str(i) + ".txt"
+			url = "http://localhost:8000/fich" + str(i) + ".txt"
 			print (self.getName() + " descarga " + url)
 			f = urllib2.urlopen(url)                
 			numero = int(f.read())
