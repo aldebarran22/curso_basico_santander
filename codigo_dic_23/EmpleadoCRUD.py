@@ -42,11 +42,31 @@ class EmpleadoBD:
             return L
 
         except Exception as e:
-            print(e)
+            raise e  # Relanzar excepción
         finally:
             if cur:
                 cur.close()
-        
+
+    def read(self, id):
+        """
+        Recuperar un empleado de la Bd a partir del id
+        """
+        cur = None
+        try:
+            sql = "select * from empleados where id=?"
+            cur = self.con.cursor()
+            cur.execute(sql, (id,))
+            t = cur.fetchone()
+            if t:
+                return Empleado(*t)
+            else:
+                raise ValueError(f"El empleado con id: {id} no existe")
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
 
     def __del__(self):
         if hasattr(self, "con"):
@@ -56,5 +76,11 @@ class EmpleadoBD:
 if __name__ == "__main__":
     try:
         bd = EmpleadoBD("../bd/empresa3.db")
+        L = bd.select()
+        print(f"Tenemos {len(L)} empleados")
+
+        e1 = bd.read(1)
+        print(e1)
+
     except Exception as e:
         print(e)
