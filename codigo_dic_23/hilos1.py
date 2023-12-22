@@ -3,6 +3,7 @@ Programación concurrente con dos hilos
 hilo1: Escribir un mensaje por pantalla
 hilo2: Generar un número aleatorio
 """
+import threading
 from threading import Thread
 from time import sleep
 from random import randint
@@ -38,6 +39,8 @@ if __name__ == "__main__":
     hilo1.start()
     hilo2.start()
     hilo3.start()
+
+    print([i for i in threading.enumerate()])
 
     hilo1.join()
     hilo2.join()
