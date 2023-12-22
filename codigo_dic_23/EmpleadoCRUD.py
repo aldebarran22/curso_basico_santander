@@ -95,6 +95,29 @@ class EmpleadoBD:
             if cur:
                 cur.close()
 
+    def delete(self, id):
+        """
+        Borra un empleado de la BD a partir del ID
+        """
+        cur = None
+        try:
+            sql = "delete from empleados where id = ?"
+            cur = self.con.cursor()
+            cur.execute(sql, (id,))
+            n = cur.rowcount  # Antes de confirmar la Transacción
+            self.con.commit()
+            if n == 0:
+                raise ValueError(f"El empleado con id:{id} no existe")
+            else:
+                return n
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -109,10 +132,15 @@ if __name__ == "__main__":
         e1 = bd.read(1)
         print(e1)
 
+        """
         nuevo = Empleado(0, "Sandra", "Gerente")
         if bd.create(nuevo) == 1:
             print("Registro creado")
             print(nuevo)
+        """
+
+        if bd.delete(150) == 1:
+            print("Registro borrado")
 
     except Exception as e:
         print(e)
