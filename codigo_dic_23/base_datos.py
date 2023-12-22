@@ -15,8 +15,11 @@ def test(path, tabla):
             cur = conexion.cursor()
             sql = f"select * from {tabla}"
             cur.execute(sql)
+            cabs = ";".join([t[0] for t in cur.description])
+            print(cabs)
             for t in cur.fetchall():
-                print(t)
+                linea = ";".join([str(i) for i in t])
+                print(linea)
         else:
             raise FileNotFoundError(f"El fichero {path} no existe")
     except Exception as e:
@@ -29,4 +32,4 @@ def test(path, tabla):
 
 
 if __name__ == "__main__":
-    test("../bd/empresa3.db", "clientes")
+    test("../bd/empresa3.db", "categorias")
