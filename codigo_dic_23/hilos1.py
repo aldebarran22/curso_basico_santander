@@ -36,4 +36,7 @@ if __name__ == "__main__":
 
     hilo1.start()
     hilo2.start()
+
+    hilo1.join()
+    hilo2.join()
     print("main termina")
