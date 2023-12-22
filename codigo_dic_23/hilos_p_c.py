@@ -16,7 +16,19 @@ class Productor(Thread):
         self.buffer = buffer
 
     def run(self):
-        pass
+        for i in range(num_muestras):
+            item = randint(1, 20)
+            print("P: ", item)
+            # Comprobar si hay hueco:
+            self.buffer.sem_huecos.acquire()
+            with self.buffer.mutex:
+                self.buffer.buffer[self.buffer.ind_p] = item
+                self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
+                print(self.buffer.buffer)
+
+            # Avisar que hay un nuevo item:
+            self.buffer.sem_items.release()
+            sleep(randint(1, 2))
 
 
 class Consumidor(Thread):
@@ -25,7 +37,8 @@ class Consumidor(Thread):
         self.buffer = buffer
 
     def run(self):
-        pass
+        for i in range(num_muestras):
+            pass
 
 
 class TBuffer:
@@ -37,7 +50,8 @@ class TBuffer:
         self.sem_huecos = Semaphore(tam_buffer)
         self.sem_items = Semaphore(0)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     buf = TBuffer()
     con = Consumidor(buf)
     pro = Productor(buf)
