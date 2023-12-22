@@ -12,6 +12,12 @@ class Empleado:
         self.__nombre = nombre
         self.__cargo = cargo
 
+    def getId(self):
+        return self.__id
+
+    def setId(self, id):
+        self.__id = id
+
     def getTupla(self):
         return (self.__nombre, self.__cargo)
 
@@ -77,6 +83,7 @@ class EmpleadoBD:
             sql = "insert into empleados(nombre, cargo) values(?,?)"
             cur = self.con.cursor()
             cur.execute(sql, empleado.getTupla())
+            empleado.setId(cur.lastrowid)
             n = cur.rowcount  # Antes de confirmar la Transacción
             self.con.commit()
             return n
@@ -102,9 +109,10 @@ if __name__ == "__main__":
         e1 = bd.read(1)
         print(e1)
 
-        nuevo = Empleado(0, "Raúl", "Representante de Ventas")
-        if bd.create(nuevo)==1:
+        nuevo = Empleado(0, "Sandra", "Gerente")
+        if bd.create(nuevo) == 1:
             print("Registro creado")
+            print(nuevo)
 
     except Exception as e:
         print(e)
