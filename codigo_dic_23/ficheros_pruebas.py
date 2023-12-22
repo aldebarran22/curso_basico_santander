@@ -2,7 +2,7 @@
 Código de pruebas para el módulo ficheros.py
 """
 import unittest
-from ficheros import isFloat, leerEscribirFichero
+from ficheros import isFloat, leerEscribirFichero, leerFichero
 from os import listdir
 
 
@@ -12,7 +12,7 @@ class PruebasFicheros(unittest.TestCase):
         self.assertTrue(isFloat("56.6"))
 
     def test_isFloat2(self):
-        self.assertFalse(isFloat("12.34"), msg="No es un float")
+        self.assertTrue(isFloat("12.34"), msg="No es un float")
 
     def test_ficheros_paises(self):
         paises = ["Finlandia", "Francia", "Alemania", "Suizas"]
@@ -23,6 +23,9 @@ class PruebasFicheros(unittest.TestCase):
         for p in paises:
             if p + ".csv" not in ficheros:
                 AssertionError(f"No se ha generado el fichero para el pais: {p}")
+
+    def test_leerFichero(self):
+        self.assertRaises(FileNotFoundError, leerFichero, "hola.txt")
 
 
 if __name__ == "__main__":

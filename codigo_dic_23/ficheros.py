@@ -25,7 +25,7 @@ def leerFichero(path):
             linea = linea.rstrip()
             print(linea)
     except Exception as e:
-        print(e)
+        raise e
     finally:
         if f:
             f.close()
@@ -78,8 +78,8 @@ def leerEscribirFichero(path, pais):
 
 
 if __name__ == "__main__":
-    # leerFichero("../ficheros/Empleados.txt")
-    leerEscribirFichero("../ficheros/Pedidos.txt", "Suiza")
+    leerFichero("../ficheros/Empleados.txt")
+    #leerEscribirFichero("../ficheros/Pedidos.txt", "Suiza")
     """
     f = open("productos.txt", "w")
     testStdout(f)
