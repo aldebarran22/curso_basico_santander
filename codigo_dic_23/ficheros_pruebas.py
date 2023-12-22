@@ -7,6 +7,14 @@ from os import listdir
 
 
 class PruebasFicheros(unittest.TestCase):
+    def setUp(self):
+        pass
+        # print("inicia el contexto")
+
+    def tearDown(self):
+        pass
+        # print("finaliza el contexto")
+
     def test_isFloat(self):
         self.assertFalse(isFloat("hola"), msg="La cadena la da como Float")
         self.assertTrue(isFloat("56.6"))
