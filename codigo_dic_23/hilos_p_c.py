@@ -9,16 +9,20 @@ from time import sleep
 num_muestras = 20
 tam_buffer = 10
 
+num_productores = 2
+num_consumidores = 1
+
 
 class Productor(Thread):
-    def __init__(self, buffer):
-        Thread.__init__(self)
+    def __init__(self, buffer, num_muestras, nombre):
+        Thread.__init__(self, name=nombre)
         self.buffer = buffer
+        self.num_muestras = num_muestras
 
     def run(self):
-        for i in range(num_muestras):
+        for i in range(self.num_muestras):
             item = randint(1, 20)
-            print("P: ", item)
+            print(self.getName() + ":", item)
             # Comprobar si hay hueco:
             self.buffer.sem_huecos.acquire()
             with self.buffer.mutex:
@@ -63,12 +67,27 @@ class TBuffer:
 
 
 if __name__ == "__main__":
-    buf = TBuffer()
-    con = Consumidor(buf)
-    pro = Productor(buf)
+    if num_muestras % num_productores != 0 or num_muestras % num_consumidores != 0:
+        print("El número tiene que estar equilibrado entre el n. de prod/con")
+        exit()
 
+    # Calcular el numero de muestra por productor y consumidor:
+    num_muestras_prod = num_muestras // num_productores
+    num_muestras_con = num_muestras // num_consumidores
+
+    buf = TBuffer()
+
+    con = Consumidor(buf)
     con.start()
-    pro.start()
+
+    productores = []
+    for i in range(num_productores):
+        nombre = "P" + str(i + 1)
+        pro = Productor(buf, num_muestras_prod, nombre)
+        pro.start()
+        productores.append(pro)
 
     con.join()
-    pro.join()
+
+    for pro in productores:
+        pro.join()
