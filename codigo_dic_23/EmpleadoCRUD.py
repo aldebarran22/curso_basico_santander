@@ -29,6 +29,25 @@ class EmpleadoBD:
         else:
             self.con = dbapi.connect(path)
 
+    def select(self):
+        """
+        Devuelve una lista con los empleados
+        """
+        cur = None
+        try:
+            sql = "select * from empleados"
+            cur = self.con.cursor()
+            cur.execute(sql)
+            L = [Empleado(*t) for t in cur.fetchall()]
+            return L
+
+        except Exception as e:
+            print(e)
+        finally:
+            if cur:
+                cur.close()
+        
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
