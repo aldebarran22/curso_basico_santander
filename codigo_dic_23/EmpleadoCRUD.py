@@ -13,7 +13,7 @@ class Empleado:
         self.__cargo = cargo
 
     def getTupla(self):
-        return (self.__id, self.__nombre, self.__cargo)
+        return (self.__nombre, self.__cargo)
 
     def __str__(self):
         return str(self.__id) + " " + self.__nombre + " " + self.__cargo
@@ -68,6 +68,26 @@ class EmpleadoBD:
             if cur:
                 cur.close()
 
+    def create(self, empleado):
+        """
+        Crea un nuevo empleado en la BD.
+        """
+        cur = None
+        try:
+            sql = "insert into empleados(nombre, cargo) values(?,?)"
+            cur = self.con.cursor()
+            cur.execute(sql, empleado.getTupla())
+            n = cur.rowcount  # Antes de confirmar la Transacción
+            self.con.commit()
+            return n
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -81,6 +101,10 @@ if __name__ == "__main__":
 
         e1 = bd.read(1)
         print(e1)
+
+        nuevo = Empleado(0, "Raúl", "Representante de Ventas")
+        if bd.create(nuevo)==1:
+            print("Registro creado")
 
     except Exception as e:
         print(e)
