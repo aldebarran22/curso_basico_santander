@@ -22,12 +22,12 @@ class Productor(Thread):
     def run(self):
         for i in range(self.num_muestras):
             item = randint(1, 20)
-            print(self.getName() + ":", item)
             # Comprobar si hay hueco:
             self.buffer.sem_huecos.acquire()
             with self.buffer.mutex:
                 self.buffer.buffer[self.buffer.ind_p] = item
                 self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
+                print(self.getName() + ":", item)
                 print(self.buffer.buffer)
 
             # Avisar que hay un nuevo item:
@@ -48,11 +48,11 @@ class Consumidor(Thread):
                 item = self.buffer.buffer[self.buffer.ind_c]
                 self.buffer.buffer[self.buffer.ind_c] = -1
                 self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
+                print("C: ", item)
                 print(self.buffer.buffer)
 
             # Avisar que hay un nuevo hueco
             self.buffer.sem_huecos.release()
-            print("C: ", item)
             sleep(randint(2, 4))
 
 
