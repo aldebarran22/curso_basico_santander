@@ -20,3 +20,22 @@ class Empleado:
 
     def __repr__(self):
         return str(self)
+
+
+class EmpleadoBD:
+    def __init__(self, path):
+        if not isfile(path):
+            raise FileNotFoundError(f"El fichero {path} no existe")
+        else:
+            self.con = dbapi.connect(path)
+
+    def __del__(self):
+        if hasattr(self, "con"):
+            self.con.close()
+
+
+if __name__ == "__main__":
+    try:
+        bd = EmpleadoBD("../bd/empresa3.db")
+    except Exception as e:
+        print(e)
