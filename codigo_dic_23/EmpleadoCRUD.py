@@ -18,8 +18,23 @@ class Empleado:
     def setId(self, id):
         self.__id = id
 
+    def getNombre(self):
+        return self.__nombre
+
+    def setNombre(self, nombre):
+        self.__nombre = nombre
+
+    def getCargo(self):
+        return self.__cargo
+
+    def setCargo(self, cargo):
+        self.__cargo = cargo
+
     def getTupla(self):
         return (self.__nombre, self.__cargo)
+
+    def getTupla2(self):
+        return (self.__nombre, self.__cargo, self.__id)
 
     def __str__(self):
         return str(self.__id) + " " + self.__nombre + " " + self.__cargo
@@ -118,6 +133,29 @@ class EmpleadoBD:
             if cur:
                 cur.close()
 
+    def update(self, empleado):
+        """
+        Actualiza el nombre y el cargo de un empleado de la BD
+        """
+        cur = None
+        try:
+            sql = "update empleados set nombre=?,cargo=? where id = ?"
+            cur = self.con.cursor()
+            cur.execute(sql, empleado.getTupla2())
+            n = cur.rowcount  # Antes de confirmar la Transacción
+            self.con.commit()
+            if n == 0:
+                raise ValueError(f"El empleado con id:{id} no existe")
+            else:
+                return n
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -131,6 +169,10 @@ if __name__ == "__main__":
 
         e1 = bd.read(1)
         print(e1)
+
+        e1.setCargo("Gerente")
+        if bd.update(e1) == 1:
+            print("Registro actualizado")
 
         """
         nuevo = Empleado(0, "Sandra", "Gerente")
