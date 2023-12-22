@@ -10,7 +10,7 @@ from random import randint
 
 class HiloMensajes(Thread):
     def __init__(self, n=10):
-        Thread.__init__(self, name="Mensajes")
+        Thread.__init__(self)
         self.n = n
 
     def run(self):
@@ -21,7 +21,7 @@ class HiloMensajes(Thread):
 
 class HiloAleatorio(Thread):
     def __init__(self, n=15):
-        Thread.__init__(self, name="Aleatorio")
+        Thread.__init__(self)
         self.n = n
 
     def run(self):
@@ -33,10 +33,13 @@ class HiloAleatorio(Thread):
 if __name__ == "__main__":
     hilo1 = HiloMensajes(15)
     hilo2 = HiloAleatorio(12)
+    hilo3 = HiloAleatorio(9)
 
     hilo1.start()
     hilo2.start()
+    hilo3.start()
 
     hilo1.join()
     hilo2.join()
+    hilo3.join()
     print("main termina")
