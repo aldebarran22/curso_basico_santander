@@ -45,4 +45,20 @@ print("los 3 primeros:", L[0:3])
 print("los 3 primeros:", L[:3])  # desde el principio
 print("los tres últimos:", L[-3:])
 print("Toda la lista de dos en dos:", L[::2])
-print('Quitar el primero y el último:', L[1:-1])
+print("Quitar el primero y el último:", L[1:-1])
+print("Invertir la lista:", L[::-1])
+
+L2 = [1, 2, 3, 5, 6, 5, 3, 2, 1]
+if L2 == L2[::-1]:
+    print("capicua")
+else:
+    print("no es capicua")
+
+path = "C:/mis documentos/hojas/libro1.xlsx"
+L = path.split("/") # Partir la cadena por la /
+print(L)
+fichero = L[-1]
+print('fichero:', fichero)
+
+
+# Copiar listas:
