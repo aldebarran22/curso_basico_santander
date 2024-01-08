@@ -43,7 +43,7 @@ else:
 
 # if compacto: A if cond else B
 # Imprimir si un número es par o impar
-numero = 17
+numero = 20
 print("par" if numero % 2 == 0 else "impar")
 
 if numero % 2 == 0:
