@@ -39,3 +39,14 @@ elif n1 == n2:
 
 else:
     print(f"El menor es {n2}")
+
+
+# if compacto: A if cond else B
+# Imprimir si un número es par o impar
+numero = 17
+print("par" if numero % 2 == 0 else "impar")
+
+if numero % 2 == 0:
+    print("par")
+else:
+    print("impar")
