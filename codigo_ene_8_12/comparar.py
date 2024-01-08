@@ -1,8 +1,8 @@
 """
 Ejemplo de condiciones
 """
-numero = 10
-if numero:
+numero = 0
+if numero == 0:
     print("true")
 
     if numero > 5:
@@ -10,7 +10,7 @@ if numero:
 else:
     print("false")
 
-cadena = ""
+cadena = "hola"
 if cadena:
     print("true")
 else:
