@@ -5,6 +5,11 @@ A partir de una lista de precios calcular el iva de cada producto
 y el resultado se almacena en una nueva lista.
 """
 
+def entre100y150(valor):
+    if 100 <= valor <= 150:
+        return True
+    else:
+        return False
 
 def calcularIVA(precio, iva=21):
     resul = round((precio * iva) / 100.0, 2)
@@ -37,3 +42,8 @@ if __name__ == "__main__":
     # pero con 10%
     ivas3 = [calcularIVA(p, 10) for p in precios]
     print(ivas3)
+
+    # filter:
+    precios2 = list(filter(entre100y150, precios))
+    print(precios)
+    print(precios2)
