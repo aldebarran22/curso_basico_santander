@@ -12,6 +12,9 @@ def sumar3(a, b, c):
 
 
 def imprimirPosiciones(t, numero):
+    """
+    Imprime las posiciones que ocupa número en la colección t
+    """
     ini = 0
     if numero in t:
         for i in range(t.count(numero)):
@@ -22,10 +25,12 @@ def imprimirPosiciones(t, numero):
         print(f"{numero} no se encuentra en la tupla")
 
 
-print(sumar(3, 5))
-s = sumar(3, 5)
-print(s)
-print(sumar("55", "44"))
+if __name__ == "__main__":
+    print("Nombre del módulo:", __name__)
+    print(sumar(3, 5))
+    s = sumar(3, 5)
+    print(s)
+    print(sumar("55", "44"))
 
-imprimirPosiciones((1, 5, 5, 2, 3, 4, 5), 5)
-imprimirPosiciones((1, 2, 3, 4, 5), 6)
+    imprimirPosiciones((1, 5, 5, 2, 3, 4, 5), 5)
+    imprimirPosiciones((1, 2, 3, 4, 5), 6)
