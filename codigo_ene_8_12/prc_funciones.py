@@ -21,3 +21,8 @@ if __name__ == '__main__':
     ivas2 = list(map(calcularIVA, precios))
     print(ivas2)
 
+    # Otro ejemplo:
+    nombres = ['Ana','Marta','Andrés','Julio','Raúl']
+    longitudNombres = list(map(len, nombres))
+    print(longitudNombres)
+
