@@ -16,3 +16,5 @@ if __name__ == "__main__":
     funcion(10, 20, 30, 40)
     funcion(10, 20, op2=40)
     funcion(1, 2, 3, 4, 5, 6, 7, 8, 9, x=100, y=200)
+
+    print("hola", "adios", "que tal", sep=";")
