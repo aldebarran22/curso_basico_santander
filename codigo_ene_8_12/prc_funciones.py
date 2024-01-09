@@ -47,3 +47,9 @@ if __name__ == "__main__":
     precios2 = list(filter(entre100y150, precios))
     print(precios)
     print(precios2)
+
+    # lo mismo con list comprehension:
+    precios3 = [p for p in precios \
+                if 100 <= p <= 150]
+    print(precios3)
+
