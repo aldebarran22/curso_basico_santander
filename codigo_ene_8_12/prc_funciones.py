@@ -16,3 +16,8 @@ if __name__ == '__main__':
         #print(precio, iva)
         ivas.append(iva) 
     print(ivas)
+
+    # Lo mismo pero con map: es un iterador
+    ivas2 = list(map(calcularIVA, precios))
+    print(ivas2)
+
