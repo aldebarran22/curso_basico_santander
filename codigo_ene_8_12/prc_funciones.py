@@ -26,3 +26,7 @@ if __name__ == '__main__':
     longitudNombres = list(map(len, nombres))
     print(longitudNombres)
 
+    # Lo mismo que el anterior pero con list comprehension
+    longitudNombres2 = [len(i) for i in nombres]
+    print(longitudNombres2)
+
