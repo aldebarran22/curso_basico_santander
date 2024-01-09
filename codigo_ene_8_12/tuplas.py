@@ -31,3 +31,16 @@ if 15 in t:
     print("Posición del 15: ", t.index(15))
 else:
     print('El 15 no está')
+
+# Obtener las posiciones donde tenemos un 5:
+print('El primer 5:', t.index(5))
+print('El segundo 5:', t.index(5, 3))
+print('El tercer 5:', t.index(5, 5))
+
+ini = 0
+for i in range(t.count(5)):
+    pos = t.index(5, ini)
+    print(pos)
+    ini = pos+1
+    
+
