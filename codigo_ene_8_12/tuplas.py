@@ -24,7 +24,10 @@ print(t3, type(t3))
 
 # Prueba con count:
 t = (1, 4, 5, 6, 5, 4, 3, 1, 3, 4, 5, 6, 7)
-# Cuantas veces se repite el 5
-print("El 5 se repite:", t.count(5))
-# Que posición ocupa el primer 5:
-print("Posición del 5: ", t.index(5))
+# Cuantas veces se repite el 15
+print("El 15 se repite:", t.count(15))
+# Que posición ocupa el primer 15:
+if 15 in t:
+    print("Posición del 15: ", t.index(15))
+else:
+    print('El 15 no está')
