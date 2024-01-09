@@ -30,3 +30,10 @@ for i in L:
     else:
         # La primera vez que vemos el número
         d2[i] = 1
+
+# Actualizar un diccionario con los datos de otro:
+d = {"nombre": "José", "edad": 34, "tno": 600993344}
+d2 = {"tno":656778899, "fijo":913456677}
+d.update(d2)
+print(d)
+
