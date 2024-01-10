@@ -56,7 +56,13 @@ class Guia(Persona):
             # Llamar al método de la clase Padre
             Persona.hablarCon(self, otro)
         else:
-            pass
+            c1 = set(self.idiomas)
+            c2 = set(otro.idiomas)
+            comunes = c1 & c2
+            if len(comunes) > 0:
+                print(self.nombre, "habla con", otro.nombre, "en", comunes)
+            else:
+                print("No pueden hablar, no tienen un idioma común")
 
     def __str__(self):
         # Reutilizamos el método __str__ de la clase Persona
