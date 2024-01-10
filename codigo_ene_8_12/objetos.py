@@ -42,8 +42,9 @@ if __name__ == "__main__":
     print(p1)
     # print(str(p1))
     # print(p1.__str__())
-    L = [p1, Persona("Ana", 45, 1.77), Persona("Sara", 23, 1.88)]
+    L = [p1, Persona("Ana", 14, 1.77), Persona("Sara", 13, 1.88)]
     print(L)
     L.sort(key=lambda obj: obj.altura, reverse=True)
+    print(L)
     L.sort()
     print(L)
