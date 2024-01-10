@@ -14,9 +14,10 @@ class Time:
         self.__hh += horas
         self.__mm %= 60
 
-
     def __add__(self, other):
-        resul = Time(self.__hh+other.__hh, self.__mm+other.__mm, self.__ss+other.__ss)
+        resul = Time(
+            self.__hh + other.__hh, self.__mm + other.__mm, self.__ss + other.__ss
+        )
         resul.ajustar()
         return resul
 
@@ -47,12 +48,12 @@ class DateTime(Time, Date):
 if __name__ == "__main__":
     dt1 = DateTime(10, 1, 2024, 13, 13, 9)
     print(dt1)
-    
 
-    t1 = Time(12, 5, 58)
-    t2 = Time(10, 15, 28)
-    s = t1 + t2 # s = t1.__add__(t2)
-    print('suma: ',s)
+    t1 = Time(12, 30, 58)
+    t2 = Time(10, 29, 2)
+    s = t1 + t2  # s = t1.__add__(t2)
+    print("suma: ", s)
+    exit()
 
     d1 = Date(12, 5, 2028)
     print(d1)
