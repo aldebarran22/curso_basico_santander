@@ -50,7 +50,7 @@ class Guia(Persona):
         self.idiomas = idiomas
 
 
-if __name__ == "__main__":
+def testPersona():
     p1 = Persona("Pedro", 33, 1.8)
     p2 = Persona("Juan", 30, 1.82)
     p1.hablarCon()
@@ -70,3 +70,12 @@ if __name__ == "__main__":
     print(L)
     L.sort()
     print(L)
+
+
+def testGuia():
+    pass
+
+
+if __name__ == "__main__":
+    # testPersona()
+    testGuia()
