@@ -44,6 +44,8 @@ class Guia(Persona):
     def __init__(self, nombre="", edad=0, altura=0.0, ambito="", idiomas=[]):
         # Llamar al constructor de la clase Padre:
         Persona.__init__(self, nombre, edad, altura)
+        # Otra forma para hacer lo mismo:
+        # super().__init__(nombre, edad, altura)
 
         # definir los atributos del Guia:
         self.ambito = ambito
@@ -73,8 +75,10 @@ def testPersona():
 
 
 def testGuia():
-    pass
-
+    g1 = Guia("Andrés",33,1.8,'I', ['inglés','alemán'])
+    print(g1)
+    g1.cumple()
+    print(g1)
 
 if __name__ == "__main__":
     # testPersona()
