@@ -16,6 +16,11 @@ class Persona:
         self.edad = edad
         self.altura = altura
 
+    def __str__(self):
+        return self.nombre + " " + str(self.edad) + " " + str(self.altura)
+
 if __name__ == '__main__':
     p1 = Persona("Pedro",33, 1.8)
     print(p1)
+    print(str(p1))
+    print(p1.__str__())
