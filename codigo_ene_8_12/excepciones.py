@@ -46,12 +46,22 @@ def prueba3():
         print(e.__class__.__name__, e)
 
 
+def procesarFichero(f):
+    # Extraer la extensión del fichero y
+    # si no es python lanzar excepción
+    t = f.partition(".")
+    if t[2] != "py" and t[2] != "":
+        raise Exception(f"Error al procesar el fichero: {f}")
+    else:
+        print(f"procesando el fichero {f}")
+
+
 def prueba4():
     # Procesar los ficheros de una carpeta y
     # generar un error al azar en uno de los
     # ficheros.
     for f in os.listdir():
-        print(f)
+        procesarFichero(f)
 
 
 if __name__ == "__main__":
