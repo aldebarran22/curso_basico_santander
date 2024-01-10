@@ -26,6 +26,6 @@ if __name__ == "__main__":
     print()
 
     print("GENERADOR:")
-    for i in genMul3(1, 30):
+    for i in genMul3(30, 90):
         print(i)
     print()
