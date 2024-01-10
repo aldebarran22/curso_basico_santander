@@ -1,6 +1,7 @@
 """
 Capturar y lanzar excepciones en Python
 """
+import os
 
 
 def prueba1():
@@ -45,7 +46,16 @@ def prueba3():
         print(e.__class__.__name__, e)
 
 
+def prueba4():
+    # Procesar los ficheros de una carpeta y
+    # generar un error al azar en uno de los
+    # ficheros.
+    for f in os.listdir():
+        print(f)
+
+
 if __name__ == "__main__":
     # prueba1()
     # prueba2()
-    prueba3()
+    # prueba3()
+    prueba4()

@@ -49,7 +49,7 @@ if __name__ == "__main__":
     dt1 = DateTime(10, 1, 2024, 13, 13, 9)
     print(dt1)
 
-    t1 = Time(12, 30, 58)
+    t1 = Time(12, 30, 580)
     t2 = Time(10, 29, 2)
     s = t1 + t2  # s = t1.__add__(t2)
     print("suma: ", s)
