@@ -60,12 +60,15 @@ def prueba4():
     # Procesar los ficheros de una carpeta y
     # generar un error al azar en uno de los
     # ficheros.
-
-    for f in os.listdir():
+    errores = 0
+    ficheros = os.listdir()
+    for f in ficheros:
         try:
             procesarFichero(f)
         except Exception as e:
             print(e)
+            errores += 1
+    print(f"Total ficheros {len(ficheros)} y errores: {errores}")
 
 
 if __name__ == "__main__":
