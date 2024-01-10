@@ -36,6 +36,20 @@ class Persona:
         return str(self)
 
 
+class Guia(Persona):
+    """
+    Clase guia turístico.
+    """
+
+    def __init__(self, nombre="", edad=0, altura=0.0, ambito="", idiomas=[]):
+        # Llamar al constructor de la clase Padre:
+        Persona.__init__(self, nombre, edad, altura)
+
+        # definir los atributos del Guia:
+        self.ambito = ambito
+        self.idiomas = idiomas
+
+
 if __name__ == "__main__":
     p1 = Persona("Pedro", 33, 1.8)
     p2 = Persona("Juan", 30, 1.82)
