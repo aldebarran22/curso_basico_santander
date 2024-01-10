@@ -19,6 +19,12 @@ class Persona:
     def cumple(self):
         self.edad += 1
 
+    def hablarCon(self, otro=None):
+        if otro != None:
+            print(self.nombre, "habla con", otro.nombre)
+        else:
+            print(self.nombre, "habla solo")
+
     def __lt__(self, other):
         return self.edad < other.edad
 
@@ -33,6 +39,8 @@ class Persona:
 if __name__ == "__main__":
     p1 = Persona("Pedro", 33, 1.8)
     p2 = Persona("Juan", 30, 1.82)
+    p1.hablarCon()
+    p1.hablarCon(p2)
     if p1 < p2:  # if p1.__lt__(p2)
         print(p1, "menor que", p2)
     else:
