@@ -68,6 +68,9 @@ class Guia(Persona):
         # Reutilizamos el método __str__ de la clase Persona
         return Persona.__str__(self) + " " + self.ambito + " " + ",".join(self.idiomas)
 
+    def __del__(self):
+        print("Eliminando: ", self.nombre)
+
 
 def testPersona():
     p1 = Persona("Pedro", 33, 1.8)
@@ -94,12 +97,16 @@ def testPersona():
 def testGuia():
     g1 = Guia("Andrés", 33, 1.8, "I", ["inglés", "francés"])
     g2 = Guia("Ana", 32, 1.78, "I", ["italiano", "inglés", "francés"])
+    # del(g1) Fuerza la llamada al destructor: __del__()
     print(g1)
     g1.cumple()
     print(g1)
     g1.hablarCon()
+    g1.edad = -88
 
 
 if __name__ == "__main__":
     # testPersona()
     testGuia()
+
+  
