@@ -92,12 +92,12 @@ def testPersona():
 
 
 def testGuia():
-    g1 = Guia("Andrés", 33, 1.8, "I", ["inglés", "alemán"])
-    g2 = Guia("Ana", 32, 1.78, "I", ["italiano", "francés"])
+    g1 = Guia("Andrés", 33, 1.8, "I", ["inglés", "francés"])
+    g2 = Guia("Ana", 32, 1.78, "I", ["italiano", "inglés", "francés"])
     print(g1)
     g1.cumple()
     print(g1)
-    g1.hablarCon(g2)
+    g1.hablarCon()
 
 
 if __name__ == "__main__":
