@@ -51,6 +51,10 @@ class Guia(Persona):
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def __str__(self):
+        # Reutilizamos el método __str__ de la clase Persona
+        return Persona.__str__(self) + " " + self.ambito + " " + ",".join(self.idiomas)
+
 
 def testPersona():
     p1 = Persona("Pedro", 33, 1.8)
@@ -75,10 +79,11 @@ def testPersona():
 
 
 def testGuia():
-    g1 = Guia("Andrés",33,1.8,'I', ['inglés','alemán'])
+    g1 = Guia("Andrés", 33, 1.8, "I", ["inglés", "alemán"])
     print(g1)
     g1.cumple()
     print(g1)
+
 
 if __name__ == "__main__":
     # testPersona()
