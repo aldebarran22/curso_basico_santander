@@ -51,6 +51,13 @@ class Guia(Persona):
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def hablarCon(self, otro=None):
+        if otro == None:
+            # Llamar al método de la clase Padre
+            Persona.hablarCon(self, otro)
+        else:
+            pass
+
     def __str__(self):
         # Reutilizamos el método __str__ de la clase Persona
         return Persona.__str__(self) + " " + self.ambito + " " + ",".join(self.idiomas)
@@ -80,9 +87,11 @@ def testPersona():
 
 def testGuia():
     g1 = Guia("Andrés", 33, 1.8, "I", ["inglés", "alemán"])
+    g2 = Guia("Ana", 32, 1.78, "I", ["italiano", "francés"])
     print(g1)
     g1.cumple()
     print(g1)
+    g1.hablarCon(g2)
 
 
 if __name__ == "__main__":
