@@ -43,6 +43,9 @@ class Time:
         # Resultado: 15:02:06
         return "%02d:%02d:%02d" % (self.__hh, self.__mm, self.__ss)
 
+    def __repr__(self):
+        return str(self)
+
 
 class Date:
     def __init__(self, dd, mm, yy):
