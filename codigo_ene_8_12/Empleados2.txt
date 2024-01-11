@@ -8,4 +8,3 @@ id;nombre;cargo
 9;Dodsworth;Representante de ventas
 15;Roger;Vicepresidente comercial
 16;Sara;Coordinador ventas interno
-

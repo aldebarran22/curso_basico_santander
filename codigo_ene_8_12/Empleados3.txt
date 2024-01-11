@@ -7,4 +7,3 @@ id;nombre;cargo
 7;King;Representante de ventas
 8;Callahan;Coordinador ventas interno
 19;Richard;Gerente de ventas
-
