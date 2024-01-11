@@ -12,6 +12,12 @@ class Time:
         if not (0 <= hh <= 23):
             raise TimeError("Las horas deben estar entre 0 y 23")
 
+        if not (0 <= mm <= 59):
+            raise TimeError("Los minutos deben estar entre 0 y 59")
+
+        if not (0 <= ss <= 59):
+            raise TimeError("Los segundos deben estar entre 0 y 59")
+
         # definir los att con acceso privado
         self.__hh = hh
         self.__mm = mm
