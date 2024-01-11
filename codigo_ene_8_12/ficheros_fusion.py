@@ -34,10 +34,25 @@ def ordenar(linea):
         return 0
 
 
+def grabarFichero(path, L):
+    """
+    Grabar todas las líneas de la lista en un fichero.
+    """
+    fich = None
+    try:
+        fich = open(path, "w")
+        fich.writelines(L)
+
+    except Exception as e:
+        print(e)
+    finally:
+        if fich:
+            fich.close()
+
+
 if __name__ == "__main__":
     c1 = cargaFichero("Empleados2.txt")
     c2 = cargaFichero("Empleados3.txt")
     todo = c1 | c2
     L = sorted(todo, key=ordenar)
-    for i in L:
-        print(i)
+    grabarFichero("Empleados_todo.txt", L)
