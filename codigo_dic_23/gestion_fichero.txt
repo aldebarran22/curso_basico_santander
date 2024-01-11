@@ -1,0 +1,12 @@
+Gestión de Ficheros:
+
+fich=None
+try:
+	- fich = Abrir Fichero 
+	- leer fichero (fich) 
+	return
+except:
+	error
+
+finally:
+	if fich!= None: fich cerrar fichero

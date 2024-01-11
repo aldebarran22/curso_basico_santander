@@ -37,7 +37,7 @@ def prueba3():
         print(d["x"])  # KeyError
         print("Pos 100:", L[100])  # IndexError
         print("Longitud de L:", len(L))
-
+    # except (IndexError, KeyError) as e:
     except IndexError as e:
         print(e)
     except KeyError as e:
@@ -71,8 +71,21 @@ def prueba4():
     print(f"Total ficheros {len(ficheros)} y errores: {errores}")
 
 
+def prueba5():
+    # Comprobar como se ejecuta finally antes de hacer el return
+    try:
+        print("todo bien")
+        return True
+
+    except Exception as e:
+        print(e)
+    finally:
+        print("finally")
+
+
 if __name__ == "__main__":
     # prueba1()
     # prueba2()
     # prueba3()
-    prueba4()
+    # prueba4()
+    prueba5()
