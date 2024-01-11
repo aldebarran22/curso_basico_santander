@@ -2,6 +2,7 @@
 Listar el contenido de un fichero que se indica
 por la línea de comandos
 """
+import sys
 
 
 def leerFichero(path):
@@ -25,4 +26,8 @@ def leerFichero(path):
 
 
 if __name__ == "__main__":
-    pass
+    if len(sys.argv) == 1:
+        print("Falta indicar un nombre de fichero")
+        exit()
+    else:
+        leerFichero(sys.argv[1])
