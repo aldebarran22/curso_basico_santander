@@ -14,7 +14,11 @@ def cargaFichero(path):
     try:
         fich = open(path, "r")
         txt = fich.read()
-        print(txt)
+        # Parte el texto por el salto de linea
+        # y lo guarda en un conjunto
+        c = set(txt.split("\n"))
+        return c
+
     except Exception as e:
         print(e)
     finally:
