@@ -1,6 +1,8 @@
 """
 Leer y escribir ficheros CSV con Python
 """
+
+
 def leerFichero(path):
     """
     Imprimir el contenido en consola
@@ -10,12 +12,16 @@ def leerFichero(path):
         # Abrir el fichero en modo lectura
         fich = open(path, "r")
         for linea in fich:
+            # Limpia el carácter fin de línea (EOL)
+            linea = linea.strip()
             print(linea)
-            
+
     except Exception as e:
         print(e)
     finally:
-        if fich != None: fich.close()
+        if fich != None:
+            fich.close()
 
-if __name__ == '__main__':
-    leerFichero('../ficheros/Pedidos.txt')
+
+if __name__ == "__main__":
+    leerFichero("../ficheros/Pedidos.txt")
