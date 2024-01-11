@@ -1,4 +1,6 @@
 from modulos.fecha_hora import DateTime
+from modulos.fecha import Date
+from modulos.hora import Time, TimeError
 
 if __name__ == "__main__":
     dt1 = DateTime(10, 1, 2024, 13, 13, 9)
