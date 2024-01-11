@@ -55,5 +55,6 @@ if __name__ == "__main__":
     c2 = cargaFichero("Empleados3.txt")
     todo = c1 | c2
     L = sorted(todo, key=ordenar)
-    L = [linea+"\n" for linea in L]
+    # Añade un salto de línea al final de cada cadena:
+    L = [linea + "\n" for linea in L]
     grabarFichero("Empleados_todo.txt", L)
