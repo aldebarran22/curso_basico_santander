@@ -1,5 +1,17 @@
+class TimeError(Exception):
+    """
+    Clase que gestiona los errores con el tiempo.
+    """
+
+    def __init__(self, mensaje=""):
+        Exception.__init__(self, mensaje)
+
+
 class Time:
     def __init__(self, hh=0, mm=0, ss=0):
+        if not (0 <= hh <= 23):
+            raise TimeError("Las horas deben estar entre 0 y 23")
+
         # definir los att con acceso privado
         self.__hh = hh
         self.__mm = mm
@@ -49,11 +61,13 @@ if __name__ == "__main__":
     dt1 = DateTime(10, 1, 2024, 13, 13, 9)
     print(dt1)
 
-    t1 = Time(12, 30, 580)
-    t2 = Time(10, 29, 2)
-    s = t1 + t2  # s = t1.__add__(t2)
-    print("suma: ", s)
-    exit()
+    try:
+        t1 = Time(6, 30, 58)
+        t2 = Time(10, 29, 2)
+        s = t1 + t2  # s = t1.__add__(t2)
+        print("suma: ", s)
+    except TimeError as e:
+        print(e)
 
     d1 = Date(12, 5, 2028)
     print(d1)

@@ -75,10 +75,12 @@ def prueba5():
     # Comprobar como se ejecuta finally antes de hacer el return
     try:
         print("todo bien")
+        raise Exception("fallo")
         return True
 
     except Exception as e:
         print(e)
+
     finally:
         print("finally")
 
