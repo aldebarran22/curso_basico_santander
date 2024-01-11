@@ -26,10 +26,18 @@ def cargaFichero(path):
             fich.close()
 
 
+def ordenar(linea):
+    t = linea.partition(";")
+    if t[0].isnumeric():
+        return int(t[0])
+    else:
+        return 0
+
+
 if __name__ == "__main__":
     c1 = cargaFichero("Empleados2.txt")
     c2 = cargaFichero("Empleados3.txt")
     todo = c1 | c2
-    L = sorted(todo)
+    L = sorted(todo, key=ordenar)
     for i in L:
         print(i)
