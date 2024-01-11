@@ -16,7 +16,7 @@ app: fecha_hora
 
 
 app  <dir>
-    principal.py      código principal (main)
+    main.py      código principal (main)
     modulos <dir>
 	__init__.py
 	hora.py       clase Time y TimeError
