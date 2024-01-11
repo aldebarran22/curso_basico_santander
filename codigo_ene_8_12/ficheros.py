@@ -47,4 +47,4 @@ def filtroPaises(path, *paises):
 
 if __name__ == "__main__":
     # leerFichero("../ficheros/Pedidos.txt")
-    filtroPaises("../ficheros/Pedidos.txt", "Alemania", "Francia")
+    filtroPaises("../ficheros/Pedidos.txt", "Suiza")
