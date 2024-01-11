@@ -29,3 +29,7 @@ def cargaFichero(path):
 if __name__ == "__main__":
     c1 = cargaFichero("Empleados2.txt")
     c2 = cargaFichero("Empleados3.txt")
+    todo = c1 | c2
+    L = sorted(todo)
+    for i in L:
+        print(i)
