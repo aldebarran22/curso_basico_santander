@@ -1,0 +1,24 @@
+Paquetes:
+es.curso.app
+
+dominio.nombre_empresa.nombre_aplicacion
+
+es <dir>
+    __init__.py
+    curso <dir>
+       __init__.py
+       app <dir>
+          __init__.py
+
+###################################################
+
+app: fecha_hora
+
+
+app  <dir>
+    principal.py      código principal (main)
+    modulos <dir>
+	__init__.py
+	hora.py       clase Time y TimeError
+	fecha.py      clase Date
+	fecha_hora.py clase DateTime
