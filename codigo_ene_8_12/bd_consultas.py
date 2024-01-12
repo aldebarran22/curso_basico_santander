@@ -90,7 +90,7 @@ def exportar(pathBD, *tablas, sep=";"):
     for tabla in tablas:
         fich = None
         try:
-            path = f"../ficheros/{tabla}.csv"
+            path = f"../csv/{tabla}.csv"
             fich = open(path, "w")
             consulta(tabla, pathBD, sep, fich)
 
