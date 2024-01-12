@@ -23,6 +23,7 @@ def consulta(tabla, path):
             cur = con.cursor()
             sql = f"select * from {tabla}"
             cur.execute(sql)
+            print(cur.description)
 
             for t in cur.fetchall():
                 print(t)
@@ -56,4 +57,5 @@ def testConexion(path):
 
 
 if __name__ == "__main__":
-    testConexion("../bd/empresa3.db")
+    # testConexion("../bd/empresa3.db")
+    consulta("categorias", "../bd/empresa3.db")
