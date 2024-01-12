@@ -7,11 +7,34 @@ import sqlite3 as dbapi
 from os.path import isfile
 
 
-def consulta(tabla):
+def consulta(tabla, path):
     """
     Lista el contenido de la tabla que recibe
     """
-    pass
+    con = None
+    cur = None
+    try:
+        if not isfile(path):
+            raise FileNotFoundError(f"No existe el fichero {path}")
+        else:
+            # Abrir la conexión:
+            con = dbapi.connect(path)
+            # Crear un cursor:
+            cur = con.cursor()
+            sql = f"select * from {tabla}"
+            cur.execute(sql)
+
+            for t in cur.fetchall():
+                print(t)
+
+    except Exception as e:
+        print(e)
+
+    finally:
+        if cur:
+            cur.close()
+        if con:
+            con.close()
 
 
 def testConexion(path):
@@ -33,4 +56,4 @@ def testConexion(path):
 
 
 if __name__ == "__main__":
-    testConexion('../bd/empresa3.db')
+    testConexion("../bd/empresa3.db")
