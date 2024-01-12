@@ -62,7 +62,7 @@ def testConexion(path):
 def exportar(pathBD, *tablas, sep=";"):
     for tabla in tablas:
         fich = None
-        try:
+        try:           
             path = f"../ficheros/{tabla}.csv"
             fich = open(path, "w")
             consulta(tabla, pathBD, sep, fich)
@@ -77,4 +77,4 @@ def exportar(pathBD, *tablas, sep=";"):
 if __name__ == "__main__":
     # testConexion("../bd/empresa3.db")
     # consulta("categorias", "../bd/empresa3.db")
-    exportar("../bd/empresa3.db","clientes", "pedidos", "productos", sep=";")
+    exportar("../bd/empresa3.db", "clientes", "pedidos", "productos", sep=";")
