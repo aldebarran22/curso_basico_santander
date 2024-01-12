@@ -9,7 +9,12 @@ from fecha_hora import Time, TimeError
 
 class PruebasTime(unittest.TestCase):
     def testStr(self):
-        pass
+        """
+        Comprobar si al convertir en texto un Time hace correctamente
+        el relleno de ceros
+        """
+        t1 = Time(2,3,1)
+        self.assertEqual(str(t1), "02:03:01", msg="No rellena correctamente los ceros")
 
     def testAdd(self):
         pass
