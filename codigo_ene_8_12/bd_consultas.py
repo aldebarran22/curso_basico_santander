@@ -27,7 +27,8 @@ def consulta(tabla, path, sep=";"):
             print(cabs)
 
             for t in cur.fetchall():
-                print(t)
+                fila = sep.join([str(i) for i in t])
+                print(fila)
 
     except Exception as e:
         print(e)
