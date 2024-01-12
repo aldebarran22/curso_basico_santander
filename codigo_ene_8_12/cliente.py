@@ -5,8 +5,9 @@ import socket
 
 s = socket.socket()
 s.connect(("localhost", 9999))
+print("Conectado al Servidor!")
 while True:
-    mensaje = input("> ")
+    mensaje = input("Mensaje:> ")
     s.send(mensaje.encode("utf-8"))
     recibido = s.recv(1024)
     recibido = recibido.decode("utf-8")
