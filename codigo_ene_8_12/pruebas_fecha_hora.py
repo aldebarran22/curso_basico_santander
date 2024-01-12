@@ -27,7 +27,9 @@ class PruebasTime(unittest.TestCase):
         self.assertEqual(str(r), str(r2), msg="No suma correctamente")
 
     def testException(self):
-        pass
+        """Comprobar si al construir un Time se lanza una
+        excepción TimeError con horas > 23 o min > 59 o sg > 59"""
+        self.assertRaises(TimeError, Time, 12, 59, -8)
 
 
 if __name__ == "__main__":
