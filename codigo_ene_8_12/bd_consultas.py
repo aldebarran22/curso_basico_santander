@@ -8,6 +8,30 @@ from os.path import isfile
 import sys
 
 
+def grabarCategoria(path, categoria):
+    con = None
+    try:
+        if not isfile(path):
+            raise FileNotFoundError(f"No existe el fichero {path}")
+        else:
+            # Abrir la conexión:
+            con = dbapi.connect(path)
+            sql = "insert into categorias(nombre) values(?)"
+            cur = con.cursor()
+            cur.execute(sql, (categoria,))
+            print("Número de registros creados: ", cur.rowcount)
+            print("id generado: ", cur.rowid)
+            con.commit()  # Confirmar la transacción
+
+    except Exception as e:
+        con.rollback()  # Rechazar los cambios.
+        print(e)
+
+    finally:
+        if con:
+            con.close()
+
+
 def consulta(tabla, path, sep=";", file=sys.stdout):
     """
     Lista el contenido de la tabla que recibe
@@ -62,7 +86,7 @@ def testConexion(path):
 def exportar(pathBD, *tablas, sep=";"):
     for tabla in tablas:
         fich = None
-        try:           
+        try:
             path = f"../ficheros/{tabla}.csv"
             fich = open(path, "w")
             consulta(tabla, pathBD, sep, fich)
