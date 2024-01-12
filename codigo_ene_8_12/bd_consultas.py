@@ -10,6 +10,7 @@ import sys
 
 def grabarCategoria(path, categoria):
     con = None
+    cur = None
     try:
         if not isfile(path):
             raise FileNotFoundError(f"No existe el fichero {path}")
@@ -20,7 +21,7 @@ def grabarCategoria(path, categoria):
             cur = con.cursor()
             cur.execute(sql, (categoria,))
             print("Número de registros creados: ", cur.rowcount)
-            print("id generado: ", cur.rowid)
+            print("id generado: ", cur.lastrowid)
             con.commit()  # Confirmar la transacción
 
     except Exception as e:
@@ -28,6 +29,8 @@ def grabarCategoria(path, categoria):
         print(e)
 
     finally:
+        if cur:
+            cur.close()
         if con:
             con.close()
 
@@ -101,4 +104,5 @@ def exportar(pathBD, *tablas, sep=";"):
 if __name__ == "__main__":
     # testConexion("../bd/empresa3.db")
     # consulta("categorias", "../bd/empresa3.db")
-    exportar("../bd/empresa3.db", "clientes", "pedidos", "productos", sep=";")
+    # exportar("../bd/empresa3.db", "clientes", "pedidos", "productos", sep=";")
+    grabarCategoria("../bd/empresa3.db", "viajes")
