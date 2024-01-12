@@ -29,7 +29,7 @@ class HiloServer(Thread):
 			#input()
 	
 
-class Server(object):
+class Server():
 	
 	def __init__(self, host, puerto, num_conexiones):
 		self.__host = host

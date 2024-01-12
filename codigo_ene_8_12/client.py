@@ -1,7 +1,7 @@
 # Cliente socket
 from socket import *
 
-class Client(object):
+class Client():
 	
 	def __init__(self, host, puerto):
 		self.__host = host
