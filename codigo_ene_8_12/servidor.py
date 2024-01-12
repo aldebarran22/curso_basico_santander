@@ -17,7 +17,7 @@ while True:
     if recibido == "quit":
         break
     print("Recibido:", recibido)
-    sc.send(recibido.encode("utf-8"), recibido)
+    sc.send(recibido.encode("utf-8"))
 print("fin comunicación")
 sc.close()
 s.close()
