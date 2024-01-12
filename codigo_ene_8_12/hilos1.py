@@ -35,7 +35,14 @@ def test2Threads():
 
 
 def testListThreads():
-    pass
+    L = []
+    for i in range(5):
+        hilo = Mensajes(randint(5,10), "Mensajero"+str(i+1))
+        L.append(hilo)
+        hilo.start()
+
+    for hilo in L:
+        hilo.join()
 
 
 if __name__ == "__main__":
