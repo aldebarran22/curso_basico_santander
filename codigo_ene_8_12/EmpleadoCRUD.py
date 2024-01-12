@@ -163,7 +163,7 @@ class EmpleadoBD:
 
 if __name__ == "__main__":
     try:
-        bd = EmpleadoBD("../bd/empresa3.db")
+        bd = EmpleadoBD("empresa3.db")
         L = bd.select()
         print(f"Tenemos {len(L)} empleados")
 
