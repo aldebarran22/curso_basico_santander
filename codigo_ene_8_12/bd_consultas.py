@@ -7,7 +7,7 @@ import sqlite3 as dbapi
 from os.path import isfile
 
 
-def consulta(tabla, path):
+def consulta(tabla, path, sep=";"):
     """
     Lista el contenido de la tabla que recibe
     """
@@ -23,7 +23,8 @@ def consulta(tabla, path):
             cur = con.cursor()
             sql = f"select * from {tabla}"
             cur.execute(sql)
-            print(cur.description)
+            cabs = sep.join([t[0] for t in cur.description])
+            print(cabs)
 
             for t in cur.fetchall():
                 print(t)
