@@ -105,4 +105,4 @@ if __name__ == "__main__":
     # testConexion("../bd/empresa3.db")
     # consulta("categorias", "../bd/empresa3.db")
     # exportar("../bd/empresa3.db", "clientes", "pedidos", "productos", sep=";")
-    grabarCategoria("../bd/empresa3.db", "viajes")
+    grabarCategoria("empresa3.db", "viajes")
