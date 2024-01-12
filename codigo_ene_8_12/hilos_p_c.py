@@ -27,7 +27,7 @@ class Productor(Thread):
             with self.buffer.mutex:
                 self.buffer.buffer[self.buffer.ind_p] = item
                 self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
-                print(self.getName() + ":", item)
+                print(self.name + ":", item)
                 print(self.buffer.buffer)
 
             # Avisar que hay un nuevo item:
