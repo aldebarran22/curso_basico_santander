@@ -23,5 +23,10 @@ num2 = float(numero2)
 resul = num1 + num2
 print("resul:",resul)
 
+# Convertir números a texto (str)
+s1 = str(num1)
+s2 = str(num2)
+print(s1+s2)
+
 
 
