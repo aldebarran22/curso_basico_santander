@@ -21,3 +21,15 @@ if not (num >= ini and num <= fin):
     print("No está")
 else:
     print("dentro del intervalo")
+
+if num < ini or num > fin:
+    print("No está")
+else:
+    print("dentro del intervalo")
+
+if ini < fin:
+    print("el menor", ini)
+elif ini == fin:
+    print("iguales")
+else:
+    print("el menor", fin)
