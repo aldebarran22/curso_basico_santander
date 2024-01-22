@@ -33,3 +33,11 @@ elif ini == fin:
     print("iguales")
 else:
     print("el menor", fin)
+
+num = 0
+if num:
+    print('es true')
+else:
+    print('es false')    
+
+# En python es False: 0, cadena vacía '', lista vacía [], None
