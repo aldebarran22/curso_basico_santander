@@ -1,6 +1,8 @@
 """
 Prueba de python.
 """
+import sys
 
-# Imprime un mensaje por consola
-print("hola")
+print(sys.version)
+
+
