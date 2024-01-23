@@ -843,5 +843,10 @@ for pais in paises:
     cuenta = L.count(pais)
     # Añadir una clave al diccionario: país / cuenta
     histograma[pais] = cuenta
-    
-print(histograma)
+
+#print(histograma)
+for k,v in histograma.items():
+    print(k,v)
+
+print(histograma.keys())
+print(histograma.values())
