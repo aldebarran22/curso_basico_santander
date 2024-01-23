@@ -20,7 +20,9 @@ def sqrt(a: int, b: int, c: int) -> int:
     return a + b + c
 
 
-print(math.sqrt(25))
-print(sqrt([1], [2], [3]))
-print(type(sqrt))
-print(sqrt.__name__, sqrt.__doc__)
+if __name__ == "__main__":
+    print(math.sqrt(25))
+    print(sqrt([1], [2], [3]))
+    print(type(sqrt))
+    print(sqrt.__name__, sqrt.__doc__)
+    print(__name__, __doc__)
