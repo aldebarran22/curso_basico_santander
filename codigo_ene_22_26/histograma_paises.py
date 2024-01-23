@@ -837,4 +837,11 @@ Estados Unidos"""
 L = txt.split("\n")
 paises = set(L)
 print(paises)
-print('Suiza se repite: ', L.count('Suiza'))
+print("Suiza se repite: ", L.count("Suiza"))
+histograma = dict()  # Crea un diccionario vacío
+for pais in paises:
+    cuenta = L.count(pais)
+    # Añadir una clave al diccionario: país / cuenta
+    histograma[pais] = cuenta
+    
+print(histograma)
