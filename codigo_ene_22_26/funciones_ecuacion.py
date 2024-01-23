@@ -6,16 +6,25 @@ x1 y x2
 
 import math
 
-# inicializar variables:
-a, b, c = 1, 5, 4  # a = 1 b = 5 c = 4
-# a,b,c=1,2,3
 
-raiz = b**2 - 4 * a * c
-if raiz > 0:
-    x1 = (-b + math.sqrt(raiz)) / (2 * a)
-    x2 = (-b - math.sqrt(raiz)) / (2 * a)
+def ecuacion(a, b, c):
+    raiz = b**2 - 4 * a * c
+    if raiz > 0:
+        x1 = (-b + math.sqrt(raiz)) / (2 * a)
+        x2 = (-b - math.sqrt(raiz)) / (2 * a)
+        return x1, x2
+    else:
+        return None
 
-    print("x1:", x1, sep="")
-    print(f"x2:{x2}")
-else:
-    print("No se puede calcular")
+
+if __name__ == "__main__":
+    resul = ecuacion(1, 5, 4)
+    if resul:
+        print(resul)
+    else:
+        print("No hay solución")
+    resul = ecuacion(1, 2, 3)
+    if resul:
+        print(resul)
+    else:
+        print("No hay solución")
