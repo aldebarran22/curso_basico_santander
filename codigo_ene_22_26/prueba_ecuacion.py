@@ -31,3 +31,7 @@ print(resul)
 L = [(1, 5, 4), (1,2,3)]
 for t in L:
     print(ecuacion(*t)) # Desempaqueta la tupla en los parámetros de la fun.
+
+d =  {"a":1, "b":5, "c":4}    
+# Desempaquetar el dict en los params de la función
+print(ecuacion(**d))
