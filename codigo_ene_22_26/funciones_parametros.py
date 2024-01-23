@@ -18,9 +18,17 @@ def funcion2(a=10, b=20):
     print('opcionales: ',a,b)
     print()
 
+def funcion3(a,b,d,c=0):
+    pass
+
+def funcion4(*args):
+    print("args: ",args)
+    print()
+
 if __name__ == '__main__':
     funcion(1,2)        # forma posicional
     funcion(b=2, a=1)   # forma nominal
 
-    funcion2(b=200)
+    funcion2(b=200)     # forma nominal.
+    funcion4(1,2,3,4,5) # Se recibe como una tupla
 
