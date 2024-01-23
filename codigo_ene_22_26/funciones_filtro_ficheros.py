@@ -1,7 +1,7 @@
 import os
 
 
-def filtroFicheros(path, *extensiones):
+def filtroFicheros(*extensiones, path=None):
     L = os.listdir(path)
     R = []
     for f in L:
@@ -12,5 +12,6 @@ def filtroFicheros(path, *extensiones):
 
 
 if __name__ == "__main__":
-    L2 = filtroFicheros(".", "py")
-    L3 = filtroFicheros(".", "py", "txt", "xlsx")
+    L2 = filtroFicheros("py")
+    L3 = filtroFicheros("py", "txt", "xlsx")
+    print(L3)
