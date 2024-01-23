@@ -27,3 +27,7 @@ from funciones_ecuacion import ecuacion
 
 resul = ecuacion(1, 5, 4)
 print(resul)
+
+L = [(1, 5, 4), (1,2,3)]
+for t in L:
+    print(ecuacion(*t)) # Desempaqueta la tupla en los parámetros de la fun.
