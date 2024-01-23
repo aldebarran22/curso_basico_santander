@@ -25,6 +25,13 @@ def funcion4(*args):
     print("args: ",args)
     print()
 
+def funcion5(obligatorio, opcional=10, *args, **kwargs):
+    print('obligatorio:', obligatorio)
+    print('opcional:', opcional)
+    print('args: ', args)
+    print('kwargs: ', kwargs)
+    print()
+
 if __name__ == '__main__':
     funcion(1,2)        # forma posicional
     funcion(b=2, a=1)   # forma nominal

@@ -12,6 +12,7 @@ def filtroFicheros(*extensiones, path=None):
 
 
 if __name__ == "__main__":
-    L2 = filtroFicheros("py")
-    L3 = filtroFicheros("py", "txt", "xlsx")
+    L2 = filtroFicheros("txt", path=r"D:\OneDrive\Escritorio\python_basico_santander\repositorio\codigo_dic_23")
+    print(L2)
+    L3 = filtroFicheros("py", "txt", "xlsx",path="C:/")
     print(L3)
