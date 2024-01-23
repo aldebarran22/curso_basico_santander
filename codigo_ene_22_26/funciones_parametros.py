@@ -46,7 +46,7 @@ def plot(**kwargs):
 
 
 if __name__ == "__main__":
-    plot(color="green")
+    plot(color="green",label="precios")
     exit()
     funcion5(0, 1, 2, 3, 4, 5, x=100, y=200)
 
