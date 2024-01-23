@@ -832,5 +832,9 @@ Mexico
 Dinamarca
 Suiza
 Francia
-Estados Unidos
-"""
+Estados Unidos"""
+
+L = txt.split("\n")
+paises = set(L)
+print(paises)
+print('Suiza se repite: ', L.count('Suiza'))
