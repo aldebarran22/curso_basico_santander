@@ -26,3 +26,10 @@ if __name__ == "__main__":
     print(type(sqrt))
     print(sqrt.__name__, sqrt.__doc__)
     print(__name__, __doc__)
+
+    f = sumar
+    print(f, type(f))
+    print(f(1, 2))
+
+    L = [1, 2, 3]
+    # print(L(0)) Error. Lo toma como si fuera una función y no lo es.
