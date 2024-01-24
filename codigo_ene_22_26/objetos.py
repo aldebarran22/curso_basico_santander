@@ -26,6 +26,12 @@ class Empleado:
     def cumpleaños(self):
         self.edad += 1
 
+    def __lt__(self, other):
+        if self.edad < other.edad:
+            return True
+        else:
+            return False
+
     def __del__(self):
         # print("se elimina: " + self.nombre)
         pass
@@ -40,5 +46,7 @@ if __name__ == "__main__":
     # print(emp.__str__())
     L = [emp, Empleado(1, "Gema", "Gerente", 44), Empleado(nombre="Juan", edad=34)]
     print(L)
-    L.sort(key=lambda obj : obj.edad)
+    L.sort(key=lambda obj : obj.nombre)
+    print(L)
+    L.sort()
     print(L)
