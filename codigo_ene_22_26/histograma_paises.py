@@ -844,9 +844,13 @@ for pais in paises:
     # Añadir una clave al diccionario: país / cuenta
     histograma[pais] = cuenta
 
-#print(histograma)
-for k,v in histograma.items():
-    print(k,v)
+# print(histograma)
 
-print(histograma.keys())
-print(histograma.values())
+L = sorted(histograma.items(), key=lambda t: t[1], reverse=True)
+
+for k, v in L:
+    print(k, v)
+
+
+# print(histograma.keys())
+# print(histograma.values())
