@@ -19,7 +19,7 @@ class Empleado:
         return (
             str(self.id) + " " + self.nombre + " " + self.cargo + " " + str(self.edad)
         )
-    
+
     def __repr__(self):
         return str(self)
 
@@ -39,6 +39,7 @@ class Empleado:
 
 if __name__ == "__main__":
     emp = Empleado(nombre="Jorge", edad=29)
+    print(emp.__dict__)    
     print(emp)
     emp.cumpleaños()
     # del(emp) Llama al destructor de la clase
@@ -46,7 +47,12 @@ if __name__ == "__main__":
     # print(emp.__str__())
     L = [emp, Empleado(1, "Gema", "Gerente", 44), Empleado(nombre="Juan", edad=34)]
     print(L)
-    L.sort(key=lambda obj : obj.nombre)
+    L.sort(key=lambda obj: obj.nombre)
     print(L)
     L.sort()
     print(L)
+    L2 = [obj.__dict__ for obj in L]
+    print(L2)
+    emp.telefono = 600252624
+    emp.__dict__['email'] = "webmaster@gmail.es"
+    print(emp.__dict__)
