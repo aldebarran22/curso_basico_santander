@@ -32,3 +32,13 @@ class Persona:
     def __repr__(self):
         # Vuelve a llamar al método __str__()
         return str(self)
+
+def testPersona():
+    p1 = Persona("Ana")
+    p2 = Persona("Tomas")
+
+    p2.hablarCon()
+    p2.hablarCon(p1)
+
+if __name__ == '__main__':
+    testPersona()
