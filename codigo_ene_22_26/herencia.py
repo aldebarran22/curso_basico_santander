@@ -40,6 +40,25 @@ class Extranjero(Persona):
         # super().__init__(nombre, edad, altura)
         self.idiomas = idiomas
 
+    def hablarCon(self, otro=None):
+        if otro == None:
+            Persona.hablarCon(self, otro)
+        else:
+            c1 = set(self.idiomas)
+            c2 = set(otro.idiomas)
+
+            comunes = c1 & c2
+            if len(comunes) > 0:
+                print(
+                    self.nombre
+                    + " habla con "
+                    + otro.nombre
+                    + " en "
+                    + " o ".join(comunes)
+                )
+            else:
+                print("No tienen un idioma en común")
+
     def __str__(self):
         return super().__str__() + " " + ",".join(self.idiomas)
 
