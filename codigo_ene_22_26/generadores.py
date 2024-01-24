@@ -21,11 +21,11 @@ def genMul3(ini, fin, salto=1):
 
 if __name__ == "__main__":
     print("LISTA:")
-    for i in listaMul3(1, 30):
+    for i in listaMul3(1, 10):
         print(i, end=" ")
     print()
 
     print("GENERADOR:")
-    for i in genMul3(1, 30):
+    for i in genMul3(1, 10):
         print(i)
     print()
