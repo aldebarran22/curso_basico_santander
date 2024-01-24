@@ -3,3 +3,4 @@ Función Python		Función especial
 str			__str__
 del			__del__
 repr			__repr__
+<			__lt__

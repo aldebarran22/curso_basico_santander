@@ -18,3 +18,8 @@ objeto1
 
    persona1 = Persona("nombre",peso, altura)
    persona1.saltar()
+
+
+Constructor: __init__() --> para inicializar
+objeto en curso: self
+Destructor: __del__() --> para liberar recurso
