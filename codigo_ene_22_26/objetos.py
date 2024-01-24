@@ -19,8 +19,19 @@ class Empleado:
         return (
             str(self.id) + " " + self.nombre + " " + self.cargo + " " + str(self.edad)
         )
+    
+    def cumpleaños(self):
+        self.edad+=1
+
+    def __del__(self):
+        # print("se elimina: " + self.nombre)
+        pass
 
 
 if __name__ == "__main__":
     emp = Empleado(nombre="Jorge", edad=29)
     print(emp)
+    emp.cumpleaños()
+    # del(emp) Llama al destructor de la clase
+    print(str(emp))
+    print(emp.__str__())
