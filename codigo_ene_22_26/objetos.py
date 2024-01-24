@@ -40,3 +40,5 @@ if __name__ == "__main__":
     # print(emp.__str__())
     L = [emp, Empleado(1, "Gema", "Gerente", 44), Empleado(nombre="Juan", edad=34)]
     print(L)
+    L.sort(key=lambda obj : obj.edad)
+    print(L)
