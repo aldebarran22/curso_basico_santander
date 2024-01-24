@@ -72,7 +72,7 @@ def testPersona():
 
 
 def testExtranjero():
-    ex1 = Extranjero("Pedro", 24, 1.77, ["inglés", "francés"])
+    ex1 = Extranjero("Pedro", 24, 1.77, ["italiano", "español"])
     ex2 = Extranjero("Sara", 22, 1.67, ["inglés", "francés", "alemán"])
     print(ex1)
     ex1.cumple()
