@@ -5,8 +5,6 @@ class Time:
         self.mm = mm
         self.ss = ss
 
- 
-
     def __str__(self):
         # Resultado: 15:02:06
         return "%02d:%02d:%02d" % (self.hh, self.mm, self.ss)
@@ -16,7 +14,7 @@ class Time:
 
 
 class Date:
-    def __init__(self, dd, mm, yy):
+    def __init__(self, dd=1, mm=1, yy=1970):
         self.dd = dd
         self.mm = mm
         self.yy = yy
