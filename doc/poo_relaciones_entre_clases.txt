@@ -1,5 +1,11 @@
 Relaciones entre clases:
 - Herencia: Clases que tengan un conocimiento en común
+
+Perfiles de Empleado:
+Administrador
+Programador
+Analista
+Jefe de Proyecto
 	
 - Composición: Una clase se desglosa en partes que a su
 vez son objetos de otras clases.

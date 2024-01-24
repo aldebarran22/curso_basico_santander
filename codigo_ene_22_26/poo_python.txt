@@ -8,3 +8,6 @@ h2 = Hora(2,10,5)
 h1 + h2
 
 if h1 < h2:
+
+
+- NO admite sobrecarga de métodos en la misma clase
