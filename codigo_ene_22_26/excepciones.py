@@ -53,8 +53,20 @@ def test4():
         print(e.__class__.__name__, e)
 
 
+def test5():
+    try:
+        print("todo bien")
+        return True
+
+    except Exception as e:
+        print(e.__class__.__name__, e)
+    finally:
+        print("finally")
+
+
 if __name__ == "__main__":
     # test1()
     # test2()
     # test3()
-    test4()
+    # test4()
+    test5()
