@@ -38,3 +38,6 @@ def deserializarPickle(path):
 if __name__ == "__main__":
     L = [DateTime(), DateTime(y=2000), DateTime(1, 5, 2023)]
     serializarPickle("fecha_hora.bin", L)
+    L2 = deserializarPickle("fecha_hora.bin")
+    print(L)
+    print(L2)
