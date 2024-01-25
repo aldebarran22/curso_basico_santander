@@ -1,6 +1,8 @@
 """
 Imprimir información en columnas: 
 texto, entero y real
+Redirigir la salida a un fichero o la consola
+a partit de un parámetro de la línea de comandos.
 """
 
 import sys
