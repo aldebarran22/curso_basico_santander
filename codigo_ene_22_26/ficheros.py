@@ -7,9 +7,17 @@ def leerFichero(path):
     fich = None
     try:
         fich = open(path, "r")
+        while True:
+            linea = fich.readline()
+            if not linea:
+                break
+            linea = linea.rstrip()
+            print(linea, fich.tell())
+        """
         for linea in fich.readlines():
             linea = linea.rstrip()
-            print(linea)
+            print(linea, fich.tell())
+        """
 
     except Exception as e:
         print(e)
@@ -76,7 +84,7 @@ def exportarPaises(path, *pais, sep=";"):
             linea = linea.rstrip()
             L = linea.split(sep)
             if L[-1] in paises:
-                paises[L[-1]].append((linea+"\n"))
+                paises[L[-1]].append((linea + "\n"))
 
         # Ha terminado el fichero y grabamos los pedidos de cada país
         for p, L in paises.items():
@@ -94,11 +102,11 @@ def exportarPaises(path, *pais, sep=";"):
 
 
 if __name__ == "__main__":
-    # leerFichero('../ficheros/Pedidos.txt')
+    leerFichero("../ficheros/Pedidos.txt")
 
     # importe = sumaImporte("../ficheros/Pedidos.txt", "Suiza")
     # print("Importe: ", round(importe, 2))
 
     # exportar("../ficheros/Pedidos.txt", "Suiza")
 
-    exportarPaises("../ficheros/Pedidos.txt", "Suiza", "Alemania", "Francia")
+    # exportarPaises("../ficheros/Pedidos.txt", "Suiza", "Alemania", "Francia")
