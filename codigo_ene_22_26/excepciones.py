@@ -73,11 +73,15 @@ def procesarArchivo(fich):
 
 
 def test6():
-    try:
-        for f in os.listdir():
+    errores = 0
+    L = os.listdir()
+    for f in L:
+        try:        
             procesarArchivo(f)
-    except Exception as e:
-        print(e)
+        except Exception as e:
+            print(e)
+            errores += 1
+    print(f'Han fallado {errores} ficheros de {len(L)}')
 
 
 if __name__ == "__main__":
