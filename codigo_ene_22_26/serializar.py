@@ -18,3 +18,8 @@ def serializarPickle(path, objeto):
     finally:
         if fich:
             fich.close()
+
+
+if __name__ == "__main__":
+    L = [DateTime(), DateTime(y=2000), DateTime(1, 5, 2023)]
+    serializarPickle("fecha_hora.bin", L)
