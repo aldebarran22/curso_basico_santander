@@ -29,10 +29,15 @@ comprobar(patron, L)
 """
 EXPRESIONES REGULARES:
 1. Comprobar la validez del siguiente código:
-Palabra COD o S/N, un guión bajo, 3 vocales mayúsculas, guión bajo y 6 números que no pueden empezar por 0.
+Palabra COD o S/N, un guión bajo, 3 vocales mayúsculas, 
+guión bajo y 6 números que no pueden empezar por 0.
 COD_AEE_800959
 S/N_UOO_958474
 """
-patron = ""
-L = ["COD_AEE_800959", "S/N_UOO_958474"]
+patron = "^(COD|S/N)_[AEIOU]{3}_[1-9][0-9]{5}$"
+L = ["COD_AEE_800959", "S/N_UOO_958474","AAA_AUI_123456","COD_AEE_012345"]
 comprobar(patron, L)
+
+patron = "^(COD|S/N)_([AEIOU]{3})_([1-9][0-9]{5})$"
+obj = re.match(patron, "S/N_UOO_958474")
+print(obj.groups())
