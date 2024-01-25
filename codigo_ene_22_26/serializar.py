@@ -11,7 +11,22 @@ def serializarPickle(path, objeto):
     try:
         # Abrir el fichero binario para escritura
         fich = open(path, "wb")
-        p.dump(objeto, fich, 0)
+        p.dump(objeto, fich, 2)
+
+    except Exception as e:
+        print(e)
+    finally:
+        if fich:
+            fich.close()
+
+
+def deserializarPickle(path):
+    fich = None
+    try:
+        # Abrir el fichero binario para lectura
+        fich = open(path, "rb")
+        objeto = p.load(fich)
+        return objeto
 
     except Exception as e:
         print(e)
