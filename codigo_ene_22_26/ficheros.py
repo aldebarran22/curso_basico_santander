@@ -76,7 +76,7 @@ def exportarPaises(path, *pais, sep=";"):
             linea = linea.rstrip()
             L = linea.split(sep)
             if L[-1] in paises:
-                paises[L[-1]].append(linea)
+                paises[L[-1]].append((linea+"\n"))
 
         # Ha terminado el fichero y grabamos los pedidos de cada país
         for p, L in paises.items():
