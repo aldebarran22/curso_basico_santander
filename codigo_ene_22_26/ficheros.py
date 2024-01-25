@@ -40,22 +40,26 @@ def sumaImporte(path, pais, sep=";"):
 
 def exportar(path, pais, sep=";"):
     fich = None
+    fich2 = None
     importe = 0
     try:
         Lpath = path.split("/")
         pathPais = "/".join(Lpath[:-1]) + "/" + pais + ".txt"
         fich = open(path, "r")
+        fich2 = open(pathPais, "w")
         for linea in fich.readlines():
             linea = linea.rstrip()
             L = linea.split(sep)
             if L[-1] == pais:
-                pass
+                fich2.write(linea + "\n")
 
     except Exception as e:
         print(e)
     finally:
         if fich:
             fich.close()
+        if fich2:
+            fich2.close()
 
 
 if __name__ == "__main__":
