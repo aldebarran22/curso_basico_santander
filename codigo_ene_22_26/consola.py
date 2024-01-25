@@ -5,8 +5,15 @@ texto, entero y real
 
 import sys
 
-def formatear(d, file=sys.stdout):
-    print("%s\t%s\t%s\t%s" % ('producto','precio','uds','total'),file=file)
+
+def formatear(L, file=sys.stdout):
+    print("%s\t%s\t%s\t%s" % ("producto", "precio", "uds", "total"), file=file)
+    for d in L:
+        print(
+            "%s\t%f\t%d\t%f"
+            % (d["producto"], d["precio"], d["uds"], d["uds"] * d["precio"])
+        )
+
 
 if __name__ == "__main__":
     d = [
