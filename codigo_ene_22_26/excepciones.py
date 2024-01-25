@@ -1,6 +1,7 @@
 """
 Control de excepciones en Python
 """
+import os
 
 
 def test1():
@@ -64,9 +65,25 @@ def test5():
         print("finally")
 
 
+def procesarArchivo(fich):
+    if fich.partition(".")[2] == "ipynb":
+        raise Exception(f"Ha fallado el fichero: {fich}")
+    else:
+        print(f"Se ha procesado el fichero {fich}")
+
+
+def test6():
+    try:
+        for f in os.listdir():
+            procesarArchivo(f)
+    except Exception as e:
+        print(e)
+
+
 if __name__ == "__main__":
     # test1()
     # test2()
     # test3()
     # test4()
-    test5()
+    # test5()
+    test6()
