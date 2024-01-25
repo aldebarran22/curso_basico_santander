@@ -2,6 +2,7 @@
 Expresiones regulares en Python
 """
 import re
+import string
 
 
 def comprobar(patron, L):
@@ -44,4 +45,11 @@ print(obj.groups())
 
 patron = "^[\x30-\x34]{1,5}$"
 L = ["abcde", "01234", "22222", "12"]
+comprobar(patron, L)
+
+# Validar matrículas europeas:
+consonantes = "".join([i for i in string.ascii_uppercase if i not in "AEIOU"])
+patron = "^\d{4}[" + consonantes + "]{3}$"
+print(patron)
+L = []
 comprobar(patron, L)
