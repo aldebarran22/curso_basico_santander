@@ -35,9 +35,13 @@ COD_AEE_800959
 S/N_UOO_958474
 """
 patron = "^(COD|S/N)_[AEIOU]{3}_[1-9][0-9]{5}$"
-L = ["COD_AEE_800959", "S/N_UOO_958474","AAA_AUI_123456","COD_AEE_012345"]
+L = ["COD_AEE_800959", "S/N_UOO_958474", "AAA_AUI_123456", "COD_AEE_012345"]
 comprobar(patron, L)
 
 patron = "^(COD|S/N)_([AEIOU]{3})_([1-9][0-9]{5})$"
 obj = re.match(patron, "S/N_UOO_958474")
 print(obj.groups())
+
+patron = "^[\x30-\x34]{1,5}$"
+L = ["abcde", "01234", "22222", "12"]
+comprobar(patron, L)
