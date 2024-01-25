@@ -51,5 +51,5 @@ comprobar(patron, L)
 consonantes = "".join([i for i in string.ascii_uppercase if i not in "AEIOU"])
 patron = "^\d{4}[" + consonantes + "]{3}$"
 print(patron)
-L = []
+L = ["1234fGG", "0012", "3344SSR", "12234RRHT", "RRT4567", "1234DDF"]
 comprobar(patron, L)
