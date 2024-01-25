@@ -4,7 +4,7 @@ Se puede tratar como un diccionario
 """
 import pickle as p
 import shelve
-from fecha_hora import DateTime
+from fecha_hora import DateTime, Date, Time
 
 
 def serializarShelve(nombreFichero, *args):
@@ -14,6 +14,15 @@ def serializarShelve(nombreFichero, *args):
         clave = f"k-{k}"
         Shelf[clave] = obj
         k += 1
+    Shelf.close()
+    return k
+
+
+def deserializarShelve(nombreFichero, numClaves):
+    Shelf = shelve.open(nombreFichero)
+    for k in range(1, numClaves):
+        clave = f"k-{k}"
+        print(clave, Shelf[clave])
     Shelf.close()
 
 
@@ -52,3 +61,8 @@ if __name__ == "__main__":
     L2 = deserializarPickle("fecha_hora.bin")
     print(L)
     print(L2)
+
+    t1 = Time(12, 3, 4)
+    d1 = Date(8, 9, 2023)
+    numClaves = serializarShelve("tiempo", t1, d1)
+    deserializarShelve("tiempo", numClaves)
