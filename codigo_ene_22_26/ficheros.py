@@ -42,6 +42,8 @@ def exportar(path, pais, sep=";"):
     fich = None
     importe = 0
     try:
+        Lpath = path.split("/")
+        pathPais = "/".join(Lpath[:-1]) + "/" + pais + ".txt"
         fich = open(path, "r")
         for linea in fich.readlines():
             linea = linea.rstrip()
@@ -58,5 +60,8 @@ def exportar(path, pais, sep=";"):
 
 if __name__ == "__main__":
     # leerFichero('../ficheros/Pedidos.txt')
-    importe = sumaImporte("../ficheros/Pedidos.txt", "Suiza")
-    print("Importe: ", round(importe, 2))
+
+    # importe = sumaImporte("../ficheros/Pedidos.txt", "Suiza")
+    # print("Importe: ", round(importe, 2))
+
+    exportar("../ficheros/Pedidos.txt", "Suiza")
