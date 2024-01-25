@@ -24,6 +24,11 @@ if __name__ == "__main__":
         {"producto": "HP", "precio": 1269.34, "uds": 1},
         {"producto": "teclado", "precio": 55.8, "uds": 3},
     ]
-    fich = open("productos.txt", "w")
-    formatear(d, fich)
-    fich.close()
+
+    if len(sys.argv) == 1:
+        # No hay fichero, lo mandamos a la consola
+        formatear(d)
+    else:
+        fich = open(sys.argv[1], "w")
+        formatear(d, fich)
+        fich.close()
