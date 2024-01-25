@@ -96,4 +96,6 @@ if __name__ == "__main__":
     # importe = sumaImporte("../ficheros/Pedidos.txt", "Suiza")
     # print("Importe: ", round(importe, 2))
 
-    exportar("../ficheros/Pedidos.txt", "Suiza")
+    # exportar("../ficheros/Pedidos.txt", "Suiza")
+
+    exportarPaises("../ficheros/Pedidos.txt", "Suiza", "Alemania", "Francia")
