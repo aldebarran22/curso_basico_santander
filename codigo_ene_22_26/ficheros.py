@@ -78,10 +78,13 @@ def exportarPaises(path, *pais, sep=";"):
             if L[-1] in paises:
                 paises[L[-1]].append(linea)
 
-        # Lpath = path.split("/")
-        # pathPais = "/".join(Lpath[:-1]) + "/" + pais + ".txt"
-        # fich2 = open(pathPais, "w")
-        # fich2.write(linea + "\n")
+        # Ha terminado el fichero y grabamos los pedidos de cada país
+        for p, L in paises.items():
+            Lpath = path.split("/")
+            pathPais = "/".join(Lpath[:-1]) + "/" + p + ".txt"
+            fich2 = open(pathPais, "w")
+            fich2.writelines(L)
+            fich2.close()
 
     except Exception as e:
         print(e)
