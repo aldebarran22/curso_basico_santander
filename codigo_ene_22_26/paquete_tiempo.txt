@@ -1,0 +1,14 @@
+app_tiempo <dir>
+	principal.py
+	modulos <dir>
+	   __init__.py
+	   fecha.py (class Date)
+	   hora.py  (class Time)
+           fechahora.py (class DateTime)
+
+
+import modulos.fecha
+fecha1 = modulos.fecha.Date(1,2,2024)
+
+from modulos.fecha import Date
+fecha1 = Date(1,2,2024)

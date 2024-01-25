@@ -1,0 +1,11 @@
+aplicación
+	dominio.empresa.aplicacion
+
+	es.curso.prueba
+
+	es
+          __init__.py
+	  curso
+             __init__.py
+	     prueba
+                __init__.py
