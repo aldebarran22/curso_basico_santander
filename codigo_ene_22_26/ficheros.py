@@ -38,7 +38,25 @@ def sumaImporte(path, pais, sep=";"):
             fich.close()
 
 
+def exportar(path, pais, sep=";"):
+    fich = None
+    importe = 0
+    try:
+        fich = open(path, "r")
+        for linea in fich.readlines():
+            linea = linea.rstrip()
+            L = linea.split(sep)
+            if L[-1] == pais:
+                pass
+
+    except Exception as e:
+        print(e)
+    finally:
+        if fich:
+            fich.close()
+
+
 if __name__ == "__main__":
     # leerFichero('../ficheros/Pedidos.txt')
     importe = sumaImporte("../ficheros/Pedidos.txt", "Suiza")
-    print("Importe: ", importe)
+    print("Importe: ", round(importe, 2))
