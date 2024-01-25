@@ -7,7 +7,7 @@ import re
 def comprobar(patron, L):
     print("Patron:", patron)
     for i in L:
-        print(i, re.match(patron, i))
+        print(i, True if re.match(patron, i) else False)
     print("-" * 15)
 
 
