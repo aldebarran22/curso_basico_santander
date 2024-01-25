@@ -7,10 +7,10 @@ import sys
 
 
 def formatear(L, file=sys.stdout):
-    print("%s\t%s\t%s\t%s" % ("producto", "precio", "uds", "total"), file=file)
+    print("%-10s\t%8s\t%3s\t%8s" % ("producto", "precio", "uds", "total"), file=file)
     for d in L:
         print(
-            "%s\t%f\t%d\t%f"
+            "%-10s\t%8.2f\t%3d\t%8.2f"
             % (d["producto"], d["precio"], d["uds"], d["uds"] * d["precio"])
         )
 
