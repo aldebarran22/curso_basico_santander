@@ -3,7 +3,18 @@ Serializar objetos con pickle: para 1 sólo objeto y shelve: para varios
 Se puede tratar como un diccionario
 """
 import pickle as p
+import shelve
 from fecha_hora import DateTime
+
+
+def serializarShelve(nombreFichero, *args):
+    Shelf = shelve.open(nombreFichero)
+    k = 1
+    for obj in args:
+        clave = f"k-{k}"
+        Shelf[clave] = obj
+        k += 1
+    Shelf.close()
 
 
 def serializarPickle(path, objeto):
