@@ -3,14 +3,25 @@ Pruebas con unittest.
 """
 
 import unittest
+import ficheros
+import os
 
-class Pruebas1(unittest.TestCase):
+class PruebasFicheros(unittest.TestCase):
 
-    def test1(self):
-        pass
+    def testVariosPaises(self):
+        """
+        Exportar varios paises y comprobar si se genera un fichero
+        por cada país
+        """
+        path = "../ficheros/Pedidos.txt"
+        L = ["Alemania","Francia","Italia"]
+        ficheros.exportarPaises(path, *L)
+        Lficheros = os.listdir(path)
+        L2 = [f.partition('.')[0] for f in Lficheros]
+        self.assertEqual(L, L2, msg="No coinciden los ficheros con los países")
 
-    def test2(self):
-        raise AssertionError('Fallo')
+
+  
     
 if __name__ == '__main__':
     unittest.main()
