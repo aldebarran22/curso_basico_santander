@@ -65,6 +65,23 @@ class EmpleadoBD:
         else:
             return Empleado(*t)
 
+    def update(self, emp):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "update empleados set nombre=?,cargo=? where id=?"
+            cur.execute(sql, emp.getTupla2())
+            n = cur.rowcount  # Número de regs. afectados!
+            self.con.commit()
+            return n > 0
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def delete(self, id):
         cur = None
         try:
@@ -119,8 +136,15 @@ if __name__ == "__main__":
         L = bd.select("Gerente")
         print("Tenemos: ", len(L), "empleados")
 
-        emp = bd.read(4)
+        emp = bd.read(11)
         print(emp)
+
+        emp.setNombre("Andrés Sanz")
+        emp.setCargo("Gerente de Ventas")
+        if bd.update(emp):
+            print("Registro actualizado")
+        else:
+            print("No lo ha actualizado")
 
         if bd.delete(17):
             print("Registro eliminado")
