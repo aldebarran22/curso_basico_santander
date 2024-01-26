@@ -9,6 +9,14 @@ from funciones_ecuacion import ecuacion
 
 
 class PruebasFicheros(unittest.TestCase):
+    """
+    def setUp(self):
+        print('crear objetos ...')
+
+    def tearDown(self):
+        print('borrar objetos ...')
+    """
+
     def testEcuacionOk(self):
         t = ecuacion(1, 5, 4)
         self.assertEqual(t, (-1, -4), msg="No coincide el resultado")
