@@ -12,7 +12,10 @@ class HiloMensajes(Thread):
         self.n = n
 
     def run(self):
-        pass
+        for i in range(self.n):
+            print(self.getName(), (i + 1))
+            sleep(randint(1, 2))
+        print(self.getName(), "termina!")
 
 
 class HiloRandom(Thread):
@@ -22,4 +25,19 @@ class HiloRandom(Thread):
         self.ini = ini
 
     def run(self):
-        pass
+        for i in range(self.ini, self.fin):
+            print(self.getName(), randint(self.ini, self.fin))
+            sleep(randint(1, 3))
+        print(self.getName(), "termina!")
+
+
+if __name__ == "__main__":
+    hm = HiloMensajes()
+    hr = HiloRandom(1, 15)
+
+    # Poner en marcha los hilos:
+    hm.start()  # Ejecuta el método run
+    hr.start()
+
+    # Main espera a que termina
+    print("main termina")
