@@ -65,6 +65,22 @@ class EmpleadoBD:
         else:
             return Empleado(*t)
 
+    def create(self, emp):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "insert into empleados(nombre, cargo) values(?,?)"
+            cur.execute(sql, emp.getTupla())
+            emp.setId(cur.lastrowid)
+            self.con.commit()
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def select(self, cargo=None):
         sql = "select id,nombre,cargo from empleados"
         cur = self.con.cursor()
@@ -84,10 +100,14 @@ if __name__ == "__main__":
     try:
         bd = EmpleadoBD("../bd/empresa3.db")
         L = bd.select("Gerente")
-        print("Tenemos: ", len(L),'empleados')
+        print("Tenemos: ", len(L), "empleados")
 
         emp = bd.read(4)
         print(emp)
+
+        emp2 = Empleado(0, "Jorge Sanz", "Ventas")
+        bd.create(emp2)
+        print(emp2)
 
     except Exception as e:
         print(e)
