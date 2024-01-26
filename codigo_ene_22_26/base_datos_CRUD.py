@@ -55,6 +55,16 @@ class EmpleadoBD:
         else:
             self.con = dbapi.connect(path)
 
+    def read(self, id):
+        sql = "select id,nombre,cargo from empleados where id=?"
+        cur = self.con.cursor()
+        cur.execute(sql, (id,))
+        t = cur.fetchone()
+        if t == None:
+            raise ValueError(f"El empleado con id: {id} no existe en la BD")
+        else:
+            return Empleado(*t)
+
     def select(self, cargo=None):
         sql = "select id,nombre,cargo from empleados"
         cur = self.con.cursor()
@@ -72,5 +82,5 @@ class EmpleadoBD:
 
 if __name__ == "__main__":
     bd = EmpleadoBD("../bd/empresa3.db")
-    L = bd.select()
+    L = bd.select("Gerente")
     print(L)
