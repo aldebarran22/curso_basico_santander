@@ -1,0 +1,8 @@
+Semáforos:
+Aforo: 20 personas
+Entran 5 : Aforo 15
+Entran 7 : Aforo 8
+
+
+Lock: 0 / 1
+Modificar datos en exclusión mutua!
