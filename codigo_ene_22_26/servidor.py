@@ -4,6 +4,8 @@ Servidor TCP en Python
 import socket
 
 s = socket.socket()
+# Reutilizar el puerto
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 print("Socket creado!")
 s.bind(("localhost", 9999))
 print("Bind ok!")
