@@ -122,6 +122,11 @@ if __name__ == "__main__":
         emp = bd.read(4)
         print(emp)
 
+        if bd.delete(17):
+            print("Registro eliminado")
+        else:
+            print("No lo ha borrado")
+
         """
         emp2 = Empleado(0, "Jorge Sanz", "Ventas")
         bd.create(emp2)
