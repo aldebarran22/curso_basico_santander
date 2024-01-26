@@ -65,6 +65,23 @@ class EmpleadoBD:
         else:
             return Empleado(*t)
 
+    def delete(self, id):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "delete from empleados where id=?"
+            cur.execute(sql, (id,))
+            n = cur.rowcount  # Número de regs. afectados!
+            self.con.commit()
+            return n > 0
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def create(self, emp):
         cur = None
         try:
@@ -105,9 +122,11 @@ if __name__ == "__main__":
         emp = bd.read(4)
         print(emp)
 
+        """
         emp2 = Empleado(0, "Jorge Sanz", "Ventas")
         bd.create(emp2)
         print(emp2)
+        """
 
     except Exception as e:
         print(e)
