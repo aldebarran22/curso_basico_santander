@@ -12,16 +12,23 @@ class HiloServer(Thread):
         self.addr = addr
 
     def run(self):
-        while True:
-            recibido = self.sc.recv(1024)
-            recibido = recibido.decode("utf-8")
-            # if recibido == "quit":
-            #    break
-            print("Recibido:", recibido)
-            self.sc.send(recibido.encode("utf-8"))
+        try:
+            while True:
+                recibido = self.sc.recv(1024)
+                recibido = recibido.decode("utf-8")
+                # if recibido == "quit":
+                #    break
+                print("Recibido:", recibido)
+                self.sc.send(recibido.encode("utf-8"))
 
-        print("fin comunicación")
-        self.sc.close()
+        except Exception as e:
+            if e.errno == 10054:
+                print(e.__class__.__name__, "Cliente desconectado...")
+            else:
+                print(e)
+        finally:
+            print("fin comunicación")
+            self.sc.close()
 
 
 if __name__ == "__main__":
