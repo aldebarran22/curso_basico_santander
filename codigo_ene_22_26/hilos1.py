@@ -39,5 +39,9 @@ if __name__ == "__main__":
     hm.start()  # Ejecuta el método run
     hr.start()
 
+    # Main espera a que terminen los dos hilos:
+    hm.join()
+    hr.join()
+
     # Main espera a que termina
     print("main termina")
