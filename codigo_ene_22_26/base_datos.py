@@ -7,9 +7,14 @@ from os.path import isfile
 
 
 def listarTabla(path, tabla):
-    pass
+    if isfile(path):
+        con = db.connect(path)
+        print('conexión ok')
+    else:
+        raise FileNotFoundError(f"El fichero {path} no existe...")
+        
 
 
 if __name__ == "__main__":
-    path = "noexiste.db"
+    path = "../bd/empresa3.db"
     listarTabla(path, "clientes")
