@@ -5,9 +5,17 @@ Pruebas con unittest.
 import unittest
 import ficheros
 import os
+from funciones_ecuacion import ecuacion
 
 
 class PruebasFicheros(unittest.TestCase):
+    def testEcuacionOk(self):
+        t = ecuacion(1, 5, 4)
+        self.assertEqual(t, (-1, -4), msg="No coincide el resultado")
+
+    def testEcuacionError(self):
+        self.assertRaises(ValueError, ecuacion, 1, 2, 3)
+
     def testVariosPaises(self):
         """
         Exportar varios paises y comprobar si se genera un fichero
