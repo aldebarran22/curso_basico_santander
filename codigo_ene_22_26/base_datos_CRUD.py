@@ -1,3 +1,12 @@
+"""
+OPERACIONES CRUD:
+C: create --> insert into
+R: Read --> select pk
+U: Update --> update
+D: delete --> delete
+select: recuperar una colección
+"""
+
 import sqlite3 as dbapi
 from os.path import isfile
 
@@ -46,6 +55,22 @@ class EmpleadoBD:
         else:
             self.con = dbapi.connect(path)
 
+    def select(self, cargo=None):
+        sql = "select id,nombre,cargo from empleados"
+        cur = self.con.cursor()
+        if cargo:
+            sql += " where cargo = ?"
+            cur.execute(sql, (cargo,))
+        else:
+            cur.execute(sql)
+        return [Empleado(*t) for t in cur.fetchall()]
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
+
+
+if __name__ == "__main__":
+    bd = EmpleadoBD("../bd/empresa3.db")
+    L = bd.select()
+    print(L)
