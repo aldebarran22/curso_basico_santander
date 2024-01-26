@@ -81,6 +81,13 @@ class EmpleadoBD:
 
 
 if __name__ == "__main__":
-    bd = EmpleadoBD("../bd/empresa3.db")
-    L = bd.select("Gerente")
-    print(L)
+    try:
+        bd = EmpleadoBD("../bd/empresa3.db")
+        L = bd.select("Gerente")
+        print("Tenemos: ", len(L),'empleados')
+
+        emp = bd.read(4)
+        print(emp)
+
+    except Exception as e:
+        print(e)
