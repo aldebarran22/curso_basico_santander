@@ -14,7 +14,7 @@ def ecuacion(a, b, c):
         x2 = (-b - math.sqrt(raiz)) / (2 * a)
         return x1, x2
     else:
-        return None
+        raise ValueError("No hay solución")
 
 
 if __name__ == "__main__":
