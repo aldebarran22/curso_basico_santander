@@ -68,4 +68,16 @@ for nombre in L:
     if prefijo in nombre:
         print(nombre[n:])    
 
+# Modificar elementos de una lista:
+L = [3,4,5,6,7]
+print(L)
+L[0] = 30   # Machaca el valor de la posición 0
+L[-1] *= 2  # Duplica el último valor
+print(L)
+# range
+
+nombre = "ana"
+# Intento modificar la primera letra:
+nombre[0] = 'A'
+
 
