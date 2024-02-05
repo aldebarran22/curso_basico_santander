@@ -1,1 +1,2 @@
-print("ok, todo funciona 2")
+print("mensaje1") 
+print("mensaje2")
