@@ -26,3 +26,21 @@ path = "C:/mis documentos/excel/Libro1.xlsx"
 L2 = path.split("/")
 print(L2)
 print("Fichero:", L2[-1])
+
+# Recorrer una lista: con un bucle for
+for i in L:
+    print(i)
+#print('fuera del bucle')
+    
+for pos, i in enumerate(L):
+    print(pos, i)
+
+# Comprobar si el valor 15 está en la lista:
+numero = 7
+if numero in L:
+    print(numero,'está en la lista')
+else:
+    print(numero, 'no está')
+
+
+
