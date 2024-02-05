@@ -15,3 +15,8 @@ print(resul, type(resul))
 # imprimir en binario, octal y hexadecimal:
 n = 32
 print(bin(n), oct(n), hex(n))
+
+print(print('hola'))
+
+valor = True
+print(valor, type(valor))
