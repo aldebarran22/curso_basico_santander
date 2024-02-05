@@ -39,6 +39,7 @@ for pos, i in enumerate(L):
 numero = 7
 if numero in L:
     print(numero,'está en la lista')
+    print('La pos es: ', L.index(numero))
 else:
     print(numero, 'no está')
 
