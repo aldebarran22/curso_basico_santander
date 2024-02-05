@@ -25,3 +25,16 @@ if not (ini <= numero <= fin):
     print("No está en el intervalo")
 else:
     print(numero, "dentro del intervalo", ini, fin)
+
+# Comparar dos número e imprimir: cual es el menor, o el mayor
+# o si son iguales:
+n1 = 10
+n2 = 10
+if n1 < n2:
+    print('El menor es ',n1)
+
+elif n1 > n2:
+    print('El menor es ',n2)
+    
+else:
+    print('son iguales')
