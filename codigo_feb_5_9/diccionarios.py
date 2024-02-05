@@ -21,3 +21,6 @@ print(Ldatos)
 d = dict(zip(Lcabs, Ldatos))
 print(d)
 print(d['nombre'])
+print('Todas las claves:')
+for col, valor in d.items():
+    print(col, valor)
