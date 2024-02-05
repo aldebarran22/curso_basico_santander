@@ -9,3 +9,15 @@ print('El nombre:', usuario["nombre"])
 # Incrementar la edad:
 usuario["edad"]+=1
 print(usuario, type(usuario))
+usuario["peso"] = 78
+print(usuario)
+
+cabs = "id;nombre;cargo"
+datos = "1;Davolio;Representante de ventas"
+Lcabs = cabs.split(";")
+Ldatos = datos.split(";")
+print(Lcabs)
+print(Ldatos)
+d = dict(zip(Lcabs, Ldatos))
+print(d)
+print(d['nombre'])
