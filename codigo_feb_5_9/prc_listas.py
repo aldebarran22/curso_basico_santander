@@ -16,3 +16,9 @@ for i in L1:
         R += [i]
 print(R)
 
+# Solución 2: utilizando conjuntos &: intersección
+c1 = set(L1)
+c2 = set(L2)
+print(list(c1 & c2))
+
+
