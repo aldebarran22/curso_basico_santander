@@ -15,4 +15,6 @@ if raiz > 0:
     x2 = (-b - math.sqrt(raiz)) / (2 * a)
     print(x1, x2)
 else:
-    print('No hay solución')
+    print("No hay solución")
+
+print("fin de programa")
