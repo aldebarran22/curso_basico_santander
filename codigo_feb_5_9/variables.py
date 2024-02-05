@@ -18,3 +18,5 @@ print(numero2, type(numero2))
 # print(numero + numero2)
 aux = float(numero2)
 print(numero + aux)
+
+
