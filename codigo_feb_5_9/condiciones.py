@@ -4,7 +4,7 @@ Operadores relacionales y lógicos en Python
 
 ini = 10
 fin = 50
-numero = 64
+numero = 25
 
 if numero >= ini and numero <= fin:
     print(numero, "dentro del intervalo", ini, fin)
@@ -15,3 +15,8 @@ if ini <= numero <= fin:
     print(numero, "dentro del intervalo", ini, fin)
 else:
     print("No está en el intervalo")
+
+if numero < ini or numero > fin:
+    print("No está en el intervalo")
+else:
+    print(numero, "dentro del intervalo", ini, fin)
