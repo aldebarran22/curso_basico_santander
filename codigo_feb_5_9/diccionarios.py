@@ -41,5 +41,11 @@ histo = dict()
 for i in k:
     histo[i] = L.count(i)
 print(histo)
+print('Tenemos',len(histo),'números distintos')
+# f-string
+print(f'Tenemos {len(histo)} números distintos')
 
+pais = "Alemania"
+path = f"../repositorio/ficheros_curso/{pais}.csv"
+print(path)
 
