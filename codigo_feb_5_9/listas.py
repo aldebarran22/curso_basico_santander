@@ -30,18 +30,33 @@ print("Fichero:", L2[-1])
 # Recorrer una lista: con un bucle for
 for i in L:
     print(i)
-#print('fuera del bucle')
-    
+# print('fuera del bucle')
+
 for pos, i in enumerate(L):
     print(pos, i)
 
 # Comprobar si el valor 15 está en la lista:
 numero = 7
 if numero in L:
-    print(numero,'está en la lista')
-    print('La pos es: ', L.index(numero))
+    print(numero, "está en la lista")
+    print("La pos es: ", L.index(numero))
+    print("Se repite: ", L.count(numero), "veces")
 else:
-    print(numero, 'no está')
+    print(numero, "no está")
 
+# Slicing: vale para list, tuple y str
+# variable[inicio:fin-1:salto=1]
+print(L)
+print("los tres primeros: ", L[0:3])
+print("los tres primeros: ", L[:3])  # desde el inicio
+print("los 3 últimos:", L[-3:])  # hasta el final de la lista
+print("Quitar el primero y el último:", L[1:-1])
+print("Elementos de dos en dos: ", L[::2])  # desde el principio hasta el final
+print("Invertir: ", L[::-1])
 
-
+# Comprobar si una cadena es un palíndromo
+s = "arenera"
+if s == s[::-1]:
+    print(s, "es un palíndromo")
+else:
+    print("no lo es")
