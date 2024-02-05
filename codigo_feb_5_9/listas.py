@@ -60,3 +60,12 @@ if s == s[::-1]:
     print(s, "es un palíndromo")
 else:
     print("no lo es")
+
+prefijo = "ana"
+n = len(prefijo)
+L = ['ana','anabel','ana maria']
+for nombre in L:
+    if prefijo in nombre:
+        print(nombre[n:])    
+
+
