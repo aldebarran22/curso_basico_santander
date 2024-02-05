@@ -87,4 +87,11 @@ print(L)
 
 # + y *
 
-# range
+# range(ini, fin-1, salto=1)
+print('Del 0 al 9:', list(range(10)))
+print(list(range(0,101,5)))
+print('Cuenta atrás: ', list(range(10,0,-1)))
+
+# Ejecutar un bucle 10 veces!
+for i in range(10):
+    print(i, end=' ')
