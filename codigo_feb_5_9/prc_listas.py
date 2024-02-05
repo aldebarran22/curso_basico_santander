@@ -10,3 +10,9 @@ L1 = [1, 2, 3, 4, 5, 6, 7, 4, 5, 6]
 L2 = [6, 7, 5, 4, 11, 15]
 # Crea una lista vacía
 R = []  # R = list()
+
+for i in L1:
+    if i in L2 and i not in R:
+        R += [i]
+print(R)
+
