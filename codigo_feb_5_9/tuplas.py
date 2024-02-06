@@ -23,3 +23,11 @@ a = 10
 b = 20
 a,b = b,a
 print('a',a, 'b',b)
+
+L = [('Ana',34,1.78),('Jorge',31,1.77),('Raúl',45, 1.79)]
+for i in L:
+    print(i[0])
+
+# Expansión de tuplas:
+for nombre,edad,altura in L:
+    print(nombre)
