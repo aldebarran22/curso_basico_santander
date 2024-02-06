@@ -46,3 +46,11 @@ n1 = 12
 n2 = 21
 menor = n1 if n1 < n2 else n2
 print(menor)
+
+# break (rompe el bucle) / continue (salta iteraciones)
+i = 0
+while i < 10:
+    i += 1
+    if i == 5:
+        continue  # break
+    print(i)
