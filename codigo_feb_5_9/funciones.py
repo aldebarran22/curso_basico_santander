@@ -20,5 +20,7 @@ def sumar2(a: int, b: int) -> int:
     return a + b
 
 
-print(sumar2(12, 34))
-print(sumar2("12", "34"))
+if __name__ == "__main__":
+    print("__name___ ", __name__)
+    print(sumar2(12, 34))
+    print(sumar2("12", "34"))
