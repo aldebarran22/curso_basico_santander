@@ -31,3 +31,20 @@ for i in L:
 # Expansión de tuplas:
 for nombre,edad,altura in L:
     print(nombre)
+
+# in, count, index:
+t = (1,2,3,4,3,2,1,1,6,7,8)
+print('10:',t.count(10))
+print('1:',t.count(1))
+print('index del 1:', t.index(1))
+print('sig index del 1:', t.index(1, 1))
+
+# Obtener las posiciones donde se encuentra el 1 en la tupla: t
+ini = 0
+n = t.count(1)
+for i in range(n):
+    pos = t.index(1, ini)
+    print('pos: ', pos)
+    ini = pos+1
+
+
