@@ -12,6 +12,7 @@ def incrementar(numero):
 
 def añadir(L):
     L.append(123)
+    print(L, id(L))
 
 
 if __name__ == "__main__":
@@ -22,4 +23,4 @@ if __name__ == "__main__":
 
     lista = [1,2,3,4]
     añadir(lista)
-    print(lista)
+    print(lista, id(lista))
