@@ -26,3 +26,23 @@ while numero % 10 != 0:
     print("Sólo múltiplos de 10")
     numero = int(input("Dame un multiplo de 10:"))
 print("ok, múltiplo de 10: ", numero)
+
+# Imprimir del 1 al 10:
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+
+# if compacto: A if cond. else B
+numero = 23
+print("par" if numero % 2 == 0 else "impar")
+
+if numero % 2 == 0:
+    print("par")
+else:
+    print("impar")
+
+n1 = 12
+n2 = 21
+menor = n1 if n1 < n2 else n2
+print(menor)
