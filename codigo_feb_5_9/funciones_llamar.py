@@ -29,5 +29,18 @@ def formatearHora(h=0, m=0, s=0):
 
 horas = [(13, 45, 0), (8, 1, 34), (12, 30), (17,)]
 # 13:45:00, 08:01:34, 12:30:00, 17:00:00
-for t in horas:
-    formatearHora(*t)
+for i in horas:
+    formatearHora(*i)
+
+# Llamadas a un función con parámetros opcionales:
+formatearHora(s=30)
+formatearHora(m=10)
+
+##################################################################
+
+def calcularIVA(precio, iva=21.0):
+    return round(precio * iva / 100, 2)
+
+print('iva de 100: ', calcularIVA(100))
+print('iva de 150 al 10%: ', calcularIVA(150, 10.0))
+print('iva de 200 al 4%: ', calcularIVA(150, 4.0))
