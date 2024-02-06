@@ -38,9 +38,11 @@ formatearHora(m=10)
 
 ##################################################################
 
+
 def calcularIVA(precio, iva=21.0):
     return round(precio * iva / 100, 2)
 
-print('iva de 100: ', calcularIVA(100))
-print('iva de 150 al 10%: ', calcularIVA(150, 10.0))
-print('iva de 200 al 4%: ', calcularIVA(150, 4.0))
+
+print("iva de 100: ", calcularIVA(100))
+print("iva de 150 al 10%: ", calcularIVA(150, 10.0))
+print("iva de 200 al 4%: ", calcularIVA(200, 4.0))
