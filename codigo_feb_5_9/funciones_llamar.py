@@ -16,3 +16,5 @@ print(sumar(b=3, a=1))  # Nominal
 t = (1, 3)
 print(sumar(t[0], t[1]))  # incómodo!!!
 print(sumar(*t))  # Con el * desempaqueta la tupla
+d = {"a": 1, "b": 3}
+print(sumar(**d))  # desempaqueta el dict.
