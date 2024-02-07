@@ -63,3 +63,7 @@ if __name__ == "__main__":
     h2 = Time(88, 9, 35)
     r = h1 + h2
     print(r)
+
+    print(Date.__subclasses__())
+    print('Datetime es subclase de Time: ', issubclass(DateTime, Time))
+    print(dt.__dict__)
