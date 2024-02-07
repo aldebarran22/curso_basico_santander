@@ -1,0 +1,13 @@
+Jerarquía de clases (H.Simple):
+
+object __str__()
+
+Persona __str__()
+
+
+Guia __str__()
+
+H.Múltiple:
+Date  __str__()       Time __str__()
+           \              /
+		DateTime
