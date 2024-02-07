@@ -1,0 +1,29 @@
+
+try:
+	fichero = open() <-- no existe el fich.
+	fichero.read()
+	fichero.close()
+except:
+   print('error')
+
+
+----------------------------------------
+
+try:
+	fichero = open() 
+	fichero.read()     <-- error I/O
+	fichero.close()
+except:
+   print('error')
+
+----------------------------------------
+fichero = None
+try:
+	fichero = open() 
+	fichero.read()     <-- error I/O
+	
+except:
+   print('error')
+
+finally:
+	if fichero !=None: fichero.close()

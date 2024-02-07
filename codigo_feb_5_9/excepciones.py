@@ -64,4 +64,7 @@ if __name__ == "__main__":
     # test2()
     # test3()
     # test4()
-    test5(True)
+    try:
+        test5(True)
+    except Exception as e:
+        print(e)
