@@ -78,7 +78,12 @@ def testPersona():
 
 
 def testGuia():
-    pass
+    g1 = Guia("Sandra", 34, 1.8, "I", ["inglés", "alemán"])
+    g2 = Guia("Juan", 32, 1.78, "N", ["francés", "alemán"])
+
+    print(g1)
+    g1.cumple()
+    print(g1)
 
 
 if __name__ == "__main__":
