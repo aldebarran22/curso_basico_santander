@@ -19,6 +19,7 @@ class Time:
         self.mm %= 60
 
         self.hh += horas
+        # self.hh %= 24
 
     def __str__(self):
         return "%02d:%02d:%02d" % (self.hh, self.mm, self.ss)
@@ -58,6 +59,7 @@ if __name__ == "__main__":
     dt2 = DateTime()
     print(dt2)
 
-    h1 = Time(12, 4, 56)
-    h2 = Time(1, 7, 45)
+    h1 = Time(12, 50, 30)
+    h2 = Time(88, 9, 35)
     r = h1 + h2
+    print(r)
