@@ -49,6 +49,11 @@ class Guia(Persona):
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def __str__(self):
+        # return Persona.__str__(self)
+        return super().__str__() + " " + self.ambito + \
+            " " + ",".join(self.idiomas)
+
 
 def testPersona():
     p1 = Persona("Pedro", 45, 1.9)
