@@ -64,8 +64,9 @@ def test5(lanzar):
 def test6():
     fichero = None
     try:
-        fichero = open("no existe.txt")
+        fichero = open("errores.py")
         fichero.read()
+        return True
 
     except:
         print("error")
@@ -80,7 +81,10 @@ if __name__ == "__main__":
     # test2()
     # test3()
     # test4()
+    """
     try:
         test5(True)
     except Exception as e:
         print(e)
+    """
+    test6()
