@@ -37,12 +37,25 @@ class Persona:
         pass
 
 
-if __name__ == "__main__":
+class Guia(Persona):
+
+    def __init__(self, nombre="", edad=0, altura=0.0, ambito="", idiomas=[]):
+        # Forma 1:
+        Persona.__init__(self, nombre, edad, altura)
+        # Forma 2:
+        # super().__init__(nombre, edad, altura)
+
+        # Atributos de la clase Guia:
+        self.ambito = ambito
+        self.idiomas = idiomas
+
+
+def testPersona():
     p1 = Persona("Pedro", 45, 1.9)
     p2 = Persona("Sara", 40, 1.88)
     p1.hablarCon()
     p1.hablarCon(p2)
-    
+
     # del(p1) Se fuerza la llamada al destructor de la clase: __del__
 
     if p2 < p1:  # if p2.__lt__(p1)
@@ -62,3 +75,12 @@ if __name__ == "__main__":
 
     # print(str(p1))
     # print(p1.__str__())
+
+
+def testGuia():
+    pass
+
+
+if __name__ == "__main__":
+    # testPersona()
+    testGuia()
