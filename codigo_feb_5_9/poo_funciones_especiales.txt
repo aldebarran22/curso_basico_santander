@@ -4,3 +4,5 @@ str			__str__
 del			__del__
 repr			__repr__
 <			__lt__
+>			__gt__
++			__add__

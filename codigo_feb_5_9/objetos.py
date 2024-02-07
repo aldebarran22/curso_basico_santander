@@ -49,10 +49,12 @@ class Guia(Persona):
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def hablarCon(self, otro=None):
+        pass
+
     def __str__(self):
         # return Persona.__str__(self)
-        return super().__str__() + " " + self.ambito + \
-            " " + ",".join(self.idiomas)
+        return super().__str__() + " " + self.ambito + " " + ",".join(self.idiomas)
 
 
 def testPersona():
@@ -89,6 +91,7 @@ def testGuia():
     print(g1)
     g1.cumple()
     print(g1)
+    g1.hablarCon(g2)
 
 
 if __name__ == "__main__":
