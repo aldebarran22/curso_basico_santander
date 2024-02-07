@@ -86,13 +86,15 @@ def procesar(fichero):
         print(f'Procesando el fichero {fichero}')
 
 def test7():
-    try:
-        L = listdir()
-        for f  in L:
+    cont = 0
+    L = listdir()
+    for f in L:
+        try:
             procesar(f)
-
-    except  Exception as e:
-        print(e)
+        except  Exception as e:
+            print(e)
+            cont+=1
+    print('Han fallado: ',cont,'ficheros')
 
 
 if __name__ == "__main__":
