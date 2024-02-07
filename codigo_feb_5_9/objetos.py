@@ -16,10 +16,10 @@ class Persona:
 
     def __str__(self):
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
-    
+
     def __repr__(self):
         return str(self)
-    
+
     def __lt__(self, other):
         return self.edad < other.edad
 
@@ -33,12 +33,16 @@ if __name__ == "__main__":
     p2 = Persona("Sara", 40, 1.88)
     # del(p1) Se fuerza la llamada al destructor de la clase: __del__
 
-    L = [p1, p2, Persona('Ana',42,1.85)]
+    if p2 < p1: # if p2.__lt__(p1)
+        print(p2.nombre,'es menor que',p1.nombre)        
+    else:
+        print(p1.nombre,'es menor que',p2.nombre)
+
+    L = [p1, p2, Persona("Ana", 42, 1.85)]
     L.sort(reverse=True)
     print(L)
-    L.sort(key=lambda obj : obj.altura)
+    L.sort(key=lambda obj: obj.altura)
     print(L)
-    for i in L:
-        print(i)
-    #print(str(p1))
-    #print(p1.__str__())
+
+    # print(str(p1))
+    # print(p1.__str__())
