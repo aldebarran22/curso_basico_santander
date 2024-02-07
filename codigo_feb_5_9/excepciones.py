@@ -83,7 +83,8 @@ def procesar(fichero):
     if ext == 'png':
         raise ValueError(f"El fichero {fichero} no se puede procesar")
     else:
-        print(f'Procesando el fichero {fichero}')
+        pass
+        #print(f'Procesando el fichero {fichero}')
 
 def test7():
     cont = 0
@@ -94,6 +95,7 @@ def test7():
         except  Exception as e:
             print(e)
             cont+=1
+            
     print('Han fallado: ',cont,'ficheros')
 
 
