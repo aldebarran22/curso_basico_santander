@@ -52,12 +52,28 @@ def test4():
     except Exception as e:  # Excepción más genérica
         print(e.__class__.__name__, e)
 
+
 def test5(lanzar):
     if lanzar:
         raise ValueError("Se produce un error")
-        
+
     else:
-        print('todo bien')
+        print("todo bien")
+
+
+def test6():
+    fichero = None
+    try:
+        fichero = open("no existe.txt")
+        fichero.read()
+
+    except:
+        print("error")
+
+    finally:
+        if fichero != None:
+            fichero.close()
+
 
 if __name__ == "__main__":
     # test1()
