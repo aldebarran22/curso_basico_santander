@@ -46,15 +46,22 @@ def test4():
         print(d["a"])
         print(L[10])  # IndexError
 
-    except KeyError as e:
-        print("error en el dict: ", e)
+    except (KeyError, IndexError) as e:  # Excepciones particular
+        print("error en el dict o en list: ", e)
 
-    except Exception as e:
+    except Exception as e:  # Excepción más genérica
         print(e.__class__.__name__, e)
 
+def test5(lanzar):
+    if lanzar:
+        raise ValueError("Se produce un error")
+        
+    else:
+        print('todo bien')
 
 if __name__ == "__main__":
     # test1()
     # test2()
     # test3()
-    test4()
+    # test4()
+    test5(True)
