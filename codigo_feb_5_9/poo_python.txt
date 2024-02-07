@@ -1,3 +1,9 @@
+    Figura
+Figura2D   Figura3D
+Triangulo  Cubo
+Cuadrado   Cilindro
+
+
 
 Python soporta:
 - Herencia simple y múltiple
