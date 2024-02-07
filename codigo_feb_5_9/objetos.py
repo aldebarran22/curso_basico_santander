@@ -44,5 +44,10 @@ if __name__ == "__main__":
     L.sort(key=lambda obj: obj.altura)
     print(L)
 
+    print("p1 pertenece a la clase: ", p1.__class__.__name__)
+    p2 = p1.__class__() # Crea un nuevo objeto
+    print(p2, type(p2))
+
+
     # print(str(p1))
     # print(p1.__str__())
