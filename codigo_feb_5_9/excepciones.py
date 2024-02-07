@@ -3,6 +3,8 @@ Captura de excepciones en Python.
 try, except, finally, raise
 """
 
+from os import listdir
+
 
 def test1():
     # Capturar una excepción concreta:
@@ -76,6 +78,23 @@ def test6():
             fichero.close()
 
 
+def procesar(fichero):
+    n, _, ext = fichero.partition('.')
+    if ext == 'png':
+        raise ValueError(f"El fichero {fichero} no se puede procesar")
+    else:
+        print(f'Procesando el fichero {fichero}')
+
+def test7():
+    try:
+        L = listdir()
+        for f  in L:
+            procesar(f)
+
+    except  Exception as e:
+        print(e)
+
+
 if __name__ == "__main__":
     # test1()
     # test2()
@@ -87,4 +106,5 @@ if __name__ == "__main__":
     except Exception as e:
         print(e)
     """
-    test6()
+    #test6()
+    test7()
