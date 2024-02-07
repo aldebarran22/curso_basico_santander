@@ -14,6 +14,15 @@ class Persona:
         self.edad = edad
         self.altura = altura
 
+    def cumple(self):
+        self.edad += 1
+
+    def hablarCon(self, otro=None):
+        if not otro:
+            print(self.nombre, "está hablando solo")
+        else:
+            print(f"{self.nombre} y {otro.nombre} están hablando")
+
     def __str__(self):
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
 
@@ -31,12 +40,15 @@ class Persona:
 if __name__ == "__main__":
     p1 = Persona("Pedro", 45, 1.9)
     p2 = Persona("Sara", 40, 1.88)
+    p1.hablarCon()
+    p1.hablarCon(p2)
+    
     # del(p1) Se fuerza la llamada al destructor de la clase: __del__
 
-    if p2 < p1: # if p2.__lt__(p1)
-        print(p2.nombre,'es menor que',p1.nombre)        
+    if p2 < p1:  # if p2.__lt__(p1)
+        print(p2.nombre, "es menor que", p1.nombre)
     else:
-        print(p1.nombre,'es menor que',p2.nombre)
+        print(p1.nombre, "es menor que", p2.nombre)
 
     L = [p1, p2, Persona("Ana", 42, 1.85)]
     L.sort(reverse=True)
@@ -45,9 +57,8 @@ if __name__ == "__main__":
     print(L)
 
     print("p1 pertenece a la clase: ", p1.__class__.__name__)
-    p2 = p1.__class__() # Crea un nuevo objeto
+    p2 = p1.__class__()  # Crea un nuevo objeto
     print(p2, type(p2))
-
 
     # print(str(p1))
     # print(p1.__str__())
