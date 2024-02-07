@@ -24,7 +24,17 @@ def test2():
     except KeyError as e:
         print(e.__class__.__name__, e)
 
+def test3():
+    # Capturamos a nivel de exception:
+    try:
+        d = {"a": 1, "b": 2}
+        L = [1, 2, 3, 4]
+        print(d["a"]) 
+        print(L[10])  # IndexError
+    except Exception as e:
+        print(e.__class__.__name__, e)
 
 if __name__ == "__main__":
     # test1()
-    test2()
+    # test2()
+    test3()
