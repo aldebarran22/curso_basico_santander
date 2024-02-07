@@ -19,6 +19,9 @@ class Persona:
     
     def __repr__(self):
         return str(self)
+    
+    def __lt__(self, other):
+        return self.edad < other.edad
 
     def __del__(self):
         # print('se borra a ', self.nombre)
@@ -30,7 +33,10 @@ if __name__ == "__main__":
     p2 = Persona("Sara", 40, 1.88)
     # del(p1) Se fuerza la llamada al destructor de la clase: __del__
 
-    L = [p1, p2, Persona('Ana',45,1.85)]
+    L = [p1, p2, Persona('Ana',42,1.85)]
+    L.sort(reverse=True)
+    print(L)
+    L.sort(key=lambda obj : obj.altura)
     print(L)
     for i in L:
         print(i)
