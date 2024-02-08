@@ -1,5 +1,9 @@
-from tiempo.fecha import Date
-from tiempo.hora import Time
+try:
+    from tiempo.fecha import Date
+    from tiempo.hora import Time
+except:
+    from fecha import Date
+    from hora import Time
 
 
 class DateTime(Time, Date):
@@ -10,3 +14,8 @@ class DateTime(Time, Date):
 
     def __str__(self):
         return Date.__str__(self) + " " + Time.__str__(self)
+
+
+if __name__ == "__main__":
+    dt = DateTime(7, 2, 2024, 13, 5, 34)  # 07/02/2024 13:05:34
+    print(dt)
