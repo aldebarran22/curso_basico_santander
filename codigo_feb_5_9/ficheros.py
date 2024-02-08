@@ -74,8 +74,9 @@ def compararFicheros(path1, path2):
         lineas1 | lineas2 | lineas, key=lambda cad: int(cad.partition(";")[0])
     )
     todo.insert(0, cabs)
-    for i in todo:
-        print(i)
+    fichTodo = open("exportaciones/empleados_final.txt", "w")
+    fichTodo.writelines([fila + "\n" for fila in todo])
+    fichTodo.close()
 
 
 if __name__ == "__main__":
