@@ -12,14 +12,17 @@ try:
     print("Conectado al Servidor!")
     fich = open("objetos.txt", "r")
     while True:
-        mensaje = fich.readLine()
-        mensaje = mensaje.rstrip()
-        s.send(mensaje.encode("utf-8"))
-        recibido = s.recv(1024)
-        recibido = recibido.decode("utf-8")
-        if mensaje == "quit":
+        mensaje = fich.readline()
+        if mensaje:
+            mensaje = mensaje.rstrip()
+            s.send(mensaje.encode("utf-8"))
+            recibido = s.recv(1024)
+            recibido = recibido.decode("utf-8")
+            print("Recibido:", recibido)
+        else:
             break
-        print("Recibido:", recibido)
+
+    s.send("quit".encode("utf-8"))
 except Exception as e:
     print(e)
 finally:
