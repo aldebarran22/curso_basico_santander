@@ -18,6 +18,14 @@ def serializarShelve(path, *objetos):
     return len(objetos)
 
 
+def deserializarShelve(path):
+    Shelf = shelve.open(path)
+    print(Shelf["K-2"])
+    print(Shelf["K-0"])
+    print(Shelf["K-1"])
+    Shelf.close()
+
+
 def serializarPickle(path, obj):
     fich = None
     try:
@@ -54,3 +62,4 @@ if __name__ == "__main__":
     t = Time(12, 34, 56)
     d = Date(8, 9, 2024)
     serializarShelve("exportaciones/tiempo", dt, d, t)
+    deserializarShelve("exportaciones/tiempo")
