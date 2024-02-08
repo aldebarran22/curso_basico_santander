@@ -27,8 +27,10 @@ def filtroPais(path, *paises):
         for linea in fich:
             linea = linea.rstrip()  # machacar la variable: OJO es INMUTABLE!!!
             L = linea.split(";")
-            if L[-1] in paises:
-                print(linea)
+            pais = L[-1]
+            if pais in paises:
+                importe = float(L[-2])
+                print(pais, "\t", importe)
 
     except Exception as e:
         print(e)
@@ -47,5 +49,5 @@ def printFile():
 if __name__ == "__main__":
     # printFile()
     # leerFichero("../ficheros_curso/Pedidos.txt")
-    filtroPais("../ficheros_curso/Pedidos.txt", "Alemania")
-    filtroPais("../ficheros_curso/Pedidos.txt", "Alemania", "Suiza", "Italia")
+    # filtroPais("../ficheros_curso/Pedidos.txt", "Alemania")
+    filtroPais("../ficheros_curso/Pedidos.txt", "Venezuela", "Suiza", "Italia")
