@@ -1,0 +1,3 @@
+r --> cadena raw: no interpreta \t \n
+f --> f-string formatos
+b --> bytes

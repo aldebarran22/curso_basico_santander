@@ -52,9 +52,9 @@ L = [
 ]
 validar(patron, L)
 
-# Recuperar el objeto que devuelve match:
+# Recuperar el objeto que devuelve match/search:
 patron = "(COD|S/N)_([AEIOU]{3})_([1-9][0-9]{5})$"
-cad = "COD_AEE_800959"
-obj = re.match(patron, cad)
+cad = "mi codigo es: COD_AEE_800959"
+obj = re.search(patron, cad)
 print(obj)
 print(obj.groups())
