@@ -10,7 +10,7 @@ try:
     s = socket.socket()
     s.connect(("localhost", 9999))
     print("Conectado al Servidor!")
-    fich = open("objetos.txt", "r")
+    fich = open("../ficheros_curso/Pedidos.txt", "r")
     while True:
         mensaje = fich.readline()
         if mensaje:

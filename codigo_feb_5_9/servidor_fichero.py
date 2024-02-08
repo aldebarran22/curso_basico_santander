@@ -11,7 +11,7 @@ try:
     s = socket.socket()
     # Reutilizar el puerto
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    fich = open("exportaciones/objetos_server.txt", "w")
+    fich = open("exportaciones/Pedidos_server.txt", "w")
     print("Socket creado!")
     s.bind(("localhost", 9999))
     print("Bind ok!")
