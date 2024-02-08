@@ -6,7 +6,7 @@ Si tenemos varios objetos: shelve (diccionario)
 
 import pickle as p
 import shelve
-from fecha_hora import DateTime
+from fecha_hora import DateTime, Time, Date
 
 
 def serializarShelve(path, *objetos):
@@ -49,3 +49,8 @@ if __name__ == "__main__":
     L2 = deserializarPickle("exportaciones/datetime.bin")
     for dt in L2:
         print(dt)
+
+    dt = DateTime(1, 12, 2000)
+    t = Time(12, 34, 56)
+    d = Date(8, 9, 2024)
+    serializarShelve("exportaciones/tiempo", dt, d, t)
