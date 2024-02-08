@@ -23,6 +23,6 @@ L = ["abc-", "abc_", "ABC_", "....", "ab_", "abc_qqqq"]
 validar(patron, L)
 
 # Validar DNIs
-patron = r""
-L = ["123", "12345678", "12345678AB", "12345678a", "1A"]
+patron = r"[0-9]{1,8}[A-Z]$"
+L = ["123", "12345678", "12345678AB", "12345678a", "1A","40156894Q"]
 validar(patron, L)
