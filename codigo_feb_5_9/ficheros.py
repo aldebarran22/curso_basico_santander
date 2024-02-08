@@ -45,9 +45,23 @@ def printFile():
         print("mensaje de prueba", file=f)
     f.close()
 
+def compararFicheros(path1, path2):
+
+    def cargaFichero(path):
+        fich = open(path, "r")
+        txt = fich.read()
+        fich.close()
+
+        L = txt.split("\n")
+        return set(L)
+
+    c1 = cargaFichero(path1)
+    c2 = cargaFichero(path2)
 
 if __name__ == "__main__":
     # printFile()
     # leerFichero("../ficheros_curso/Pedidos.txt")
     # filtroPais("../ficheros_curso/Pedidos.txt", "Alemania")
-    filtroPais("../ficheros_curso/Pedidos.txt", "Venezuela", "Suiza", "Italia")
+    # filtroPais("../ficheros_curso/Pedidos.txt", "Venezuela", "Suiza", "Italia")
+    compararFicheros("exportaciones/Empleados2.txt", \
+                     "exportaciones/Empleados3.txt")
