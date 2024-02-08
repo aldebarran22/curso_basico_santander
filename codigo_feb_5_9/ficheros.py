@@ -4,17 +4,20 @@ Leer / escribir en fichero y redirigir la salida
 estandar a un fichero
 """
 
+
 def leerFichero(path):
     fich = None
     try:
-        fich = open(path, 'r')
+        fich = open(path, "r")
         for i in fich:
+            i = i.rstrip()  # machacar la variable: OJO es INMUTABLE!!!
             print(i)
 
     except Exception as e:
         print(e)
     finally:
-        if fich: fich.close()
+        if fich:
+            fich.close()
 
 
 def printFile():
@@ -25,5 +28,5 @@ def printFile():
 
 
 if __name__ == "__main__":
-    #printFile()
+    # printFile()
     leerFichero("../ficheros_curso/Pedidos.txt")
