@@ -29,6 +29,6 @@ L = ["123", "12345678", "12345678AB", "12345678a", "1A","40156894Q"]
 validar(patron, L)
 
 # Matriculas europeas:
-patron = r""
+patron = "[0-9]"*4 + "[BCDFGHJKLMNPQRSTWZ]"*3
 L = ["1234", "1234dff", "1234AB", "1234RRT", "12345TRT","1234tGG"]
 validar(patron, L)
