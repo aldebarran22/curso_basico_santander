@@ -1,18 +1,29 @@
 """
 Cliente TCP en Python
 """
+
 import socket
 
-s = socket.socket()
-s.connect(("localhost", 9999))
-print("Conectado al Servidor!")
-while True:
-    mensaje = input("Mensaje:> ")
-    s.send(mensaje.encode("utf-8"))
-    recibido = s.recv(1024)
-    recibido = recibido.decode("utf-8")
-    if mensaje == "quit":
-        break
-    print("Recibido:", recibido)
-print("adios")
-s.close()
+s = None
+fich = None
+try:
+    s = socket.socket()
+    s.connect(("localhost", 9999))
+    print("Conectado al Servidor!")
+    fich = open("objetos.txt", "r")
+    while True:
+        mensaje = fich.readLine()
+        mensaje = mensaje.rstrip()
+        s.send(mensaje.encode("utf-8"))
+        recibido = s.recv(1024)
+        recibido = recibido.decode("utf-8")
+        if mensaje == "quit":
+            break
+        print("Recibido:", recibido)
+except Exception as e:
+    print(e)
+finally:
+    if s:
+        s.close()
+    if fich:
+        fich.close()
