@@ -58,6 +58,16 @@ def compararFicheros(path1, path2):
     c1 = cargaFichero(path1)
     c2 = cargaFichero(path2)
 
+    # Buscar lineas coincidentes:
+    lineas = c1 & c2    
+    lineas1 = c1 - c2
+    lineas2 = c2 - c1
+
+    todo = lineas1 | lineas2 | lineas
+    for i in todo:
+        print(i)
+
+
 if __name__ == "__main__":
     # printFile()
     # leerFichero("../ficheros_curso/Pedidos.txt")
