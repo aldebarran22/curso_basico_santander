@@ -51,6 +51,9 @@ def compararFicheros(path1, path2):
     cabs = None
 
     def cargaFichero(path):
+        # No tiene que crear una var. dentro de la función carga fichero
+        nonlocal cabs
+
         fich = open(path, "r")
         txt = fich.read()
         fich.close()
