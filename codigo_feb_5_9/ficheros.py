@@ -30,7 +30,7 @@ def filtroPais(path, *paises):
             pais = L[-1]
             if pais in paises:
                 importe = float(L[-2])
-                print("%-12s\t%6.2f" % (pais,importe))
+                print("%-12s\t%6.2f" % (pais, importe))
 
     except Exception as e:
         print(e)
@@ -45,7 +45,10 @@ def printFile():
         print("mensaje de prueba", file=f)
     f.close()
 
+
 def compararFicheros(path1, path2):
+
+    cabs = None
 
     def cargaFichero(path):
         fich = open(path, "r")
@@ -53,18 +56,21 @@ def compararFicheros(path1, path2):
         fich.close()
 
         L = txt.split("\n")
+        cabs = L[0]
         return set(L[1:])
 
     c1 = cargaFichero(path1)
     c2 = cargaFichero(path2)
 
     # Buscar lineas coincidentes:
-    lineas = c1 & c2    
+    lineas = c1 & c2
     lineas1 = c1 - c2
     lineas2 = c2 - c1
 
-    todo = sorted(lineas1 | lineas2 | lineas, \
-                  key=lambda cad: int(cad.partition(';')[0]))
+    todo = sorted(
+        lineas1 | lineas2 | lineas, key=lambda cad: int(cad.partition(";")[0])
+    )
+    todo.insert(0, cabs)
     for i in todo:
         print(i)
 
@@ -74,5 +80,4 @@ if __name__ == "__main__":
     # leerFichero("../ficheros_curso/Pedidos.txt")
     # filtroPais("../ficheros_curso/Pedidos.txt", "Alemania")
     # filtroPais("../ficheros_curso/Pedidos.txt", "Venezuela", "Suiza", "Italia")
-    compararFicheros("exportaciones/Empleados2.txt", \
-                     "exportaciones/Empleados3.txt")
+    compararFicheros("exportaciones/Empleados2.txt", "exportaciones/Empleados3.txt")
