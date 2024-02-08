@@ -30,7 +30,7 @@ def filtroPais(path, *paises):
             pais = L[-1]
             if pais in paises:
                 importe = float(L[-2])
-                print(pais, "\t", importe)
+                print("%-12s\t%6.2f" % (pais,importe))
 
     except Exception as e:
         print(e)
