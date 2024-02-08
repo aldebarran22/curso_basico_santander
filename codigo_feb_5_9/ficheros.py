@@ -8,7 +8,9 @@ def leerFichero(path):
     fich = None
     try:
         fich = open(path, 'r')
-        
+        for i in fich:
+            print(i)
+
     except Exception as e:
         print(e)
     finally:
