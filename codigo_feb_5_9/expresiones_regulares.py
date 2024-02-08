@@ -30,5 +30,6 @@ validar(patron, L)
 
 # Matriculas europeas:
 patron = "[0-9]"*4 + "[BCDFGHJKLMNPQRSTWZ]"*3
+patron = "[0-9]{4}[BCDFGHJKLMNPQRSTWZ]{3}"
 L = ["1234", "1234dff", "1234AB", "1234RRT", "12345TRT","1234tGG"]
 validar(patron, L)
