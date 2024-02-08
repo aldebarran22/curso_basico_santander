@@ -10,6 +10,6 @@ def validar(patron, L):
     print()
 
 # Palabras de 3 letras que terminan en .
-patron = ""
-L = ["123","abc","ABC.","...."]
+patron = "...\.$"
+L = ["123","abc","ABC.","....","ab.","abc.qqqq"]
 validar(patron, L)
