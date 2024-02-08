@@ -10,12 +10,29 @@ from fecha_hora import DateTime
 
 
 def serializarPickle(path, obj):
-    pass
+    fich = None
+    try:
+        fich = open(path, "wb")
+        p.dump(obj, fich, 2)
+    except Exception as e:
+        print(e)
+    finally:
+        if fich:
+            fich.close()
 
 
 def deserializarPickle(path):
-    pass
+    fich = None
+    try:
+        fich = open(path, "rb")
+        obj = p.load(fich)
+    except Exception as e:
+        print(e)
+    finally:
+        if fich:
+            fich.close()
 
 
 if __name__ == "__main__":
     L = [DateTime(y=2020), DateTime(), DateTime(1, 12, 2000)]
+    L2 = serializarPickle("exportaciones/datetime.bin", L)
