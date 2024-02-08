@@ -53,7 +53,7 @@ def compararFicheros(path1, path2):
         fich.close()
 
         L = txt.split("\n")
-        return set(L)
+        return set(L[1:])
 
     c1 = cargaFichero(path1)
     c2 = cargaFichero(path2)
@@ -63,7 +63,8 @@ def compararFicheros(path1, path2):
     lineas1 = c1 - c2
     lineas2 = c2 - c1
 
-    todo = lineas1 | lineas2 | lineas
+    todo = sorted(lineas1 | lineas2 | lineas, \
+                  key=lambda cad: int(cad.partition(';')[0]))
     for i in todo:
         print(i)
 
