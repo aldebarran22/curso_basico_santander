@@ -40,5 +40,14 @@ guión bajo y 6 números que no pueden empezar por 0.
 COD_AEE_800959
 S/N_UOO_958474"""
 patron = "(COD|S/N)_[AEIOU]{3}_[1-9][0-9]{5}$"
-L = ["COD_AEE_800959", "S/N_UOO_958474", "S/N_UOO_058474", "S/N_UoO_958474"]
+L = [
+    "COD_AEE_800959",
+    "S/N_UOO_958474",
+    "S/N_UOO_058474",
+    "S/N_UoO_958474",
+    "C_UOO_123456",
+    "|_UOO_123456",
+    "///_UOO_123456",
+    "CCC_UOO_123456"
+]
 validar(patron, L)
