@@ -9,6 +9,15 @@ import shelve
 from fecha_hora import DateTime
 
 
+def serializarShelve(path, *objetos):
+    Shelf = shelve.open(path)
+    for k, i in enumerate(objetos):
+        clave = f"K-{k}"
+        Shelf[clave] = i
+    Shelf.close()
+    return len(objetos)
+
+
 def serializarPickle(path, obj):
     fich = None
     try:
