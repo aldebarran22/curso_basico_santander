@@ -26,6 +26,7 @@ def deserializarPickle(path):
     try:
         fich = open(path, "rb")
         obj = p.load(fich)
+        return obj
     except Exception as e:
         print(e)
     finally:
@@ -35,4 +36,7 @@ def deserializarPickle(path):
 
 if __name__ == "__main__":
     L = [DateTime(y=2020), DateTime(), DateTime(1, 12, 2000)]
-    L2 = serializarPickle("exportaciones/datetime.bin", L)
+    serializarPickle("exportaciones/datetime.bin", L)
+    L2 = deserializarPickle("exportaciones/datetime.bin")
+    for dt in L2:
+        print(dt)
