@@ -1,0 +1,21 @@
+dominio.empresa.aplicacion
+
+es.curso.aplicacion1
+
+paquete1.paquete2.paquete3
+
+paquete1 <dir>
+   __init__.py
+
+   paquete2 <dir>
+	__init__.py
+
+	     paquete3 <dir>
+		__init__.py
+		modulo1.py
+
+import paquete1.paquete2.paquete3.modulo1
+
+paquete1.paquete2.paquete3.modulo1.funcion1()
+
+from paquete1.paquete2.paquete3.modulo1 import funcion1
