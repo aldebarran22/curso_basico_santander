@@ -24,5 +24,11 @@ validar(patron, L)
 
 # Validar DNIs
 patron = r"[0-9]{1,8}[A-Z]$"
+patron = r"\d{1,8}[A-Z]$"
 L = ["123", "12345678", "12345678AB", "12345678a", "1A","40156894Q"]
+validar(patron, L)
+
+# Matriculas europeas:
+patron = r""
+L = ["1234", "1234dff", "1234AB", "1234RRT", "12345TRT","1234tGG"]
 validar(patron, L)
