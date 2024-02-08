@@ -48,6 +48,13 @@ L = [
     "C_UOO_123456",
     "|_UOO_123456",
     "///_UOO_123456",
-    "CCC_UOO_123456"
+    "CCC_UOO_123456",
 ]
 validar(patron, L)
+
+# Recuperar el objeto que devuelve match:
+patron = "(COD|S/N)_([AEIOU]{3})_([1-9][0-9]{5})$"
+cad = "COD_AEE_800959"
+obj = re.match(patron, cad)
+print(obj)
+print(obj.groups())
