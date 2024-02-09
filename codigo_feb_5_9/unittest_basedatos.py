@@ -14,7 +14,10 @@ class PruebaBD(unittest.TestCase):
         self.assertRaises(FileNotFoundError, BaseDatos, "no existe.db")
 
     def test_delete(self):
-        pass
+        bd = BaseDatos("../bd/empresa3.db")
+        obj = bd.read(14)
+        bd.delete(14)
+        self.assertRaises(ValueError, bd.read, 14)
 
 
 if __name__ == "__main__":
