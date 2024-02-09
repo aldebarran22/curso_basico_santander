@@ -79,7 +79,7 @@ class BaseDatos:
                 cur.execute(sql, (cargo,))
             else:
                 cur.execute(sql)
-                
+
             return [Empleado(*t) for t in cur.fetchall()]
         except Exception as e:
             raise e
@@ -96,8 +96,11 @@ class BaseDatos:
 if __name__ == "__main__":
     try:
         bd = BaseDatos("../bd/empresa3.db")
-        L = bd.select()
+        L = bd.select("Gerente")
         print(L)
+
+        obj = bd.read(1)
+        print(obj)
 
     except Exception as e:
         print(e)
