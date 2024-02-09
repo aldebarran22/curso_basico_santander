@@ -67,7 +67,22 @@ class BaseDatos:
         pass
 
     def read(self, id):
-        pass
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = f"select * from empleados where id=?"
+            cur.execute(sql, (id,))
+            t = cur.fetchone()
+            if t:
+                return Empleado(*t)
+            else:
+                raise ValueError(f"El empleado: {id} no existe")
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
 
     def select(self, cargo=None):
         cur = None
@@ -99,7 +114,7 @@ if __name__ == "__main__":
         L = bd.select("Gerente")
         print(L)
 
-        obj = bd.read(1)
+        obj = bd.read(20)
         print(obj)
 
     except Exception as e:
