@@ -16,6 +16,9 @@ class Pruebas1(unittest.TestCase):
             resultado, t, msg="No coincide el resultado para a=1, b=5, c=4"
         )
 
+    def testEcuacionError(self):
+        self.assertRaises(ValueError, ecuGrado2, 1, 2, 3)
+
 
 if __name__ == "__main__":
     unittest.main()
