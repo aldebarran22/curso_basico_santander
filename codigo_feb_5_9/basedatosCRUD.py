@@ -20,7 +20,9 @@ class BaseDatos:
         self.con = db.connect(path)
 
     def __del__(self):
-        self.con.close()
+        if hasattr(self, "con"):
+            print('conexión cerrada...')
+            self.con.close()
 
 
 if __name__ == "__main__":
