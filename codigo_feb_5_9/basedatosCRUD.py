@@ -91,6 +91,8 @@ class BaseDatos:
 if __name__ == "__main__":
     try:
         bd = BaseDatos("../bd/empresa3.db")
+        L = bd.select()
+        print(L)
 
     except Exception as e:
         print(e)
