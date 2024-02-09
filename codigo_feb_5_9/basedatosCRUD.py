@@ -5,6 +5,7 @@ C - Create: insert into
 R - Read: select ... where id=PK
 U - Update: update
 D - Delete: delete
+select: select all
 """
 
 import sqlite3 as db
@@ -53,6 +54,23 @@ class BaseDatos:
             raise FileNotFoundError(f"El fichero {path} no existe")
 
         self.con = db.connect(path)
+
+    def create(self, empleado):
+        pass
+
+    def update(self, empleado):
+        pass
+
+    def delete(self, id):
+        pass
+
+    def read(self, id):
+        pass
+
+    def select(self):
+        pass
+
+
 
     def __del__(self):
         if hasattr(self, "con"):
