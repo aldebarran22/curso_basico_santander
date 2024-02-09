@@ -168,7 +168,7 @@ if __name__ == "__main__":
         obj = bd.read(14)
         print(obj)
 
-        obj.cargo = "Presidente"
+        obj.setCargo("Presidente")
         if bd.update(obj):
             print("Registro actualizado")
 
