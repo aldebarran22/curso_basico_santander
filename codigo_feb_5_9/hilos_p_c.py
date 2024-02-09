@@ -35,7 +35,7 @@ class Productor(Thread):
                 self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
 
             # Avisar de que se ha colocado un item:
-            self.buffer.sem_item.release()
+            self.buffer.sem_items.release()
 
             sleep(randint(1, 3))
 
