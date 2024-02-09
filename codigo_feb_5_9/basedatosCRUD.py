@@ -11,6 +11,7 @@ select: select all
 import sqlite3 as db
 from os.path import isfile
 
+
 class Empleado:
     def __init__(self, id=0, nombre="", cargo=""):
         self.__id = id
@@ -47,6 +48,7 @@ class Empleado:
     def __repr__(self):
         return str(self)
 
+
 class BaseDatos:
 
     def __init__(self, path):
@@ -68,15 +70,27 @@ class BaseDatos:
         pass
 
     def select(self):
-        pass
-
-
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = f"select * from empleados"
+            cur.execute(sql)
+            return [Empleado(*t) for t in cur.fetchall()]
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
 
     def __del__(self):
         if hasattr(self, "con"):
-            print('conexión cerrada...')
+            print("conexión cerrada...")
             self.con.close()
 
 
 if __name__ == "__main__":
-    bd = BaseDatos("../bd/empresa3.db")
+    try:
+        bd = BaseDatos("../bd/empresa3.db")
+
+    except Exception as e:
+        print(e)
