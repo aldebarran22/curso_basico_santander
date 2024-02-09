@@ -1,8 +1,8 @@
 import sqlite3 as db
 from os.path import isfile
+import sys
 
-
-def conexion(path, tabla):
+def conexion(path, tabla, file=sys.stdout):
     con = None
     cur = None
     try:
@@ -14,11 +14,11 @@ def conexion(path, tabla):
             sql = f"select * from {tabla}"
             cur.execute(sql)
             cabs = ";".join([t[0] for t in cur.description])
-            print(cabs)
+            print(cabs, file=file)
 
             for t in cur.fetchall():
                 linea = ";".join([str(i) for i in t])
-                print(linea)
+                print(linea, file=file)
 
     except Exception as e:
         # raise e
