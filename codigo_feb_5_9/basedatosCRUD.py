@@ -135,5 +135,9 @@ if __name__ == "__main__":
         obj = bd.read(1)
         print(obj)
 
+        id = 29
+        if bd.delete(id):
+            print(f"El empleado: {id} eliminado")
+
     except Exception as e:
         print(e)
