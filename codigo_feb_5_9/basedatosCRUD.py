@@ -64,13 +64,31 @@ class BaseDatos:
         pass
 
     def delete(self, id):
-        pass
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "delete from empleados where id=?"
+            cur.execute(sql, (id,))
+            n = cur.rowcount  # Número de registros eliminados
+            self.con.commit()
+            if n == 0:
+                # No existe el registro
+                raise ValueError(f"El empleado: {id} no existe")
+            else:
+                return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
 
     def read(self, id):
         cur = None
         try:
             cur = self.con.cursor()
-            sql = f"select * from empleados where id=?"
+            sql = "select * from empleados where id=?"
             cur.execute(sql, (id,))
             t = cur.fetchone()
             if t:
@@ -114,7 +132,7 @@ if __name__ == "__main__":
         L = bd.select("Gerente")
         print(L)
 
-        obj = bd.read(20)
+        obj = bd.read(1)
         print(obj)
 
     except Exception as e:
