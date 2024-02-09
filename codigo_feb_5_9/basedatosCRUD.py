@@ -69,12 +69,17 @@ class BaseDatos:
     def read(self, id):
         pass
 
-    def select(self):
+    def select(self, cargo=None):
         cur = None
         try:
             cur = self.con.cursor()
-            sql = f"select * from empleados"
-            cur.execute(sql)
+            sql = f"select * from empleados "
+            if cargo:
+                sql += "where cargo=?"
+                cur.execute(sql, (cargo,))
+            else:
+                cur.execute(sql)
+                
             return [Empleado(*t) for t in cur.fetchall()]
         except Exception as e:
             raise e
