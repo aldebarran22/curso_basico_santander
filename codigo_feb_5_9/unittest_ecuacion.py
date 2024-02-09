@@ -19,6 +19,9 @@ class Pruebas1(unittest.TestCase):
     def testEcuacionError(self):
         self.assertRaises(ValueError, ecuGrado2, 1, 2, 3)
 
+    def testError(self):
+        raise AssertionError("Error fatal")
+
 
 if __name__ == "__main__":
     unittest.main()
