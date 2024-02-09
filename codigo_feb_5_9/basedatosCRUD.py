@@ -58,7 +58,26 @@ class BaseDatos:
         self.con = db.connect(path)
 
     def create(self, empleado):
-        pass
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "insert into empleados(nombre,cargo) values(?,?)"
+            cur.execute(sql, empleado.getTupla())
+            # El id generado por la BD
+            empleado.setId(cur.lastrowid)
+            n = cur.rowcount
+            self.con.commit()
+            if n == 0:
+                raise ValueError(f"No se ha podido crear el empleado")
+            else:
+                return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
 
     def update(self, empleado):
         pass
@@ -132,12 +151,18 @@ if __name__ == "__main__":
         L = bd.select("Gerente")
         print(L)
 
+        """
         obj = bd.read(1)
         print(obj)
 
         id = 29
         if bd.delete(id):
             print(f"El empleado: {id} eliminado")
+        """
+
+        emp = Empleado(0, "Andrés", "Gerente de ventas")
+        bd.create(emp)
+        print(emp)
 
     except Exception as e:
         print(e)
