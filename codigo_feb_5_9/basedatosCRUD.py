@@ -165,18 +165,26 @@ if __name__ == "__main__":
         L = bd.select("Gerente")
         print(L)
 
-        """
-        obj = bd.read(1)
+        obj = bd.read(14)
         print(obj)
+
+        obj.cargo = "Presidente"
+        if bd.update(obj):
+            print("Registro actualizado")
+
+        """
+        
 
         id = 29
         if bd.delete(id):
             print(f"El empleado: {id} eliminado")
         """
 
+        """
         emp = Empleado(0, "Andrés", "Gerente de ventas")
         bd.create(emp)
         print(emp)
+        """
 
     except Exception as e:
         print(e)
