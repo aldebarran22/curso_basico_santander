@@ -13,8 +13,12 @@ def conexion(path, tabla):
             cur = con.cursor()
             sql = f"select * from {tabla}"
             cur.execute(sql)
+            cabs = ";".join([t[0] for t in cur.description])
+            print(cabs)
+
             for t in cur.fetchall():
-                print(t)
+                linea = ";".join([str(i) for i in t])
+                print(linea)
 
     except Exception as e:
         # raise e
@@ -27,4 +31,4 @@ def conexion(path, tabla):
 
 
 if __name__ == "__main__":
-    conexion("../bd/empresa3.db","pedidos2")
+    conexion("../bd/empresa3.db","pedidos")
