@@ -15,9 +15,9 @@ class PruebaBD(unittest.TestCase):
 
     def test_delete(self):
         bd = BaseDatos("../bd/empresa3.db")
-        obj = bd.read(14)
-        bd.delete(14)
-        self.assertRaises(ValueError, bd.read, 14)
+        obj = bd.read(8)
+        bd.delete(8)
+        self.assertRaises(ValueError, bd.read, 8)
 
 
 if __name__ == "__main__":

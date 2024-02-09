@@ -9,6 +9,9 @@ from ecuacion import ecuGrado2
 
 class Pruebas1(unittest.TestCase):
 
+    def setUp(self):
+        print("inicio contexto")
+
     def testEcuacionOK(self):
         resultado = ecuGrado2(1, 5, 4)
         t = (-1, -4)
@@ -21,6 +24,9 @@ class Pruebas1(unittest.TestCase):
 
     def testError(self):
         raise AssertionError("Error fatal")
+
+    def tearDown(self):
+        print("limpia contexto")
 
 
 if __name__ == "__main__":
