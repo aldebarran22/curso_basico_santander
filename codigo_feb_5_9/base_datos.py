@@ -18,7 +18,7 @@ def conexion(path, tabla):
 
     except Exception as e:
         # raise e
-        print(e)
+        print(e.__class__.__name__, e)
     finally:
         if cur:
             cur.close()
@@ -27,4 +27,4 @@ def conexion(path, tabla):
 
 
 if __name__ == "__main__":
-    conexion("../bd/empresa3.db","pedidos")
+    conexion("../bd/empresa3.db","pedidos2")
