@@ -79,8 +79,22 @@ class BaseDatos:
             if cur:
                 cur.close()
 
-    def update(self, empleado):
-        pass
+    def update(self, emp):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "update empleados set nombre=?,cargo=? where id=?"
+            cur.execute(sql, emp.getTupla2())
+            n = cur.rowcount  # Número de regs. afectados!
+            self.con.commit()
+            return n > 0
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
 
     def delete(self, id):
         cur = None
