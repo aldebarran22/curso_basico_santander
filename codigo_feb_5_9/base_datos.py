@@ -29,6 +29,11 @@ def conexion(path, tabla, file=sys.stdout):
         if con:
             con.close()
 
+def exportar(path, tabla):
+    pathFile = f"exportaciones/{tabla}.csv"
+    f = open(pathFile, "w")
+    conexion(path, tabla, f)
+    f.close()
 
 if __name__ == "__main__":
-    conexion("../bd/empresa3.db","pedidos")
+    exportar("../bd/empresa3.db","pedidos")
