@@ -9,7 +9,9 @@ from basedatosCRUD import BaseDatos
 class PruebaBD(unittest.TestCase):
 
     def test_exceptions(self):
-        pass
+        # Comprobar si lanza una exception cuando
+        # está mal la ruta de la BD
+        self.assertRaises(FileNotFoundError, BaseDatos, "no existe.db")
 
     def test_delete(self):
         pass
