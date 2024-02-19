@@ -15,4 +15,8 @@ print('num Billetes de 50:',numbilletes)
 cantidad = 230
 billete = 50
 numbilletes = cantidad // billete
+resto = cantidad % billete
 print(cantidad,'necesitamos',numbilletes,"de",billete)
+#f-string
+print(f"Para {cantidad} eur necesitamos {numbilletes} billetes de {billete}")
+print('Nos quedan ',resto)
