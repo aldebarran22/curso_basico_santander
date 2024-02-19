@@ -40,17 +40,21 @@ else:
     print("dentro del intervalo")
 
 # Que valores considera Python que son False:
-numero = 5
-f = None
-nombre = ""
+numero = 0  # 0 es False
+f = None  # None es False
+nombre = ""  # Cadena vacía es False
 
 if numero:
-    print('numero es true')
+    print("numero es true")
 else:
-    print('numero es false')
+    print("numero es false")
 
 if f:
-    print('f es true')
+    print("f es true")
 else:
-    print('f es false',type(f))
+    print("f es false", type(f))
 
+if nombre:
+    print("nombre es true")
+else:
+    print("nombre es false")
