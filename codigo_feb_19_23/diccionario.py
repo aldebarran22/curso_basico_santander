@@ -23,3 +23,18 @@ print('valores: ', list(d.values()))
 print('items: ', list(d.items()))
 for k,v in d.items():
     print(k,v)
+
+L = [1,2,3,1,1,2,3,4,5,6,3,2,1,2]
+d = dict()
+for i in L:
+    if i in d:
+        d[i]+=1
+    else:
+        d[i] = 1
+print(d)
+"""
+1:4
+2:4
+3:3
+"""
+
