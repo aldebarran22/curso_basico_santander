@@ -38,3 +38,19 @@ if not (num >= ini and num <= fin):
     print("fuera del intervalo")
 else:
     print("dentro del intervalo")
+
+# Que valores considera Python que son False:
+numero = 5
+f = None
+nombre = ""
+
+if numero:
+    print('numero es true')
+else:
+    print('numero es false')
+
+if f:
+    print('f es true')
+else:
+    print('f es false',type(f))
+
