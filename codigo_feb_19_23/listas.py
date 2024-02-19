@@ -72,3 +72,7 @@ if cad == cad[::-1]:
     print('es un palindromo')
 else:
     print('no lo es')
+
+cadena  = "hola que tal"
+L = list(cadena)
+print(L)
