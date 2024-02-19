@@ -11,3 +11,8 @@ print('media: ', media)
 # Cuantos billetes de 50 € necesitamos para 230 €
 numbilletes = 230 // 50
 print('num Billetes de 50:',numbilletes)
+
+cantidad = 230
+billete = 50
+numbilletes = cantidad // billete
+print(cantidad,'necesitamos',numbilletes,"de",billete)
