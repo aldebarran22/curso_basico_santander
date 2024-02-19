@@ -17,3 +17,9 @@ if 'e' in d:
     print('la clave e existe')
 if 400 in d.values():
     print('400 existe')
+
+print('claves: ', list(d.keys()))
+print('valores: ', list(d.values()))
+print('items: ', list(d.items()))
+for k,v in d.items():
+    print(k,v)
