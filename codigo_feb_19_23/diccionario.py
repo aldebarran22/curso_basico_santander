@@ -38,3 +38,18 @@ print(d)
 3:3
 """
 
+# Crear un diccionario  a partir de dos colecciones:
+cad = "adios"
+L = [1,2,3,4,5]
+
+d1 = dict(zip(cad, L))
+print(d1)
+
+d2 = dict(zip(L, cad))
+print(d2)
+
+cad = "ana"
+L = [1,2,3]
+d3 = dict(zip(cad, L))
+print(d3)
+
