@@ -6,7 +6,7 @@ import math
 
 # from math import sqrt
 
-a, b, c = 1, 2, 3  # a = 1, b = 5, c = 4
+a, b, c = 1, 5, 4  # a = 1, b = 5, c = 4, sin solución:1,2,3
 
 raiz = b**2 - 4 * a * c
 
@@ -16,3 +16,5 @@ if raiz > 0:
     print("x1:", x1, "x2:", x2)
 else:
     print("No hay solución")
+
+print("fin de programa")
