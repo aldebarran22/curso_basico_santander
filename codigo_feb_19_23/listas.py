@@ -44,4 +44,9 @@ if numero in L:
 else:
     print(f"{numero} no está en la lista")
 
-# bucle, slicing, índices negativos
+# bucle,
+for i in L:
+    print(i, end=" ")
+print() # salto de linea
+
+# slicing, índices negativos
