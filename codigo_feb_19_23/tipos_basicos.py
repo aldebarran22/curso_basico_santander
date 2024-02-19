@@ -13,3 +13,6 @@ print(nombre, type(nombre))
 
 print(numero + numero2)
 #print(numero + nombre)
+
+resultado = True
+
