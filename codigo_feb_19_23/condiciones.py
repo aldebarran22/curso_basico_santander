@@ -18,7 +18,7 @@ else:
 # un intervalo:
 ini = 10
 fin = 40
-num = 41
+num = 11
 if num >= ini and num <= fin:
     print("dentro del intervalo")
 else:
@@ -28,3 +28,13 @@ if ini <= num <= fin:
     print("dentro del intervalo")
 else:
     print("fuera del intervalo")
+
+if num < ini or num > fin:
+    print("fuera del intervalo")
+else:
+    print("dentro del intervalo")
+
+if not (num >= ini and num <= fin):
+    print("fuera del intervalo")
+else:
+    print("dentro del intervalo")
