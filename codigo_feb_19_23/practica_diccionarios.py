@@ -16,5 +16,15 @@ txt = """id;nombre;cargo
 
 L = txt.split("\n")
 cabs = L[0].split(";")
+R = []
 for i in L[1:]:
-    print(i)
+    datos = i.split(";")
+    d = dict(zip(cabs, datos))
+    R.append(d)
+print(R)
+
+"""
+s = ";".join(cabs)
+print(cabs)
+print(s)
+"""
