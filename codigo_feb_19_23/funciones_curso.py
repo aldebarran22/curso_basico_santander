@@ -2,6 +2,17 @@
 Funciones del curso de  Python
 """
 
+import os
+
+
+def filtroFicheros():
+    L = os.listdir("C:/")
+    extensiones = ("py", "txt")
+    for f in L:
+        nombre, _, ext = f.partition(".")
+        if ext in extensiones:
+            print(f)
+
 
 def histograma(L):
     d = dict()
