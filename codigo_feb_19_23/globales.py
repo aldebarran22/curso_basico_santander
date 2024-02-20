@@ -4,6 +4,7 @@ L=[1,2,3]
 
 
 def funcion():
+	i = 0 # Variable local
 	print("num:",num)
 	print("L:",L)
 	
