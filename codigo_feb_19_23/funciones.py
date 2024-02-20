@@ -12,7 +12,7 @@ def sumar(a,b):
     """
     return a+b
 
-def sumar(a,b,c):
+def sumar3(a,b,c):
     """
     Sumar los tres parámetros
     """
