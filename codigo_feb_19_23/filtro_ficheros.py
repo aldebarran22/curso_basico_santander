@@ -4,7 +4,7 @@ solo imprimir ficheros de dos extensiones.
 """
 import os
 
-L = os.listdir()
+L = os.listdir("C:/")
 extensiones = ('py','txt') 
 for f in L:
     nombre, _, ext = f.partition('.')
