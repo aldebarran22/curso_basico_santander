@@ -29,7 +29,9 @@ def segundos(hh=0, mm=0, ss=0):
 if __name__ == "__main__":
     print(segundos(mm=30))
     print(segundos(1,30,15))
-
+    horas = [(12,), (5,30), (8,40,30), (12,7,13)]
+    for t in horas:
+        print(t, segundos(*t))
     exit()
     print(sumar(1, 2))  # Forma posicional
     print(sumar(b=2, a=1))  # Forma nominal
