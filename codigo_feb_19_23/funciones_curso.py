@@ -5,13 +5,15 @@ Funciones del curso de  Python
 import os
 
 
-def filtroFicheros():
-    L = os.listdir("C:/")
-    extensiones = ("py", "txt")
+def filtroFicheros(path, *extensiones):
+    R = []
+    L = os.listdir(path)
+    # extensiones = ("py", "txt")
     for f in L:
         nombre, _, ext = f.partition(".")
         if ext in extensiones:
-            print(f)
+            R.append(f)
+    return R
 
 
 def histograma(L):
@@ -22,6 +24,8 @@ def histograma(L):
 
 
 if __name__ == "__main__":
+    print("ficheros:", filtroFicheros(".", "txt", "py", "xlsx", "pdf"))
+
     L = [1, 2, 3, 1, 1, 2, 3, 4, 5, 6, 3, 2, 1, 2]
     d = histograma(L)
     print(d)
