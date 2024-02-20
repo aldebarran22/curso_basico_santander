@@ -19,6 +19,9 @@ def sumar3(a, b, c):
     """
     return a + b + c
 
+def calcularIVA(precio, iva=.21):
+    return precio * iva
+
 
 def segundos(hh=0, mm=0, ss=0):
     """
