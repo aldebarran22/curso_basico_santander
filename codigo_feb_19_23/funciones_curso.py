@@ -35,14 +35,15 @@ def ecuacion(a, b, c):
         x1 = (-b + math.sqrt(raiz)) / (2 * a)
         x2 = (-b - math.sqrt(raiz)) / (2 * a)
         return {"x1": x1, "x2": x2}
+        #return x1, x2
     else:
         return None
 
 
 if __name__ == "__main__":
-    d = ecuacion(1,5,4)
+    d = ecuacion(1, 5, 4)
     print(d)
-    d = ecuacion(1,2,3)
+    d = ecuacion(1, 2, 3)
     print(d)
 
     s, r = sumaResta(12, 4)
