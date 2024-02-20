@@ -7,6 +7,7 @@ import math
 
 
 def sumaResta(a, b):
+    print("funciones curso")
     return a + b, a - b
 
 
@@ -35,7 +36,7 @@ def ecuacion(a, b, c):
         x1 = (-b + math.sqrt(raiz)) / (2 * a)
         x2 = (-b - math.sqrt(raiz)) / (2 * a)
         return {"x1": x1, "x2": x2}
-        #return x1, x2
+        # return x1, x2
     else:
         return None
 
