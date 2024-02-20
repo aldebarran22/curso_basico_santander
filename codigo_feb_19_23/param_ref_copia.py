@@ -19,3 +19,7 @@ if __name__ == "__main__":
     # funcion(numero, L.copy())
 
     print(f"numero: {numero}, lista: {L}")
+    print(type(funcion), funcion)
+
+    # print(L(0)) # Error L no es una función
+    # print(numero[0]) # Error número no es indexable (no es una colección)
