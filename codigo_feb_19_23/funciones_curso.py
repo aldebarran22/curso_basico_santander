@@ -5,6 +5,10 @@ Funciones del curso de  Python
 import os
 
 
+def sumaResta(a,b):
+    return a+b, a-b
+
+
 def filtroFicheros(path, *extensiones):
     R = []
     L = os.listdir(path)
@@ -24,6 +28,9 @@ def histograma(L):
 
 
 if __name__ == "__main__":
+    s,r = sumaResta(12,4)
+    print("suma:",s,"resta:",r)
+
     print("ficheros:", filtroFicheros(".", "txt", "py", "xlsx", "pdf"))
 
     L = [1, 2, 3, 1, 1, 2, 3, 4, 5, 6, 3, 2, 1, 2]
