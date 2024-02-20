@@ -31,6 +31,9 @@ def segundos(hh=0, mm=0, ss=0):
 
 
 if __name__ == "__main__":
+    print("iva: ", calcularIVA(100))
+    print("iva: ", calcularIVA(100, .04))
+    
     print(segundos(mm=30))
     print(segundos(1, 30, 15))
     horas = [(12, 5), (5, 30), (8, 40, 30), (12, 7, 13)]
