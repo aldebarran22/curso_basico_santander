@@ -6,18 +6,22 @@ Tipos anotados
 """
 
 
-def sumar(a,b):
+def sumar(a, b):
     """
     Sumar los dos parámetros
     """
-    return a+b
+    return a + b
 
-def sumar3(a,b,c):
+
+def sumar3(a, b, c):
     """
     Sumar los tres parámetros
     """
-    return a+b+c
+    return a + b + c
 
-print(sumar(1,2))
-print(sumar("1","2"))
-print(sumar([1],[2]))
+
+if __name__ == "__main__":
+    print(sumar(1, 2))
+    print(sumar("1", "2"))
+    print(sumar([1], [2]))
+    print(__name__)
