@@ -3,10 +3,11 @@ Funciones del curso de  Python
 """
 
 import os
+import math
 
 
-def sumaResta(a,b):
-    return a+b, a-b
+def sumaResta(a, b):
+    return a + b, a - b
 
 
 def filtroFicheros(path, *extensiones):
@@ -27,9 +28,25 @@ def histograma(L):
     return d
 
 
+def ecuacion(a, b, c):
+    raiz = b**2 - 4 * a * c
+
+    if raiz > 0:
+        x1 = (-b + math.sqrt(raiz)) / (2 * a)
+        x2 = (-b - math.sqrt(raiz)) / (2 * a)
+        return {"x1": x1, "x2": x2}
+    else:
+        return None
+
+
 if __name__ == "__main__":
-    s,r = sumaResta(12,4)
-    print("suma:",s,"resta:",r)
+    d = ecuacion(1,5,4)
+    print(d)
+    d = ecuacion(1,2,3)
+    print(d)
+
+    s, r = sumaResta(12, 4)
+    print("suma:", s, "resta:", r)
 
     print("ficheros:", filtroFicheros(".", "txt", "py", "xlsx", "pdf"))
 
