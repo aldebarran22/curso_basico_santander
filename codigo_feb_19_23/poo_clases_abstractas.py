@@ -11,7 +11,7 @@ class Prototipo(abc.ABC):
 			
 	@abc.abstractmethod
 	def clone(self):
-		return
+		pass
 	
 	
 class Circulo(Prototipo):
@@ -23,7 +23,8 @@ class Circulo(Prototipo):
 	def __str__(self):		
 		return super().__str__() + " radio: " + str(self.radio)
 			
-	
+	def clone(self):
+		pass
 			
 		
 	
@@ -37,7 +38,8 @@ class Rectangulo(Prototipo):
 	def __str__(self):		
 		return super().__str__() + 	" ancho: " + str(self.ancho) + " alto: " + str(self.alto)
 	
-	
+	def clone(self):
+		pass
 	
 	
 class Triangulo(Prototipo):
@@ -50,5 +52,6 @@ class Triangulo(Prototipo):
 	def __str__(self):		
 		return super().__str__() + 	" base: " + str(self.base) + " altura: " + str(self.altura)
 			
-	
+	def clone(self):
+		pass
 	
