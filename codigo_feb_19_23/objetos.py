@@ -13,6 +13,16 @@ class Persona:
         self.edad = edad
         self.altura = altura
 
+    def __str__(self):
+        return self.nombre+" "+str(self.edad)+" "+str(self.altura)
+    
+    def __repr__(self):
+        return str(self) # Red. a __str__
+
 if __name__ == '__main__':
     p1 = Persona("Andrés", 34, 1.8)
-    print(p1)
+    print(p1) # str(p1) --> p1.__str__()
+    #print(str(p1))
+    #print(p1.__str__())
+    L = [p1, Persona("Ana",45,1.77),Persona("Jose",66,1.9)]
+    print(L)
