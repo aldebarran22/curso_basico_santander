@@ -20,10 +20,10 @@ class Guia(Persona):
             c1 = set(self.idiomas)
             c2 = set(other.idiomas)
             comun = c1 & c2
-            if len(comun)==0:
+            if len(comun) == 0:
                 raise ValueError("No pueden hablar")
             else:
-                print('Puede hablar en: ', " o ".join(comun))
+                print("Puede hablar en: ", " o ".join(comun))
 
     def __str__(self):
         return Persona.__str__(self) + " " + self.ambito + " " + ",".join(self.idiomas)
@@ -31,11 +31,12 @@ class Guia(Persona):
 
 
 def testGuia():
-    g1 = Guia("Andrés", 34, 1.8, "I", ["Inglés", "Francés","Alemán"])
+    g1 = Guia("Andrés", 34, 1.8, "I", ["Inglés", "Francés", "Alemán"])
     g1.cumple()
     print(g1)
-    g2 = Guia("Eva", 34, 1.8, "I", ["Alemán", "Chino","Inglés"])
+    g2 = Guia("Eva", 34, 1.8, "I", ["Alemán", "Chino", "Inglés"])
     g1.hablarCon(g2)
+
 
 if __name__ == "__main__":
     testGuia()
