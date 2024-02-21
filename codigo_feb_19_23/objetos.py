@@ -23,15 +23,22 @@ class Persona:
     def __lt__(self, other):
         return self.edad < other.edad
 
+    def __eq__(self, other):
+        return (
+            self.nombre == other.nombre
+            and self.edad == other.edad
+            and self.altura == other.altura
+        )
+
     def __del__(self):
         # print("se borra a: ", self.nombre)
         pass
 
 
-if __name__ == "__main__":
+def testPersona():
     p2 = Persona("Juan")
     p3 = Persona("Juan")
-    #del p2  # Fuerza la llamada al destructor --> __del__()
+    # del p2  # Fuerza la llamada al destructor --> __del__()
     p1 = Persona("Andrés", 34, 1.8)
     print(p1)  # str(p1) --> p1.__str__()
     # print(str(p1))
@@ -42,14 +49,22 @@ if __name__ == "__main__":
     print(L)
     L.sort()  # Utiliza __lt__()
     print(L)
-    if L[0] < L[1]: # if L[0].__lt__(L[1]):
-        print(L[0],'es menor que',L[1])
+    if L[0] < L[1]:  # if L[0].__lt__(L[1]):
+        print(L[0], "es menor que", L[1])
     else:
-        print(L[1],'es menor que',L[0])
+        print(L[1], "es menor que", L[0])
 
     p4 = p2
     print("p2 == p3", p2 == p3)
-    print("p2 == p4", p2 == p4) # por defecto comprueba las refs. no los att.
-    print("id(p2)",id(p2))
-    print("id(p4)",id(p4))
+    print("p2 == p4", p2 == p4)  # por defecto comprueba las refs. no los att.
+    print("id(p2)", id(p2))
+    print("id(p4)", id(p4))
 
+
+def testCrearObjetos():
+    pass
+
+
+if __name__ == "__main__":
+    # testPersona()
+    testCrearObjetos()
