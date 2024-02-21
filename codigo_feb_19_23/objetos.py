@@ -62,7 +62,15 @@ def testPersona():
 
 
 def testCrearObjetos():
-    pass
+    p1 = Persona("Ana", 45, 1.77)
+    # Crear un objeto a partir de la clase de otro
+    p2 = p1.__class__("Pedro")
+    print(p2)
+
+    cad = "{}({},{},{})".format("Persona","'Juan'",23,1.99)
+    print(cad)
+    obj = eval(cad)
+    print(obj, obj.__class__.__name__)
 
 
 if __name__ == "__main__":
