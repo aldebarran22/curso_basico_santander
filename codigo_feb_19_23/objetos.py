@@ -8,11 +8,18 @@ class Persona:
     Implementación de la clase persona
     """
 
+    contador = 0  # Variable de clase
+
     def __init__(self, nombre="", edad=0, altura=0.0):
         # definición de atributos
         self.nombre = nombre
         self.edad = edad
         self.altura = altura
+        Persona.contador += 1
+
+    @staticmethod
+    def get_contador():
+        return Persona.contador
 
     def __str__(self):
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
@@ -29,13 +36,13 @@ class Persona:
             and self.edad == other.edad
             and self.altura == other.altura
         )
-    
+
     def cumple(self):
-        self.edad+=1
+        self.edad += 1
 
     def __del__(self):
         # print("se borra a: ", self.nombre)
-        pass
+        Persona.contador -= 1
 
 
 def testPersona():
@@ -70,11 +77,13 @@ def testCrearObjetos():
     p2 = p1.__class__("Pedro")
     print(p2)
 
-    cad = "{}({},{},{})".format("Persona","'Juan'",23,1.99)
+    cad = "{}({},{},{})".format("Persona", "'Juan'", 23, 1.99)
     print(cad)
     obj = eval(cad)
     print(obj, obj.__class__.__name__)
     obj.cumple()
+    print(obj)
+    Persona.cumple(obj)
     print(obj)
 
 
