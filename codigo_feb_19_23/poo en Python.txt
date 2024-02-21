@@ -1,0 +1,24 @@
+POO en Python
+- Herencia Simple y Múltiple
+- Interface NO - C.Abstractas SI
+- Sobrecarga de operadores.
+	Aritmético: __add__, Relacionales
+
+	class Hora:
+            pass
+
+        h1 = Hora(9,30)
+        h2 = Hora(10,45)
+        h1 + h2 --> __add__
+
+	if h1 < h2: --> __lt__
+          pass
+- Dinámico: modificar las propiedades de un objeto en t.de ejecución
+- Encapsulación: acceso privado vs público
+  Persona
+
+Funciones de Python	vs	Métodos especiales
+str()					__str__()
+del()					__del__()
+repr()					__repr__()
+len()					__len__()
