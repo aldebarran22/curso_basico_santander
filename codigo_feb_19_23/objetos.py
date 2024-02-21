@@ -87,6 +87,17 @@ def testCrearObjetos():
     print(obj)
 
 
+def testStatic():
+    print("Num objetos:", Persona.get_contador())
+    p1 = Persona("Ana", 45, 1.77)
+    p2 = Persona("Sofía", 45, 1.77)
+    print("Num objetos:", Persona.get_contador())
+    del p1
+    del p2
+    print("Num objetos:", Persona.get_contador())
+
+
 if __name__ == "__main__":
     # testPersona()
-    testCrearObjetos()
+    # testCrearObjetos()
+    testStatic()
