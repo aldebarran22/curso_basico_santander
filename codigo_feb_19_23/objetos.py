@@ -41,3 +41,8 @@ if __name__ == "__main__":
     print(L)
     L.sort()  # Utiliza __lt__()
     print(L)
+    if L[0] < L[1]: # if L[0].__lt__(L[1]):
+        print(L[0],'es menor que',L[1])
+    else:
+        print(L[1],'es menor que',L[0])
+
