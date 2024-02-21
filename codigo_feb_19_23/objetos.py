@@ -2,7 +2,6 @@
 POO en Python
 """
 
-
 class Persona:
     """
     Implementación de la clase persona
@@ -102,8 +101,15 @@ def testStatic():
     del p2
     print("Num objetos:", Persona.get_contador())
 
+def testAtt():
+    p1 = Persona("Andrés", 34, 1.8)
+    print(p1.__dict__)
+    p1.telefono = 912345566
+    print(p1.__dict__)
+    print(p1.telefono)
 
 if __name__ == "__main__":
     # testPersona()
     # testCrearObjetos()
-    testStatic()
+    # testStatic()
+    testAtt()
