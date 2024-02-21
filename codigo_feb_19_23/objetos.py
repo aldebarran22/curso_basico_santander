@@ -30,7 +30,8 @@ class Persona:
 
 if __name__ == "__main__":
     p2 = Persona("Juan")
-    del p2  # Fuerza la llamada al destructor --> __del__()
+    p3 = Persona("Juan")
+    #del p2  # Fuerza la llamada al destructor --> __del__()
     p1 = Persona("Andrés", 34, 1.8)
     print(p1)  # str(p1) --> p1.__str__()
     # print(str(p1))
@@ -45,4 +46,10 @@ if __name__ == "__main__":
         print(L[0],'es menor que',L[1])
     else:
         print(L[1],'es menor que',L[0])
+
+    p4 = p2
+    print("p2 == p3", p2 == p3)
+    print("p2 == p4", p2 == p4) # por defecto comprueba las refs. no los att.
+    print("id(p2)",id(p2))
+    print("id(p4)",id(p4))
 
