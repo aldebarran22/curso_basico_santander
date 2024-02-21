@@ -13,9 +13,13 @@ class Guia(Persona):
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def __str__(self):
+        return Persona.__str__(self) + " "+self.ambito+" "+",".join(self.idiomas)
 
 def testGuia():
-    pass
+    g1 = Guia("Andrés", 34, 1.8, 'I', ['Inglés','Francés'])
+    g1.cumple()
+    print(g1)
 
 
 if __name__ == "__main__":
