@@ -3,6 +3,9 @@ class Reversa:
 	def __init__(self, datos):
 		self.datos = datos
 		self.indice = len(datos)
+
+	def __len__(self):
+		return len(self.datos)
      
 	def __iter__(self):	
 		return self
@@ -16,10 +19,12 @@ class Reversa:
 
 rev = Reversa('spam')
 print(iter(rev))
+print('Número de elementos: ', len(rev))
 for char in rev:
-	print(char)
+	print(char, end='')
+print()
 	
-	
+exit()
 for char in rev:
 	print(char)
 	
