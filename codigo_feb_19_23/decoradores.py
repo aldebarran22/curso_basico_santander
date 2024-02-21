@@ -16,16 +16,15 @@ def autenticado(f):
     return inner
 
 
-
 @autenticado
-def abrir_puerta(a, b):
+def abrir_puerta(a, b, c=0):
     print("en abrir puerta")
-    print("a,b", a, b)
-   
+    print("a,b,c", a, b, c)
+
 
 # Programa principal:
 try:
-    abrir_puerta(1, 2)
+    abrir_puerta(1, 2, c=100)
 
 except Exception as e:
     print("Error:", e)
