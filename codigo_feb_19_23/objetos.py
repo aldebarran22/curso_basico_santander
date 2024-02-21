@@ -40,6 +40,12 @@ class Persona:
     def cumple(self):
         self.edad += 1
 
+    def hablarCon(self, other=None):
+        if other:
+            print(self.nombre, "y", other.nombre, "están hablando")
+        else:
+            print(self.nombre, "está hablando solo")
+
     def __del__(self):
         # print("se borra a: ", self.nombre)
         Persona.contador -= 1

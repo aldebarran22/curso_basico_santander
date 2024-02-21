@@ -14,13 +14,16 @@ class Guia(Persona):
         self.idiomas = idiomas
 
     def __str__(self):
-        return Persona.__str__(self) + " "+self.ambito+" "+",".join(self.idiomas)
+        return Persona.__str__(self) + " " + self.ambito + " " + ",".join(self.idiomas)
+        # return super().__str__() + " " + self.ambito + " " + ",".join(self.idiomas)
+
 
 def testGuia():
-    g1 = Guia("Andrés", 34, 1.8, 'I', ['Inglés','Francés'])
+    g1 = Guia("Andrés", 34, 1.8, "I", ["Inglés", "Francés"])
     g1.cumple()
     print(g1)
-
+    g2 = Guia("Eva", 34, 1.8, "I", ["Alemán", "Chino"])
+    g1.hablarCon(g2)
 
 if __name__ == "__main__":
     testGuia()
