@@ -29,6 +29,9 @@ class Persona:
             and self.edad == other.edad
             and self.altura == other.altura
         )
+    
+    def cumple(self):
+        self.edad+=1
 
     def __del__(self):
         # print("se borra a: ", self.nombre)
@@ -71,6 +74,8 @@ def testCrearObjetos():
     print(cad)
     obj = eval(cad)
     print(obj, obj.__class__.__name__)
+    obj.cumple()
+    print(obj)
 
 
 if __name__ == "__main__":
