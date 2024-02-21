@@ -29,7 +29,10 @@ class Date:
 
 class DateTime(Date, Time):
     """01/01/1970 00:00:00"""
-    pass
+
+    def __init__(self, dd=1, mm=1, yy=1970, h=0, m=0, s=0):
+        Date.__init__(self, dd, mm, yy)
+        Time.__init__(self, h, m, s)
 
 
 if __name__ == "__main__":
@@ -38,3 +41,6 @@ if __name__ == "__main__":
 
     d = Date(1, 4, 2024)
     print(d)
+
+    dt = DateTime()
+    print(dt)
