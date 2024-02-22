@@ -54,10 +54,19 @@ def filtroFichero(path, *paises, sep=";", file=sys.stdout):
             f.close()
 
 
+def columnas():
+    L = [('portatil', 550.7), ('PC', 1550.0), ('teclado', 40.79)]
+    for producto, importe in L:
+        print("%s\t%f" % (producto, importe))
+
 if __name__ == "__main__":
 
     # leerFichero("../ficheros_curso/Pedidos.txt")
 
+    """
     f = open("../csv/pedidos.csv", "w")
-    filtroFichero("../ficheros_curso/Pedidos.txt", "Finlandia", "Alemania", file=f)
+    filtroFichero("../ficheros_curso/Pedidos.txt", "Suiza", file=f)
     f.close()
+    """
+
+    columnas()
