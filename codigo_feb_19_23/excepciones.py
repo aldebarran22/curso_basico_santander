@@ -64,7 +64,7 @@ def pruebaFich(path):
         print(txt)
 
     except Exception as e:
-        print(e)
+        raise e
 
     finally:
         if f:
@@ -75,4 +75,7 @@ if __name__ == "__main__":
     # prueba1()
     # prueba2()
     # prueba3()
-    pruebaFich("no existe.txt")
+    try:
+        pruebaFich("noexiste.py")
+    except Exception as e:
+        print(e)
