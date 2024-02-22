@@ -29,7 +29,7 @@ if __name__ == "__main__":
     L = ["abc\,", "def,", "123", "1,", ",", "1234,", "abcd,", "---,"]
     validar(patron, L)
 
-    # Validar un DNIs:
-    patron = ""
-    L = [""]
+    # Validar un DNI:
+    patron = "[0-9]{1,8}[A-Z]$"
+    L = ["12345678AA", "1B", "234G", "B12345678", "123A56G"]
     validar(patron, L)
