@@ -21,6 +21,13 @@ def leerFichero(path):
             f.close()
 
 
+def isFloat(num):
+    if type(num) == str:
+        return num.replace(".", "").isnumeric()
+    else:
+        return 0.0
+
+
 def filtroFichero(path, *paises, sep=";", file=sys.stdout):
     f = None
     try:
@@ -28,6 +35,9 @@ def filtroFichero(path, *paises, sep=";", file=sys.stdout):
         for linea in f:
             linea = linea.rstrip()
             columnas = linea.split(sep)
+            if isFloat(columnas[-2]):
+                columnas[-2] = columnas[-2].replace(".", ",")
+
             if columnas[-1] in paises:
                 print(linea, file=file)
 
@@ -39,17 +49,8 @@ def filtroFichero(path, *paises, sep=";", file=sys.stdout):
             f.close()
 
 
-def isFloat(num):
-    if type(num) == str:
-        return num.replace(".", "").isnumeric()
-    else:
-        return 0.0
-
-
 if __name__ == "__main__":
-    print(isFloat("12.44"))
-    print(isFloat("12"))
-    print(isFloat("12h"))
+
     # leerFichero("../ficheros_curso/Pedidos.txt")
 
     f = open("../csv/pedidos.csv", "w")
