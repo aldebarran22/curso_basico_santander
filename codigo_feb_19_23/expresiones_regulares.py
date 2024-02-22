@@ -58,6 +58,12 @@ if __name__ == "__main__":
     COD_AEE_800959
     S/N_UOO_958474
     """
-    patron = ""
-    L = ["COD_AEE_800959", "S/N_UOO_958474", "S/N_UoO_958474", "S/N_UOO_95847"]
+    patron = "(COD|S/N)_([AEIOU]{3})_([1-9]\d{5})"
+    L = [
+        "COD_AEE_800959",
+        "S/N_UOO_958474",
+        "S/N_UoO_958474",
+        "S/N_UOO_95847",
+        "COD_AEE_010959",
+    ]
     validar(patron, L)
