@@ -27,7 +27,17 @@ def imprimir(L):
 
 
 def deserializarPickle(path):
-    pass
+    f = None
+    try:
+        f = open(path, "rb")
+        obj = p.load(f)
+        return obj
+
+    except Exception as e:
+        print(e)
+    finally:
+        if f:
+            f.close()
 
 
 if __name__ == "__main__":
@@ -35,3 +45,4 @@ if __name__ == "__main__":
     imprimir(L)
     serializarPickle("../ficheros/ser_pickle.bin", L)
     L2 = deserializarPickle("../ficheros/ser_pickle.bin")
+    imprimir(L2)
