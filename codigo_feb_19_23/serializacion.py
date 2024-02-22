@@ -19,5 +19,5 @@ def serializarPickle(path, obj):
 
 if __name__ == '__main__':
     L = [Date(1,5,2045), Time(12), DateTime()]
-    serializarPickle("../ficheros/ser_pickle.bin")
-    
+    serializarPickle("../ficheros/ser_pickle.bin", L)
+
