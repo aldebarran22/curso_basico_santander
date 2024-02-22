@@ -42,7 +42,17 @@ def prueba2():
     if len(fallos) > 0:
         print(fallos)
 
+def prueba3():
+    # Funcionamiento de finally
+    try:
+        print('Va todo bien')
+        return True
+    except Exception as e:
+        print(e)
+    finally:
+        print('Se ejecuta finally')
 
 if __name__ == "__main__":
     # prueba1()
-    prueba2()
+    # prueba2()
+    prueba3()
