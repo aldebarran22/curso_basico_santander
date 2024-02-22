@@ -33,3 +33,15 @@ if __name__ == "__main__":
     patron = "[0-9]{1,8}[A-Z]$"
     L = ["12345678AA", "1B", "234G", "B12345678", "123A56G"]
     validar(patron, L)
+
+    # Objeto match: re.match
+    patron = "[0-9]{1,8}[A-Z]$"
+    cad = "12345678A"
+    obj = re.match(patron, cad)
+    print(obj)
+
+    # Objeto match: re.search
+    patron = "[0-9]{1,8}[A-Z]$"
+    cad = "mi dni  es: 12345678A"
+    obj = re.search(patron, cad)
+    print(obj)
