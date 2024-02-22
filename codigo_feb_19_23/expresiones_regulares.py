@@ -41,7 +41,12 @@ if __name__ == "__main__":
     print(obj)
 
     # Objeto match: re.search
-    patron = "[0-9]{1,8}[A-Z]$"
-    cad = "mi dni  es: 12345678A"
+    patron = "\d{1,8}[A-Z]$"
+    cad = "mi dni es: 12345678A"
     obj = re.search(patron, cad)
     print(obj)
+
+    # Validar una matricula europea: 4 dígitos y 3 consonantes mayúsculas
+    patron = "\d{4}[BCDFGHJKLMNPQRSTVWYZ]{3}$"
+    L = ["1234AGT", "1234rrt", "4455","6778HHJ","1234|||","6778HHJF"]
+    validar(patron, L)
