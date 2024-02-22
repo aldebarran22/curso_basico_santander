@@ -40,9 +40,22 @@ def deserializarPickle(path):
             f.close()
 
 
+def serializarShelve(path, *objetos):
+    Shelf = s.open(path)
+    cont = 1
+    for obj in objetos:
+        clave = f"K-{cont}"
+        Shelf[clave] = obj
+        cont += 1
+    Shelf.close()
+    return len(objetos)
+
+
 if __name__ == "__main__":
     L = [Date(1, 5, 2045), Time(12), DateTime()]
     imprimir(L)
     serializarPickle("../ficheros/ser_pickle.bin", L)
     L2 = deserializarPickle("../ficheros/ser_pickle.bin")
     imprimir(L2)
+    ##################
+    numObjs = serializarShelve("../ficheros/ser_shelve", *L)
