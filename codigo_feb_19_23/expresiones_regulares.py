@@ -48,8 +48,10 @@ if __name__ == "__main__":
 
     # Validar una matricula europea: 4 dígitos y 3 consonantes mayúsculas
     patron = "\d{4}[BCDFGHJKLMNPQRSTVWYZ]{3}$"
+    patron = "\d{4}([A-Z^AEIOU]){3}$"
     L = ["1234AGT", "1234rrt", "4455", "6778HHJ", "1234|||", "6778HHJF"]
     validar(patron, L)
+    exit()
 
     """
     Comprobar la validez del siguiente código:
@@ -74,3 +76,5 @@ if __name__ == "__main__":
     obj = re.match(patron, cad)
     print(obj.groups())
     print("código: ",obj.groups()[2])
+
+
