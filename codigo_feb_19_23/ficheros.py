@@ -16,5 +16,21 @@ def leerFichero(path):
         if f:
             f.close()
 
+def filtroFichero(path, *pais, sep=';'):
+    f = None
+    try:
+        f = open(path, "r")
+        for linea in f:
+            linea = linea.rstrip()
+            print(linea)        
+
+    except Exception as e:
+        print(e)
+
+    finally:
+        if f:
+            f.close()
+
 if __name__ == "__main__":
-    leerFichero("../ficheros_curso/Pedidos.txt")
+    #leerFichero("../ficheros_curso/Pedidos.txt")
+    filtroFichero("../ficheros_curso/Pedidos.txt","Finlandia","Alemania")
