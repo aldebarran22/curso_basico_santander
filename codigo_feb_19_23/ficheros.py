@@ -57,7 +57,7 @@ def filtroFichero(path, *paises, sep=";", file=sys.stdout):
 def columnas():
     L = [('portatil', 550.7), ('PC', 1550.0), ('teclado', 40.79)]
     for producto, importe in L:
-        print("%s\t%f" % (producto, importe))
+        print("%-10s\t%7.2f" % (producto, importe))
 
 if __name__ == "__main__":
 
