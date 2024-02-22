@@ -76,6 +76,6 @@ if __name__ == "__main__":
     # prueba2()
     # prueba3()
     try:
-        pruebaFich("noexiste.py")
+        pruebaFich("decoradores.py")
     except Exception as e:
         print(e)
