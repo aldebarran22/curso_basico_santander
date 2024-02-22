@@ -1,3 +1,7 @@
+from tiempo.fecha import Date
+from tiempo.hora import Time
+from tiempo.fecha_hora import DateTime
+
 if __name__ == "__main__":
     t = Time(1, 5, 7)
     print(t)
