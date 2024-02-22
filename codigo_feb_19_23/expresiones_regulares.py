@@ -58,7 +58,7 @@ if __name__ == "__main__":
     COD_AEE_800959
     S/N_UOO_958474
     """
-    patron = "(COD|S/N)_([AEIOU]{3})_([1-9]\d{5})"
+    patron = "(COD|S/N)_([AEIOU]{3})_([1-9]\d{5})$"
     L = [
         "COD_AEE_800959",
         "S/N_UOO_958474",
@@ -67,3 +67,9 @@ if __name__ == "__main__":
         "COD_AEE_010959",
     ]
     validar(patron, L)
+
+    # Grupos dentro de las expresiones regulares:
+    patron = "(COD|S/N)_([AEIOU]{3})_([1-9]\d{5})$"
+    cad = "COD_AEE_800959"
+    obj = re.match(patron, cad)
+    print(obj.groups())
