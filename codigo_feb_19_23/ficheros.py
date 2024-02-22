@@ -1,13 +1,17 @@
 """
 Operaciones con ficheros en Python
 """
+
+import sys
+
+
 def leerFichero(path):
     f = None
     try:
         f = open(path, "r")
         for linea in f:
             linea = linea.rstrip()
-            print(linea)        
+            print(linea)
 
     except Exception as e:
         print(e)
@@ -16,13 +20,16 @@ def leerFichero(path):
         if f:
             f.close()
 
-def filtroFichero(path, *pais, sep=';'):
+
+def filtroFichero(path, *paises, sep=";", file=sys.stdout):
     f = None
     try:
         f = open(path, "r")
         for linea in f:
             linea = linea.rstrip()
-            print(linea)        
+            columnas = linea.split(sep)
+            if columnas[-1] in paises:
+                print(linea, file=file)
 
     except Exception as e:
         print(e)
@@ -31,6 +38,7 @@ def filtroFichero(path, *pais, sep=';'):
         if f:
             f.close()
 
+
 if __name__ == "__main__":
-    #leerFichero("../ficheros_curso/Pedidos.txt")
-    filtroFichero("../ficheros_curso/Pedidos.txt","Finlandia","Alemania")
+    # leerFichero("../ficheros_curso/Pedidos.txt")
+    filtroFichero("../ficheros_curso/Pedidos.txt", "Finlandia", "Alemania")
