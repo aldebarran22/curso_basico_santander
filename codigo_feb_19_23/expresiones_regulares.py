@@ -15,6 +15,11 @@ def validar(patron, L):
 
 if __name__ == "__main__":
     # Cadenas de 3 caracteres:
-    patron = r"..."
-    L = ["abc", "def", "123", "1", "", "1234", "abcd"]
+    patron = r"...$"
+    L = ["abc", "def", "123", "1", "", "1234", "abcd", "---"]
+    validar(patron, L)
+
+    # Cadenas de 3 caracteres que terminan en .
+    patron = r"...\.$"
+    L = ["abc.", "def.", "123.", "1.", ".", "1234.", "abcd.", "---."]
     validar(patron, L)
