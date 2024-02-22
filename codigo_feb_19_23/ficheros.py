@@ -41,4 +41,8 @@ def filtroFichero(path, *paises, sep=";", file=sys.stdout):
 
 if __name__ == "__main__":
     # leerFichero("../ficheros_curso/Pedidos.txt")
-    filtroFichero("../ficheros_curso/Pedidos.txt", "Finlandia", "Alemania")
+
+    f = open("../csv/pedidos.csv", "w")
+    filtroFichero("../ficheros_curso/Pedidos.txt", \
+                  "Finlandia", "Alemania",file=f)
+    f.close()
