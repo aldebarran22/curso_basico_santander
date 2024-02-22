@@ -48,5 +48,16 @@ if __name__ == "__main__":
 
     # Validar una matricula europea: 4 dígitos y 3 consonantes mayúsculas
     patron = "\d{4}[BCDFGHJKLMNPQRSTVWYZ]{3}$"
-    L = ["1234AGT", "1234rrt", "4455","6778HHJ","1234|||","6778HHJF"]
+    L = ["1234AGT", "1234rrt", "4455", "6778HHJ", "1234|||", "6778HHJF"]
+    validar(patron, L)
+
+    """
+    Comprobar la validez del siguiente código:
+    Palabra COD o S/N, un guión bajo, 3 vocales mayúsculas, 
+    guión bajo y 6 números que no pueden empezar por 0.
+    COD_AEE_800959
+    S/N_UOO_958474
+    """
+    patron = ""
+    L = ["COD_AEE_800959", "S/N_UOO_958474", "S/N_UoO_958474", "S/N_UOO_95847"]
     validar(patron, L)
