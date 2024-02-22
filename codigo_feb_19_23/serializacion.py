@@ -51,6 +51,14 @@ def serializarShelve(path, *objetos):
     return len(objetos)
 
 
+def deserializarShelve(path, numObjetos):
+    Shelf = s.open(path)
+    print("K-2", Shelf["K-2"])
+    print("K-3", Shelf["K-3"])
+    print("K-1", Shelf["K-1"])
+    Shelf.close()
+
+
 if __name__ == "__main__":
     L = [Date(1, 5, 2045), Time(12), DateTime()]
     imprimir(L)
@@ -59,3 +67,4 @@ if __name__ == "__main__":
     imprimir(L2)
     ##################
     numObjs = serializarShelve("../ficheros/ser_shelve", *L)
+    deserializarShelve("../ficheros/ser_shelve", numObjs)
