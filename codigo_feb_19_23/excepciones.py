@@ -42,17 +42,37 @@ def prueba2():
     if len(fallos) > 0:
         print(fallos)
 
+
 def prueba3():
     # Funcionamiento de finally
+    L = []
     try:
-        print('Va todo bien')
+        print("Va todo bien")
+        print(L[2])
         return True
     except Exception as e:
         print(e)
     finally:
-        print('Se ejecuta finally')
+        print("Se ejecuta finally")
+
+
+def pruebaFich(path):
+    f = None
+    try:
+        f = open(path, "r")
+        txt = f.read()
+        print(txt)
+
+    except Exception as e:
+        print(e)
+
+    finally:
+        if f:
+            f.close()
+
 
 if __name__ == "__main__":
     # prueba1()
     # prueba2()
-    prueba3()
+    # prueba3()
+    pruebaFich("no existe.txt")
