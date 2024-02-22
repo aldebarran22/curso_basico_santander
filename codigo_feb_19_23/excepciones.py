@@ -30,9 +30,14 @@ def prueba2():
     for f in listdir():
         try:
             procesarFich(f)
-        except Exception as e:
+            # raise IndexError('error en un index')
+
+        except ValueError as e:
             fallos.append(f)
+
+        except Exception as e:
             print(e.__class__.__name__, e)
+
     print(f"Han fallado {len(fallos)} ficheros")
     if len(fallos) > 0:
         print(fallos)
