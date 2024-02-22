@@ -39,10 +39,19 @@ def filtroFichero(path, *paises, sep=";", file=sys.stdout):
             f.close()
 
 
+def isFloat(num):
+    if type(num) == str:
+        return num.replace(".", "").isnumeric()
+    else:
+        return 0.0
+
+
 if __name__ == "__main__":
+    print(isFloat("12.44"))
+    print(isFloat("12"))
+    print(isFloat("12h"))
     # leerFichero("../ficheros_curso/Pedidos.txt")
 
     f = open("../csv/pedidos.csv", "w")
-    filtroFichero("../ficheros_curso/Pedidos.txt", \
-                  "Finlandia", "Alemania",file=f)
+    filtroFichero("../ficheros_curso/Pedidos.txt", "Finlandia", "Alemania", file=f)
     f.close()
