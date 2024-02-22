@@ -39,7 +39,7 @@ def filtroFichero(path, *paises, sep=";", file=sys.stdout):
                 columnas[-2] = columnas[-2].replace(".", ",")
 
             if columnas[-1] in paises:
-                print(linea, file=file)
+                print(sep.join(columnas), file=file)
 
     except Exception as e:
         print(e)
