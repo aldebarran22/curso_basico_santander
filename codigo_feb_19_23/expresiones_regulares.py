@@ -73,3 +73,4 @@ if __name__ == "__main__":
     cad = "COD_AEE_800959"
     obj = re.match(patron, cad)
     print(obj.groups())
+    print("código: ",obj.groups()[2])
