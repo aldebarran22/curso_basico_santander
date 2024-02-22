@@ -30,16 +30,21 @@ def isFloat(num):
 
 def filtroFichero(path, *paises, sep=";", file=sys.stdout):
     f = None
+    cabs = False
     try:
         f = open(path, "r")
         for linea in f:
             linea = linea.rstrip()
-            columnas = linea.split(sep)
-            if isFloat(columnas[-2]):
-                columnas[-2] = columnas[-2].replace(".", ",")
+            if not cabs:
+                cabs = True
+                print(linea, file=file)
+            else:
+                columnas = linea.split(sep)
+                if isFloat(columnas[-2]):
+                    columnas[-2] = columnas[-2].replace(".", ",")
 
-            if columnas[-1] in paises:
-                print(sep.join(columnas), file=file)
+                if columnas[-1] in paises:
+                    print(sep.join(columnas), file=file)
 
     except Exception as e:
         print(e)
