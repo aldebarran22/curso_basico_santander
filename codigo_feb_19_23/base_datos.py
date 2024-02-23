@@ -17,7 +17,10 @@ def listar(path, tabla):
             cur = con.cursor()
             sql = f"select * from {tabla}"
             cur.execute(sql)
-            print(cur.description)
+            cabs = ";".join([t[0] for t in cur.description])
+            print(cabs)
+            for fila in cur.fetchall():
+                print(fila)
     except Exception as e:
         print(e)
     finally:
