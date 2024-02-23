@@ -20,7 +20,13 @@ class PruebasFicheros(unittest.TestCase):
             leerEscribirFichero("../ficheros_curso/Pedidos.csv", pais)
 
     def test(self):
-        print(self.paises)
+        # Comprobar si hay un fichero por cada pais:
+        L = os.listdir("../ficheros")
+        self.assertEqual(
+            len(self.paises),
+            len(L),
+            msg="No coinciden el número de ficheros con el número de paises",
+        )
 
     def tearDown(self):
         # Eliminar todo los ficheros del contexto: carpeta "ficheros"
