@@ -70,7 +70,6 @@ class EmpleadoCRUD:
                 raise ValueError(f"No existe el empleado: {id}")
 
         except Exception as e:
-            print(e)
             raise e
         finally:
             if cur:
@@ -85,7 +84,6 @@ class EmpleadoCRUD:
             return [Empleado(*t) for t in cur.fetchall()]
 
         except Exception as e:
-            print(e)
             raise e
         finally:
             if cur:
@@ -103,6 +101,9 @@ if __name__ == "__main__":
 
         L = bd.select()
         print(len(L), "empleados")
+
+        emp = bd.read(2)
+        print(emp)
 
     except Exception as e:
         print(e.__class__.__name__, e)
