@@ -162,7 +162,7 @@ if __name__ == "__main__":
 
         emp = bd.read(2)
         print(emp)
-        emp.cargo = "Gerente de Ventas"
+        emp.setCargo("Gerente de Ventas")
         if bd.update(emp):
             print("Se ha actualizado el registro")
 
