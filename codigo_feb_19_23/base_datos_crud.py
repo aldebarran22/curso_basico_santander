@@ -61,7 +61,7 @@ class EmpleadoCRUD:
         cur = None
         try:
             cur = self.con.cursor()
-            sql = "delete from empleado where id = ?"
+            sql = "delete from empleados where id = ?"
             cur.execute(sql, (id,))
             n = cur.rowcount  # Número de registros afectado
             if n == 0:
