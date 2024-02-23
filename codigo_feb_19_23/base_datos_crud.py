@@ -57,6 +57,26 @@ class EmpleadoCRUD:
         else:
             self.con = db.connect(path)
 
+    def delete(self, id):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = ""
+            cur.execute(sql, (id,))
+            n = cur.rowcount  # Número de registros afectado
+            if n == 0:
+                raise ValueError(f"No existe el empleado: {id}")
+            else:
+                self.con.commit()
+                return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def create(self, emp):
         cur = None
         try:
@@ -123,9 +143,17 @@ if __name__ == "__main__":
         emp = bd.read(2)
         print(emp)
 
+        if bd.delete(16):
+            print("Registro eliminado")
+
+        if bd.delete(100):
+            print("Registro eliminado")
+
+        """
         emp2 = Empleado(0, "Robert", "Representante de Ventas")
-        bd.create(emp2)
-        print("Id asignado: ", emp2.getId())
+        if bd.create(emp2):
+            print("Id asignado: ", emp2.getId())
+        """
 
     except Exception as e:
         print(e.__class__.__name__, e)
