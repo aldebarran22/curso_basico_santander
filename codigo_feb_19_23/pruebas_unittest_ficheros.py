@@ -5,6 +5,7 @@ Pruebas con unittest y el módulo de ficheros
 import unittest
 
 from ficheros_paises import leerEscribirFichero
+import os
 
 
 class PruebasFicheros(unittest.TestCase):
@@ -22,7 +23,10 @@ class PruebasFicheros(unittest.TestCase):
         print(self.paises)
 
     def tearDown(self):
-        print("limpiar contexto")
+        # Eliminar todo los ficheros del contexto: carpeta "ficheros"
+        for pais in self.paises:
+            path = f"../ficheros/{pais}.csv"
+            os.remove(path)
 
 
 if __name__ == "__main__":
