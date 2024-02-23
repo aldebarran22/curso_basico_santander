@@ -7,10 +7,10 @@ from threading import Thread, Lock, Semaphore
 from random import randint
 from time import sleep
 
-num_muestras = 10
+num_muestras = 12
 tam_buffer = 5
 
-num_productores = 1
+num_productores = 3
 num_consumidores = 1
 
 
@@ -38,7 +38,7 @@ class Productor(Thread):
             self.buffer.sem_items.release()
 
             # Espera:
-            sleep(randint(1, 4))
+            sleep(randint(2, 4))
 
 
 class Consumidor(Thread):
@@ -66,7 +66,7 @@ class Consumidor(Thread):
             self.buffer.sem_huecos.release()
 
             # Espera:
-            sleep(randint(1, 4))
+            sleep(randint(2, 4))
 
 
 class TBuffer:
