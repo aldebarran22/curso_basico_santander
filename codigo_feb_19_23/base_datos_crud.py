@@ -57,6 +57,26 @@ class EmpleadoCRUD:
         else:
             self.con = db.connect(path)
 
+    def update(self, emp):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "update empleados set nombre=?, cargo=? where id = ?"
+            cur.execute(sql, emp.getTupla2())
+            n = cur.rowcount  # Número de registros afectado
+            if n == 0:
+                raise ValueError(f"No existe el empleado: {id}")
+            else:
+                self.con.commit()
+                return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def delete(self, id):
         cur = None
         try:
@@ -142,14 +162,18 @@ if __name__ == "__main__":
 
         emp = bd.read(2)
         print(emp)
+        emp.cargo = "Gerente de Ventas"
+        if bd.update(emp):
+            print("Se ha actualizado el registro")
 
+        """
         if bd.delete(16):
             print("Registro eliminado")
 
         if bd.delete(100):
             print("Registro eliminado")
 
-        """
+        
         emp2 = Empleado(0, "Robert", "Representante de Ventas")
         if bd.create(emp2):
             print("Id asignado: ", emp2.getId())
