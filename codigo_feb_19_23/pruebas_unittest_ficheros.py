@@ -15,6 +15,9 @@ class PruebasFicheros(unittest.TestCase):
         self.paises = txt.split("\n")
         f.close()
 
+        for pais in self.paises:
+            leerEscribirFichero("../ficheros_curso/Pedidos.csv", pais)
+
     def test(self):
         print(self.paises)
 
