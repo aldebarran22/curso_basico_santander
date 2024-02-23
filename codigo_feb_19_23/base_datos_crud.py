@@ -57,6 +57,21 @@ class EmpleadoCRUD:
         else:
             self.con = db.connect(path)
 
+    def select(self):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "select * from empleados"
+            cur.execute(sql)
+            return [Empleado(*t) for t in cur.fetchall()]
+
+        except Exception as e:
+            print(e)
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
