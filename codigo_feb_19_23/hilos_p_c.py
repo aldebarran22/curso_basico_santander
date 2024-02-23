@@ -21,7 +21,7 @@ class Productor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        for i in self.num_muestras:
+        for i in range(self.num_muestras):
             numero = randint(1, 30)
 
             # Comprobar si hay un hueco libre:
