@@ -47,3 +47,15 @@ class Empleado:
 
     def __repr__(self):
         return str(self)
+    
+class EmpleadoCRUD:
+
+    def __init__(self, path):
+        if not isfile(path):
+            raise FileNotFoundError(f"No existe el fichero: {path}")
+        else:
+            self.con = db.connect(path)
+    
+
+    def __del__(self):
+        self.con.close()
