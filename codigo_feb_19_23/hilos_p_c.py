@@ -10,7 +10,7 @@ from time import sleep
 num_muestras = 10
 tam_buffer = 5
 
-num_productores = 2
+num_productores = 1
 num_consumidores = 1
 
 
@@ -38,17 +38,35 @@ class Productor(Thread):
             self.buffer.sem_items.release()
 
             # Espera:
-            sleep(randint(1,4))
-            
+            sleep(randint(1, 4))
 
 
 class Consumidor(Thread):
-    def __init__(self, buffer):
-        Thread.__init__(self)
+    def __init__(self, buffer, num_muestras, nombre):
+        Thread.__init__(self, name=nombre)
         self.buffer = buffer
+        self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+
+            # Comprobar si hay un item:
+            self.buffer.sem_items.acquire()
+
+            # Modificar el buffer en exclusión mutua
+            with self.buffer.mutex:
+                numero = self.buffer.buffer[self.buffer.ind_c]
+                print(self.getName(), "numero:", numero)
+                # Marca la casilla como vacía
+                self.buffer.buffer[self.buffer.ind_c] = -1
+                print(self.buffer.buffer)
+                self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
+
+            # Avisar que hay un nuevo hueco
+            self.buffer.sem_huecos.release()
+
+            # Espera:
+            sleep(randint(1, 4))
 
 
 class TBuffer:
