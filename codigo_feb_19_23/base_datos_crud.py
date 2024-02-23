@@ -57,6 +57,25 @@ class EmpleadoCRUD:
         else:
             self.con = db.connect(path)
 
+    def read(self, id):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "select * from empleados where id=?"
+            cur.execute(sql, (id,))
+            t = cur.fetchone()
+            if t:
+                return Empleado(*t)
+            else:
+                raise ValueError(f"No existe el empleado: {id}")
+
+        except Exception as e:
+            print(e)
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def select(self):
         cur = None
         try:
@@ -83,7 +102,7 @@ if __name__ == "__main__":
         bd = EmpleadoCRUD(path)
 
         L = bd.select()
-        print(len(L),'empleados')
-        
+        print(len(L), "empleados")
+
     except Exception as e:
         print(e.__class__.__name__, e)
