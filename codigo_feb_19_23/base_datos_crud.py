@@ -81,5 +81,9 @@ if __name__ == "__main__":
     try:
         path = "../bd/empresa3.db"
         bd = EmpleadoCRUD(path)
+
+        L = bd.select()
+        print(len(L),'empleados')
+        
     except Exception as e:
         print(e.__class__.__name__, e)
