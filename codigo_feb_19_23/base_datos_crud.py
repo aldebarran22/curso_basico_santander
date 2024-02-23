@@ -47,7 +47,8 @@ class Empleado:
 
     def __repr__(self):
         return str(self)
-    
+
+
 class EmpleadoCRUD:
 
     def __init__(self, path):
@@ -55,7 +56,15 @@ class EmpleadoCRUD:
             raise FileNotFoundError(f"No existe el fichero: {path}")
         else:
             self.con = db.connect(path)
-    
 
     def __del__(self):
-        self.con.close()
+        if hasattr(self, "con"):
+            self.con.close()
+
+
+if __name__ == "__main__":
+    try:
+        path = "../bd/empresa3.db"
+        bd = EmpleadoCRUD(path)
+    except Exception as e:
+        print(e.__class__.__name__, e)
