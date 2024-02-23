@@ -57,6 +57,24 @@ class EmpleadoCRUD:
         else:
             self.con = db.connect(path)
 
+    def create(self, emp):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "insert into empleados(nombre,cargo) values(?,?)"
+            cur.execute(sql, emp.getTupla())
+            n = cur.rowcount  # Número de registros afectado
+            emp.setId(cur.lastrowid)  # Obtener y colocar el id asignado
+            self.con.commit()
+            return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def read(self, id):
         cur = None
         try:
@@ -104,6 +122,10 @@ if __name__ == "__main__":
 
         emp = bd.read(2)
         print(emp)
+
+        emp2 = Empleado(0, "Robert", "Representante de Ventas")
+        bd.create(emp2)
+        print("Id asignado: ", emp2.getId())
 
     except Exception as e:
         print(e.__class__.__name__, e)
