@@ -34,4 +34,4 @@ for emp in empleados:
         print(emp)
 
 # Error si obtenemos el teléfono del primer empleado (no existe):
-# print('tno del 0: ', empleados[0]['telefono']) ERROR: KeyError
+# print('tno del 0: ', empleados[0]['telefono']) # ERROR: KeyError
