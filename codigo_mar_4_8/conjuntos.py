@@ -21,8 +21,10 @@ print(c2, type(c2))
 L2 = list(set(L))
 print(L2)
 
-comida = {"Sonia","Alberto","Ana", "Marta","Andrés"}
-cena = {"Ana","Raúl","Alberto", "Miguel", "Sara"}
-
-
-
+comida = {"Sonia", "Alberto", "Ana", "Marta", "Andrés"}
+cena = {"Ana", "Raúl", "Alberto", "Miguel", "Sara"}
+print("a comer y cenar: ", comida & cena)
+print("Quien va solo a comer:", comida - cena)
+print("Quien va solo a cenar:", cena - comida)
+print("Quienes van solo a un evento: ", comida ^ cena)
+print("Quienes han participado en los eventos: ", comida | cena)
