@@ -15,3 +15,13 @@ txt = """id;nombre;cargo
 L = txt.split("\n")
 print('Cabeceras: ', L[0])
 print('Segundo empleado: ', L[2])
+cabs = L[0].split(';')
+empleados = list()
+for fila in L[1:]:
+    Lfila = fila.split(';')
+    d = dict(zip(cabs, Lfila))
+    empleados += [d]
+print(empleados)
+
+
+
