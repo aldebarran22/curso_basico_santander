@@ -25,3 +25,14 @@ print(L2)
 
 print([1,2,3]+[4,5,6])
 print([1,2,3]*10)
+
+print('L2',L2)
+numero = 5
+if numero in L2:
+    print('existe')
+else:
+    print('no existe')
+
+# Crear una lista vacia:
+L = []  # L = list()
+print(L)
