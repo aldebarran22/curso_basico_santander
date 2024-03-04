@@ -16,3 +16,8 @@ print(d2)
 d3 = dict(zip(cad, L))
 print(d3)
 
+# in, for
+d = {'a':1, 'b':2, 'c':3, 'd':4}
+print('Existe la clave: c: ', 'c' in d)
+print('Existe el valor: 2: ', 2 in d.values())
+
