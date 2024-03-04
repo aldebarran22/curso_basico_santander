@@ -5,7 +5,7 @@ se encuentra dentro de un intervalo.
 
 ini = 10
 fin = 20
-numero = 25
+numero = 15
 if numero >= ini and numero <= fin:
     print("cumple el intervalo")
 else:
@@ -15,3 +15,8 @@ if ini <= numero <= fin:
     print("cumple el intervalo")
 else:
     print("NO cumple el intervalo")
+
+if numero < ini or numero > fin:
+    print("NO cumple el intervalo")
+else:
+    print("cumple el intervalo")
