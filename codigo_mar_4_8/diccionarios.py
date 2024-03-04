@@ -35,3 +35,6 @@ Lvalores = valores.split(";")
 empleado = dict(zip(Lcabs, Lvalores))
 print(empleado)
 print('el nombre: ', empleado['nombre'])
+empleado['telefono'] = 913452233 # Crea una nueva clave
+empleado['id'] = 102             # modifica una clave existente
+print(empleado)
