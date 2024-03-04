@@ -52,30 +52,29 @@ for pos, i in enumerate(R):
 
 
 # Funciones sobre listas
-L = [1,5,6,7,6]
-print('suma:', sum(L))
-print('recuento:', len(L))
-print('min:', min(L))
-print('max:', max(L))
-print('media:', sum(L)/len(L))
+L = [1, 5, 6, 7, 6]
+print("suma:", sum(L))
+print("recuento:", len(L))
+print("min:", min(L))
+print("max:", max(L))
+print("media:", sum(L) / len(L))
 
 # slicing: Válido para str, tuple y list
 # L[ini:fin-1:salto=1]
-L = [1,2,3,4,5,6,7,8,9]
-print('los 3 primeros: ', L[0:3], L[:3])
-print('los 3 últimos: ', L[-3:])
-print('Toda la lista: ', L[:])
-print('Toda la lista: ', L)
-print('Toda la lista de dos en dos: ', L[::2])
-print('quitar el primero y el último: ', L[1:-1])
-print('lista invertida: ', L[::-1])
+L = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print("los 3 primeros: ", L[0:3], L[:3])
+print("los 3 últimos: ", L[-3:])
+print("Toda la lista: ", L[:])
+print("Toda la lista: ", L)
+print("Toda la lista de dos en dos: ", L[::2])
+print("quitar el primero y el último: ", L[1:-1])
+print("lista invertida: ", L[::-1])
 
 numero = 1235221
 s = str(numero)
-print('Es capicua: ', s==s[::-1])
+print("Es capicua: ", s == s[::-1])
 
 path = "C:/mis documentos/excel/libro1.xlsx"
 L = path.split("/")
 print(L)
-print('fichero: ', L[-1])
-
+print("fichero: ", L[-1])
