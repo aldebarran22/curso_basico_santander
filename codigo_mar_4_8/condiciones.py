@@ -25,3 +25,15 @@ if not (numero >= ini and numero <= fin):
     print("NO cumple el intervalo")
 else:
     print("cumple el intervalo")
+
+
+# condiciones: 0 es False, "" cadena vacía es False, None es False
+n = 0
+if n:
+    # es distinto de cero?
+    print(n)
+else:
+    print("es cero")
+
+# Operador compacto: A if cond else B
+print(n if n else "es cero")
