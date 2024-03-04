@@ -1,3 +1,7 @@
+"""
+Primer ejemplo en Python
+"""
+
 print("ok 2")
 print("segunda linea")
 
