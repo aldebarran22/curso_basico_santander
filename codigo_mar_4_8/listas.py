@@ -47,4 +47,15 @@ for i in L1:
         R += [i]
 print(R)
 
+for pos, i in enumerate(R):
+    print(pos, i)
+
+
+# Funciones sobre listas
+L = [1,5,6,7,6]
+print('suma:', sum(L))
+print('recuento:', len(L))
+print('min:', min(L))
+print('max:', max(L))
+print('media:', sum(L)/len(L))
 
