@@ -23,5 +23,13 @@ for fila in L[1:]:
     empleados += [d]
 print(empleados)
 
+# Añadir el teléfono al tercer empleado:
+empleados[2]['telefono'] = 912345566
+empleados[5]['telefono'] = 912350091
+
+# Imprimir los empleados que tienen teléfono:
+for emp in empleados:
+    if 'telefono' in emp:
+        print(emp)
 
 
