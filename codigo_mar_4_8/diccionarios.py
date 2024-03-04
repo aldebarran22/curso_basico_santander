@@ -25,5 +25,13 @@ print("Existe el valor: 2: ", 2 in d.values())
 print("keys:", d.keys())
 print("values: ", d.values())
 print("items: ", d.items())
-for k,v in d.items():
-    print(k,v)
+for k, v in d.items():
+    print(k, v)
+
+cabs = "id;nombre;cargo"
+valores = "1;Davolio;Representante de ventas"
+Lcabs = cabs.split(";")
+Lvalores = valores.split(";")
+empleado = dict(zip(Lcabs, Lvalores))
+print(empleado)
+print('el nombre: ', empleado['nombre'])
