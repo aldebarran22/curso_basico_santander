@@ -17,3 +17,11 @@ print(L2)
 L2[0] = 400
 print(L2)
 print('EL último de la lista:', L2[4], L2[-1])
+print('El primero de la lista: ', L2[0], L2[-5])
+
+# Añadir elementos a la lista:
+L2 += [120] # L2 = L2 + [120]
+print(L2)
+
+print([1,2,3]+[4,5,6])
+print([1,2,3]*10)
