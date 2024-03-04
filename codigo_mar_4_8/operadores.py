@@ -24,7 +24,7 @@ print(
 # Traducir la fórmula de la Ec. de 2º grado:
 # ax^2 + bx + c = 0
 
-a, b, c = 1, 2, 3  # 1,5,4
+a, b, c = 1, 5, 4  # 1,5,4
 raiz = b**2 - 4 * a * c
 if raiz > 0:
     x1 = (-b + math.sqrt(raiz)) / (2 * a)
