@@ -18,3 +18,8 @@ if "hola" in cad:
     print("si está")
 else:
     print("no está")
+
+# Recorrer una cadena con un for
+for i in cad:
+    print(i, end=" ")
+print()
