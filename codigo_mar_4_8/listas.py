@@ -67,4 +67,15 @@ print('los 3 últimos: ', L[-3:])
 print('Toda la lista: ', L[:])
 print('Toda la lista: ', L)
 print('Toda la lista de dos en dos: ', L[::2])
-print('quitar el primero y el último: ')
+print('quitar el primero y el último: ', L[1:-1])
+print('lista invertida: ', L[::-1])
+
+numero = 1235221
+s = str(numero)
+print('Es capicua: ', s==s[::-1])
+
+path = "C:/mis documentos/excel/libro1.xlsx"
+L = path.split("/")
+print(L)
+print('fichero: ', L[-1])
+
