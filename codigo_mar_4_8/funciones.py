@@ -9,9 +9,14 @@ def sumar(a, b):
     return a + b
 
 
+def calcularIVA(importe, tasa=2, iva=21):
+    return round((importe + tasa) * iva / 100, 2)
+
+
 # Formas de llamar a la función
 # 1) forma posicional:
 print(sumar(12, 34))
 
 # 2) forma nominal:
 print(sumar(b=34, a=12))
+print(calcularIVA(100, iva=10))
