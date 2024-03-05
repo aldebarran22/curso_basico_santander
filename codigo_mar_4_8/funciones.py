@@ -38,3 +38,7 @@ for t in L:
 d = {"lat":40.4, "lon": -3.68}
 coordenadas(d['lat'], d['lon'])
 coordenadas(**d)
+
+# 5) Con una lista:
+lista = [40.4, -3.68]
+coordenadas(*lista)
