@@ -24,7 +24,7 @@ while True:
         break
 print("Importe: ", numero)
 
-# continue
+# continue: imprimir del 1 al 10, pero no mostrar del 5 al 7
 i = 1
 while i < 10:
     if i == 5:
