@@ -26,9 +26,19 @@ print("Importe: ", numero)
 
 # continue: imprimir del 1 al 10, pero no mostrar del 5 al 7
 i = 1
-while i < 10:
-    if i == 5:
+while i <= 10:
+
+    if i == 5:        
+        i += 1
         continue
 
-    print(i)
     i += 1
+    print(i)
+   
+i = 0
+while i <= 10:
+    i += 1
+    if i == 5:                
+        continue
+  
+    print(i)
