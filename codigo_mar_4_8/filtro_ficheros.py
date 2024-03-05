@@ -4,5 +4,7 @@ solo los ficheros de una determinada extensión.
 """
 import os
 
-L = os.listdir()
-print(L)
+L = os.listdir('../ficheros_curso')
+for fich in L:
+    t = fich.partition('.')
+    print(t)
