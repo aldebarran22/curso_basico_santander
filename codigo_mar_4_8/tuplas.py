@@ -47,5 +47,8 @@ print("a", a, "b", b)
 t = (0, 3, 1, 3, 4, 5, 6, 1, 5, 6, 1)
 numero = 1
 n = t.count(numero)
+ini = 0
 for i in range(n):
-    print(t.index(numero))
+    pos = t.index(numero, ini)
+    print(pos)
+    ini = pos + 1
