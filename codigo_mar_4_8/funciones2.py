@@ -18,3 +18,10 @@ if __name__ == "__main__":
     filtroFicheros(".", "py")
     filtroFicheros(".", "py", "pdf")
     filtroFicheros(".", "py", "docx", "xslx")
+
+    f = filtroFicheros  # Almacena una referencia a una función
+    print(type(f))
+    f(".", "txt")
+
+    L = [1, 2, 3]
+    # L(1) # Error confundimos [] con (), se cree que es una función
