@@ -8,6 +8,7 @@ Tuplas en Python
 - llamada a funciones ...
 - operadores: +, *, in
 - Slicing, indices + / -
+- métodos: count, index
 """
 
 t = (1, 2, 3, 4)
@@ -38,5 +39,13 @@ for lat, lon in L:
 # Intercambiar dos variables:
 a = 10
 b = 20
-a,b = b,a
-print('a',a, 'b',b)
+a, b = b, a
+print("a", a, "b", b)
+
+# Obtener las posiciones que ocupa un número dentro de una tupla:
+# count e  index
+t = (0, 3, 1, 3, 4, 5, 6, 1, 5, 6, 1)
+numero = 1
+n = t.count(numero)
+for i in range(n):
+    print(t.index(numero))
