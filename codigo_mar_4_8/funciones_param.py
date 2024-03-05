@@ -14,3 +14,4 @@ def funcion(ob, op=0, *args, **kwargs):
     print()
 
 funcion(100)
+funcion(1,2,3,4)
