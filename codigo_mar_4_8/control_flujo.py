@@ -17,10 +17,18 @@ while True:
 
 # Validar una cantidad múltiplo de 10, sin límite de repetición
 while True:
-    numero = int(input('Teclear importe: '))
+    numero = int(input("Teclear importe: "))
     if numero % 10 != 0:
-        print('Importe no válido')
+        print("Importe no válido")
     else:
         break
+print("Importe: ", numero)
 
+# continue
+i = 1
+while i < 10:
+    if i == 5:
+        continue
 
+    print(i)
+    i += 1
