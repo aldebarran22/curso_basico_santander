@@ -37,3 +37,11 @@ L2 = L1  # Crea una referencia a los mismos datos
 L1[0] = 1000
 print("L1", L1, id(L1))
 print("L2", L2, id(L2))
+print("-" * 20)
+
+L1 = [1, 2, 3, 4, 5]
+L2 = L1.copy()  # Copia: funciona bien si los elementos son inmutables
+L1[0] = 1000
+print("L1", L1, id(L1))
+print("L2", L2, id(L2))
+print("-" * 20)
