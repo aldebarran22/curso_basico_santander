@@ -31,5 +31,5 @@ print(calcularIVA(100, iva=21))
 
 # 3) Con una tupla: 
 L = [(40.4, -3.68), (34, -77), (45.6, -12), (-45, 77)]
-for lat, lon in L:
-    coordenadas(lat, lon)
+for t in L:
+    coordenadas(*t)
