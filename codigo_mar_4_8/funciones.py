@@ -16,7 +16,8 @@ def calcularIVA(importe, tasa=2, iva=21):
 # Formas de llamar a la función
 # 1) forma posicional:
 print(sumar(12, 34))
+print(calcularIVA(100, 5, 10))
 
 # 2) forma nominal:
 print(sumar(b=34, a=12))
-print(calcularIVA(100, iva=10))
+print(calcularIVA(100, iva=21))
