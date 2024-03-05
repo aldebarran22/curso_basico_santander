@@ -6,5 +6,6 @@ import os
 
 L = os.listdir('../ficheros_curso')
 for fich in L:
-    t = fich.partition('.')
-    print(t)
+    ext = fich.partition('.')[2]
+    if ext == 'csv':
+        print(fich)
