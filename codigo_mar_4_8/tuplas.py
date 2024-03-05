@@ -34,3 +34,9 @@ for lat, lon in L:
     dirLat = "N" if lat > 0 else "S"
     dirLon = "E" if lon > 0 else "W"
     print(f"{abs(lat)}{dirLat}, {abs(lon)}{dirLon}")
+
+# Intercambiar dos variables:
+a = 10
+b = 20
+a,b = b,a
+print('a',a, 'b',b)
