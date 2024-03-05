@@ -33,3 +33,8 @@ print(calcularIVA(100, iva=21))
 L = [(40.4, -3.68), (34, -77), (45.6, -12), (-45, 77)]
 for t in L:
     coordenadas(*t)
+
+# 4) Con un diccionario:
+d = {"lat":40.4, "lon": -3.68}
+coordenadas(d['lat'], d['lon'])
+coordenadas(**d)
