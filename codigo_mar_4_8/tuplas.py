@@ -20,4 +20,12 @@ t3 = tuple('hola que tal')
 print(t3)
 print('los 3 últimos: ', t3[-3:])
 print('a' in t3)
+print(t3 + t)
+print((1,2)*3)
+
+L = [(40.4, -3.68), (34, -77), (45.6, -12)]
+print(L[0][0])
+print('len:',len(L))
+for t in L:
+    print(t)
 
