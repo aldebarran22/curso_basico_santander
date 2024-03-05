@@ -7,6 +7,11 @@ def porCopia(cadena, numero, tupla):
     numero *= 2
     tupla += (9,9,9)
 
+def porRef(lista, dicc, conjunto):
+    lista.append(1000)
+    dicc['ZZ'] = 1000
+    conjunto.add(1000)
+
 if __name__ == "__main__":
     num = 10
     cad = "hola"
@@ -14,3 +19,9 @@ if __name__ == "__main__":
 
     porCopia(cad, num, t)
     print(cad, num, t)
+
+    L = [1,2,3]
+    d = {"a":1, "b":2, "c":3}
+    c = {1,2,3}
+    porRef(L, d, c)
+    print(L, d, c)
