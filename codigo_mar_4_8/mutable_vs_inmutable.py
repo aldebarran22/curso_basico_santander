@@ -48,7 +48,18 @@ print("-" * 20)
 
 # Copiar una lista de listas
 L1 = [[1, 2], [3, 4, 5]]
+print(L1[0])
 L2 = L1.copy()  # OJO, se comparten los elementos:
+L1[0] = 1000
+L1[-1].append(999)
+print("L1", L1, id(L1))
+print("L2", L2, id(L2))
+print("-" * 20)
+
+# Copia profunda:
+import copy
+L1 = [[1, 2], [3, 4, 5]]
+L2 = copy.deepcopy(L1)  # Genera una copia independiente
 L1[0] = 1000
 L1[-1].append(999)
 print("L1", L1, id(L1))
