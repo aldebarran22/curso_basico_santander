@@ -31,5 +31,7 @@ for t in L:
 
 # Desempaquetar/expandir tuplas
 for lat, lon in L:
-    print(lat)
+    dirLat = 'N' if lat > 0 else 'S'
+    dirLon = 'E' if lon > 0 else 'W'
+    print(f"{lat}{dirLat}, {lon}{dirLon}")
 
