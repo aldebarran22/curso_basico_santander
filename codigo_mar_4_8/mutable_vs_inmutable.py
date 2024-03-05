@@ -31,3 +31,9 @@ L[0] = 1000
 # modificar el objeto: inmutable error!
 # cad[0] = 'X'
 
+# Copiar objetos mutables: list, dict y set
+L1 = [1, 2, 3, 4, 5]
+L2 = L1  # Crea una referencia a los mismos datos
+L1[0] = 1000
+print("L1", L1, id(L1))
+print("L2", L2, id(L2))
