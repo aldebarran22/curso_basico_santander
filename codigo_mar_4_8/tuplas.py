@@ -23,9 +23,13 @@ print('a' in t3)
 print(t3 + t)
 print((1,2)*3)
 
-L = [(40.4, -3.68), (34, -77), (45.6, -12)]
+L = [(40.4, -3.68), (34, -77), (45.6, -12), (-45, 77)]
 print(L[0][0])
 print('len:',len(L))
 for t in L:
     print(t)
+
+# Desempaquetar/expandir tuplas
+for lat, lon in L:
+    print(lat)
 
