@@ -5,7 +5,7 @@ Tipos de parámetros en una función:
 - en una tupla
 - en un diccionario
 """
-
+import matplotlib.pyplot as plt
 
 def funcion(ob, op=0, *args, **kwargs):
     print("ob: ", ob)
@@ -13,6 +13,9 @@ def funcion(ob, op=0, *args, **kwargs):
     print("*args: ", args)
     print("**kwargs: ", kwargs)
     print()
+
+plt.plot([1,2,3],[1,2,3], color="red", lw=3.5, ls='-.')
+plt.show()
 
 
 funcion(100)
