@@ -1,5 +1,5 @@
 """
-range, bucle while, break y continue
+range, bucle while, break y continue, exit()
 """
 
 # range(ini, fin-1, salto=1)
@@ -14,3 +14,13 @@ print(tuple(range(0, 101, 5)))  # del 0 al 100 de 5 en 5
 while True:
     pass
 """
+
+# Validar una cantidad múltiplo de 10, sin límite de repetición
+while True:
+    numero = int(input('Teclear importe: '))
+    if numero % 10 != 0:
+        print('Importe no válido')
+    else:
+        break
+
+
