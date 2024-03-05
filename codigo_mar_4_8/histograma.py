@@ -9,5 +9,7 @@ letras = set(L)
 histo = dict()
 for letra in letras:
     histo[letra] = L.count(letra)
-print(histo)
+
+for letra, cuenta in histo.items():
+    print(letra, cuenta)
 
