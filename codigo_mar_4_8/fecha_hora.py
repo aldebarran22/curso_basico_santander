@@ -7,13 +7,8 @@ class Time:
         self.mm = mm
         self.ss = ss
 
-   
-   
     def __str__(self):        
         return '%02d:%02d:%02d' % (self.hh,self.mm,self.ss)
-
-
-   
 
 class Date:
 
@@ -31,6 +26,13 @@ class Date:
             return True    
         else:
             return False
+        
+if __name__=='__main__':
+    t1 = Time(7,53,3)
+    print(t1)
+
+    dt = DateTime(6,3,2024,13,58,12) 
+    print(dt) # 06/03/2024 13:58:12
 
  
 
