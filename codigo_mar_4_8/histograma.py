@@ -10,6 +10,9 @@ histo = dict()
 for letra in letras:
     histo[letra] = L.count(letra)
 
-for letra, cuenta in histo.items():
+R = sorted(histo.items(), key=lambda t: t[1], reverse=True)
+# Lord = sorted(histo.items(), key=)
+
+for letra, cuenta in R:
     print(letra, cuenta)
 
