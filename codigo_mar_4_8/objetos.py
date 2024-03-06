@@ -48,7 +48,7 @@ class Candidato:
     def __repr__(self):
         return str(self)
 
-    def __eq__(self, other):       
+    def __eq__(self, other):
         if other == None:
             return False
         elif self.__class__ != other.__class__:
@@ -76,14 +76,15 @@ class Candidato:
                     return False
         else:
             return False
-        
+
     def __del__(self):
-        print('Eliminando a: ', self.nombre)
+        print("Eliminando a: ", self.nombre)
 
 
 if __name__ == "__main__":
     c1 = Candidato("Juan", 10, 5, True)
     c2 = Candidato("Pedro", 12, 5, False)
+    # del(c1) # Fuerza la llamada al Destructor: __del__
     print(c1)
     c1.actualizarExp()
     print(c1)
