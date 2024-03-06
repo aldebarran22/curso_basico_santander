@@ -57,3 +57,8 @@ if __name__ == "__main__":
     # print(c1.__str__())
     L = [c1, c2]
     print(L)
+
+    lista = generarDatos()
+    L = [Candidato(**d) for d in lista]
+    L.sort(key=lambda x: x.años, reverse=True)
+    print(L)
