@@ -98,5 +98,5 @@ if __name__ == "__main__":
     print(t4)
 
     usr = User("admin","13333")
-    usr.directorio = "tmp"
+    usr.nombre = "main"
 
