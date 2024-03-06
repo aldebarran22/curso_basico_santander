@@ -121,7 +121,9 @@ def testCandidato():
 def testCandidatoExtranjero():
     c1 = CandidatoExtranjero("Juan", 10, 5, True, ["inglés", "francés"])
     c2 = CandidatoExtranjero("Pedro", 12, 5, False, ["alemán", "inglés"])
-
+    c1.actualizarExp()
+    c1.actualizarExp()
+    
     if c1 < c2:
         print(c1.nombre, "es menor que", c2.nombre)
     else:
