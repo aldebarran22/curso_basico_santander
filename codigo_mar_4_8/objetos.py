@@ -81,7 +81,19 @@ class Candidato:
         print("Eliminando a: ", self.nombre)
 
 
-if __name__ == "__main__":
+class CandidatoExtranjero(Candidato):
+
+    def __init__(self, nombre="", años=0, numempresas=0, superior=False, idiomas=[]):
+        # Llamar al constructor de la clase Padre:
+        Candidato.__init__(self, nombre, años, numempresas, superior)
+        # Att. de la clase CandidatoExtranjero
+        self.idiomas = idiomas
+
+    def __str__(self):
+        return Candidato.__str__(self) + " " + ",".join(self.idiomas)
+
+
+def testCandidato():
     c1 = Candidato("Juan", 10, 5, True)
     c2 = Candidato("Pedro", 12, 5, False)
     # del(c1) # Fuerza la llamada al Destructor: __del__
@@ -104,3 +116,12 @@ if __name__ == "__main__":
         print("son iguales")
     else:
         print("son distintos")
+
+
+def testCandidatoExtranjero():
+    pass
+
+
+if __name__ == "__main__":
+    # testCandidato()
+    testCandidatoExtranjero()
