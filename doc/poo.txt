@@ -9,8 +9,9 @@ acciones (métodos) -> funciones:
    dormir()
    reir()
    saltar()
+   hablar()
 
-objeto1	 
+una Persona -> objeto (instancia)
    peso: 69
    altura: 1.67
    color de pelo: moreno
