@@ -119,7 +119,16 @@ def testCandidato():
 
 
 def testCandidatoExtranjero():
-    pass
+    c1 = CandidatoExtranjero("Juan", 10, 5, True, ["inglés", "francés"])
+    c2 = CandidatoExtranjero("Pedro", 12, 5, False, ["alemán", "inglés"])
+
+    if c1 < c2:
+        print(c1.nombre, "es menor que", c2.nombre)
+    else:
+        print(c2.nombre, "es menor que", c1.nombre)
+
+    print(c1)
+    print(c2)
 
 
 if __name__ == "__main__":
