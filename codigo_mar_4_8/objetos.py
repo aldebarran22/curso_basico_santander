@@ -29,6 +29,17 @@ class Candidato:
         self.numempresas = numempresas
         self.superior = superior
 
+    def __str__(self):
+        return (
+            self.nombre
+            + " "
+            + str(self.años)
+            + " "
+            + str(self.numempresas)
+            + " "
+            + str(self.superior)
+        )
+
 
 if __name__ == "__main__":
     c1 = Candidato("Juan", 10, 5, True)
