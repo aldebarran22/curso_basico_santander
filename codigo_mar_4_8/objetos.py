@@ -42,12 +42,18 @@ class Candidato:
             + " "
             + str(self.superior)
         )
+    
+    def __repr__(self):
+        return str(self)        
 
 
 if __name__ == "__main__":
     c1 = Candidato("Juan", 10, 5, True)
+    c2 = Candidato("Pedro", 12, 5, False)
     print(c1)
     c1.actualizarExp()
     print(c1)
     # print(str(c1))
     # print(c1.__str__())
+    L = [c1, c2]
+    print(L)
