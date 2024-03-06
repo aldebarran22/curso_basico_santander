@@ -79,7 +79,7 @@ if __name__ == "__main__":
 
     lista = generarDatos()
     L = [Candidato(**d) for d in lista]
-    L.sort()
-    L.sort(key=lambda x: x.años, reverse=True)
+    L.sort(reverse=True)
+    # L.sort(key=lambda x: x.años, reverse=True)
     for c in L:
         print(c)
