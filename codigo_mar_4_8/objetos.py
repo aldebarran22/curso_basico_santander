@@ -48,6 +48,14 @@ class Candidato:
     def __repr__(self):
         return str(self)
 
+    def __eq__(self, other):
+        return (
+            self.nombre == other.nombre
+            and self.años == other.años
+            and self.numempresas == other.numempresas
+            and self.superior == other.superior
+        )
+
     def __lt__(self, other):
         if self.años < other.años:
             return True
@@ -83,3 +91,8 @@ if __name__ == "__main__":
     # L.sort(key=lambda x: x.años, reverse=True)
     for c in L:
         print(c)
+
+    if L[0] == L[1]:  # if L[0].__eq__(L[1])
+        print("son iguales")
+    else:
+        print("son distintos")
