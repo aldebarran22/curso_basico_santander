@@ -17,3 +17,19 @@ def generarDatos():
         for letra in ascii_uppercase
     ]
     return candidatos
+
+
+class Candidato:
+    """Implementación de la clase Candidato"""
+
+    def __init__(self, nombre="", años=0, numempresas=0, superior=False):
+        # Definir atributos:
+        self.nombre = nombre
+        self.años = años
+        self.numempresas = numempresas
+        self.superior = superior
+
+
+if __name__ == "__main__":
+    c1 = Candidato("Juan", 10, 5, True)
+    print(c1)
