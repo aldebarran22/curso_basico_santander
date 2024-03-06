@@ -63,3 +63,12 @@ if __name__ == "__main__":
 
     dt = DateTime(6, 3, 2024, 13, 58, 12)
     print(dt)  # 06/03/2024 13:58:12
+
+    # Crear un objeto a partir de otro:
+    t3 = t1.__class__(12)
+    print(t3)
+
+    cad = "{}({},{},{})".format("Time",3,45,9)
+    print(cad)
+    t4 = eval(cad)
+    print(t4)
