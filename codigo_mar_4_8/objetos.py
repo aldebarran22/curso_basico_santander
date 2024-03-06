@@ -1,5 +1,7 @@
 """
-POO en Python
+POO en Python. Características:
+- Soporta la sobrecarga de operadores: relacionales, aritméticos ...
+- 
 """
 
 from random import randint
@@ -42,9 +44,26 @@ class Candidato:
             + " "
             + str(self.superior)
         )
-    
+
     def __repr__(self):
-        return str(self)        
+        return str(self)
+
+    def __lt__(self, other):
+        if self.años < other.años:
+            return True
+
+        elif self.años == other.años:
+            if self.numempresas < other.numempresas:
+                return True
+            elif other.numempresas < self.numempresas:
+                return False
+            else:  # mismo numero de empresas
+                if not self.superior:
+                    return True
+                else:
+                    return False
+        else:
+            return False
 
 
 if __name__ == "__main__":
@@ -60,5 +79,7 @@ if __name__ == "__main__":
 
     lista = generarDatos()
     L = [Candidato(**d) for d in lista]
+    L.sort()
     L.sort(key=lambda x: x.años, reverse=True)
-    print(L)
+    for c in L:
+        print(c)
