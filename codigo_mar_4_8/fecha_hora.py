@@ -1,3 +1,18 @@
+
+
+class User:
+
+    __slots__ = ('nombre','password')
+
+    def __init__(self,nombre="",password=None):
+        self.nombre = nombre
+        self.password = password
+
+class User2:
+
+    def __init__(self,*args):
+        self.__slots__ = args
+
 class Time:
 
     def __init__(self, hh=0, mm=0, ss=0):
@@ -19,7 +34,9 @@ class Time:
         self.h = (self.h + horas) % 24
 
     def __str__(self):
-        return "%02d:%02d:%02d" % (self.h, self.m, self.s)
+        return "\n".join([k+" "+str(v) for k,v in self.__dict__.items()])
+            
+        #return "%02d:%02d:%02d" % (self.h, self.m, self.s)
 
 
 class Date:
@@ -77,3 +94,9 @@ if __name__ == "__main__":
     t4.__dict__["microsg"] = 4578
     print(t4.__dict__)
     print(t4.microsg)
+    print()
+    print(t4)
+
+    usr = User("admin","13333")
+    usr.directorio = "tmp"
+
