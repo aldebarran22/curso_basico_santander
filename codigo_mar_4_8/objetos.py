@@ -29,6 +29,9 @@ class Candidato:
         self.numempresas = numempresas
         self.superior = superior
 
+    def actualizarExp(self):
+        self.años += 1
+
     def __str__(self):
         return (
             self.nombre
@@ -44,3 +47,7 @@ class Candidato:
 if __name__ == "__main__":
     c1 = Candidato("Juan", 10, 5, True)
     print(c1)
+    c1.actualizarExp()
+    print(c1)
+    # print(str(c1))
+    # print(c1.__str__())
