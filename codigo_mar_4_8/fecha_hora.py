@@ -6,18 +6,17 @@ class Time:
         self.s = ss
 
     def __add__(self, other):
-        resul = Time(self.h+other.h, self.m+other.m, self.s+other.s)
+        resul = Time(self.h + other.h, self.m + other.m, self.s + other.s)
         resul.ajustar()
         return resul
-    
+
     def ajustar(self):
         minutos = self.s // 60
         self.s %= 60
         self.m += minutos
         horas = self.m // 60
         self.m %= 60
-        self.h = (self.h+horas) % 24
-
+        self.h = (self.h + horas) % 24
 
     def __str__(self):
         return "%02d:%02d:%02d" % (self.h, self.m, self.s)
@@ -58,8 +57,8 @@ if __name__ == "__main__":
     t2 = Time(17, 12, 37)
     print(t2)
 
-    suma = t1 + t2 # suma = t1.__add__(t2)
-    print('suma: ', suma)
+    suma = t1 + t2  # suma = t1.__add__(t2)
+    print("suma: ", suma)
 
     dt = DateTime(6, 3, 2024, 13, 58, 12)
     print(dt)  # 06/03/2024 13:58:12
@@ -68,7 +67,13 @@ if __name__ == "__main__":
     t3 = t1.__class__(12)
     print(t3)
 
-    cad = "{}({},{},{})".format("Time",3,45,9)
+    cad = "{}({},{},{})".format("Time", 3, 45, 9)
     print(cad)
     t4 = eval(cad)
     print(t4)
+
+    print(t4.__dict__)
+    t4.mlsg = 345
+    t4.__dict__["microsg"] = 4578
+    print(t4.__dict__)
+    print(t4.microsg)
