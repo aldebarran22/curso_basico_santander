@@ -76,6 +76,9 @@ class Candidato:
                     return False
         else:
             return False
+        
+    def __del__(self):
+        print('Eliminando a: ', self.nombre)
 
 
 if __name__ == "__main__":
