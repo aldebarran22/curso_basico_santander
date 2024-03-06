@@ -7,8 +7,17 @@ class Time:
 
     def __add__(self, other):
         resul = Time(self.h+other.h, self.m+other.m, self.s+other.s)
-        #resul.ajustar()
+        resul.ajustar()
         return resul
+    
+    def ajustar(self):
+        minutos = self.s // 60
+        self.s %= 60
+        self.m += minutos
+        horas = self.m // 60
+        self.m %= 60
+        self.h = (self.h+horas) % 24
+
 
     def __str__(self):
         return "%02d:%02d:%02d" % (self.h, self.m, self.s)
