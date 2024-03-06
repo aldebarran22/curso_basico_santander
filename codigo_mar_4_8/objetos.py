@@ -48,7 +48,11 @@ class Candidato:
     def __repr__(self):
         return str(self)
 
-    def __eq__(self, other):
+    def __eq__(self, other):       
+        if other == None:
+            return False
+        elif self.__class__ != other.__class__:
+            return False
         return (
             self.nombre == other.nombre
             and self.años == other.años
@@ -92,7 +96,7 @@ if __name__ == "__main__":
     for c in L:
         print(c)
 
-    if L[0] == L[1]:  # if L[0].__eq__(L[1])
+    if L[0] == L[0]:  # if L[0].__eq__(L[1])
         print("son iguales")
     else:
         print("son distintos")
