@@ -3,6 +3,7 @@ def leerFichero(path):
     try:
         fich = open(path, "r")
         for line in fich:
+            line = line.rstrip()
             print(line)
 
     except FileNotFoundError as e:
