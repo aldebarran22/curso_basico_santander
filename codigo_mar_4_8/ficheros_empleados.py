@@ -43,5 +43,5 @@ if __name__ == "__main__":
         print(f)
 
     fich = open("../ficheros/empleados.csv","w")
-    fich.writelines(filas)
+    fich.writelines([fila+"\n" for fila in filas])
     fich.close()
