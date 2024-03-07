@@ -41,3 +41,7 @@ if __name__ == "__main__":
     print("\n\nFusión:")
     for f in filas:
         print(f)
+
+    fich = open("../ficheros/empleados.csv","w")
+    fich.writelines(filas)
+    fich.close()
