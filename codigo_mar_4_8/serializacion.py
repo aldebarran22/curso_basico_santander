@@ -34,5 +34,8 @@ def deserializarPickle(path):
 
 if __name__ == "__main__":
     c = Candidato("Andrés", 15, 9, True)
-    serializarPickle("../ficheros/candidato.bin", c)
-    deserializarPickle("../ficheros/candidato.bin")
+    c2 = Candidato("Sara", 22, 3, True)
+    c3 = Candidato("Jaime", 2, 1, False)
+    # serializarPickle("../ficheros/candidato.bin", c)
+    # deserializarPickle("../ficheros/candidato.bin")
+    serializarShelve("../ficheros/candidatos")
