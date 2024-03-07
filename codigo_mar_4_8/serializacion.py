@@ -32,6 +32,17 @@ def deserializarPickle(path):
     fich.close()
 
 
+def deserializarShelve(path):
+    Shelf = s.open(path)
+    obj2 = Shelf["K-2"]
+    print(obj2)
+
+    obj0 = Shelf["K-0"]
+    print(obj0)
+
+    Shelf.close()
+
+
 if __name__ == "__main__":
     c = Candidato("Andrés", 15, 9, True)
     c2 = Candidato("Sara", 22, 3, True)
@@ -39,3 +50,4 @@ if __name__ == "__main__":
     # serializarPickle("../ficheros/candidato.bin", c)
     # deserializarPickle("../ficheros/candidato.bin")
     serializarShelve("../ficheros/candidatos", c, c2, c3)
+    deserializarShelve("../ficheros/candidatos")
