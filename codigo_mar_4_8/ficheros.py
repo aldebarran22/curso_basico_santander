@@ -1,10 +1,12 @@
-def leerFichero(path):
+def leerFichero(path, pais):
     fich = None
     try:
         fich = open(path, "r")
         for line in fich:
             line = line.rstrip()
-            print(line)
+            L = line.split(";")
+            if pais == L[-1]:
+                print(line)
 
     except FileNotFoundError as e:
         print(e)
@@ -14,6 +16,7 @@ def leerFichero(path):
         if fich:
             fich.close()
 
-
+ 
 if __name__ == "__main__":
-    leerFichero("../ficheros_curso/Pedidos.csv")
+    #leerFichero(r"..\ficheros_curso\Pedidos.csv")   
+    leerFichero("../ficheros_curso/Pedidos.csv", "Noruega")
