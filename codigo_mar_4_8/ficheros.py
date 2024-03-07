@@ -17,6 +17,13 @@ def leerFichero(path, pais):
             fich.close()
 
  
+def grabarFichero(path):
+    fich = open(path, "w")
+    for i in range(10):
+        print(f"linea de pedido {i+1}", file=fich)
+    fich.close()
+
 if __name__ == "__main__":
     #leerFichero(r"..\ficheros_curso\Pedidos.csv")   
-    leerFichero("../ficheros_curso/Pedidos.csv", "Noruega")
+    #leerFichero("../ficheros_curso/Pedidos.csv", "Noruega")
+    grabarFichero("../ficheros/prueba.txt")
