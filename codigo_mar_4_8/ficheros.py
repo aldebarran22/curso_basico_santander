@@ -4,9 +4,15 @@ import sys
 def leerFichero(path, pais, file=sys.stdout):
     fich = None
     try:
+        cabs = True
         fich = open(path, "r")
         for line in fich:
             line = line.rstrip()
+            if cabs:
+                print(line, file=file)
+                cabs = False
+                continue
+
             L = line.split(";")
             if pais == L[-1]:
                 print(line, file=file)
@@ -38,4 +44,4 @@ if __name__ == "__main__":
     # leerFichero(r"..\ficheros_curso\Pedidos.csv")
     # leerFichero("../ficheros_curso/Pedidos.csv", "Noruega")
     # grabarFichero("../ficheros/prueba.txt")
-    exportar("../ficheros_curso/Pedidos.csv", "Noruega")
+    exportar("../ficheros_curso/Pedidos.csv", "Francia")
