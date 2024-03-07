@@ -38,4 +38,4 @@ if __name__ == "__main__":
     c3 = Candidato("Jaime", 2, 1, False)
     # serializarPickle("../ficheros/candidato.bin", c)
     # deserializarPickle("../ficheros/candidato.bin")
-    serializarShelve("../ficheros/candidatos")
+    serializarShelve("../ficheros/candidatos", c, c2, c3)
