@@ -5,7 +5,16 @@ Serializar objetos con Python:
 """
 
 import pickle as p
+import shelve as s
 from objetos import Candidato
+
+
+def serializarShelve(path, *candidatos):
+    Shelf = s.open(path)
+    for pos, c in enumerate(candidatos):
+        clave = f"K-{pos}"
+        Shelf[clave] = c
+    Shelf.close()
 
 
 def serializarPickle(path, candidato):
