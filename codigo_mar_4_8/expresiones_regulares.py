@@ -14,11 +14,16 @@ def validar(patron, L):
 
 if __name__ == "__main__":
     # Cadenas de 3 caracteres:
-    patron = "..."
+    patron = "...$"
     L = ["***", "1234", "abc", "--a", "12345"]
+    validar(patron, L)
+
+    # Cadenas de 3 caracteres y que terminan en punto:
+    patron = "...\.$"
+    L = ["abc.","***.", "1234.", "abc.", "--a.", "12345."]
     validar(patron, L)
 
     # DNI:
     patron = ""
-    L = ["AWWEE", "51000123", "65000123J"]
-    #validar(patron, L)
+    L = ["AWWEE", "51000123", "65000123J","12345678AA"]
+    # validar(patron, L)
