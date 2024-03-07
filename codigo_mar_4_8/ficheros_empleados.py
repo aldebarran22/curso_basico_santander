@@ -20,6 +20,13 @@ def cargaFichero(path):
             fich.close()
 
 
+def criterio(fila):
+    t = fila.partition(";")
+    if t[0].isnumeric():
+        return int(t[0])
+    else:
+        return 0
+
 if __name__ == "__main__":
     c1 = cargaFichero("../ficheros_curso/Empleados2.txt")
     c2 = cargaFichero("../ficheros_curso/Empleados3.txt")
@@ -30,7 +37,7 @@ if __name__ == "__main__":
         print(f)
 
     fusion = c1 | c2
-    filas = sorted(fusion)
+    filas = sorted(fusion, key=criterio)
     print("\n\nFusión:")
     for f in filas:
         print(f)
