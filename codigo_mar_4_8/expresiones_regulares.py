@@ -52,6 +52,15 @@ if __name__ == "__main__":
     validar(patron, L)
 
 
-    patron = r"\d{4}[BCDFGHJKLMNPQRSTVWXYZ]{3}"
+    patron = r"\d{4}[BCDFGHJKLMNPQRSTVWXYZ]{3}$"
     obj = re.match(patron, "1234TRTD")
     print(obj)
+
+    html = "<p>hola que tal</p><b>hola</b>"
+    patron = "<p>(.+)</p>"
+    obj = re.match(patron, html)
+    print(obj)
+    print(obj.groups())
+
+    fecha = "12/03/2024"
+    patron = "\d{1,2}/{}"
