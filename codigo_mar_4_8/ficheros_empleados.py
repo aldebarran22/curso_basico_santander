@@ -28,3 +28,7 @@ if __name__ == "__main__":
     print("Filas comunes:")
     for f in filasComunes:
         print(f)
+
+    fusion = c1 | c2
+    for f in fusion:
+        print(f)
