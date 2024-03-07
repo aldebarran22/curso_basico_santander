@@ -30,5 +30,7 @@ if __name__ == "__main__":
         print(f)
 
     fusion = c1 | c2
-    for f in fusion:
+    filas = sorted(fusion)
+    print("\n\nFusión:")
+    for f in filas:
         print(f)
