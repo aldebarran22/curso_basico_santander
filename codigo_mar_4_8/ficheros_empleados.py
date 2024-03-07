@@ -9,9 +9,11 @@ def cargaFichero(path):
     try:
         fich = open(path, "r")
         txt = fich.read()
-        print(txt)
+        L = txt.split("\n")
+        c = set([linea for linea in L if len(linea) > 1])
+        print(c)
     except Exception as e:
-        pass
+        print(e.__class__.__name__, e)
     finally:
         if fich:
             fich.close()
