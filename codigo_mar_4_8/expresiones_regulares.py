@@ -27,3 +27,8 @@ if __name__ == "__main__":
     patron = r"[0-9]{8}[A-Z]$"
     L = ["AWWEE", "51000123", "65000123J", "12345678AA","12345678b"]
     validar(patron, L)
+
+    """Comprobar la validez del siguiente código:
+    Palabra COD o S/N, un guión bajo, 3 vocales mayúsculas, 
+    guión bajo y 6 números que no pueden empezar por 0.
+    COD_AEE_800959  S/N_UOO_958474"""
