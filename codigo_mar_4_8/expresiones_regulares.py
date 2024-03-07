@@ -63,4 +63,7 @@ if __name__ == "__main__":
     print(obj.groups())
 
     fecha = "12/03/2024"
-    patron = "\d{1,2}/{}"
+    patron = "([0-3][0-9])/([0-1][0-9])/(\d{4})"
+    obj = re.match(patron, fecha)
+    print(obj)
+    print(obj.groups())
