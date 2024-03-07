@@ -46,7 +46,7 @@ if __name__ == "__main__":
     validar(patron, L)
 
     # Validar matrículas europeas:
-    patron = r"\d{4}[^AEIOU]{3}$"
+    patron = r"\d{4}[BCDFGHJKLMNPQRSTVWXYZ]{3}$"
 
     L = ["1234RR(","0045FTF", "5644TT", "123GGT","1234DDRR"]
     validar(patron, L)
