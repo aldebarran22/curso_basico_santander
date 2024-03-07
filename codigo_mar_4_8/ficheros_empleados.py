@@ -11,7 +11,8 @@ def cargaFichero(path):
         txt = fich.read()
         L = txt.split("\n")
         c = set([linea for linea in L if len(linea) > 1])
-        print(c)
+        return c
+
     except Exception as e:
         print(e.__class__.__name__, e)
     finally:
@@ -22,3 +23,8 @@ def cargaFichero(path):
 if __name__ == "__main__":
     c1 = cargaFichero("../ficheros_curso/Empleados2.txt")
     c2 = cargaFichero("../ficheros_curso/Empleados3.txt")
+
+    filasComunes = c1 & c2
+    print("Filas comunes:")
+    for f in filasComunes:
+        print(f)
