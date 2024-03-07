@@ -9,7 +9,10 @@ from objetos import Candidato
 
 
 def serializarPickle(path, candidato):
-    pass
+    # Abrir el fichero para escritura en binario:
+    fich = open(path, "wb")
+    p.dump(candidato, fich)
+    fich.close()
 
 
 if __name__ == "__main__":
