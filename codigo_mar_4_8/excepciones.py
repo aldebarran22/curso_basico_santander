@@ -29,6 +29,22 @@ def prueba2():
         print(e.__class__.__name__, e)
 
 
+def prueba3():
+    fich = None
+    try:
+        fich = open("conjuntos.py","r")
+        resul = 2 + "2"
+        
+    except FileNotFoundError as e:
+        print(e)
+    except Exception as e:
+        print(e.__class__.__name__, e)
+    finally:
+        if fich: fich.close()
+
+
+
 if __name__ == "__main__":
     # prueba1()
-    prueba2()
+    # prueba2()
+    prueba3()
