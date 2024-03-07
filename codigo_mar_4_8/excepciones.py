@@ -50,6 +50,11 @@ def prueba4(num):
     else:
         raise ValueError(f"El número {num} no cumple el intervalo")
 
+class TimeError(Exception):
+
+    def __init__(self,mensaje):
+        Exception.__init__(self,mensaje)
+
 
 if __name__ == "__main__":
     # prueba1()
