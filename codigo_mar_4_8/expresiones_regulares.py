@@ -44,3 +44,9 @@ if __name__ == "__main__":
         "S/N_UOO_9584749",
     ]
     validar(patron, L)
+
+    # Validar matrículas europeas:
+    patron = r"$"
+
+    L = ["1234RR(","0045FTF", "5644TT", "123GGT","1234DDRR"]
+    validar(patron, L)
