@@ -32,19 +32,31 @@ def prueba2():
 def prueba3():
     fich = None
     try:
-        fich = open("conjuntos.py","r")
+        fich = open("conjuntos.py", "r")
         resul = 2 + "2"
-        
+
     except FileNotFoundError as e:
         print(e)
     except Exception as e:
         print(e.__class__.__name__, e)
     finally:
-        if fich: fich.close()
+        if fich:
+            fich.close()
 
+
+def prueba4(num):
+    if 0 <= num <= 10:
+        print("numero: ", num)
+    else:
+        raise ValueError(f"El número {num} no cumple el intervalo")
 
 
 if __name__ == "__main__":
     # prueba1()
     # prueba2()
-    prueba3()
+    # prueba3()
+    try:
+        prueba4(1)
+    except ValueError as e:
+        print(e)
+
