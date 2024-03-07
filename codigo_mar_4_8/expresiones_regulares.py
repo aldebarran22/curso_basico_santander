@@ -50,3 +50,8 @@ if __name__ == "__main__":
 
     L = ["1234RR(","0045FTF", "5644TT", "123GGT","1234DDRR"]
     validar(patron, L)
+
+
+    patron = r"\d{4}[BCDFGHJKLMNPQRSTVWXYZ]{3}"
+    obj = re.match(patron, "1234TRTD")
+    print(obj)
