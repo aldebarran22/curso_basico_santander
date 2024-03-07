@@ -1,4 +1,6 @@
-def leerFichero(path, pais):
+import sys
+
+def leerFichero(path, pais, file=sys.stdout):
     fich = None
     try:
         fich = open(path, "r")
@@ -6,7 +8,7 @@ def leerFichero(path, pais):
             line = line.rstrip()
             L = line.split(";")
             if pais == L[-1]:
-                print(line)
+                print(line, file=file)
 
     except FileNotFoundError as e:
         print(e)
