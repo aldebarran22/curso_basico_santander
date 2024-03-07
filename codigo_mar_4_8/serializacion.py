@@ -15,6 +15,15 @@ def serializarPickle(path, candidato):
     fich.close()
 
 
+def deserializarPickle(path):
+    # Abrir el fichero para lectura en binario:
+    fich = open(path, "rb")
+    obj = p.load(fich)
+    print(obj)
+    fich.close()
+
+
 if __name__ == "__main__":
     c = Candidato("Andrés", 15, 9, True)
     serializarPickle("../ficheros/candidato.bin", c)
+    deserializarPickle("../ficheros/candidato.bin")
