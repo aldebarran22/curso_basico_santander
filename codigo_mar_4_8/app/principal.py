@@ -1,4 +1,5 @@
 from modulos.time2 import Time
+from modulos.datetime2 import DateTime
 
 if __name__ == "__main__":
     t1 = Time(7, 53, 3)
