@@ -32,7 +32,9 @@ if __name__ == "__main__":
     Palabra COD o S/N, un guión bajo, 3 vocales mayúsculas, 
     guión bajo y 6 números que no pueden empezar por 0.
     COD_AEE_800959  S/N_UOO_958474"""
-    patron = ""
+
+    patron = r"(COD|S/N)_[AEIOU]{3}_[1-9][0-9]{5}$"
+
     L = [
         "COD_AEE_800959",
         "S/N_UOO_958474",
