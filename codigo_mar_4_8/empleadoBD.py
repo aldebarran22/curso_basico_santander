@@ -128,7 +128,8 @@ if __name__ == "__main__":
         emp = empBD.read(1)
         print(emp)
 
-        empBD.delete(15)
+        if empBD.delete(7):
+            print('registro eliminado')
 
     except Exception as e:
         print(e)
