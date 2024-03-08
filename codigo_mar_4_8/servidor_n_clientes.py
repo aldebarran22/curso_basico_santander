@@ -4,6 +4,25 @@ Implementación de un servidor TCP
 
 import socket as s
 import sys
+from threading import Thread
+
+class Cliente(Thread):
+
+    def __init__(self,  s_client, addr):
+        self.addr = addr
+        self.s_client = s_client
+
+    def run(self):
+        # Recibir:
+        while True:
+            mensaje = s_client.recv(1024)
+            mensaje = mensaje.decode("utf-8")
+            if mensaje.lower() == "fin":
+                break
+
+            print("Mensaje del cliente: ", self.addr,"Mensaje:", mensaje)
+            s_client.send(mensaje.upper().encode("utf-8"))
+
 
 if len(sys.argv) == 2:
     puerto = int(sys.argv[1])
@@ -21,21 +40,16 @@ if len(sys.argv) == 2:
         print("Bind ok!")
 
         # Comunicacion 1 a 1:
-        s_server.listen(1)
+        s_server.listen(5)
 
-        print("Servidor a la espera de clientes")
-        s_client, addr = s_server.accept()
-
-        print("cliente conectado: ", addr)
         while True:
-            # Recibir:
-            mensaje = s_client.recv(1024)
-            mensaje = mensaje.decode("utf-8")
-            if mensaje.lower() == "fin":
-                break
+            print("Servidor a la espera de clientes")
+            s_client, addr = s_server.accept()
+            print("cliente conectado: ", addr)
 
-            print("Mensaje del cliente: ", mensaje)
-            s_client.send(mensaje.upper().encode("utf-8"))
+            cliente = Cliente(addr, s_client)
+            cliente.start()
+           
 
         print("Fin de comunicación")
 
