@@ -7,6 +7,15 @@ from os.path import isfile
 import sys
 
 
+def isfloat(cad):
+    return cad.replace(".", "").isnumeric()
+
+
+def tuplaToCSV(t):
+    csv = ";".join([str(i).replace(".", ",") if isfloat(i) else str(i) for i in t])
+    return csv
+
+
 def imprimirTabla(path, tabla, file=sys.stdout):
     con = None
     cur = None
@@ -22,7 +31,7 @@ def imprimirTabla(path, tabla, file=sys.stdout):
             cabs = ";".join([t[0] for t in cur.description])
             print(cabs, file=file)
             for t in cur.fetchall():
-                linea = ";".join([str(i) for i in t])
+                linea = tuplaToCSV(t)
                 print(linea, file=file)
 
     except Exception as e:
