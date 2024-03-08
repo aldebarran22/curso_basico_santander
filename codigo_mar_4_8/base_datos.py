@@ -52,4 +52,4 @@ def exportar(path, tabla):
 
 if __name__ == "__main__":
     # imprimirTabla("../bd/empresa3.db", "empleados")
-    exportar("../bd/empresa3.db", "pedidos")
+    exportar("../bd/empresa3.db", "detallespedido")
