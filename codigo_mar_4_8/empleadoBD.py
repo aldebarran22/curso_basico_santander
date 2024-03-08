@@ -131,5 +131,9 @@ if __name__ == "__main__":
         if empBD.delete(7):
             print('registro eliminado')
 
+        emp2 = Empleado(0, 'Juan', 'Representante de Ventas')
+        if empBD.create(emp2):
+            print('nuevo empleado: ', emp2)
+
     except Exception as e:
         print(e)
