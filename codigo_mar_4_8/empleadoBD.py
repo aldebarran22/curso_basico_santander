@@ -85,8 +85,11 @@ class EmpleadoBD:
 if __name__ == "__main__":
     try:
         empBD = EmpleadoBD("../bd/empresa3.db")
-        L = empBD.select("Gerente")
+        L = empBD.select("Representante")
         print(L)
+
+        emp = empBD.read(1)
+        print(emp)
 
     except Exception as e:
         print(e)
