@@ -8,7 +8,7 @@ import sys
 
 
 def isfloat(cad):
-    return cad.replace(".", "").isnumeric()
+    return str(cad).replace(".", "").isnumeric()
 
 
 def tuplaToCSV(t):
