@@ -47,3 +47,24 @@ class Empleado:
 
     def __repr__(self):
         return str(self)
+    
+class EmpleadoBD:
+    """Implementar las operaciones CRUD"""
+
+    def __init__(self, path):
+        
+        if not isfile(path):
+            raise FileNotFoundError(f"No existe la BD: {path}")
+        
+        self.con = db.connect(path)
+
+    def __del__(self):
+        self.con.close()
+
+if __name__ == '__main__':
+    try:
+        empBD = EmpleadoBD('../bd/empresa3.db')
+    except Exception as e:
+        print(e)
+
+     
