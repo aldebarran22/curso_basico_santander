@@ -18,6 +18,8 @@ def imprimirTabla(path, tabla):
             sql = f"select * from {tabla}"
             cur = con.cursor()
             cur.execute(sql)
+            cabs = ";".join([t[0] for t in cur.description])
+            print(cabs)
             for t in cur.fetchall():
                 print(t)
 
@@ -31,4 +33,4 @@ def imprimirTabla(path, tabla):
 
 
 if __name__ == "__main__":
-    imprimirTabla("../bd/empresa3.db", "pedidos")
+    imprimirTabla("../bd/empresa3.db", "empleados")
