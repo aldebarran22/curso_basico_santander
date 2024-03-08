@@ -59,6 +59,20 @@ class EmpleadoBD:
 
         self.con = db.connect(path)
 
+    def select(self, cargo=None):
+        cur = None
+        try:
+            sql = "select * from empleados"
+            cur = self.con.cursor()
+            cur.execute(sql)
+            return [Empleado(*t) for t in cur.fetchall()]
+        except Exception as e:
+            raise e
+        finally:
+            if cur:cur.close()
+
+
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -67,5 +81,8 @@ class EmpleadoBD:
 if __name__ == "__main__":
     try:
         empBD = EmpleadoBD("../bd/empresa3.db")
+        L = empBD.select()
+        print(L[:3])
+
     except Exception as e:
         print(e)
