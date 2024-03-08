@@ -9,16 +9,12 @@ from ficheros_empleados import fusion
 class Pruebas(unittest.TestCase):
 
     def test_1(self):
-        "../ficheros_curso/Empleados2.txt"
-        "../ficheros_curso/Empleados3.txt"
-        "../ficheros/empleados.csv"
-        return True
+        path1 = "../ficheros_curso/Empleados2.txt"
+        path2 = "../ficheros_curso/Empleados3.txt"
+        pathDestino = "../ficheros/empleados.csv"
 
-    def test_2(self):
-        raise ValueError("un error")
-
-    def test_3(self):
-        raise AssertionError("error 2")
+        fusion(path1, path2, pathDestino)
+        pathMaestro = "../ficheros_curso/empleados_maestro.csv"
 
 
 if __name__ == "__main__":
