@@ -27,21 +27,14 @@ def criterio(fila):
     else:
         return 0
 
-if __name__ == "__main__":
-    c1 = cargaFichero("../ficheros_curso/Empleados2.txt")
-    c2 = cargaFichero("../ficheros_curso/Empleados3.txt")
 
-    filasComunes = c1 & c2
-    print("Filas comunes:")
-    for f in filasComunes:
-        print(f)
+def fusion(pathO1, pathO2, pathDestino):
+    c1 = cargaFichero(pathO1)
+    c2 = cargaFichero(pathO2)    
 
     fusion = c1 | c2
     filas = sorted(fusion, key=criterio)
-    print("\n\nFusión:")
-    for f in filas:
-        print(f)
 
-    fich = open("../ficheros/empleados.csv","w")
-    fich.writelines([fila+"\n" for fila in filas])
+    fich = open(pathDestino, "w")
+    fich.writelines([fila + "\n" for fila in filas])
     fich.close()
