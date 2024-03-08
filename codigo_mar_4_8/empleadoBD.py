@@ -133,6 +133,23 @@ class EmpleadoBD:
             if cur:
                 cur.close()
 
+    def update(self, emp):
+        cur = None
+        try:
+            sql = "update empleados set nombre=?,cargo=? where id=?"
+            cur = self.con.cursor()
+            cur.execute(sql, emp.getTupla2())
+            n = cur.rowcount
+            self.con.commit()
+            return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -146,13 +163,21 @@ if __name__ == "__main__":
 
         emp = empBD.read(1)
         print(emp)
+        emp.setCargo("Gerente de Ventas")
+        emp.setNombre("Sr. Davolio")
+        if empBD.update(emp):
+            print("Registro actualizado: ", emp)
 
+        """
         if empBD.delete(7):
             print("registro eliminado")
+        """
 
+        """
         emp2 = Empleado(0, "Juan", "Representante de Ventas")
         if empBD.create(emp2):
             print("nuevo empleado: ", emp2)
+        """
 
     except Exception as e:
         print(e)
