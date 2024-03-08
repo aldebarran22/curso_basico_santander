@@ -4,11 +4,19 @@ Ejemplo de pruebas con unittest
 
 import unittest
 from ficheros_empleados import fusion
+from ecugrado2 import ecuacion
 
 
 class PruebasFunciones(unittest.TestCase):
 
-    def test_fusion_ficheros(self):
+    def testEcuacionExc(self):
+        self.assertRaises(ValueError, ecuacion, 1, 2, 3)
+
+    def testEcuacionOk(self):
+        resul = ecuacion(1, 5, 4)
+        self.assertEqual((-4, -1), resul, msg="No coincide con el resul esperado")
+
+    def te_st_fusion_ficheros(self):
         path1 = "../ficheros_curso/Empleados2.txt"
         path2 = "../ficheros_curso/Empleados3.txt"
         pathDestino = "../ficheros/empleados.csv"
