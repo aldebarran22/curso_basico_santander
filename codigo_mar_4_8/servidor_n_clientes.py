@@ -10,6 +10,7 @@ from threading import Thread
 class Cliente(Thread):
 
     def __init__(self, s_client, addr):
+        Thread.__init__(self)
         self.addr = addr
         self.s_client = s_client
 
@@ -54,7 +55,7 @@ if len(sys.argv) == 2:
             s_client, addr = s_server.accept()
             print("cliente conectado: ", addr)
 
-            cliente = Cliente(addr, s_client)
+            cliente = Cliente(s_client, addr)
             cliente.start()
 
         print("Fin de comunicación")
