@@ -44,7 +44,19 @@ class Consumidor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+            # Comprobar si hay un nuevo número
+            self.buffer.sem_items.acquire()
+            with self.buffer.mutex:
+                numero = self.buffer.buffer[self.buffer.ind_c]
+                self.buffer.buffer[self.buffer.ind_c] = -1
+                print(self.getName(), "quita el:", numero)
+                print(self.buffer.buffer)
+                self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
+            # Avisar que hay nuevo hueco
+            self.buffer.sem_huecos.release()
+            sleep(randint(1, 3))
+        print("Termina: ", self.getName())
 
 
 class TBuffer:
