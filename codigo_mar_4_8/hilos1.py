@@ -15,7 +15,7 @@ class Hilo(Thread):
     def run(self):
         for i in range(self.n):
             print(self.getName(), " mensaje: ", i)
-            sleep(1)
+            sleep(0.2)
         print("Ha terminado: ", self.getName())
 
 
