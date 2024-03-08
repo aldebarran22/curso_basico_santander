@@ -103,10 +103,29 @@ class EmpleadoBD:
             cur.execute(sql, (id,))
             n = cur.rowcount
             self.con.commit()
-            if n == 0:            
+            if n == 0:
                 raise ValueError(f"El empleado {id} no se ha podido eliminar")
             return True
-        
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
+    def create(self, emp):
+        cur = None
+        try:
+            sql = "insert into empleados(nombre,cargo) values(?,?)"
+            cur = self.con.cursor()
+            cur.execute(sql, emp.getTupla())
+            n = cur.rowcount
+            if n == 1:
+                emp.setId(cur.lastrowid)
+            self.con.commit()
+            return True
+
         except Exception as e:
             self.con.rollback()
             raise e
@@ -129,11 +148,11 @@ if __name__ == "__main__":
         print(emp)
 
         if empBD.delete(7):
-            print('registro eliminado')
+            print("registro eliminado")
 
-        emp2 = Empleado(0, 'Juan', 'Representante de Ventas')
+        emp2 = Empleado(0, "Juan", "Representante de Ventas")
         if empBD.create(emp2):
-            print('nuevo empleado: ', emp2)
+            print("nuevo empleado: ", emp2)
 
     except Exception as e:
         print(e)
