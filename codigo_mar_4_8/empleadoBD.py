@@ -64,14 +64,18 @@ class EmpleadoBD:
         try:
             sql = "select * from empleados"
             cur = self.con.cursor()
+            if cargo:
+                param = f"'%{cargo}%'"
+                sql += " where cargo like " + param
+            
             cur.execute(sql)
+
             return [Empleado(*t) for t in cur.fetchall()]
         except Exception as e:
             raise e
         finally:
-            if cur:cur.close()
-
-
+            if cur:
+                cur.close()
 
     def __del__(self):
         if hasattr(self, "con"):
@@ -81,8 +85,8 @@ class EmpleadoBD:
 if __name__ == "__main__":
     try:
         empBD = EmpleadoBD("../bd/empresa3.db")
-        L = empBD.select()
-        print(L[:3])
+        L = empBD.select("Gerente")
+        print(L)
 
     except Exception as e:
         print(e)
