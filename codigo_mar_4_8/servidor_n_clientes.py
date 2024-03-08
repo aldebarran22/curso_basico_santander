@@ -6,22 +6,29 @@ import socket as s
 import sys
 from threading import Thread
 
+
 class Cliente(Thread):
 
-    def __init__(self,  s_client, addr):
+    def __init__(self, s_client, addr):
         self.addr = addr
         self.s_client = s_client
 
     def run(self):
         # Recibir:
-        while True:
-            mensaje = s_client.recv(1024)
-            mensaje = mensaje.decode("utf-8")
-            if mensaje.lower() == "fin":
-                break
+        try:
+            while True:
+                mensaje = self.s_client.recv(1024)
+                mensaje = mensaje.decode("utf-8")
+                if mensaje.lower() == "fin":
+                    break
 
-            print("Mensaje del cliente: ", self.addr,"Mensaje:", mensaje)
-            s_client.send(mensaje.upper().encode("utf-8"))
+                print("Mensaje del cliente: ", self.addr, "Mensaje:", mensaje)
+                self.s_client.send(mensaje.upper().encode("utf-8"))
+        except Exception as e:
+            if e.errno == 10054:
+                print("Cliente desconectado")
+            else:
+                print(e)
 
 
 if len(sys.argv) == 2:
@@ -49,7 +56,6 @@ if len(sys.argv) == 2:
 
             cliente = Cliente(addr, s_client)
             cliente.start()
-           
 
         print("Fin de comunicación")
 
