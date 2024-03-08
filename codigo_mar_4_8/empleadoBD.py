@@ -95,6 +95,25 @@ class EmpleadoBD:
             if cur:
                 cur.close()
 
+    def delete(self, id):
+        cur = None
+        try:
+            sql = "delete from empleados where id=?"
+            cur = self.con.cursor()
+            cur.execute(sql, (id,))
+            n = cur.rowcount
+            self.con.commit()
+            if n == 0:            
+                raise ValueError(f"El empleado {id} no se ha podido eliminar")
+            return True
+        
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -108,6 +127,8 @@ if __name__ == "__main__":
 
         emp = empBD.read(1)
         print(emp)
+
+        empBD.delete(15)
 
     except Exception as e:
         print(e)
