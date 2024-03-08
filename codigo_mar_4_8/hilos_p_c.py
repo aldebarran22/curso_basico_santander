@@ -3,15 +3,15 @@ Implementación del productor-consumidor en Python
 Solución M productores-N consumidores
 """
 
-from threading import Thread, Lock, Semaphore
+from threading import Thread, Lock, Semaphore, enumerate
 from random import randint
 from time import sleep
 
 num_muestras = 12
 tam_buffer = 5
 
-num_productores = 3
-num_consumidores = 1
+num_productores = 2
+num_consumidores = 2
 
 
 class Productor(Thread):
@@ -93,8 +93,11 @@ if __name__ == "__main__":
     # Crear los consumidores:
     for i in range(num_consumidores):
         consumidor = Consumidor(buf, num_muestras_con, f"C-{i+1}")
-        consumidor.start()
+        consumidor.start()        
         consumidores.append(consumidor)
+
+    print(enumerate())
+
 
     for p in productores:
         p.join()
