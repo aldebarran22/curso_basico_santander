@@ -67,10 +67,28 @@ class EmpleadoBD:
             if cargo:
                 param = f"'%{cargo}%'"
                 sql += " where cargo like " + param
-            
+
             cur.execute(sql)
 
             return [Empleado(*t) for t in cur.fetchall()]
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
+    def read(self, id):
+        cur = None
+        try:
+            sql = "select * from empleados where id=?"
+            cur = self.con.cursor()
+            cur.execute(sql, (id,))
+            t = cur.fetchone()
+            if t == None:
+                raise ValueError(f"El empleado {id} no existe")
+            else:
+                return Empleado(*t)
+
         except Exception as e:
             raise e
         finally:
