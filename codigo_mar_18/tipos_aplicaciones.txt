@@ -1,0 +1,10 @@
+tipos de programas:
+análisis de datos
+tratamiento de ficheros
+scripting
+aplicaciones de gestión con bases de datos
+aplicaciones Web: django
+machine learning y deep learning
+aplicaciones distribuidas: servicios de Rest
+
+aplicaciones nativas para el teléfono
