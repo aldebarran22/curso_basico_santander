@@ -77,3 +77,5 @@ for pos, i in enumerate(L):
     print(pos, i)
 
 print(list(enumerate(L)))
+
+# print(L[25]) # Error: índice fuera de rango
