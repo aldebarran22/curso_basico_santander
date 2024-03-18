@@ -72,4 +72,6 @@ numero = 1234321
 snum = str(numero)
 print("es capicua: ", snum == snum[::-1])
 
-
+# Imprimir el índice y el elemento:
+for pos, i in enumerate(L):
+    print(pos, i)
