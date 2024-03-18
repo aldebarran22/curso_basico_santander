@@ -15,3 +15,7 @@ print(resul, type(resul))
 n1 = int(input('Dame número:'))
 n2 = int(input('Dame número:'))
 print(n1 + n2)
+
+# Trunca los decimales:
+num = int(12.4)
+print(num)
