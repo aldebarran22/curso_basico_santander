@@ -21,3 +21,9 @@ for i in L[1:]:
     d = dict(zip(cabs, fila))
     R.append(d)
 print(R)
+
+print("=" * 20)
+nombres = list()
+for i in R:
+    nombres.append(i['nombre'])
+print(nombres)
