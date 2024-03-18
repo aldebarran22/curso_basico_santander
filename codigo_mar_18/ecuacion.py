@@ -5,11 +5,15 @@ Resolver la ecu de 2 grado
 
 import math
 
-a,b,c = 1,5,4
+a,b,c = 1,2,3
 
-x1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
-x2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2*a)
+raiz = b**2 - 4*a*c
+if raiz > 0:
+    x1 = (-b + math.sqrt(raiz)) / (2*a)
+    x2 = (-b - math.sqrt(raiz)) / (2*a)
 
-# f-string
-print(f"x1 = {x1}")
-print(f"x2 = {x2}")
+    # f-string
+    print(f"x1 = {x1}")
+    print(f"x2 = {x2}")
+else:
+    print('No hay solución ...')
