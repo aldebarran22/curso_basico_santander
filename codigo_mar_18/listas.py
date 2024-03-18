@@ -51,3 +51,14 @@ for i in L1:
     if i in L2 and i not in R:
         R += [i]
 print(R)
+
+# Indices y slicing: list, str, tuple
+L = [1,2,3,4,5,6,7,8,9]
+print('Quinto: ', L[4])
+L[0] = 1000
+print(L)
+print('El último: ', L[-1], L[8])
+print('El primero: ', L[0], L[-9])
+
+# slicing: L[ini:fin-1:salto=1]
+print('Los 3 primeros: ', L[0:3], L[:3])
