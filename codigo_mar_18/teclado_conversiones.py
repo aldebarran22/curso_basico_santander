@@ -11,3 +11,7 @@ print(resul, type(resul))
 
 resul = 12 + 45.6 + 9+4j
 print(resul, type(resul))
+
+n1 = input('Dame número:')
+n2 = input('Dame número:')
+print(n1 + n2)
