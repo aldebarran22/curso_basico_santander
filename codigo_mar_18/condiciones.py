@@ -69,3 +69,9 @@ if var:
     print('es true')
 else:
     print('es false')
+
+var = None
+if var:
+    print('es true')
+else:
+    print('es false')
