@@ -26,3 +26,19 @@ if not (num >= ini and num <= fin):
 else:
     print('dentro del intervalo')
 
+# Imprimir el menor de dos números teniendo en cuenta si son iguales:
+n1 = 12
+n2 = 34
+
+if n1 < n2:
+    print('El menor es ',n1)
+
+    if n1 % 2 == 0:
+        print('n1 es par')
+
+elif n2 < n1:
+    print('El menor es ', n2)
+
+else:
+    print('son iguales')
+
