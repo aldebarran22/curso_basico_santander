@@ -62,3 +62,14 @@ print('El primero: ', L[0], L[-9])
 
 # slicing: L[ini:fin-1:salto=1]
 print('Los 3 primeros: ', L[0:3], L[:3])
+print('los 3 últimos: ', L[-3:])
+print('quitar el primero y el último: ', L[1:-1])
+print('Toda la lista: ', L, L[:])
+print('Todos de 2 en 2: ', L[::2])
+print('invertida: ', L[::-1])
+
+numero = 1234321
+snum = str(numero)
+print("es capicua: ", snum == snum[::-1])
+
+
