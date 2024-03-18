@@ -25,11 +25,20 @@ Lcabs = cabs.split(";")
 Lval = val.split(";")
 print(Lcabs)
 print(Lval)
-
+# Crear el dict:
+d1 = dict(zip(Lcabs, Lval))
+print(d1)
+# Obtener el nombre del empleado:
+print(d1['nombre'])
+print(f"El nombre: {d1['nombre']}")
 
 L = [1,2,3,4]
 L2 = list("adios")
-d2 = dict(zip(L, L2))
+d2 = dict(zip(L2, L))
 print(d2)
+
+
+
+
 
 
