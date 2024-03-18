@@ -1,5 +1,6 @@
 """operadores.py
 Operaciones con variables numéricas
+Prioridades: potencia, (div div_ent, resto), suma, resta
 """
 
 # Calcular la media de dos numeros:
