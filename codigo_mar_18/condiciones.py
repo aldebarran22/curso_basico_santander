@@ -42,3 +42,17 @@ elif n2 < n1:
 else:
     print('son iguales')
 
+print('fin de programa')
+if n1 < n2:
+    pass
+
+
+# if compacto: A if cond else B
+numero = 24
+print("par" if numero % 2 == 0 else "impar")
+if numero % 2 == 0:
+    print("par")
+else:
+    print('impar')
+
+menor = n1 if n1 < n2 else n2
