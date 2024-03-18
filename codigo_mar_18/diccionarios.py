@@ -9,6 +9,7 @@ histogramas
 d = {"a":1, "b":2, "c":3}
 print(d, type(d))
 
+# Acceso a los elementos con [] y para crear nuevas claves o modificar también
 d["a"] = 500
 d["d"] = 4
 print(d)
