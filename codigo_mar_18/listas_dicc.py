@@ -12,3 +12,7 @@ txt = """id;nombre;cargo
 7;King;Representante de ventas
 8;Callahan;Coordinador ventas interno
 9;Dodsworth;Representante de ventas"""
+
+L = txt.split("\n")
+for i in L:
+    print(i)
