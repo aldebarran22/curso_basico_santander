@@ -35,5 +35,14 @@ print("2 in L1: ", 2 in L1)
 # Añadir elementos a una lista:
 R = []
 R += [2]
-R += [3]
+R += [3,6,7,8]
 print(R)
+
+# Bucle for:
+for i in R:
+    print(i, end=' ')
+print()
+
+# Dadas dos listas obtener en otra lista los elementos comunes:
+L1 = [1,2,3,4,3,2,1,1,2,7]
+L2 = [1,2,7,8,9]
