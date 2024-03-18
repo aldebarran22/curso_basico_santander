@@ -26,3 +26,10 @@ Lval = val.split(";")
 print(Lcabs)
 print(Lval)
 
+
+L = [1,2,3,4]
+L2 = list("adios")
+d2 = dict(zip(L, L2))
+print(d2)
+
+
