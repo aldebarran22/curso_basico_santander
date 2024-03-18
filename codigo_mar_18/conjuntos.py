@@ -19,3 +19,4 @@ print('Quien va a comer y a cenar: ', comida & cena)  # intersección
 print('Quien va solo a comer: ', comida - cena) # Diferencia de conjuntos
 print('Quien va solo a cenar: ', cena - comida)
 print('Quienes han participado en los eventos: ', comida | cena) # unión
+print("Quienes van a un solo evento:", comida ^ cena )
