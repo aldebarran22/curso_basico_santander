@@ -14,5 +14,8 @@ txt = """id;nombre;cargo
 9;Dodsworth;Representante de ventas"""
 
 L = txt.split("\n")
-for i in L:
-    print(i)
+R = list()
+cabs = L[0].split(";")
+for i in L[1:]:
+    fila = i.split(";")
+    print(fila)
