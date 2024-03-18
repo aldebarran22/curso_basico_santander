@@ -6,5 +6,7 @@ aplicaciones de gestión con bases de datos
 aplicaciones Web: django
 machine learning y deep learning
 aplicaciones distribuidas: servicios de Rest
+desarrollo de programación orientada a objetos
 
 aplicaciones nativas para el teléfono
+
