@@ -18,4 +18,6 @@ R = list()
 cabs = L[0].split(";")
 for i in L[1:]:
     fila = i.split(";")
-    print(fila)
+    d = dict(zip(cabs, fila))
+    R.append(d)
+print(R)
