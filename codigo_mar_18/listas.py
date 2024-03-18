@@ -75,3 +75,5 @@ print("es capicua: ", snum == snum[::-1])
 # Imprimir el índice y el elemento:
 for pos, i in enumerate(L):
     print(pos, i)
+
+print(list(enumerate(L)))
