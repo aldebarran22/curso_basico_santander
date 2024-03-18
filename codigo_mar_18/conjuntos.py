@@ -16,4 +16,5 @@ comida = {"Sara", "Jorge","Ana", "Juan", "Miguel"}
 cena = {"Ana", "Raúl","Alberto", "María","Miguel"}
 
 print('Quien va a comer y a cenar: ', comida & cena)  # intersección
-
+print('Quien va solo a comer: ', comida - cena) # Diferencia de conjuntos
+print('Quien va solo a cenar: ', cena - comida)
