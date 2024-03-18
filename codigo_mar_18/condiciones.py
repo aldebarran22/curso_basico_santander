@@ -2,7 +2,7 @@
 Operadores relacionales y lógicos
 """
 
-num = 12
+num = 15
 ini = 10
 fin = 50
 
@@ -26,7 +26,3 @@ if not (num >= ini and num <= fin):
 else:
     print('dentro del intervalo')
 
-if  ini > num < fin:
-    print (" fuera del intervalo")
-else:
-    print (" dentro del intervalo ")  
