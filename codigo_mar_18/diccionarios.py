@@ -18,3 +18,11 @@ print(d)
 print(list(d.items()))
 for k,v in d.items():
     print(k,v)
+
+cabs = "id;nombre;cargo"
+val = "1;Davolio;Representante de ventas"
+Lcabs = cabs.split(";")
+Lval = val.split(";")
+print(Lcabs)
+print(Lval)
+
