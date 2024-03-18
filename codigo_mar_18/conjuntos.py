@@ -20,3 +20,7 @@ print('Quien va solo a comer: ', comida - cena) # Diferencia de conjuntos
 print('Quien va solo a cenar: ', cena - comida)
 print('Quienes han participado en los eventos: ', comida | cena) # unión
 print("Quienes van a un solo evento:", comida ^ cena )
+print("Quienes van a un solo evento:", (comida | cena ) - (comida & cena))
+
+print('Va María a cenar? ', 'María' in cena)
+print('Va María a cenar? ', "Si" if 'María' in cena else "No")
