@@ -41,8 +41,13 @@ print(R)
 # Bucle for:
 for i in R:
     print(i, end=' ')
-print()
+print() # salto de línea
 
 # Dadas dos listas obtener en otra lista los elementos comunes:
 L1 = [1,2,3,4,3,2,1,1,2,7]
 L2 = [1,2,7,8,9]
+R = []
+for i in L1:
+    if i in L2 and i not in R:
+        R += [i]
+print(R)
