@@ -56,3 +56,16 @@ else:
     print('impar')
 
 menor = n1 if n1 < n2 else n2
+
+# Que es False en Python: cadena vacía, 0, None, []
+var = ""
+if var:
+    print('es true')
+else:
+    print('es false')
+
+var = 0
+if var:
+    print('es true')
+else:
+    print('es false')
