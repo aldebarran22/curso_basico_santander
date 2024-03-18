@@ -2,11 +2,16 @@
 Operadores relacionales y lógicos
 """
 
-num = 23
+num = 12
 ini = 10
 fin = 50
 
 if num >= ini and num <= fin:
     print('dentro del intervalo')
 else:
-    print('no se cumple')
+    print('fuera del intervalo')
+
+if ini <= num <= fin:
+    print('dentro del intervalo')
+else:
+    print('fuera del intervalo')
