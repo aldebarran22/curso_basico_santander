@@ -3,7 +3,7 @@ import math
 def suma(a,b):
     return a+b
 
-def suma(a,b,c):
+def suma3(a,b,c):
     return a+b+c
 
 print("mi math")
