@@ -36,5 +36,5 @@ for h, m, s in L:
     print(segundos(h, m, s))
 
 # Con un diccionario:
-d = {"h":12, "m":30, "s":15}
+d = {"h": 12, "m": 30, "s": 15}
 print(d, segundos(**d))
