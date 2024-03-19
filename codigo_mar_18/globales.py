@@ -10,9 +10,10 @@ def funcion():
 def funcion2():
 	global num,L
 	num+=2
-	L+=[45]
+	L+=[45] # L = L + [45]
 		
 def funcion3():
+	global L
 	L.append(8)	
 	
 funcion()
