@@ -37,3 +37,8 @@ for h, m, s in L:
 # Con un diccionario:
 d = {"h": 12, "m": 30, "s": 15}
 print(d, segundos(**d))
+
+
+n1 = 100
+n2 = 200
+print(sumar(f"{n1}", f"{n2}"))
