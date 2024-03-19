@@ -1,7 +1,10 @@
 """
 Pasar parámetros mutables e inmutables a funciones
 """
-
+def copia(n, t, c):
+    n *= 2
+    t += (8,9,0)
+    c += "hola"
 
 def referencias(L: list, c: set, d: dict) -> None:
     L.append(1000)
@@ -18,3 +21,12 @@ if __name__ == "__main__":
     print(lista)
     print(conjunto)
     print(diccionario)
+
+    numero = 100
+    tupla = 1,2,3
+    cad = "texto"
+    copia(numero, tupla, cad)
+
+    print(numero)
+    print(tupla)
+    print(cad)
