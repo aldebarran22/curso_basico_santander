@@ -52,3 +52,12 @@ for i in range(t.count(numero)):
     pos = t.index(numero, ini)
     print(f" posicion de {numero} es {pos}  ")
     ini = pos + 1
+
+# Expansión de tuplas:
+fichero = "libro1.xlsx"
+t = fichero.partition('.')
+print(t)
+
+nom, _, ext = fichero.partition('.')
+print(nom)
+print(ext)
