@@ -5,7 +5,6 @@ Formas de llamar a una función en Python
 2- Nominal
 3- Tupla / lista
 4- diccionario
-Tipos anotados
 """
 
 
