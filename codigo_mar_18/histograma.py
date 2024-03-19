@@ -3,10 +3,17 @@ Obtener un histograma con los valores que
 se repiten en una lista.
 """
 
+import random
+
 # range(ini, fin-1, salto=1)
 print(list(range(10)))
 print(list(range(1,11)))
+print(list(range(0,101, 5)))
+print(list(range(-10, 1, 1)))
+print(list(range(-10, -30, -2)))
 
-for i in range(10):
-    print(i, end=' ')
-print()
+# Cargar una lista de números aleatorios:
+L = []
+for i in range(1000):
+    L.append(random.randint(1,20))
+print(L[:10])
