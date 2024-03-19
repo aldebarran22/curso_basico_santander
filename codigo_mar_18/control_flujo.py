@@ -22,8 +22,12 @@ print()
 
 # continue
 i = 0
-while i < 10:        
+while i < 10:
     i += 1
     if i == 5:
         continue
     print(i, end=" ")
+
+# Bucle infinito, se corta con control+C
+while True:
+    pass
