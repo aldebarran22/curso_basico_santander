@@ -12,6 +12,4 @@ while True:
         else:
             print("El importe debe ser un múltiplo de 10.")
     else:
-        print('Sólo se acpetan números')
-
-
+        print("Sólo se aceptan números")
