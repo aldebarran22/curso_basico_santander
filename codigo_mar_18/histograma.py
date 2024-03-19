@@ -18,6 +18,9 @@ for i in range(1000):
     L.append(random.randint(1,20))
 print(L[:10])
 claves = set(L)
+histo = dict()
 print(claves)
 for k in claves:
-    print(k, L.count(k))
+    #print(k, L.count(k))
+    histo[k] = L.count(k)
+print(histo)
