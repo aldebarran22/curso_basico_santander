@@ -61,3 +61,5 @@ print(t)
 nom, _, ext = fichero.partition('.')
 print(nom)
 print(ext)
+ext = fichero.partition('.')[2]
+print(ext)
