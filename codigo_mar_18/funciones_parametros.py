@@ -7,6 +7,8 @@ Tipos de parámetros en las funciones de python:
 Tipos anotados
 """
 
+import matplotlib.pyplot as plt
+
 
 # Uno obligatorio y otro opcional:
 def calcularIVA(importe, iva=21):
@@ -27,6 +29,8 @@ def funcion(ob1, ob2, op1=10, op2=20, *args, **kwargs):
     print("kwargs: ", kwargs)
     print()
 
+    
+
 
 print(calcularIVA(100))
 print(calcularIVA(100, 4))
@@ -37,3 +41,9 @@ print(sumar(12, 34))
 funcion(1,2)
 funcion(1,2,3,4,5,6)
 funcion(1,2,3,4,5,6,x=10, y=20)
+funcion(1,2, x=100, y=200, op2=999)
+
+y = [12,4,5,3,1]
+x = list(range(5))
+plt.plot(x,y, color="red", lw=4)
+plt.show()
