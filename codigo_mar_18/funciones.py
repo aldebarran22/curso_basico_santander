@@ -14,8 +14,9 @@ def filtroFicheros(*extensiones, path=None):
             R.append(f)
     return R
 
-
-print(filtroFicheros("py", "txt", path="."))
-print(filtroFicheros("txt", path="."))
-ext = ("py", "txt")
-print(filtroFicheros(*ext))
+if __name__ == '__main__':
+    print(__name__)
+    print(filtroFicheros("py", "txt", path="."))
+    print(filtroFicheros("txt", path="."))
+    ext = ("py", "txt")
+    print(filtroFicheros(*ext))
