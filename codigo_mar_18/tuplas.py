@@ -38,9 +38,17 @@ print(t + (8, 9, 0))
 print("2 in t:", 2 in t)
 
 # Métodos: count, index:
-t = (1,2,3,4,5,6,5,4,3,2,1,1,3,4)
+t = (1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 1, 3, 4)
 numero = 1
-print(f'numero: {numero} se repite {t.count(numero)} veces')
-print(f'La posición de {numero} en t: {t.index(numero)}')
+print(f"numero: {numero} se repite {t.count(numero)} veces")
+print(f"La posición de {numero} en t: {t.index(numero)}")
+print(f"La posición de {numero} en t: {t.index(numero, 1)}")
+print(f"La posición de {numero} en t: {t.index(numero, 11)}")
 
-
+t = (1, 2, 3, 4, 1, 6, 7, 8, 9, 1)
+numero = 1
+ini = 0
+for i in range(t.count(numero)):
+    pos = t.index(numero, ini)
+    print(f" posicion de {numero} es {pos}  ")
+    ini = pos + 1
