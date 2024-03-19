@@ -26,8 +26,8 @@ print(sumar(b=2, a=1))
 print(segundos(m=10, s=15))  # 00:10:15
 print(segundos(12, s=10))  # 12:00:10
 
-L = [(12,30,10), (8, 25, 12), (17, 8, 19)]
+# Con tuplas / listas:
+L = [[12, 30, 10], (8, 25, 12), (17, 8, 19)]
 for t in L:
     print(t, segundos(t[0], t[1], t[2]))
     print(t, segundos(*t))
-
