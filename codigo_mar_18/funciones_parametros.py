@@ -13,5 +13,12 @@ def calcularIVA(importe, iva=21):
     return round(importe * iva / 100, 2)
 
 
+# Tipos anotados:
+def sumar(a:str, b:str) -> str:
+    return a + b
+
 print(calcularIVA(100))
 print(calcularIVA(100, 4))
+print(sumar("hola", "adios"))
+print(sumar(12,34))
+
