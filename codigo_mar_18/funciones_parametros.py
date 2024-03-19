@@ -14,11 +14,12 @@ def calcularIVA(importe, iva=21):
 
 
 # Tipos anotados:
-def sumar(a:str, b:str) -> str:
+def sumar(a: str, b: str) -> str:
+    """Concatena o suma los dos parámetros"""
     return a + b
+
 
 print(calcularIVA(100))
 print(calcularIVA(100, 4))
 print(sumar("hola", "adios"))
-print(sumar(12,34))
-
+print(sumar(12, 34))
