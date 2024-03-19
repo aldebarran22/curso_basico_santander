@@ -31,3 +31,10 @@ L = [[12, 30, 10], (8, 25, 12), (17, 8, 19)]
 for t in L:
     print(t, segundos(t[0], t[1], t[2]))
     print(t, segundos(*t))
+
+for h, m, s in L:
+    print(segundos(h, m, s))
+
+# Con un diccionario:
+d = {"h":12, "m":30, "s":15}
+print(d, segundos(**d))
