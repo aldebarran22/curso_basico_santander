@@ -35,3 +35,5 @@ print(sumar(12, 34))
 
 ###
 funcion(1,2)
+funcion(1,2,3,4,5,6)
+funcion(1,2,3,4,5,6,x=10, y=20)
