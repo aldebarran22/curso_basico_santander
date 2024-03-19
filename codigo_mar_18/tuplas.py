@@ -63,3 +63,4 @@ print(nom)
 print(ext)
 ext = fichero.partition('.')[2]
 print(ext)
+print(fichero.partition('.')[2].upper())
