@@ -6,4 +6,7 @@ de una carpeta
 import os
 
 L = os.listdir()
-print(L)
+for f in L:
+    ext = f.partition(".")[2]
+    if ext in ("txt", "py"):
+        print(f)
