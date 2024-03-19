@@ -64,3 +64,13 @@ print(ext)
 ext = fichero.partition('.')[2]
 print(ext)
 print(fichero.partition('.')[2].upper())
+
+
+# Expansión de tuplas en un bucle for:
+L = [(40.4, -3.65), (42.5, -7.5), (36.7, 1.2)]
+for t in L:
+    print(t[0], t[1])
+
+for lat, lon in L:
+    print(lat, lon)
+
