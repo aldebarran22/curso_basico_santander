@@ -81,7 +81,7 @@ def test4():
             procesarFichero(f)
 
         except Exception as e:
-            print(e)
+            print(e, "*" * 10)
 
 
 if __name__ == "__main__":
