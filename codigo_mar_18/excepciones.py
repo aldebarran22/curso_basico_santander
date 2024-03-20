@@ -74,13 +74,13 @@ def test4():
         else:
             print(f"procesando fichero {f}")
 
-    try:
         L = listdir()
         for f in L:
-            procesarFichero(f)
+            try:
+                procesarFichero(f)
 
-    except Exception as e:
-        print(e)
+            except Exception as e:
+                print(e)
 
 
 if __name__ == "__main__":
