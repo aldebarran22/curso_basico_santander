@@ -60,7 +60,31 @@ def test3():
         print(e)
 
 
+def test4():
+    # procesar ficheros dentro de un try except (TODOS LOS QUE PUEDA)
+    # solo avisa de los que fallan pero continua
+
+    def procesarFichero(f):
+        nombre, _, ext = f.partition(".")
+        if nombre == "":
+            return
+
+        if ext != "py":
+            raise ValueError(f"Error en el fichero {f}")
+        else:
+            print(f"procesando fichero {f}")
+
+    try:
+        L = listdir()
+        for f in L:
+            procesarFichero(f)
+
+    except Exception as e:
+        print(e)
+
+
 if __name__ == "__main__":
     # test1()
     # test2()
-    test3()
+    # test3()
+    test4()
