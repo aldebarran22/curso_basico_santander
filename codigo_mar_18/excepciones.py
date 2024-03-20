@@ -87,9 +87,9 @@ def test4():
 def test5():
     f = None
     try:
-        f = open("prueba55.py")
+        f = open("prueba.py")
         txt = f.read()
-        print(txt[100])
+        print(txt[1])
 
     except Exception as e:
         print(e)
