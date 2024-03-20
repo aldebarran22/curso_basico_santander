@@ -66,7 +66,7 @@ class Empleado(Persona):
         )
 
     def hablar(self, other=None):
-        if not other:
+        if other:
             c1 = set(self.idiomas)
             c2 = set(other.idiomas)
             comunes = c1 & c2
@@ -108,7 +108,7 @@ def testPersona():
 def testEmpleado():
     emp1 = Empleado("Pedro", 77, 1.8, "Santander", 2000.0, ["inglés", "alemán"])
     print(emp1)
-    emp2 = Empleado("Sandra", 67, 1.81, "Santander", 2500.0, ["inglés", "alemán"])
+    emp2 = Empleado("Sandra", 67, 1.81, "Santander", 2500.0, ["francés", "chino"])
     print(emp2)
     emp1.hablar(emp2)
 
