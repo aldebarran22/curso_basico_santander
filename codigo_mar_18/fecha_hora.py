@@ -1,12 +1,12 @@
 class Time:
 
-    def __init__(self, hh=0, mm=0, ss=0):
-        self.hh = hh
-        self.mm = mm
-        self.ss = ss
+    def __init__(self, h=0, m=0, s=0):
+        self.h = h
+        self.m = m
+        self.s = s
 
     def __str__(self):
-        return "%02d:%02d:%02d" % (self.hh, self.mm, self.ss)
+        return "%02d:%02d:%02d" % (self.h, self.m, self.s)
 
 
 class Date:
@@ -27,8 +27,11 @@ class Date:
             return False
 
 
-class DateTime(Date, Time):
-    pass
+class DateTime(Date,Time):
+
+    def __init__(self, dd=1, mm=1, yy=1970, h=0, m=0, s=0):
+        Date.__init__(self, dd, mm, yy)
+        Time.__init__(self, h, m, s)
 
 
 if __name__ == "__main__":
@@ -38,5 +41,5 @@ if __name__ == "__main__":
     d1 = Date(20, 3, 2024)
     print(d1)
 
-    dt = DateTime(20, 3, 2024, 1, 3, 5)  # 20/03/2024 01:03:05
+    dt = DateTime(20, 3, 2024, 1, 33, 5)  # 20/03/2024 01:33:05
     print(dt)
