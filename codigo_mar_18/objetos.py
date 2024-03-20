@@ -46,7 +46,12 @@ class Persona:
 
 
 class Empleado(Persona):
-    pass
+
+    def __init__(self, nombre="", peso=0, altura=0, empresa="", sueldo=0.0):
+        # super().__init__(nombre, peso, altura)
+        Persona.__init__(self, nombre, peso, altura)
+        self.empresa = empresa
+        self.sueldo = sueldo
 
 
 def testPersona():
