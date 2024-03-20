@@ -20,16 +20,16 @@ class Persona:
         else:
             print(self.nombre, "y", other.nombre, "están hablando")
 
-    """
     def __str__(self):
         return self.nombre + " " + str(self.peso) + " " + str(self.altura)
-    """
 
     def getCabeceras(self):
         return ";".join([v for v in self.__dict__.keys()])
 
+    """
     def __str__(self):
         return ";".join([str(v) for v in self.__dict__.values()])
+    """
 
     def __repr__(self):
         return str(self)
@@ -52,6 +52,9 @@ class Empleado(Persona):
         Persona.__init__(self, nombre, peso, altura)
         self.empresa = empresa
         self.sueldo = sueldo
+
+    def __str__(self):
+        return Persona.__str__(self) + " " + self.empresa + " " + str(self.sueldo)
 
 
 def testPersona():
@@ -82,7 +85,8 @@ def testPersona():
 
 
 def testEmpleado():
-    pass
+    emp1 = Empleado("Pedro", 77, 1.8, "Santander", 2000.0)
+    print(emp1)
 
 
 if __name__ == "__main__":
