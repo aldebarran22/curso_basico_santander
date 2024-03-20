@@ -20,6 +20,9 @@ class Persona:
 
     def __str__(self):
         return self.nombre + " " + str(self.peso) + " " + str(self.altura)
+    
+    def __repr__(self):
+        return str(self)
 
 
 def testPersona():
