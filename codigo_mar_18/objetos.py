@@ -33,7 +33,9 @@ def testPersona():
     p1.hablar(p2)
     # print(str(p1))
     # print(p1.__str__())
-    L = [p1, p2, Persona("Sara", 23, 1.82)]
+    L = [p1, p2, Persona("Sara", 57, 1.82)]
+    print(L)
+    L.sort()
     print(L)
 
 

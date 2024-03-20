@@ -23,4 +23,6 @@ print(claves)
 for k in claves:
     #print(k, L.count(k))
     histo[k] = L.count(k)
-print(histo)
+
+L = sorted(histo.items(), key=lambda t: t[1], reverse=True)
+print(L)
