@@ -20,8 +20,13 @@ class Persona:
         else:
             print(self.nombre, "y", other.nombre, "están hablando")
 
+    """
     def __str__(self):
         return self.nombre + " " + str(self.peso) + " " + str(self.altura)
+    """
+
+    def __str__(self):
+        return ", ".join([str(v) for v in self.__dict__.values()])
 
     def __repr__(self):
         return str(self)
@@ -52,8 +57,11 @@ def testPersona():
     L.sort()
     print(L)
     Persona.criterio = "altura"
-    L.sort()
+    L.sort(reverse=True)
     print(L)
+    p1.telefono = 912550099
+    p1.__dict__['movil'] = 600898979
+    print(p1)
 
 
 if __name__ == "__main__":
