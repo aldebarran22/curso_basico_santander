@@ -6,6 +6,8 @@ P.O.O en Python
 class Persona:
     """Implementación de la clase persona"""
 
+    criterio = "nombre"
+
     def __init__(self, nombre="", peso=0, altura=0.0):
         # Definición de att.
         self.nombre = nombre
@@ -23,9 +25,16 @@ class Persona:
 
     def __repr__(self):
         return str(self)
-    
+
+    """
     def __lt__(self, other):
         return self.nombre < other.nombre
+    """
+
+    def __lt__(self, other):
+        campo1 = self.__dict__[Persona.criterio]
+        campo2 = other.__dict__[Persona.criterio]
+        return campo1 < campo2
 
 
 def testPersona():
@@ -41,6 +50,10 @@ def testPersona():
     L.sort(key=lambda obj: (obj.peso, obj.nombre))
     print(L)
     L.sort()
+    print(L)
+    Persona.criterio = "altura"
+    L.sort()
+    print(L)
 
 
 if __name__ == "__main__":
