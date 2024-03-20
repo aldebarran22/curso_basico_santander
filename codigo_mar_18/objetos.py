@@ -12,13 +12,26 @@ class Persona:
         self.peso = peso
         self.altura = altura
 
+    def hablar(self, other=None):
+        if not other:
+            print(self.nombre, "habla solo")
+        else:
+            print(self.nombre, "y", other.nombre, "están hablando")
+
     def __str__(self):
         return self.nombre + " " + str(self.peso) + " " + str(self.altura)
 
 
 def testPersona():
     p1 = Persona("Ana", 55, 1.8)
+    p2 = Persona("Jorge", 79, 1.83)
     print(p1)
+    print(p2)
+    p1.hablar(p2)
+    # print(str(p1))
+    # print(p1.__str__())
+    L = [p1, p2, Persona("Sara", 23, 1.82)]
+    print(L)
 
 
 if __name__ == "__main__":
