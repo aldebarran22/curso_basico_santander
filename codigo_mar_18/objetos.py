@@ -12,8 +12,14 @@ class Persona:
         self.peso = peso
         self.altura = altura
 
-def testPersona():
-    pass
+    def __str__(self):
+        return self.nombre + " " + str(self.peso) + " " + str(self.altura)
 
-if __name__ == '__main__':
+
+def testPersona():
+    p1 = Persona("Ana", 55, 1.8)
+    print(p1)
+
+
+if __name__ == "__main__":
     testPersona()
