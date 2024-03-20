@@ -35,8 +35,9 @@ def testPersona():
     # print(p1.__str__())
     L = [p1, p2, Persona("Sara", 57, 1.82)]
     print(L)
-    L.sort()
+    L.sort(key=lambda obj:obj.peso)
     print(L)
+    L.sort()
 
 
 if __name__ == "__main__":

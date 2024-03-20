@@ -26,3 +26,4 @@ for k in claves:
 
 L = sorted(histo.items(), key=lambda t: t[1], reverse=True)
 print(L)
+print(type(histo.items()))
