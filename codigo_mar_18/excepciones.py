@@ -42,7 +42,10 @@ def test3():
     # procesar ficheros dentro de un try except
 
     def procesarFichero(f):
-        ext = f.partition(".")[2]
+        nombre, _, ext = f.partition(".")
+        if nombre == "":
+            return
+
         if ext != "py":
             raise ValueError(f"Error en el fichero {f}")
         else:
@@ -54,7 +57,7 @@ def test3():
             procesarFichero(f)
 
     except Exception as e:
-        print(f"Error en {f}", e)
+        print(e)
 
 
 if __name__ == "__main__":
