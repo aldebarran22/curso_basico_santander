@@ -55,7 +55,27 @@ class Empleado(Persona):
         self.idiomas = idiomas
 
     def __str__(self):
-        return Persona.__str__(self) + " " + self.empresa + " " + str(self.sueldo)+" "+",".join(self.idiomas)
+        return (
+            Persona.__str__(self)
+            + " "
+            + self.empresa
+            + " "
+            + str(self.sueldo)
+            + " "
+            + ",".join(self.idiomas)
+        )
+
+    def hablar(self, other=None):
+        if not other:
+            c1 = set(self.idiomas)
+            c2 = set(other.idiomas)
+            comunes = c1 & c2
+            if len(comunes) == 0:
+                raise Exception("No coinciden en ningún idioma")
+            else:
+                print(self.nombre, "y", other.nombre, "pueden hablar en: ", comunes)
+        else:
+            super().hablar(other)
 
 
 def testPersona():
@@ -86,8 +106,11 @@ def testPersona():
 
 
 def testEmpleado():
-    emp1 = Empleado("Pedro", 77, 1.8, "Santander", 2000.0, ['inglés','alemán'])
+    emp1 = Empleado("Pedro", 77, 1.8, "Santander", 2000.0, ["inglés", "alemán"])
     print(emp1)
+    emp2 = Empleado("Sandra", 67, 1.81, "Santander", 2500.0, ["inglés", "alemán"])
+    print(emp2)
+    emp1.hablar(emp2)
 
 
 if __name__ == "__main__":
