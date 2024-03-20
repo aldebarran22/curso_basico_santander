@@ -84,8 +84,24 @@ def test4():
             print(e, "*" * 10)
 
 
+def test5():
+    f = None
+    try:
+        f = open("prueba55.py")
+        txt = f.read()
+        print(txt[100])
+
+    except Exception as e:
+        print(e)
+
+    finally:
+        if f:
+            f.close()
+
+
 if __name__ == "__main__":
     # test1()
     # test2()
     # test3()
-    test4()
+    # test4()
+    test5()
