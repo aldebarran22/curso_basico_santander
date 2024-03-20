@@ -33,6 +33,9 @@ class DateTime(Date,Time):
         Date.__init__(self, dd, mm, yy)
         Time.__init__(self, h, m, s)
 
+    def __str__(self):
+        return Date.__str__(self)+" "+Time.__str__(self)
+
 
 if __name__ == "__main__":
     t1 = Time(1, 3, 5)  # 01:03:05
