@@ -47,14 +47,15 @@ class Persona:
 
 class Empleado(Persona):
 
-    def __init__(self, nombre="", peso=0, altura=0, empresa="", sueldo=0.0):
+    def __init__(self, nombre="", peso=0, altura=0, empresa="", sueldo=0.0, idiomas=[]):
         # super().__init__(nombre, peso, altura)
         Persona.__init__(self, nombre, peso, altura)
         self.empresa = empresa
         self.sueldo = sueldo
+        self.idiomas = idiomas
 
     def __str__(self):
-        return Persona.__str__(self) + " " + self.empresa + " " + str(self.sueldo)
+        return Persona.__str__(self) + " " + self.empresa + " " + str(self.sueldo)+" "+",".join(self.idiomas)
 
 
 def testPersona():
@@ -85,7 +86,7 @@ def testPersona():
 
 
 def testEmpleado():
-    emp1 = Empleado("Pedro", 77, 1.8, "Santander", 2000.0)
+    emp1 = Empleado("Pedro", 77, 1.8, "Santander", 2000.0, ['inglés','alemán'])
     print(emp1)
 
 
