@@ -6,6 +6,11 @@ class Time:
         self.s = s
 
     def __add__(self, other):
+        resul = Time(self.h + other.h, self.m + other.m, self.s + other.s)
+        resul.ajustar()
+        return resul
+
+    def ajustar(self):
         pass
 
     def __str__(self):
@@ -30,14 +35,14 @@ class Date:
             return False
 
 
-class DateTime(Date,Time):
+class DateTime(Date, Time):
 
     def __init__(self, dd=1, mm=1, yy=1970, h=0, m=0, s=0):
         Date.__init__(self, dd, mm, yy)
         Time.__init__(self, h, m, s)
 
     def __str__(self):
-        return Date.__str__(self)+" "+Time.__str__(self)
+        return Date.__str__(self) + " " + Time.__str__(self)
 
 
 if __name__ == "__main__":
@@ -47,7 +52,7 @@ if __name__ == "__main__":
     t2 = Time(12, 53, 55)  # 12:53:55
     print(t2)
 
-    suma = t1 + t2 # suma = t1.__add__(t2)
+    suma = t1 + t2  # suma = t1.__add__(t2)
     print(suma)
 
     d1 = Date(20, 3, 2024)
