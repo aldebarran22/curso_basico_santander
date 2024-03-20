@@ -5,6 +5,9 @@ class Time:
         self.m = m
         self.s = s
 
+    def __add__(self, other):
+        pass
+
     def __str__(self):
         return "%02d:%02d:%02d" % (self.h, self.m, self.s)
 
@@ -40,6 +43,12 @@ class DateTime(Date,Time):
 if __name__ == "__main__":
     t1 = Time(1, 3, 5)  # 01:03:05
     print(t1)
+
+    t2 = Time(12, 53, 55)  # 12:53:55
+    print(t2)
+
+    suma = t1 + t2 # suma = t1.__add__(t2)
+    print(suma)
 
     d1 = Date(20, 3, 2024)
     print(d1)
