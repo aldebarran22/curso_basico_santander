@@ -45,6 +45,10 @@ class Persona:
         return campo1 < campo2
 
 
+class Empleado(Persona):
+    pass
+
+
 def testPersona():
     p1 = Persona("Tomás", 69, 1.8)
     p2 = Persona("Jorge", 70, 1.83)
@@ -68,9 +72,14 @@ def testPersona():
     """
     print(p1)
 
-    txt = p1.getCabeceras() + "\n"+ "\n".join(str(obj) for obj in L)
+    txt = p1.getCabeceras() + "\n" + "\n".join(str(obj) for obj in L)
     print(txt)
 
 
+def testEmpleado():
+    pass
+
+
 if __name__ == "__main__":
-    testPersona()
+    # testPersona()
+    testEmpleado()
