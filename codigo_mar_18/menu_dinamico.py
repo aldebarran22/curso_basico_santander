@@ -30,4 +30,4 @@ if __name__ == "__main__":
         a = int(input("a: "))
         b = int(input("b: "))
         op = menu(L)
-        L[op-1](a,b)
+        print("resul", L[op - 1](a, b))
