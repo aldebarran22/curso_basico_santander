@@ -25,8 +25,11 @@ class Persona:
         return self.nombre + " " + str(self.peso) + " " + str(self.altura)
     """
 
+    def getCabeceras(self):
+        return ";".join([v for v in self.__dict__.keys()])
+
     def __str__(self):
-        return ", ".join([str(v) for v in self.__dict__.values()])
+        return ";".join([str(v) for v in self.__dict__.values()])
 
     def __repr__(self):
         return str(self)
@@ -59,9 +62,14 @@ def testPersona():
     Persona.criterio = "altura"
     L.sort(reverse=True)
     print(L)
+    """
     p1.telefono = 912550099
     p1.__dict__['movil'] = 600898979
+    """
     print(p1)
+
+    txt = p1.getCabeceras() + "\n"+ "\n".join(str(obj) for obj in L)
+    print(txt)
 
 
 if __name__ == "__main__":
