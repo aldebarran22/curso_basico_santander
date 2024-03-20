@@ -50,8 +50,11 @@ class DateTime(Date, Time):
         return Date.__str__(self) + " " + Time.__str__(self)
 
 
+def crearObjeto(clase, *args, **kwargs):
+    return clase(*args, **kwargs)
+
 if __name__ == "__main__":
-    t1 = Time(1, 3, 5)  # 01:03:05
+    t1 = Time(1, 23, 5)  # 01:23:05
     print(t1)
 
     t2 = Time(12, 53, 55)  # 12:53:55
@@ -65,3 +68,15 @@ if __name__ == "__main__":
 
     dt = DateTime(20, 3, 2024, 1, 33, 5)  # 20/03/2024 01:33:05
     print(dt)
+
+    print(dt.__class__)
+    print(dt.__class__.__name__)
+
+    obj = dt.__class__()
+    print(obj)
+
+    t1 = crearObjeto(Time, 12,34,55)
+    print(t1, t1.__class__.__name__)
+
+    d1 = crearObjeto(Date, 12,4,2024)
+    print(d1, d1.__class__.__name__)
