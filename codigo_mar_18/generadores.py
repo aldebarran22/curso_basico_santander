@@ -29,3 +29,6 @@ if __name__ == "__main__":
     for i in genMul3(1, 10):
         print(i)
     print()
+
+    L = list(genMul3(1,10))
+    print(L)
