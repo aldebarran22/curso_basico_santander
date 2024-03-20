@@ -20,22 +20,25 @@ class Persona:
 
     def __str__(self):
         return self.nombre + " " + str(self.peso) + " " + str(self.altura)
-    
+
     def __repr__(self):
         return str(self)
+    
+    def __lt__(self, other):
+        return self.nombre < other.nombre
 
 
 def testPersona():
-    p1 = Persona("Ana", 55, 1.8)
-    p2 = Persona("Jorge", 79, 1.83)
+    p1 = Persona("Tomás", 69, 1.8)
+    p2 = Persona("Jorge", 70, 1.83)
     print(p1)
     print(p2)
     p1.hablar(p2)
     # print(str(p1))
     # print(p1.__str__())
-    L = [p1, p2, Persona("Sara", 57, 1.82)]
+    L = [p1, p2, Persona("Sara", 70, 1.82)]
     print(L)
-    L.sort(key=lambda obj:obj.peso)
+    L.sort(key=lambda obj: (obj.peso, obj.nombre))
     print(L)
     L.sort()
 
