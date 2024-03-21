@@ -10,7 +10,7 @@ def test1():
     # Capturar 2 excepciones distintas
     try:
         L = [1, 2, 3, 4, 5]
-        print(numero)
+        # print(numero)
         print(L[10])
         print("mas codigo")
 
@@ -27,7 +27,7 @@ def test2():
     try:
         L = [1, 2, 3, 4, 5]
         print(L[-1] / 0)
-        print(numero)
+        # print(numero)
         print(L[10])
         print("mas codigo")
 
