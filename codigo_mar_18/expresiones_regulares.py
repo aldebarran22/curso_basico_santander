@@ -42,3 +42,8 @@ if __name__ == "__main__":
         "1243-4500-990123456789",
     ]
     validar(patron, L)
+
+    # Extraer los campos
+    patron = r"(\d{4})-(\d{4})-(\d{2})-(\d{4,10})$"
+    obj = re.match(patron, "1243-4500-99-0123456789")
+    print(obj.groups())
