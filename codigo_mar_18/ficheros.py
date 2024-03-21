@@ -76,6 +76,9 @@ def grabarFichero(path):
     fich = open(path, "w")
     for i in range(10):
         fich.write(f"linea de pedido {i+1}\n")
+
+    L = [f"hola{i}\n" for i in range(20)]
+    fich.writelines(L)
     fich.close()
 
 
