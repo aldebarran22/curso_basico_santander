@@ -27,6 +27,8 @@ if len(sys.argv) == 3:
 
         for linea in fich:
             linea = linea.rstrip()
+            # if len(linea)==0:
+            #    break
 
             # Enviamos un mensaje al server:
             sock_c.send(linea.encode("utf-8"))
@@ -36,6 +38,7 @@ if len(sys.argv) == 3:
             mensajeSer = mensajeSer.decode("utf-8")
             # print("El Server dice: ", mensajeSer)
 
+        print("Fichero enviado correctamente!")
         # Cortar comunicación con el Servidor!
         sock_c.send("fin".encode("utf-8"))
 
