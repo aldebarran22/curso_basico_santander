@@ -49,9 +49,11 @@ if __name__ == "__main__":
     print(obj.groups())
 
     patron = r"<h1>(.*?)</h1>"
-    html =  "<h1>titulo</h1><h3>subtitulo</h3><h4>subtitulo</h4><h1>hola</h1>"
+    html = "<h1>titulo</h1><h3>subtitulo</h3><h4>subtitulo</h4><h1>hola</h1>"
     for i in re.finditer(patron, html):
-        print(i.groups())
+        print(i)
 
-    
-
+    # Matrículas europeas: 4 dígitos y 3 consonantes mayúsculas:
+    patron = r"\d{4}[BDFGHJKLMNPQRSTXYZ]{3}$"
+    L = ["1234JJU", "123SDF", "4455KKJ", "7890KLL", "ERF"]
+    validar(patron, L)
