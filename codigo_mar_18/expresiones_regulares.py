@@ -22,7 +22,12 @@ if __name__ == "__main__":
     patron = r"[A-Za-z][A-Za-z][A-Za-z]$"
     L = ["***", "1234", "abc", "--a", "AAA", "ABCD", "ASe"]
     validar(patron, L)
-    exit()
+
+    # Cadenas que sólo contengan 3 vocales:
+    patron = r"[aeiou]{3}$"
+    L = ["aei", "aaae", "abc", "--a", "AAA", "ABC", "Aie"]
+    validar(patron, L)
+    
 
     # Cadenas de 3 números:
     patron = r"[0-9][0-9][0-9]$"
