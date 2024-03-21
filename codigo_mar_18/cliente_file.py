@@ -27,8 +27,8 @@ if len(sys.argv) == 3:
 
         for linea in fich:
             linea = linea.rstrip()
-            # if len(linea)==0:
-            #    break
+            if len(linea) == 0:
+                continue
 
             # Enviamos un mensaje al server:
             sock_c.send(linea.encode("utf-8"))

@@ -746,6 +746,8 @@ idpedido;cliente;idempleado;idempresa;importe;pais
 10992;THEBI;1;3;4.27;Estados Unidos
 10993;FOLKO;7;3;8.81;Suecia
 10994;VAFFE;2;3;65.53;Dinamarca
+
+
 10995;PERIC;1;3;46.00;Mexico
 10996;QUICK;4;2;1.12;Alemania
 10997;LILAS;8;2;73.91;Venezuela
@@ -801,6 +803,8 @@ idpedido;cliente;idempleado;idempresa;importe;pais
 11047;EASTC;7;3;46.62;Reino Unido
 11048;BOTTM;7;3;24.12;Canada
 11049;GOURL;3;1;8.34;Brasil
+
+
 11050;FOLKO;8;2;59.41;Suecia
 11051;LAMAI;7;3;2.79;Francia
 11052;HANAR;3;1;67.26;Brasil
@@ -829,3 +833,5 @@ idpedido;cliente;idempleado;idempresa;importe;pais
 11075;RICSU;8;2;6.19;Suiza
 11076;BONAP;4;2;38.28;Francia
 11077;RATTC;1;2;8.53;Estados Unidos
+
+
