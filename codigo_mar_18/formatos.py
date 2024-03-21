@@ -52,4 +52,7 @@ def formatearEnCols(file=sys.stdout):
 
 
 if __name__ == "__main__":
-    formatearEnCols()
+    fich = open("../ficheros/pedidos_format.txt", "w")
+    formatearEnCols(fich)
+    fich.close()
+
