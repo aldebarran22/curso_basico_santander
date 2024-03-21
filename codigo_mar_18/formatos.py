@@ -1,7 +1,9 @@
 """
 Imprimir registros en columnas.
 """
+
 import sys
+
 path = "../ficheros_curso/Pedidos.csv"
 
 
@@ -55,4 +57,3 @@ if __name__ == "__main__":
     fich = open("../ficheros/pedidos_format.txt", "w")
     formatearEnCols(fich)
     fich.close()
-
