@@ -47,3 +47,11 @@ if __name__ == "__main__":
     patron = r"(\d{4})-(\d{4})-(\d{2})-(\d{4,10})$"
     obj = re.match(patron, "1243-4500-99-0123456789")
     print(obj.groups())
+
+    patron = r"<h1>(.*?)</h1>"
+    html =  "<h1>titulo</h1><h3>subtitulo</h3><h4>subtitulo</h4><h1>hola</h1>"
+    for i in re.finditer(patron, html):
+        print(i.groups())
+
+    
+
