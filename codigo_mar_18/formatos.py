@@ -6,12 +6,22 @@ path = "../ficheros_curso/Pedidos.csv"
 
 
 def isfloat(cad):
-    if '.' in cad:
-        num = cad.replace(".","")
+    if "." in cad:
+        num = cad.replace(".", "")
         return num.isnumeric()
     else:
         return False
 
+
+def convertirTipos(valor):
+    if valor.isnumeric():
+        return int(valor)
+
+    elif isfloat(valor):
+        return float(valor)
+
+    else:
+        return valor
 
 
 def formatearEnCols():
@@ -29,12 +39,11 @@ def formatearEnCols():
     # Partir en filas y cols:
     L = csv.split("\n")
     for pos, fila in enumerate(L):
-        if fila == "" or pos==0:
+        if fila == "" or pos == 0:
             continue
 
         cols = fila.split(";")
-        cols = [int(i) if i.isnumeric() else i for i in cols]
-        cols[-2] = float(cols[-2])
+        cols = [convertirTipos(i) for i in cols]
         print(cols)
 
 
