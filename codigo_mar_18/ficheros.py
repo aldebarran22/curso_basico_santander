@@ -43,7 +43,14 @@ def imprimirFichero(path):
             fich.close()
 
 
+def acumuladoPaises(path, paises):
+    dict_paises = dict.fromkeys(paises, 0)
+    return dict_paises
+
+
 if __name__ == "__main__":
     # imprimirFichero("../ficheros_curso/Pedidos.csv")
     paises = extraerPaises("../ficheros_curso/Pedidos.csv")
-    print(paises)
+    #print(paises)
+    histo = acumuladoPaises("../ficheros_curso/Pedidos.csv", paises)
+    print(histo)
