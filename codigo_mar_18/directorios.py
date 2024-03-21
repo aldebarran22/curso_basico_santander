@@ -11,8 +11,8 @@ def ls(ruta="."):
     print("Archivos: ", archivos[:3])  # Devuelve la lista de
 
     for subdir in subdirs:
-        ls(dir + "/" + subdir)
         print("*" * 30)
+        ls(dir + "/" + subdir)
 
 
 if __name__ == "__main__":
