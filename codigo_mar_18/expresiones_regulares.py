@@ -17,3 +17,14 @@ if __name__ == "__main__":
     patron = r"...$"
     L = ["***", "1234", "abc", "--a", "12345"]
     validar(patron, L)
+
+    # Cadenas de 3 letras mayúsculas/minúsculas:
+    patron = r"[A-Za-z][A-Za-z][A-Za-z]$"
+    L = ["***", "1234", "abc", "--a", "AAA", "ABCD", "ASe"]
+    validar(patron, L)
+    exit()
+
+    # Cadenas de 3 números:
+    patron = r"[0-9][0-9][0-9]$"
+    L = ["***", "1234", "abc", "--a", "AAA", "ABCD", "ASe"]
+    validar(patron, L)
