@@ -1,0 +1,10 @@
+es.empresa.aplicacion
+
+es <dir>
+   __init__.py
+
+   empresa <dir> 
+     __init__.py 
+ 
+     aplicacion <dir>
+       __init__.py
