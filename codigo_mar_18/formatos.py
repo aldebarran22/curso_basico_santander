@@ -38,16 +38,17 @@ def formatearEnCols():
 
     # Partir en filas y cols:
     L = csv.split("\n")
+    tab = " " * 3
     for pos, fila in enumerate(L[:5]):
         if fila == "" or pos == 0:
-            if pos == 0: 
+            if pos == 0:
                 t = tuple(fila.split(";"))
-                print("%s\t%s\t%s\t%s\t%s\t%s" % t)
+                print(f"%-8s{tab}%s\t%s\t%s\t%s\t%s" % t)
             continue
 
         cols = fila.split(";")
         cols = tuple([convertirTipos(i) for i in cols])
-        print("%d\t%s\t%d\t%d\t%f\t%s" % cols)
+        print(f"%-8d{tab}%s\t%d\t%d\t%f\t%s" % cols)
 
 
 if __name__ == "__main__":
