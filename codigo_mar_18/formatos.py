@@ -24,6 +24,7 @@ def formatearEnCols():
             continue
 
         cols = fila.split(";")
+        cols = [int(i) if i.isnumeric() else i for i in cols]
         print(cols)
 
 
