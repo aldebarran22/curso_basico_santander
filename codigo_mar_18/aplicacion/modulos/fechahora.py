@@ -1,7 +1,11 @@
 """Clase Datetime"""
 
-from modulos.fecha import Date
-from modulos.hora import Time
+try:
+    from modulos.fecha import Date
+    from modulos.hora import Time
+except:
+    from fecha import Date
+    from hora import Time
 
 
 class DateTime(Date, Time):
@@ -12,3 +16,7 @@ class DateTime(Date, Time):
 
     def __str__(self):
         return Date.__str__(self) + " " + Time.__str__(self)
+
+if __name__ == '__main__':
+    dt = DateTime()
+    print(dt)
