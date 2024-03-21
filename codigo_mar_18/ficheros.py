@@ -77,4 +77,7 @@ if __name__ == "__main__":
     paises = extraerPaises("../ficheros_curso/Pedidos.csv")
     # print(paises)
     histo = acumuladoPaises("../ficheros_curso/Pedidos.csv", paises)
-    print(histo)
+    L = sorted(histo.items(), key=lambda t:t[1], reverse=True)
+    for pais, importe in L:
+        print(pais, round(importe,2))
+    
