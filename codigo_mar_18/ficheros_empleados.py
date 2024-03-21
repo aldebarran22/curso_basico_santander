@@ -30,7 +30,7 @@ def criterio(fila):
 
 def fusion(pathO1, pathO2, pathDestino):
     c1 = cargaFichero(pathO1)
-    c2 = cargaFichero(pathO2)    
+    c2 = cargaFichero(pathO2)
 
     fusion = c1 | c2
     filas = sorted(fusion, key=criterio)
@@ -38,3 +38,10 @@ def fusion(pathO1, pathO2, pathDestino):
     fich = open(pathDestino, "w")
     fich.writelines([fila + "\n" for fila in filas])
     fich.close()
+
+
+if __name__ == "__main__":
+    path1 = "../ficheros_curso/Empleados2.txt"
+    path2 = "../ficheros_curso/Empleados3.txt"
+    pathD = "../ficheros/empleados_final.csv"
+    fusion(path1, path2, pathD)
