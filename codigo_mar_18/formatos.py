@@ -15,7 +15,13 @@ def formatearEnCols():
 
     # formatearEnCols:
     csv = leerFichero()
-    print(csv)
+    #print(csv)
+
+    # Partir en filas y cols:
+    L = csv.split("\n")
+    for fila in L:
+        cols = fila.split(";")
+        print(cols)
 
 
 if __name__ == "__main__":
