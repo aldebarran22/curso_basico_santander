@@ -5,6 +5,15 @@ Imprimir registros en columnas.
 path = "../ficheros_curso/Pedidos.csv"
 
 
+def isfloat(cad):
+    if '.' in cad:
+        num = cad.replace(".","")
+        return num.isnumeric()
+    else:
+        return False
+
+
+
 def formatearEnCols():
 
     def leerFichero():
@@ -19,12 +28,13 @@ def formatearEnCols():
 
     # Partir en filas y cols:
     L = csv.split("\n")
-    for fila in L:
-        if fila == "":
+    for pos, fila in enumerate(L):
+        if fila == "" or pos==0:
             continue
 
         cols = fila.split(";")
         cols = [int(i) if i.isnumeric() else i for i in cols]
+        cols[-2] = float(cols[-2])
         print(cols)
 
 
