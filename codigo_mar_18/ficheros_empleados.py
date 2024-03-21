@@ -32,12 +32,13 @@ def fusion(pathO1, pathO2, pathDestino):
     c1 = cargaFichero(pathO1)
     c2 = cargaFichero(pathO2)
 
-    fusion = c1 | c2
-    filas = sorted(fusion, key=criterio)
+    filas = c1 | c2
+    filas = sorted(filas, key=criterio)
 
     fich = open(pathDestino, "w")
     fich.writelines([fila + "\n" for fila in filas])
     fich.close()
+
 
 
 if __name__ == "__main__":
