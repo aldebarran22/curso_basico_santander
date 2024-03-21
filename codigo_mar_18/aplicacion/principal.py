@@ -3,8 +3,8 @@ Código principal del proyecto
 """
 
 from modulos.fecha import Date
-from modulos.fecha import DateTime
-from modulos.fecha import Time
+from modulos.fechahora import DateTime
+from modulos.hora import Time
 
 
 def crearObjeto(clase, *args, **kwargs):
