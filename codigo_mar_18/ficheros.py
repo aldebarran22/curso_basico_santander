@@ -8,6 +8,7 @@ def imprimirFichero(path):
     try:
         fich = open(path, "r")
         for linea in fich:
+            linea = linea.rstrip()
             print(linea)
 
     except Exception as e:
