@@ -27,9 +27,18 @@ if __name__ == "__main__":
     patron = r"[aeiou]{3}$"
     L = ["aei", "aaae", "abc", "--a", "AAA", "ABC", "Aie"]
     validar(patron, L)
-    
 
     # Cadenas de 3 números:
     patron = r"[0-9][0-9][0-9]$"
     L = ["***", "1234", "abc", "--a", "AAA", "ABCD", "ASe"]
+    validar(patron, L)
+
+    # Cuenta Bancaria: sucursal-entidad-dc-numero
+    patron = r"\d{4}-\d{4}-\d{2}-\d{4,10}$"
+    L = [
+        "1243-4500-99-0123456789",
+        "1243-4500-99-0003456789",
+        "1243-4500-9-0123456789",
+        "1243-4500-990123456789",
+    ]
     validar(patron, L)
