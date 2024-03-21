@@ -43,8 +43,8 @@ def formatearEnCols():
             continue
 
         cols = fila.split(";")
-        cols = [convertirTipos(i) for i in cols]
-        print(cols)
+        cols = tuple([convertirTipos(i) for i in cols])
+        print("%d\t%s\t%d\t%d\t%f\t%s" % cols)
 
 
 if __name__ == "__main__":
