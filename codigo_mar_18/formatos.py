@@ -43,12 +43,12 @@ def formatearEnCols():
         if fila == "" or pos == 0:
             if pos == 0:
                 t = tuple(fila.split(";"))
-                print(f"%-8s{tab}%s\t%s\t%s\t%s\t%s" % t)
+                print(f"%-8s{tab}%-7s{tab}%10s{tab}%9s{tab}%7s{tab}%s" % t)
             continue
 
         cols = fila.split(";")
         cols = tuple([convertirTipos(i) for i in cols])
-        print(f"%-8d{tab}%s\t%d\t%d\t%f\t%s" % cols)
+        print(f"%-8d{tab}%-7s{tab}%10d{tab}%9d{tab}%7.2f{tab}%s" % cols)
 
 
 if __name__ == "__main__":
