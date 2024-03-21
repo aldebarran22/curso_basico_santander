@@ -72,12 +72,20 @@ def acumuladoPaises(path, paises):
             fich.close()
 
 
+def grabarFichero(path):
+    fich = open(path, "w")
+    for i in range(10):
+        fich.write(f"linea de pedido {i+1}\n")
+    fich.close()
+
+
 if __name__ == "__main__":
     # imprimirFichero("../ficheros_curso/Pedidos.csv")
     paises = extraerPaises("../ficheros_curso/Pedidos.csv")
     # print(paises)
     histo = acumuladoPaises("../ficheros_curso/Pedidos.csv", paises)
-    L = sorted(histo.items(), key=lambda t:t[1], reverse=True)
+    L = sorted(histo.items(), key=lambda t: t[1], reverse=True)
     for pais, importe in L:
-        print(pais, round(importe,2))
-    
+        print(pais, round(importe, 2))
+
+    grabarFichero("../ficheros/lineas.txt")
