@@ -62,7 +62,7 @@ class BaseDatos:
 
         self.con = dbapi.connect(path)
 
-    def select(self, cat=None):
+    def select(self, *cat):
         """Recuperar todos los productos"""
         cur = None
         try:
@@ -70,11 +70,14 @@ class BaseDatos:
             sql = """select c.id as idcat, c.nombre, p.id as idprod,
             p.nombre, p.precio, p.existencias from productos p 
             inner join categorias c on p.idcategoria = c.id"""
-            if cat is None:
+            if len(cat) == 0:
                 cur.execute(sql)  # todas las categorias:
             else:
-                sql += " where c.nombre = ?"
-                cur.execute(sql, (cat,))  # Una categoría
+                cad = " where " + " or ".join("c.nombre = '" + i + "'" for i in cat)
+                sql += cad
+                print(sql)
+                # sql += " where c.nombre in ?"
+                cur.execute(sql)  # Una categoría
 
             productos = []
             for t in cur.fetchall():
