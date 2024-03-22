@@ -11,6 +11,7 @@ def listar(path):
     try:
         if not isfile(path):
             raise FileNotFoundError(f"El fichero: {path} no existe")
+        con = db.connect(path)
         print("conexión ok!")
 
     except Exception as e:
