@@ -4,6 +4,7 @@ Implementación de un servidor TCP
 
 import socket as s
 import sys
+from datetime import datetime
 from threading import Thread
 
 
@@ -16,20 +17,32 @@ class Cliente(Thread):
 
     def run(self):
         # Recibir:
+        fich = None
         try:
+            t = datetime.now()
+            cad = t.strftime("%Y_%m_%d_%H_%M_%S")
+            fich = open(f"../ficheros/pedidos_{cad}_{self.getName()}.csv", "w")
+
             while True:
-                mensaje = self.s_client.recv(1024)
+                # Recibir:
+                mensaje = s_client.recv(1024)
                 mensaje = mensaje.decode("utf-8")
                 if mensaje.lower() == "fin":
                     break
 
-                print("Mensaje del cliente: ", self.addr, "Mensaje:", mensaje)
-                self.s_client.send(mensaje.upper().encode("utf-8"))
+                print(mensaje, file=fich)
+                s_client.send(mensaje.upper().encode("utf-8"))
+
+            print("Fin de comunicación")
+
         except Exception as e:
             if e.errno == 10054:
                 print("Cliente desconectado")
             else:
                 print(e)
+        finally:
+            if fich:
+                fich.close()
 
 
 if len(sys.argv) == 2:
@@ -37,6 +50,7 @@ if len(sys.argv) == 2:
     print("Puerto: ", puerto)
 
     s_server = s_client = None
+    fich = None
     try:
         # Crear un socket TCP / AF_INET
         s_server = s.socket()
@@ -53,12 +67,10 @@ if len(sys.argv) == 2:
         while True:
             print("Servidor a la espera de clientes")
             s_client, addr = s_server.accept()
-            print("cliente conectado: ", addr)
 
+            print("cliente conectado: ", addr)
             cliente = Cliente(s_client, addr)
             cliente.start()
-
-        print("Fin de comunicación")
 
     except Exception as e:
         print("ERROR: ", e)
@@ -71,6 +83,8 @@ if len(sys.argv) == 2:
             s_client.close()
         if s_server:
             s_server.close()
+        if fich:
+            fich.close()
 
 else:
     print("No se ha indicado el puerto para conectar ...")
