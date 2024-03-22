@@ -10,8 +10,8 @@ from time import sleep
 num_muestras = 10
 tam_buffer = 5
 
-num_productores = 2
-num_consumidores = 2
+num_productores = 1
+num_consumidores = 1
 
 
 class Productor(Thread):
@@ -22,23 +22,22 @@ class Productor(Thread):
 
     def run(self):
         for i in range(self.num_muestras):
-            numero = randint(1,50)  
-            print(self.getName(),":", numero) 
+            numero = randint(1, 50)
+            print(self.getName(), ":", numero)
 
             # Comprobar si hay hueco:
             self.buffer.sem_huecos.acquire()
 
-            # Modificar el buffer en exc. mutua: 
+            # Modificar el buffer en exc. mutua:
             with self.buffer.mutex:
-                # Colocar el número en el buffer:                
+                # Colocar el número en el buffer:
                 self.buffer.buf[self.buffer.ind_p] = numero
                 print(self.buffer.buf)
-                self.buffer.ind_p = (self.buffer.ind_p+1) % tam_buffer
-                
+                self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
+
             # Avisar que hay un nuevo item:
             self.buffer.sem_items.release()
-
-        
+            sleep(randint(2, 4))
 
 
 class Consumidor(Thread):
@@ -48,7 +47,21 @@ class Consumidor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+
+            # Comprobar si hay un item:
+            self.buffer.sem_items.acquire()
+
+            with self.buffer.mutex:
+                numero = self.buffer.buff[self.buffer.ind_c]
+                print(self.getName(), ":", numero)
+                print(self.buffer.buf)
+                self.buffer.buff[self.buffer.ind_c] = -1
+                self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
+
+            # Avisar que hay un hueco:
+            self.buffer.sem_huecos.release()
+            sleep(randint(2, 4))
 
 
 class TBuffer:
