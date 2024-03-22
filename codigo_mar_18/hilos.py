@@ -20,3 +20,14 @@ class Hilo(Thread):
         print(f"{self.getName()} ha terminado!")
 
 
+if __name__ == "__main__":
+    L = []
+    for i in range(4):
+        hilo = Hilo(f"Hilo-{i+1}", randint(5, 10))
+        hilo.start()
+        L.append(hilo)
+
+    for i in L:
+        i.join()
+
+    print("main termina")
