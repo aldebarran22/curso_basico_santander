@@ -76,9 +76,10 @@ class BaseDatos:
             if not t:
                 raise ValueError(f"El producto con id: {pk} no existe")
             else:
-                print(t)
                 cat = Categoria(*t[:2])
-                print(cat)
+                L = list(t[2:])
+                L.insert(2, cat)
+                return Producto(*L)
 
         except Exception as e:
             print(e)
