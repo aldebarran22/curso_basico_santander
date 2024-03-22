@@ -29,7 +29,7 @@ class Consumidor(Thread):
         self.buffer = buffer
 
     def run(self):
-		pass
+        pass
 
 
 class TBuffer:
@@ -47,7 +47,7 @@ if __name__ == "__main__":
         print("El número tiene que estar equilibrado entre el n. de prod/con")
         exit()
 
-    # Calcular el numero de muestra por productor y consumidor:
+    # Calcular el numero de muestras por productor y consumidor:
     num_muestras_prod = num_muestras // num_productores
     num_muestras_con = num_muestras // num_consumidores
 
