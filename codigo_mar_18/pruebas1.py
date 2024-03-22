@@ -8,7 +8,7 @@ import unittest
 class EjemploPruebas(unittest.TestCase):
 
     def testok(self):
-        return True
+        return False
 
     def testFails(self):
         raise AssertionError("Fail")
@@ -16,5 +16,6 @@ class EjemploPruebas(unittest.TestCase):
     def testException(self):
         raise Exception("Error")
 
-if __name__ == "__main __":
+
+if __name__ == "__main__":
     unittest.main()
