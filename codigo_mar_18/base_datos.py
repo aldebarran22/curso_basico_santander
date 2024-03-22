@@ -14,12 +14,13 @@ def listar(path, tabla):
         if not isfile(path):
             raise FileNotFoundError(f"El fichero: {path} no existe")
         con = db.connect(path)
-        #print("conexión ok!")
+        # print("conexión ok!")
         cur = con.cursor()
         sql = f"select * from {tabla}"
         cur.execute(sql)
+        print(cur.description)
         for t in cur.fetchall():
-            print(t)    
+            print(t)
 
     except Exception as e:
         print(e)
@@ -31,4 +32,4 @@ def listar(path, tabla):
 
 
 if __name__ == "__main__":
-    listar("../bd/empresa3.db", "empleados")
+    listar("../bd/empresa3.db", "productos")
