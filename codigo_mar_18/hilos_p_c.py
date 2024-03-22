@@ -53,10 +53,10 @@ class Consumidor(Thread):
             self.buffer.sem_items.acquire()
 
             with self.buffer.mutex:
-                numero = self.buffer.buff[self.buffer.ind_c]
+                numero = self.buffer.buf[self.buffer.ind_c]
                 print(self.getName(), ":", numero)
                 print(self.buffer.buf)
-                self.buffer.buff[self.buffer.ind_c] = -1
+                self.buffer.buf[self.buffer.ind_c] = -1
                 self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
 
             # Avisar que hay un hueco:
