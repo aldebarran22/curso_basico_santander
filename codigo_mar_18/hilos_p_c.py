@@ -10,7 +10,7 @@ from time import sleep
 num_muestras = 10
 tam_buffer = 5
 
-num_productores = 1
+num_productores = 5
 num_consumidores = 1
 
 
