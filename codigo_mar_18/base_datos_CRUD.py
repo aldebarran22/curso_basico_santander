@@ -76,8 +76,7 @@ class BaseDatos:
                 cad = " where " + " or ".join("c.nombre = '" + i + "'" for i in cat)
                 sql += cad
                 print(sql)
-                # sql += " where c.nombre in ?"
-                cur.execute(sql)  # Una categoría
+                cur.execute(sql)
 
             productos = []
             for t in cur.fetchall():
@@ -135,7 +134,7 @@ if __name__ == "__main__":
         prod = bd.read(3)
         print(prod)
 
-        L = bd.select("Lacteos")
+        L = bd.select("Carnes", "Bebidas", "Comidas")
         for p in L:
             print(p)
 
