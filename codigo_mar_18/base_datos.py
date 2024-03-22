@@ -6,6 +6,7 @@ extraer registros
 import sqlite3 as db
 from os.path import isfile
 import sys
+from formatos import isfloat
 
 
 def listar(path, tabla, file=sys.stdout):
@@ -22,7 +23,9 @@ def listar(path, tabla, file=sys.stdout):
         cabs = ";".join([t[0] for t in cur.description])
         print(cabs, file=file)
         for t in cur.fetchall():
-            linea = ";".join([str(i) for i in t])
+            L = [str(i) for i in t]
+            L = [i.replace('.',',') if isfloat(i) else i for i in L]
+            linea = ";".join(L)
             print(linea, file=file)
 
     except Exception as e:
@@ -42,5 +45,5 @@ def exportar(path, tabla):
 
 
 if __name__ == "__main__":
-    listar("../bd/empresa3.db", "productos")
+    # listar("../bd/empresa3.db", "productos")
     exportar("../bd/empresa3.db", "productos")
