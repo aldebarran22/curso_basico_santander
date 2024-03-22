@@ -62,6 +62,37 @@ class BaseDatos:
 
         self.con = dbapi.connect(path)
 
+    def select(self, cat=None):
+        """Recuperar todos los productos"""
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = """select c.id as idcat, c.nombre, p.id as idprod,
+            p.nombre, p.precio, p.existencias from productos p 
+            inner join categorias c on p.idcategoria = c.id"""
+            if cat is None:
+                cur.execute(sql)  # todas las categorias:
+            else:
+                sql += " where c.nombre = ?"
+                cur.execute(sql, (cat,))  # Una categoría
+
+            productos = []
+            for t in cur.fetchall():
+                cat = Categoria(*t[:2])
+                L = list(t[2:])
+                L.insert(2, cat)
+                productos.append(Producto(*L))
+
+            return productos
+
+        except Exception as e:
+            print(e)
+            raise e  # relanza la excepción
+
+        finally:
+            if cur:
+                cur.close()
+
     def read(self, pk):
         """Recuperar un producto a partir de la clave primaria"""
         cur = None
