@@ -21,7 +21,8 @@ def listar(path, tabla):
         cabs = ";".join([t[0] for t in cur.description])
         print(cabs)
         for t in cur.fetchall():
-            print(t)
+            linea = ";".join([str(i) for i in t])
+            print(linea)
 
     except Exception as e:
         print(e)
