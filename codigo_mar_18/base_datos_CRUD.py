@@ -137,7 +137,6 @@ class BaseDatos:
 
         except Exception as e:
             self.con.rollback()
-            print(e)
             raise e  # relanza la excepción
 
         finally:
