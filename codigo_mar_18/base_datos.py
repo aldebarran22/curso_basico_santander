@@ -5,9 +5,10 @@ extraer registros
 
 import sqlite3 as db
 from os.path import isfile
+import sys
 
 
-def listar(path, tabla):
+def listar(path, tabla, file=sys.stdout):
     con = None
     cur = None
     try:
@@ -19,10 +20,10 @@ def listar(path, tabla):
         sql = f"select * from {tabla}"
         cur.execute(sql)
         cabs = ";".join([t[0] for t in cur.description])
-        print(cabs)
+        print(cabs, file=file)
         for t in cur.fetchall():
             linea = ";".join([str(i) for i in t])
-            print(linea)
+            print(linea, file=file)
 
     except Exception as e:
         print(e)
@@ -33,5 +34,13 @@ def listar(path, tabla):
             con.close()
 
 
+def exportar(path, tabla):
+    path_fich = f"../ficheros/{tabla}.csv"
+    fich = open(path_fich, "w")
+    listar(path, tabla, fich)
+    fich.close()
+
+
 if __name__ == "__main__":
     listar("../bd/empresa3.db", "productos")
+    exportar("../bd/empresa3.db", "productos")
