@@ -131,5 +131,10 @@ if __name__ == "__main__":
         bd = BaseDatos("../bd/empresa3.db")
         prod = bd.read(3)
         print(prod)
+
+        L = bd.select("Lacteos")
+        for p in L:
+            print(p)
+
     except Exception as e:
         print(e)
