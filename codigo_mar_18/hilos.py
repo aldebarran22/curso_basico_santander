@@ -24,7 +24,7 @@ if __name__ == "__main__":
     L = []
     for i in range(4):
         hilo = Hilo(f"Hilo-{i+1}", randint(5, 10))
-        hilo.start()
+        hilo.start()  # ejecutar run()
         L.append(hilo)
 
     for i in L:
