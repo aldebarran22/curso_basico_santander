@@ -48,7 +48,7 @@ class Producto:
         return str(self)
 
     def getTupla(self):
-        return (self.id, self.nombre, self.cat.id, self.precio, self.exis)
+        return (self.nombre, self.cat.id, self.precio, self.exis)
 
     def getTupla2(self):
         return (self.nombre, self.cat.id, self.precio, self.exis, self.id)
@@ -122,6 +122,28 @@ class BaseDatos:
             if cur:
                 cur.close()
 
+    def create(self, prod):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = """insert into productos
+            (nombre, idcategoria, precio, existencias) 
+            values (?,?,?,?)"""
+            cur.execute(sql, prod.getTupla())
+            prod.id = cur.lastrowid  # El id generado por la BD
+            n = cur.rowcount  # Número de registros grabados
+            self.con.commit()  # Confirma la TX:
+            return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            print(e)
+            raise e  # relanza la excepción
+
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -137,6 +159,14 @@ if __name__ == "__main__":
         L = bd.select("Carnes", "Bebidas", "Comidas")
         for p in L:
             print(p)
+
+        # Crear un producto nuevo:
+        cat = Categoria(1, "Bebidas")
+        prod = Producto(0, "CocaCola2", cat, 1.5, 100)
+        if bd.create(prod):
+            print("Producto creado con id: ", prod.id)
+        else:
+            print("No se ha creado el producto!")
 
     except Exception as e:
         print(e)
