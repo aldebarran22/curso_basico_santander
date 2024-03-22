@@ -62,8 +62,34 @@ class BaseDatos:
 
         self.con = dbapi.connect(path)
 
+    def read(self, pk):
+        """Recuperar un producto a partir de la clave primaria"""
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = """select c.id as idcat, c.nombre, p.id as idprod,
+            p.nombre, p.precio, p.existencias from productos p 
+            inner join categorias c on p.idcategoria = c.id 
+            where p.id = ?"""
+            cur.execute(sql, (pk,))
+            t = cur.fetchone()
+            if not t:
+                raise ValueError(f"El producto con id: {pk} no existe")
+            else:
+                print(t)
+                cat = Categoria(*t[:2])
+                print(cat)
+
+        except Exception as e:
+            print(e)
+            raise e  # relanza la excepción
+
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
-        if hasattr(self, "con"):            
+        if hasattr(self, "con"):
             self.con.close()
             print("Conexión  cerrada!")
 
@@ -71,7 +97,7 @@ class BaseDatos:
 if __name__ == "__main__":
     try:
         bd = BaseDatos("../bd/empresa3.db")
-        #prod = bd.read(3)
-        #print(prod)
+        prod = bd.read(3)
+        print(prod)
     except Exception as e:
         print(e)
