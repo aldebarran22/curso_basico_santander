@@ -5,6 +5,10 @@ U - Update -> update
 D - Delete -> delete
 """
 
+from os.path import isfile
+import sqlite3 as dbapi
+
+
 class Categoria:
 
     def __init__(self, id=0, nombre=""):
@@ -49,15 +53,25 @@ class Producto:
     def getTupla2(self):
         return (self.nombre, self.cat.id, self.precio, self.exis, self.id)
 
+
 class BaseDatos:
 
     def __init__(self, path):
-        pass
+        if not isfile(path):
+            raise FileNotFoundError(f"El fichero: {path} no existe")
+
+        self.con = dbapi.connect(path)
 
     def __del__(self):
-        pass
+        if hasattr(self, "con"):            
+            self.con.close()
+            print("Conexión  cerrada!")
 
-if __name__ == '__main__':
-    bd = BaseDatos("../bd/empresa3.db")
-    prod = bd.read(3)
-    print(prod)
+
+if __name__ == "__main__":
+    try:
+        bd = BaseDatos("../bd/empresa3.db")
+        #prod = bd.read(3)
+        #print(prod)
+    except Exception as e:
+        print(e)
