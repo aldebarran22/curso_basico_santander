@@ -18,7 +18,8 @@ def listar(path, tabla):
         cur = con.cursor()
         sql = f"select * from {tabla}"
         cur.execute(sql)
-        print(cur.description)
+        cabs = ";".join([t[0] for t in cur.description])
+        print(cabs)
         for t in cur.fetchall():
             print(t)
 
