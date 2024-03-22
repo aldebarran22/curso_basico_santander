@@ -72,4 +72,5 @@ def exportarBD(path):
 
 if __name__ == "__main__":
     # listar("../bd/empresa3.db", "productos")
-    exportar("../bd/empresa3.db", "pedidos")
+    # exportar("../bd/empresa3.db", "pedidos")
+    exportarBD("../bd/empresa3.db")
