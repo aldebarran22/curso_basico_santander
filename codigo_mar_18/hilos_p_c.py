@@ -68,7 +68,7 @@ class TBuffer:
     def __init__(self):
         self.ind_c = 0
         self.ind_p = 0
-        self.buffer = [-1] * tam_buffer
+        self.buf = [-1] * tam_buffer
         self.mutex = Lock()
         self.sem_huecos = Semaphore(tam_buffer)
         self.sem_items = Semaphore(0)
