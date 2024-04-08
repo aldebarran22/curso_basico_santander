@@ -14,7 +14,12 @@ csv = """id;nombre;cargo
 9;Dodsworth;Representante de ventas"""
 
 # Convertir CSV a Lista de diccionarios:
-L = csv.split(r"\n")
+L = csv.split("\n")
 R = list()
-for linea in L:
-    print(linea)
+cabs = L[0].split(";")
+for linea in L[1:]:
+    datos = linea.split(";")
+    d = dict(zip(cabs, datos))
+    #print(d)
+    R.append(d)
+print(R)
