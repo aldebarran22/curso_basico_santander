@@ -1,0 +1,9 @@
+Funciones de uso general:
+len(), sum(), min(), max()
+
+len(colección)
+len(L) 
+
+Métodos de list:
+objeto.método()
+L.copy()
