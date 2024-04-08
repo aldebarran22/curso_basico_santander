@@ -20,6 +20,10 @@ cabs = L[0].split(";")
 for linea in L[1:]:
     datos = linea.split(";")
     d = dict(zip(cabs, datos))
-    #print(d)
+    # print(d)
     R.append(d)
 print(R)
+
+# Convertir la Lista de diccionarios a CSV:
+cabs = ";".join(R[0].keys())
+print(cabs)
