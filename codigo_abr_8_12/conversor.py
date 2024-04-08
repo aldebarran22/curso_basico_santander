@@ -27,3 +27,6 @@ print(R)
 # Convertir la Lista de diccionarios a CSV:
 cabs = ";".join(R[0].keys())
 print(cabs)
+for d in R:
+    linea = ";".join(d.values())
+    print(linea)
