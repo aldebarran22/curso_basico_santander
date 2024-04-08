@@ -1,0 +1,8 @@
+- Análisis de datos
+- Machine / Deep Learning
+- Acceso a BD: relacionales / NoSQL
+- Aplicaciones Escritorio: PyQt
+- Aplicaciones Web: Django
+- Servicios Rest: Flash
+- ORMs: SQLAlchemy / pewee --> Base de datos
+- integración con la shell: Linux
