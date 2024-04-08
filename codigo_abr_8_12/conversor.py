@@ -24,13 +24,22 @@ for linea in L[1:]:
     R.append(d)
 print(R)
 
+
+# Buscar los empleados que tienen de cargo: Representante de ventas
+for d in R:
+    #if 'Representante de ventas' in d.values():
+    if d['cargo'] == 'Representante de ventas':
+        print(d)
+
+print()
+
+
 # Convertir la Lista de diccionarios a CSV:
 cabs = ";".join(R[0].keys())
-print(cabs)
 R2 = [cabs]
 for d in R:
     linea = ";".join(d.values())
     R2.append(linea)
 csv2 = "\n".join(R2)
 print(csv == csv2)
-print(csv2)
+
