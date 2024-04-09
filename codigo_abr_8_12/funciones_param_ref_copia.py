@@ -16,7 +16,7 @@ def referencias(L: list = list(), c: set = set(), d: dict = dict()) -> None:
 
 
 if __name__ == "__main__":
-    referencias()
+    #referencias()
 
     lista = [1, 2, 3, 4, 5]
     conjunto = {1, 2, 3, 4, 5}
@@ -35,6 +35,3 @@ if __name__ == "__main__":
     print(numero)
     print(tupla)
     print(cad)
-
-    d = {(1, 2): 33, (3, 4): 34}
-    print(d)
