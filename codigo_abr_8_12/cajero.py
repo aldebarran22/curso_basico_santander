@@ -5,13 +5,19 @@ Simular un cajero:
 - importe: 230 -> 4 de 50, 1 de 20, 1 de 10.
 """
 
-sImporte = input("Dame importe:> ")
-if sImporte.isnumeric():
-    importe = int(sImporte)
-    # Comprobar si es múltiplo de 10
-    # if
-else:
-    print("Solo se admiten importes enteros")
+while True:
+    sImporte = input("Dame importe:> ")
+    if sImporte.isnumeric():
+        importe = int(sImporte)
+        # Comprobar si es múltiplo de 10
+        if importe % 10 == 0:
+            break
+        else:
+            print('Solo se admiten múltiplos de 10')
+    else:
+        print("Solo se admiten importes enteros")
+
+print('El importe a retirar es: ', importe)
 
 """
 Bucle infinito
