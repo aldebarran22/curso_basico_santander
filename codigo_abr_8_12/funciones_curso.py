@@ -1,14 +1,16 @@
 """
 Definición de funciones
 """
+
 import math
 import conversor
 
-def ecuacion(a,b,c):
-    raiz = b**2 - 4*a*c
+
+def ecuacion(a, b, c):
+    raiz = b**2 - 4 * a * c
     if raiz > 0:
-        x1 = (-b + math.sqrt(raiz)) / (2*a)
-        x2 = (-b - math.sqrt(raiz)) / (2*a)
+        x1 = (-b + math.sqrt(raiz)) / (2 * a)
+        x2 = (-b - math.sqrt(raiz)) / (2 * a)
         return x1, x2
     else:
         return None
@@ -44,27 +46,28 @@ def buscarEmpleados(R, *args):
         for cargo in args:
             if cargo in d["cargo"]:
                 print(d)
-                break        
-    print("-"*30)
+                break
+    print("-" * 30)
 
 
 if __name__ == "__main__":
     # Prueba de la ecuacion
-    resul = ecuacion(1,5,4)
+    resul = ecuacion(1, 5, 4)
     if resul:
         x1, x2 = resul
         print(x1, x2)
     else:
-        print('No hay solución')
+        print("No hay solución")
 
     # csv to json:
     R = csvTojson(conversor.csv)
     print(R[:2])
 
-    csv2 = jsonTocsv(R, ',')
+    csv2 = jsonTocsv(R, ",")
     print(csv2)
 
     # buscar empleados:
-    buscarEmpleados(R, "Gerente", "Coordinador","Vicepresidente")
-    buscarEmpleados(R,"ventas")
-    buscarEmpleados(R,"ventas", "Vicepresidente")
+    buscarEmpleados(R, "Gerente", "Coordinador", "Vicepresidente")
+    buscarEmpleados(R, "ventas")
+    t = ("ventas", "Vicepresidente")
+    buscarEmpleados(R, *t)
