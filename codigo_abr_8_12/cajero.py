@@ -21,7 +21,12 @@ while True:
 print("El importe a retirar es: ", importe)
 desglose = dict()
 billetes = [50, 20, 10]
+for billete in billetes:
+    if importe >= billete:
+        desglose[billete] = importe // billete
+        importe %= billete # importe = importe % billete
 
+print(desglose)
 
 """
 Bucle infinito
