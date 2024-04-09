@@ -8,19 +8,23 @@ Llamar a una función:
 
 Tipos anotados.
 """
-
+def limpiarCad(cad:list)->str:
+    pass
 
 def segundos(h=0, m=0, s=0):
     return h * 3600 + m * 60 + s
 
 
-def sumar(a, b):
+def sumar(a:int, b:int) -> int:
     return a + b
 
 
 def ejemplo():
     """Documentación de la función ejemplo"""
     pass
+
+
+print(sumar((1,), (2,)))
 
 
 ejemplo()
