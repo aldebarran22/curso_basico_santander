@@ -24,9 +24,14 @@ billetes = [50, 20, 10]
 for billete in billetes:
     if importe >= billete:
         desglose[billete] = importe // billete
-        importe %= billete # importe = importe % billete
+        importe %= billete  # importe = importe % billete
 
-print(desglose)
+    if importe == 0:
+        break
+
+for billete, cantidad in desglose.items():
+    print(f"{cantidad} de {billete}")
+
 
 """
 Bucle infinito
