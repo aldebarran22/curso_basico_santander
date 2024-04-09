@@ -27,8 +27,14 @@ def csvTojson(csv, sep=";"):
     return R
 
 
-def jsonTocsv():
-    pass
+def jsonTocsv(R, sep=";"):
+    cabs = sep.join(R[0].keys())
+    R2 = [cabs]
+    for d in R:
+        linea = sep.join(d.values())
+        R2.append(linea)
+    csv2 = "\n".join(R2)
+    return csv2
 
 
 if __name__ == "__main__":
@@ -43,3 +49,6 @@ if __name__ == "__main__":
     # csv to json:
     R = csvTojson(conversor.csv)
     print(R[:2])
+
+    csv2 = jsonTocsv(R, ',')
+    print(csv2)
