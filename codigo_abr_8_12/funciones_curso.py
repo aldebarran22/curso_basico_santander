@@ -37,6 +37,17 @@ def jsonTocsv(R, sep=";"):
     return csv2
 
 
+def buscarEmpleados(R, *args):
+    # Buscar los empleados que tienen de cargo: Representante de ventas
+    for d in R:
+        # if 'Representante de ventas' in d.values():
+        for cargo in args:
+            if cargo in d["cargo"]:
+                print(d)
+                break        
+    print("-"*30)
+
+
 if __name__ == "__main__":
     # Prueba de la ecuacion
     resul = ecuacion(1,5,4)
