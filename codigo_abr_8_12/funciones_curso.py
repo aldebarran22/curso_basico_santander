@@ -52,3 +52,8 @@ if __name__ == "__main__":
 
     csv2 = jsonTocsv(R, ',')
     print(csv2)
+
+    # buscar empleados:
+    buscarEmpleados(R, "Gerente", "Coordinador","Vicepresidente")
+    buscarEmpleados(R,"ventas")
+    buscarEmpleados(R,"ventas", "Vicepresidente")

@@ -27,10 +27,9 @@ print(R)
 
 # Buscar los empleados que tienen de cargo: Representante de ventas
 for d in R:
-    #if 'Representante de ventas' in d.values():
-    if d['cargo'] == 'Representante de ventas':
+    # if 'Representante de ventas' in d.values():
+    if d["cargo"] == "Representante de ventas":
         print(d)
-
 print()
 
 
@@ -42,4 +41,3 @@ for d in R:
     R2.append(linea)
 csv2 = "\n".join(R2)
 print(csv == csv2)
-
