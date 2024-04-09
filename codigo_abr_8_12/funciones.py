@@ -50,4 +50,14 @@ print(sumar(**d))
 
 # Convertir las horas de la lista L en segundos y almacenar
 # el resultado en otra lista:
-L = [(12, 3, 45), (7, 0, 1), (11, 6, 7), (9, 56, 12)]
+L = [(12, 3, 45), (7, 0, 1), (11, 6, 7), (9, 56, 7)]
+R = list()
+for t in L:
+    R.append(segundos(*t))
+
+R2 = []
+for h, m, s in L:
+    R2.append(segundos(h, m, s))
+
+print(R)
+print(R2)
