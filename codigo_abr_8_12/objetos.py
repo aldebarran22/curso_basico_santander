@@ -10,6 +10,14 @@ class Persona:
         self.edad = edad
         self.altura = altura
 
+    def __str__(self):
+        return self.nombre+" "+str(self.edad)+" "+str(self.altura)
+    
+    def __del__(self):
+        print('eliminando: ', self.nombre)
+
 if __name__ == '__main__':
     p1 = Persona("Ana",33, 1.8)
     print(p1)
+    print(str(p1))
+    print(p1.__str__())
