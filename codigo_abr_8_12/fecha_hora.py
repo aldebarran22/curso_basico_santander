@@ -43,6 +43,12 @@ class Date:
             return False
 
 
+class DateTime(Date, Time):
+
+    def __init__(self):
+        pass
+
+
 if __name__ == "__main__":
     t1 = Time(12, 30, 59)
     t2 = Time(mm=59, ss=10)
