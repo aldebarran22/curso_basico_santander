@@ -61,5 +61,19 @@ def test4():
         print(f"Han fallado {errores} ficheros")
 
 
+def test5():
+    fich = None
+    try:
+        fich = open("ecuacion.py", "r")
+        print(fich.read())
+
+    except Exception as e:
+        print(e)
+
+    finally:
+        if fich:
+            fich.close()
+
+
 if __name__ == "__main__":
-    test4()
+    test5()
