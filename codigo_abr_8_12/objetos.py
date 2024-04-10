@@ -19,6 +19,9 @@ class Persona:
     def getContador():
         return Persona.contador
 
+    def __call__(self):
+        print("me han llamado")
+
     """
     def __str__(self):
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
@@ -103,6 +106,7 @@ class Grupo:
 class Empleado(Persona):
     pass
 
+
 def testPersona():
     p1 = Persona("Ana", 33, 1.8)
     print(p1, type(p1))
@@ -168,6 +172,8 @@ def testAtributos():
     print(obj.__class__.__name__)
 
     print(Persona.__subclasses__())
+
+    obj()
 
 
 if __name__ == "__main__":
