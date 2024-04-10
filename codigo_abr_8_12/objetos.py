@@ -47,7 +47,16 @@ class Guia(Persona):
         self.idiomas = idiomas
 
     def hablar(self, other=None):
-        pass
+        if not other:
+            Persona.hablar(self, other)
+        else:
+            c1 = set(self.idiomas)
+            c2 = set(other.idiomas)
+            comun = c1 & c2
+            if len(comun)== 0:
+                raise Exception('No pueden hablar')
+            else:
+                print(self.nombre,'y',other.nombre,'pueden hablar en: ',' o '.join(comun))
 
     def __str__(self):
         # return super().__str__()+ " "+self.ambito+ " "+",".join(self.idiomas)
@@ -94,8 +103,8 @@ def testPersona():
 
 
 def testGuia():
-    g1 = Guia("Sara", 44, 1.8, "I", ["Inglés", "Francés"])
-    g2 = Guia("Luis", 33, 1.77, "N", ["Chino", "Italiano"])
+    g1 = Guia("Sara", 44, 1.8, "I", ["Inglés", "Francés",'Chino'])
+    g2 = Guia("Luis", 33, 1.77, "N", ["Chino", "Italiano","Inglés"])
     g1.hablar(g2)
 
 
