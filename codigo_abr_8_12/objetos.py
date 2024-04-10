@@ -145,12 +145,20 @@ def testGrupo():
     for i in grupo:
         print(i)
 
+
+def crearObjeto(clase, *args, **kwargs):
+    return clase(*args, **kwargs)
+
+
 def testAtributos():
+    obj2 = crearObjeto(Persona, "Jose", 55, 1.77)
+    print(obj2, obj2.__class__.__name__)
+
     p1 = Persona("Ana", 33, 1.8)
     if hasattr(p1, "edad"):
         print(getattr(p1, "edad"))
 
-    cad = "{}({},{},{})".format("Persona","'Ana'",33,1.8)
+    cad = "{}({},{},{})".format("Persona", "'Ana'", 33, 1.8)
     print(cad)
     obj = eval(cad)
     print(obj)
