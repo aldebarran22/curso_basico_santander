@@ -1,0 +1,64 @@
+Personas: class Persona(object)
+
+características:
+peso, altura, color de ojos  --> atributos
+
+
+acciones:
+correr(), dormir(), saltar() --> métodos
+
+
+1 persona --> 1 objeto (instancia)
+peso = 80
+altura = 1.9
+....
+
+una clase  --> cientos de objetos
+
+objeto en curso --> self (this en java)
+
+crear un objeto --> constructor: __init__
+
+Relaciones entre clases:
+- Herencia: clases con cosas en común
+  perfiles de empleado:
+   programador, jefe de proyecto, analista, ... --> Empleados
+
+  H.simple y múltiple
+
+- Composición: Un objeto se desglosa en partes que a su vez son objetos de otras clases
+  Ordenador: piezas
+  Coche: motor, ruedas, chasis
+
+- Asociación: Dos objetos independientes se relacionan en un instante dado.
+  Coche, SurtidorGas.
+
+  coche = Coche()
+  coche.repostar(surtidor)
+
+===========================================
+
+H.simple y múltiple
+sobrecarga de operadores: aritméticos, relacionales ...
+no hay interface
+si hay clases abstractas
+lenguaje dinámico: modificar un objeto en t.ejecución
+
+
+funciones especiales <---> f.del lenguajes
+__str__				str
+__del__				del
+__len__				len
+__add__				+
+
+coche = Coche()
+print(coche) --> coche.__str__()
+len(coche)  -> __len__
+
+if coche1 < coche2:   if coche1.__lt__(coche2)
+
+
+
+
+
+
