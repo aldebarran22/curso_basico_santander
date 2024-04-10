@@ -6,10 +6,18 @@ POO en Python
 class Persona:
     """Implementación de la clase persona"""
 
+    contador = 0
+
     def __init__(self, nombre="", edad=0, altura=0.0):
         self.nombre = nombre
         self.edad = edad
         self.altura = altura
+
+        Persona.contador += 1
+
+    @staticmethod
+    def getContador():
+        return Persona.contador
 
     """
     def __str__(self):
@@ -33,7 +41,7 @@ class Persona:
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
 
     def __del__(self):
-        pass
+        Persona.contador -= 1
         # print("eliminando: ", self.nombre)
 
 
@@ -82,7 +90,7 @@ class Grupo:
         return self
 
     def __next__(self):
-        if self.indice+1 == len(self.grupo):
+        if self.indice + 1 == len(self.grupo):
             self.indice = -1  # Para volver a repetir
             raise StopIteration
         self.indice = self.indice + 1
