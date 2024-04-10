@@ -150,6 +150,12 @@ def testAtributos():
     if hasattr(p1, "edad"):
         print(getattr(p1, "edad"))
 
+    cad = "{}({},{},{})".format("Persona","'Ana'",33,1.8)
+    print(cad)
+    obj = eval(cad)
+    print(obj)
+    print(obj.__class__.__name__)
+
 
 if __name__ == "__main__":
     # testPersona()
