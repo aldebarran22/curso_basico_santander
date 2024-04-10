@@ -30,10 +30,21 @@ class Persona:
         pass
         # print("eliminando: ", self.nombre)
 
+class Grupo:
+
+    def __init__(self, nombre="", *personal) :
+        self.nombre = nombre
+        self.grupo = []
+        if len(personal) > 0:
+            self.grupo.extend(personal)
+
+    def __len__(self):
+        return len(self.grupo)
+
 
 if __name__ == "__main__":
     p1 = Persona("Ana", 33, 1.8)
-    print(p1)
+    print(p1, type(p1))
     # del(p1) Fuerza una llamada al destructor: __del__
     # print(str(p1))
     # print(p1.__str__())
@@ -42,3 +53,17 @@ if __name__ == "__main__":
     print(L)
     L.sort()
     print(L)  # repr
+
+    # Propiedades de los objetos:
+    print(p1.__class__)
+    print(p1.__class__.__name__)
+    print(p1.__dict__)
+
+    # Crear un objeto a través de su clase:
+    p2 = p1.__class__("Lucas",55,1.88)
+    print(p2)
+
+    # Añadir att. en t.ejecución
+    p1.__dict__["tno"] = 91258778
+    p1.movil = 600909020
+    print(p1.__dict__)
