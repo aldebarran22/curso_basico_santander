@@ -20,6 +20,12 @@ class Persona:
 
     """
 
+    def hablar(self, other=None):
+        if not other:
+            print(self.nombre, "habla solo")
+        else:
+            print(self.nombre, "y", other.nombre, "están hablando")
+
     def __lt__(self, other):
         return self.edad < other.edad
 
@@ -36,12 +42,17 @@ class Guia(Persona):
     def __init__(self, nombre="", edad=0, altura=0, ambito="", idiomas=[]):
         # Llamar al constructor de la clase padre:
         Persona.__init__(self, nombre, edad, altura)
-        #super().__init__(nombre, edad, altura)
+        # super().__init__(nombre, edad, altura)
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def hablar(self, other=None):
+        pass
+
     def __str__(self):
-        return Persona.__str__(self)+ " "+self.ambito+ " "+",".join(self.idiomas)
+        # return super().__str__()+ " "+self.ambito+ " "+",".join(self.idiomas)
+        return Persona.__str__(self) + " " + self.ambito + " " + ",".join(self.idiomas)
+
 
 class Grupo:
 
@@ -81,10 +92,13 @@ def testPersona():
     p1.movil = 600909020
     print(p1.__dict__)
 
-def testGuia():
-    g1 = Guia("Sara", 44, 1.8, 'I',['inglés','francés'])
-    print(g1)
 
-if __name__ == '__main__':
+def testGuia():
+    g1 = Guia("Sara", 44, 1.8, "I", ["Inglés", "Francés"])
+    g2 = Guia("Luis", 33, 1.77, "N", ["Chino", "Italiano"])
+    g1.hablar(g2)
+
+
+if __name__ == "__main__":
     # testPersona()
     testGuia()
