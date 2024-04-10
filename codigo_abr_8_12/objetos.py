@@ -74,6 +74,7 @@ class Grupo:
     def __init__(self, nombre="", *personal):
         self.nombre = nombre
         self.grupo = []
+        self.indice = -1
         if len(personal) > 0:
             self.grupo.extend(personal)
 
@@ -81,11 +82,11 @@ class Grupo:
         return self
 
     def __next__(self):
-        if self.indice == 0:
-            self.indice = len(self.datos)  # Para volver a repetir
+        if self.indice+1 == len(self.grupo):
+            self.indice = -1  # Para volver a repetir
             raise StopIteration
-        self.indice = self.indice - 1
-        return self.datos[self.indice]
+        self.indice = self.indice + 1
+        return self.grupo[self.indice]
 
     def __len__(self):
         return len(self.grupo)
@@ -126,7 +127,7 @@ def testGuia():
 
 def testGrupo():
     p1 = Persona("Ana", 33, 1.8)
-    g1 = Guia("Sara", 44, 1.8, "I", ["Inglés", "Francés", "Chino"])
+    g1 = Guia("Pedro", 44, 1.8, "I", ["Inglés", "Francés", "Chino"])
     p2 = Persona("Juan", 44, 1.81)
     p3 = Persona("Sara", 21, 1.9)
     grupo = Grupo("Viaje Noruega", p1, p2, p3, g1)
