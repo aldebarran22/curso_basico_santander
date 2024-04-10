@@ -7,9 +7,13 @@ class Time:
         self.mm = mm
         self.ss = ss
 
+    def __add__(self,other):
+        pass
    
    
-    def __str__(self):        
+    def __str__(self): 
+        # 01:05:56 
+        #  1: 5:56      
         return '%02d:%02d:%02d' % (self.hh,self.mm,self.ss)
 
 
@@ -31,6 +35,11 @@ class Date:
             return True    
         else:
             return False
+        
+if __name__ == '__main__':
+    t1 = Time(12,30)
+    t2 = Time(mm=59)
+    suma = t1 + t2 # suma = t1.__add__(t2)
 
  
 
