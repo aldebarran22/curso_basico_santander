@@ -134,17 +134,25 @@ def testGuia():
 
 
 def testGrupo():
+    print("Num personas:", Persona.getContador())
     p1 = Persona("Ana", 33, 1.8)
     g1 = Guia("Pedro", 44, 1.8, "I", ["Inglés", "Francés", "Chino"])
     p2 = Persona("Juan", 44, 1.81)
     p3 = Persona("Sara", 21, 1.9)
+    print("Num personas:", Persona.getContador())
     grupo = Grupo("Viaje Noruega", p1, p2, p3, g1)
     print("número de personas del grupo: ", len(grupo))
     for i in grupo:
         print(i)
 
+def testAtributos():
+    p1 = Persona("Ana", 33, 1.8)
+    if hasattr(p1, "edad"):
+        print(getattr(p1, "edad"))
+
 
 if __name__ == "__main__":
     # testPersona()
     # testGuia()
-    testGrupo()
+    # testGrupo()
+    testAtributos()
