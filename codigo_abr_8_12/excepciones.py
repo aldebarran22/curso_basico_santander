@@ -48,12 +48,17 @@ def test4():
         else:
             print(f"Procesando el fichero: {f}")
 
-    try:
-        L = os.listdir()
-        for f in L:
+    L = os.listdir()
+    errores = 0
+    for f in L:
+        try:
             procesar(f)
-    except Exception as e:
-        print(e)
+        except Exception as e:
+            print(e)
+            errores += 1
+
+    if errores:
+        print(f"Han fallado {errores} ficheros")
 
 
 if __name__ == "__main__":
