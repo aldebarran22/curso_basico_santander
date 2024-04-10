@@ -53,10 +53,16 @@ class Guia(Persona):
             c1 = set(self.idiomas)
             c2 = set(other.idiomas)
             comun = c1 & c2
-            if len(comun)== 0:
-                raise Exception('No pueden hablar')
+            if len(comun) == 0:
+                raise Exception("No pueden hablar")
             else:
-                print(self.nombre,'y',other.nombre,'pueden hablar en: ',' o '.join(comun))
+                print(
+                    self.nombre,
+                    "y",
+                    other.nombre,
+                    "pueden hablar en: ",
+                    " o ".join(comun),
+                )
 
     def __str__(self):
         # return super().__str__()+ " "+self.ambito+ " "+",".join(self.idiomas)
@@ -70,6 +76,16 @@ class Grupo:
         self.grupo = []
         if len(personal) > 0:
             self.grupo.extend(personal)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.indice == 0:
+            self.indice = len(self.datos)  # Para volver a repetir
+            raise StopIteration
+        self.indice = self.indice - 1
+        return self.datos[self.indice]
 
     def __len__(self):
         return len(self.grupo)
@@ -103,11 +119,23 @@ def testPersona():
 
 
 def testGuia():
-    g1 = Guia("Sara", 44, 1.8, "I", ["Inglés", "Francés",'Chino'])
-    g2 = Guia("Luis", 33, 1.77, "N", ["Chino", "Italiano","Inglés"])
+    g1 = Guia("Sara", 44, 1.8, "I", ["Inglés", "Francés", "Chino"])
+    g2 = Guia("Luis", 33, 1.77, "N", ["Chino", "Italiano", "Inglés"])
     g1.hablar(g2)
+
+
+def testGrupo():
+    p1 = Persona("Ana", 33, 1.8)
+    g1 = Guia("Sara", 44, 1.8, "I", ["Inglés", "Francés", "Chino"])
+    p2 = Persona("Juan", 44, 1.81)
+    p3 = Persona("Sara", 21, 1.9)
+    grupo = Grupo("Viaje Noruega", p1, p2, p3, g1)
+    print("número de personas del grupo: ", len(grupo))
+    for i in grupo:
+        print(i)
 
 
 if __name__ == "__main__":
     # testPersona()
-    testGuia()
+    # testGuia()
+    testGrupo()
