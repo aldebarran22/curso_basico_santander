@@ -1,4 +1,4 @@
-AUTHENTICATED = True
+AUTHENTICATED = False
 
 
 def autenticado(f):
@@ -15,8 +15,15 @@ def autenticado(f):
 
     return inner
 
+def log(f):
+    def inner(*args, **kwargs):
+        print('en el segundo decorador')
+        f(*args, **kwargs) 
+    return inner
+
 
 @autenticado
+@log
 def abrir_puerta(a, b, c=0):
     print("en abrir puerta")
     print("a,b,c", a, b, c)
