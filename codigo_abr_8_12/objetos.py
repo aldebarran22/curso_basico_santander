@@ -100,6 +100,9 @@ class Grupo:
         return len(self.grupo)
 
 
+class Empleado(Persona):
+    pass
+
 def testPersona():
     p1 = Persona("Ana", 33, 1.8)
     print(p1, type(p1))
@@ -163,6 +166,8 @@ def testAtributos():
     obj = eval(cad)
     print(obj)
     print(obj.__class__.__name__)
+
+    print(Persona.__subclasses__())
 
 
 if __name__ == "__main__":
