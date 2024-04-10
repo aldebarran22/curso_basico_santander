@@ -69,7 +69,7 @@ def test5():
 
     except Exception as e:
         print(e)
-
+        
     finally:
         if fich:
             fich.close()
