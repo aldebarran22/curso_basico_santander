@@ -12,11 +12,16 @@ def serializarObjetos(path, *objetos):
     for pos, obj in enumerate(objetos):
         clave = f"K-{pos}"
         Shelf[clave] = obj
-        
+
     Shelf.close()
 
 def recuperarObjeto(path, key):
-    pass
+    Shelf = s.open(path)
+    print(list(Shelf.keys()))
+    print(list(Shelf.values()))
+    obj = Shelf[key]
+    Shelf.close()
+    return obj
 
 if __name__=='__main__':
     t1 = Time(12,30)
@@ -24,3 +29,5 @@ if __name__=='__main__':
     dt = DateTime()
 
     serializarObjetos("../ficheros/obj_shelve", t1,d1,dt)
+    obj = recuperarObjeto("../ficheros/obj_shelve", "K-1")
+    print(obj)

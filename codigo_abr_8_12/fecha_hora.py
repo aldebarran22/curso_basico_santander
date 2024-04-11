@@ -24,6 +24,9 @@ class Time:
         #  1: 5:56
         return "%02d:%02d:%02d" % (self.hh, self.mm, self.ss)
 
+    def __repr__(self):
+        return str(self)
+
 
 class Date:
 
