@@ -49,3 +49,8 @@ pueden empezar por 0.
 COD_AEE_800959
 S/N_UOO_958474
 """
+patron = r"(COD|S/N)_[AEIOU]{3}_[1-9][0-9]{5}$"
+L = ["COD_AEE_800959","S/N_UOO_958474",
+"MRM_AEE_800959","S/N_U0O_958474",
+"COD_AEE_000959","S/N_UOO958474"]
+validar(patron, L)
