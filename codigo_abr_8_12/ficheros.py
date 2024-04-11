@@ -69,6 +69,7 @@ def exportarPedidos(path, file=sys.stdout):
     try:
         fich = open(path, "r")
         for fila in fich:
+            fila = fila.rstrip()
             print(fila)
 
     except Exception as e:
@@ -81,6 +82,11 @@ def exportarPedidos(path, file=sys.stdout):
 
 if __name__=='__main__':
     #grabarFichero("../ficheros/productos.txt")
+
+    """
     fusionFicheros("../ficheros_curso/Empleados2.txt",
     "../ficheros_curso/Empleados3.txt",
     "../ficheros/empleados_fusion.txt")
+    """
+
+    exportarPedidos("../ficheros_curso/Pedidos.csv")
