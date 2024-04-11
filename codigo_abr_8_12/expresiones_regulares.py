@@ -57,6 +57,8 @@ validar(patron, L)
 
 # Validar matrículas europeas:
 # 4 digitos y 3 letras consonantes:
-patron = r""
+cad = "".join([chr(i) for i in range(65, 65+26) if chr(i) not in "AEIOU"])
+print(cad)
+patron = r"\d{4}["+cad+"]{3}$"
 L=["1234","1234DFFR","1234vfr","DDW","123TTY","1234TTG"]
 validar(patron, L)
