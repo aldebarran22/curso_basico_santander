@@ -6,6 +6,16 @@ import pickle as p
 import shelve as s
 from fecha_hora import Time, Date, DateTime
 
+def serializarPickle(path, obj):
+    fich = open(path, "wb")
+    p.dump(obj, fich)
+    fich.close()
+
+def deserializarPickle(path):
+    fich = open(path, "rb")
+    obj = p.load(fich)
+    fich.close()
+
 
 def serializarObjetos(path, *objetos):
     Shelf = s.open(path)
