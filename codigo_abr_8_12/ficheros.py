@@ -37,8 +37,19 @@ def cargaFichero(path):
             fich.close()
 
 def fusionFicheros(path1, path2, pathDestino):
-    pass
+    try:
+        c1 = cargaFichero(path1)
+        c2 = cargaFichero(path2)
+
+        fusion = c1 | c2
+        print(fusion)
+        
+    except Exception as e:
+        print(e)
 
 
 if __name__=='__main__':
-    grabarFichero("../ficheros/productos.txt")
+    #grabarFichero("../ficheros/productos.txt")
+    fusionFicheros("../ficheros_curso/Empleados2.txt",
+    "../ficheros_curso/Empleados3.txt",
+    "../ficheros/empleados_fusion.txt")
