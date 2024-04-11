@@ -6,9 +6,11 @@ import re
 
 def pruebaMatch():
     patron = r"(\d{4})-(\d{4})-(\d{2})-(\d{10})$"
-    cc = "1234-4567-00-1234567890"
-    obj = re.match(patron, cc)
-    print(obj)
+    cc = "   1234-4567-00-1234567890"
+    obj = re.search(patron, cc)
+    if obj:
+        print(obj)
+        print(obj.groups())
 
 def validar(patron, L):
     print('Patrón: ', patron)
