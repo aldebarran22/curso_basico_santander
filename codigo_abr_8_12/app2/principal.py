@@ -1,7 +1,4 @@
-
-from tiempo.fechahora import DateTime
-from tiempo.hora import Time
-from tiempo.fecha import Date
+from tiempo import *
 
 
 if __name__ == "__main__":
