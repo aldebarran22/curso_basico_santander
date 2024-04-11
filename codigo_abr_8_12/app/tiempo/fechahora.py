@@ -1,4 +1,5 @@
-
+from tiempo.fecha import Date
+from tiempo.hora import Time
 
 class DateTime(Time, Date):
 
