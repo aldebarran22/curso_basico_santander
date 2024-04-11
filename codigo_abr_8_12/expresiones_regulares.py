@@ -54,3 +54,9 @@ L = ["COD_AEE_800959","S/N_UOO_958474",
 "MRM_AEE_800959","S/N_U0O_958474",
 "COD_AEE_000959","S/N_UOO958474"]
 validar(patron, L)
+
+# Validar matrículas europeas:
+# 4 digitos y 3 letras consonantes:
+patron = r""
+L=["1234","1234DFFR","1234vfr","DDW","123TTY","1234TTG"]
+validar(patron, L)
