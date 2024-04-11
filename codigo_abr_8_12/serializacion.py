@@ -15,6 +15,7 @@ def deserializarPickle(path):
     fich = open(path, "rb")
     obj = p.load(fich)
     fich.close()
+    return obj
 
 
 def serializarObjetos(path, *objetos):
@@ -41,3 +42,9 @@ if __name__=='__main__':
     serializarObjetos("../ficheros/obj_shelve", t1,d1,dt)
     obj = recuperarObjeto("../ficheros/obj_shelve", "K-1")
     print(obj)
+
+    L = [t1, d1, dt]
+    serializarPickle("../ficheros/obj_pickle.bin", L)
+    L2 = deserializarPickle("../ficheros/obj_pickle.bin")
+    for i in L2:
+        print(i)
