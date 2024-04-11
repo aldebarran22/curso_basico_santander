@@ -85,11 +85,12 @@ def exportarPedidos(path, pais, sep=';', file=sys.stdout):
         if fich:
             fich.close()
 
-def exportarPais(path, pais):
-    pathPais = f"../ficheros/{pais}.csv"
-    fich = open(pathPais, "w")
-    exportarPedidos(path, pais, file=fich)
-    fich.close()
+def exportarPais(path, *paises):
+    for pais in paises:
+        pathPais = f"../ficheros/{pais}.csv"
+        fich = open(pathPais, "w")
+        exportarPedidos(path, pais, file=fich)
+        fich.close()
 
 
 if __name__=='__main__':
@@ -102,4 +103,4 @@ if __name__=='__main__':
     """
 
     exportarPedidos("../ficheros_curso/Pedidos.csv", "Finlandia")
-    exportarPais("../ficheros_curso/Pedidos.csv","Finlandia")
+    exportarPais("../ficheros_curso/Pedidos.csv","Finlandia", "Francia","Noruega")
