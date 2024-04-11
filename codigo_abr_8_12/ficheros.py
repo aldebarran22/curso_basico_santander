@@ -68,8 +68,12 @@ def exportarPedidos(path, pais, sep=';', file=sys.stdout):
     fich = None
     try:
         fich = open(path, "r")
-        for fila in fich:
+        for pos, fila in enumerate(fich):
             fila = fila.rstrip()
+            if pos == 0:
+                print(fila, file=file)
+                continue
+
             L = fila.split(sep)
             if pais==L[-1]:
                 print(fila, file=file)
