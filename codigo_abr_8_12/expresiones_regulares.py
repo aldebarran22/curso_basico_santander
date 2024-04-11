@@ -16,6 +16,13 @@ patron = r"[a-z][a-z][a-z]\.$"
 L = ["AEE.","abc.k","123.","abb..","awe.","123 awe."]
 validar(patron, L)
 
+# Igual que la anterior, pero con vocales:
+patron = r"[aeiou]{3}\.$"
+L = ["aaT.","abc.k","123.","abb..","aie.","123 awe."]
+validar(patron, L)
+
+# Validar una cuenta bancaria: sucursal-entidad-dc-numero
+
 
 
 # Validar DNIs:
