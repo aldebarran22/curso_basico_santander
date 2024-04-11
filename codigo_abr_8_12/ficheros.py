@@ -2,6 +2,8 @@
 Lectura/Escritura de ficheros en Python
 """
 
+import sys
+
 def grabarFichero(path):
     L = [{"producto":"portatil","importe":450.9},
     {"producto":"hp","importe":1450.69},
@@ -61,6 +63,20 @@ def fusionFicheros(path1, path2, pathDestino):
 
     finally:
         if fich:fich.close()
+
+def exportarPedidos(path, file=sys.stdout):
+    fich = None
+    try:
+        fich = open(path, "r")
+        for fila in fich:
+            print(fila)
+
+    except Exception as e:
+        print(e)
+        
+    finally:
+        if fich:
+            fich.close()
 
 
 if __name__=='__main__':
