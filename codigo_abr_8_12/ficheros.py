@@ -45,16 +45,22 @@ def criterio(fila):
         return 0
 
 def fusionFicheros(path1, path2, pathDestino):
+    fich = None
     try:
+        fich = open(pathDestino, "w")
         c1 = cargaFichero(path1)
         c2 = cargaFichero(path2)
 
         fusion = c1 | c2
         L = sorted(fusion, key=criterio)
-        print(L)
+        L2 = [fila+"\n" for fila in L]
+        fich.writelines(L2)
 
     except Exception as e:
         print(e)
+
+    finally:
+        if fich:fich.close()
 
 
 if __name__=='__main__':
