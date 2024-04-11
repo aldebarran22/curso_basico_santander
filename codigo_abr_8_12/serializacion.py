@@ -8,7 +8,12 @@ from fecha_hora import Time, Date, DateTime
 
 
 def serializarObjetos(path, *objetos):
-    pass
+    Shelf = s.open(path)
+    for pos, obj in enumerate(objetos):
+        clave = f"K-{pos}"
+        Shelf[clave] = obj
+        
+    Shelf.close()
 
 def recuperarObjeto(path, key):
     pass
