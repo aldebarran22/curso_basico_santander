@@ -26,7 +26,8 @@ def cargaFichero(path):
     try:
         fich = open(path, "r")
         txt = fich.read()
-        filas = set(txt.split("\n"))
+        L = [fila for fila in txt.split("\n") if len(fila) > 1]
+        filas = set(L)
         return filas
 
     except Exception as e:
@@ -42,8 +43,9 @@ def fusionFicheros(path1, path2, pathDestino):
         c2 = cargaFichero(path2)
 
         fusion = c1 | c2
-        print(fusion)
-        
+        L = sorted(fusion)
+        print(L)
+
     except Exception as e:
         print(e)
 
