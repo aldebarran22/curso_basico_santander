@@ -11,6 +11,13 @@ def validar(patron, L):
     print('-'*30)
 
 
+# Cadenas de 3 minúsculas que terminan en punto:
+patron = r"[a-z][a-z][a-z]\.$"
+L = ["AEE.","abc.k","123.","abb..","awe.","123 awe."]
+validar(patron, L)
+
+
+
 # Validar DNIs:
 patron = ""
 L = ["12345678AB","12345678A", "234FF", "509988H","62556445G"]
