@@ -21,6 +21,24 @@ def grabarFichero(path):
         if fich:
             fich.close()
 
+def cargaFichero(path):
+    fich = None
+    try:
+        fich = open(path, "r")
+        txt = fich.read()
+        filas = set(txt.split("\n"))
+        return filas
+
+    except Exception as e:
+        print(e)
+        
+    finally:
+        if fich:
+            fich.close()
+
+def fusionFicheros(path1, path2, pathDestino):
+    pass
+
 
 if __name__=='__main__':
     grabarFichero("../ficheros/productos.txt")
