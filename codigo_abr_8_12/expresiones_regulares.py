@@ -41,3 +41,11 @@ L = ["12345678AB","12345678A", "234FF", "509988H","62556445G"]
 validar(patron, L)
 
 pruebaMatch()
+
+"""
+1. Comprobar la validez del siguiente código:
+Palabra COD o S/N, un guión bajo, 3 vocales mayúsculas, guión bajo y 6 números que no 
+pueden empezar por 0.
+COD_AEE_800959
+S/N_UOO_958474
+"""
