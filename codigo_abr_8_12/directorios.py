@@ -16,4 +16,4 @@ def ls(ruta="."):
 
 
 if __name__ == "__main__":
-    ls()
+    ls('..')
