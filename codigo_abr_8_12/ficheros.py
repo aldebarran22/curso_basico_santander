@@ -37,13 +37,20 @@ def cargaFichero(path):
         if fich:
             fich.close()
 
+def criterio(fila):
+    valor = fila.partition(";")[0]
+    if valor.isnumeric():
+        return int(valor)
+    else:
+        return 0
+
 def fusionFicheros(path1, path2, pathDestino):
     try:
         c1 = cargaFichero(path1)
         c2 = cargaFichero(path2)
 
         fusion = c1 | c2
-        L = sorted(fusion)
+        L = sorted(fusion, key=criterio)
         print(L)
 
     except Exception as e:
