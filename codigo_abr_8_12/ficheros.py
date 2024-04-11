@@ -10,9 +10,9 @@ def grabarFichero(path):
     cabs = L[0].keys()
     try:
         fich = open(path, "w")
-        print("%s\t%s" % tuple(cabs), file=fich)
+        print("%-12s\t%10s" % tuple(cabs), file=fich)
         for d  in L:
-            print("%s\t%f" % tuple(d.values()) ,file=fich)
+            print("%-12s\t%10.2f" % tuple(d.values()) ,file=fich)
         
     except Exception as e:
         print(e)
