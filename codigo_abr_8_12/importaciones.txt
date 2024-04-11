@@ -1,0 +1,14 @@
+import es.curso.app.principal
+es.curso.app.principal.funcion1()
+
+from es.curso.app.principal import funcion1
+funcion1() 
+
+
+es  <dir>
+  __init__.py
+  curso <dir>
+     __init__.py
+     app
+       __init__.py
+       principal.py (funcion1())
