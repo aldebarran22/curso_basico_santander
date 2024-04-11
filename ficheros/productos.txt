@@ -1,0 +1,4 @@
+dict_keys(['producto', 'importe'])
+portatil	450.900000
+hp	1450.690000
+teclado	45.000000
