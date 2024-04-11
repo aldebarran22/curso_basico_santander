@@ -64,13 +64,15 @@ def fusionFicheros(path1, path2, pathDestino):
     finally:
         if fich:fich.close()
 
-def exportarPedidos(path, file=sys.stdout):
+def exportarPedidos(path, pais, sep=';', file=sys.stdout):
     fich = None
     try:
         fich = open(path, "r")
         for fila in fich:
             fila = fila.rstrip()
-            print(fila)
+            L = fila.split(sep)
+            if pais==L[-1]:
+                print(fila, file=file)
 
     except Exception as e:
         print(e)
@@ -78,6 +80,12 @@ def exportarPedidos(path, file=sys.stdout):
     finally:
         if fich:
             fich.close()
+
+def exportarPais(path, pais):
+    pathPais = f"../ficheros/{pais}.csv"
+    fich = open(pathPais, "w")
+    exportarPedidos(path, pais, file=fich)
+    fich.close()
 
 
 if __name__=='__main__':
@@ -89,4 +97,5 @@ if __name__=='__main__':
     "../ficheros/empleados_fusion.txt")
     """
 
-    exportarPedidos("../ficheros_curso/Pedidos.csv")
+    exportarPedidos("../ficheros_curso/Pedidos.csv", "Finlandia")
+    exportarPais("../ficheros_curso/Pedidos.csv","Finlandia")
