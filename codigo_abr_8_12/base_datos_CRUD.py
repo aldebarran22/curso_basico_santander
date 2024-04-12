@@ -62,6 +62,17 @@ class ProductoCRUD:
         else:
             self.con = db.connect(path)
 
+    def read(self, pk):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = """select p.id as idp, p.nombre, c.id as idc, c.nombre as nombrecat, 
+            p.precio, p.existencias from productos p inner join categorias c
+            p.idcategoria = c.id where p.id = ?"""
+            cur.execute(sql, (pk,))
+
+            
+
     def __del__(self):
         if hasattr(self, 'con'):
             self.con.close()
