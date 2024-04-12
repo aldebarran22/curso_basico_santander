@@ -62,6 +62,12 @@ class ProductoCRUD:
         else:
             self.con = db.connect(path)
 
+    def __getProducto(self, t):
+            cat = Categoria(*t[2:4])               
+            t2 = t[:2]+(cat,)+t[4:]
+            prod = Producto(*t2)
+            return prod
+
     def read(self, pk):
         cur = None
         try:
@@ -74,10 +80,7 @@ class ProductoCRUD:
             if t == None:
                 raise ValueError(f"El producto con pk: {pk} no existe en la BD")
             else:
-                cat = Categoria(*t[2:4])               
-                t2 = t[:2]+(cat,)+t[4:]
-                prod = Producto(*t2)
-                return prod
+               return self.__getProducto(t)
 
         except Exception as e:
             raise e
@@ -94,8 +97,11 @@ class ProductoCRUD:
 if __name__=='__main__':
     try:
         bd = ProductoCRUD('../bd/empresa3.db')
-        obj = bd.read(1)
+        obj = bd.read(12)
         print(obj)
+
+        L = bd.select()
+        L = bd.select("Bebidas")
 
     except Exception as e:
         print(e)
