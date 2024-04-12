@@ -9,5 +9,5 @@ def fact(n):
     return resul
 
 def test_fact2():
-    for i in range(1000):
+    for i in range(5000):
         fact(900)
