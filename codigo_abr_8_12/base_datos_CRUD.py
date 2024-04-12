@@ -108,12 +108,21 @@ class ProductoCRUD:
         finally:
             if cur:cur.close()
 
+    def update(self, prod):
+        sql = "update productos set nombre=?, idcategoria=?, precio=?, existencias=? where id=?"
+        t = prod.getTupla2()
+        pk = prod.id
+        return self.__actualizar(sql, t, pk)
+
     def delete(self, pk):
+        sql = "delete from productos where id=?"
+        return self.__actualizar(sql, (pk,), pk)
+
+    def __actualizar(self, sql, t, pk):
         cur = None
         try:
             cur = self.con.cursor()
-            sql = "delete from productos where id=?"
-            cur.execute(sql, (pk,))
+            cur.execute(sql, t)
             n = cur.rowcount
             self.con.commit()
             if n == 0:
@@ -159,16 +168,30 @@ if __name__=='__main__':
         for prod in L:
             print(prod)
 
+
+        obj = bd.read(1)
+        print(obj)
+        obj.precio = 20.0
+        obj.exis = 200
+        if bd.update(obj):
+            print('Producto actualizado')
+        else:
+            print('No se ha podido actualizar')
+
+        """
         nuevo = Producto(0, 'CocaCola10', Categoria(1,'Bebidas'),2.5, 100)
         if bd.create(nuevo):
             print('Producto creado: ', nuevo)
         else:
             print('No se ha creado')
+        """
 
-        if bd.delete(2000):
+        """
+        if bd.delete(85):
             print('producto borrado')
         else:
             print('no se ha borrado')
+        """
 
     except Exception as e:
         print(e)
