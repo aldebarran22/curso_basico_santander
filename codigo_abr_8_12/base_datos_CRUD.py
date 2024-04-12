@@ -168,8 +168,14 @@ if __name__=='__main__':
         for prod in L:
             print(prod)
 
+        """
+        nuevo = Producto(0, 'CocaCola10', Categoria(1,'Bebidas'),2.5, 100)
+        if bd.create(nuevo):
+            print('Producto creado: ', nuevo)
+        else:
+            print('No se ha creado')
 
-        obj = bd.read(1)
+        obj = bd.read(86)
         print(obj)
         obj.precio = 20.0
         obj.exis = 200
@@ -177,21 +183,14 @@ if __name__=='__main__':
             print('Producto actualizado')
         else:
             print('No se ha podido actualizar')
-
         """
-        nuevo = Producto(0, 'CocaCola10', Categoria(1,'Bebidas'),2.5, 100)
-        if bd.create(nuevo):
-            print('Producto creado: ', nuevo)
-        else:
-            print('No se ha creado')
-        """
-
-        """
-        if bd.delete(85):
+       
+        
+        if bd.delete(86):
             print('producto borrado')
         else:
             print('no se ha borrado')
-        """
+        
 
     except Exception as e:
         print(e)
