@@ -10,8 +10,8 @@ from time import sleep
 num_muestras = 10
 tam_buffer = 5
 
-num_productores = 2
-num_consumidores = 2
+num_productores = 1
+num_consumidores = 1
 
 
 class Productor(Thread):
@@ -33,12 +33,13 @@ class Productor(Thread):
             with self.buffer.mutex:
                 self.buffer.buffer[self.buffer.ind_p] = numero
                 self.buffer.ind_p = (self.buffer.ind_p+1) % tam_buffer
+                print(self.getName(), ' coloca: ',numero)
                 print(self.buffer.buffer)
 
             # Avisar que hay un nuevo número:
             self.buffer.sem_items.release()
 
-            sleep(randint(1,3))
+            sleep(randint(2,4))
 
 
 class Consumidor(Thread):
@@ -59,6 +60,7 @@ class Consumidor(Thread):
                 self.buffer.buffer[self.buffer.ind_c] = -1
                 self.buffer.ind_c = (self.buffer.ind_c+1) % tam_buffer
                 print(self.buffer.buffer)
+                print(self.getName(), ' quita: ',numero)
 
             # Avisar del nuevo hueco
             self.buffer.sem_huecos.release()
@@ -66,7 +68,7 @@ class Consumidor(Thread):
             # Consumir el número:
             print(self.getName(), ' consume: ',numero)
 
-            sleep(randint(1,3))
+            sleep(randint(2,3))
 
 
 
