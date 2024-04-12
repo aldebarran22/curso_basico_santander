@@ -20,7 +20,7 @@ def conexion(path):
         if con: con.close()
 
 
-def printTabla(path, tabla, file=sys.stdout):
+def printTabla(path, tabla, sep=';', file=sys.stdout):
     con = None
     cur = None
     try:
@@ -32,7 +32,8 @@ def printTabla(path, tabla, file=sys.stdout):
             sql = f"select * from {tabla}"
 
             cur.execute(sql)
-            print(cur.description)
+            cabs = sep.join([t[0] for t in cur.description])
+            print(cabs, file=file)
 
             for t in cur.fetchall():
                 print(t)
