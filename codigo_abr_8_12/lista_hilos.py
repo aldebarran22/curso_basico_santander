@@ -26,7 +26,7 @@ if __name__=='__main__':
         hilos.append(hilo)
         hilo.start()
 
-    print(threading.enumerate(), threading.active_count)
+    print(threading.enumerate(), threading.active_count())
 
     for hilo in hilos:
         hilo.join()
