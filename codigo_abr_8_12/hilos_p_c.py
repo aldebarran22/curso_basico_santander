@@ -41,8 +41,6 @@ class Productor(Thread):
             sleep(randint(1,3))
 
 
-
-
 class Consumidor(Thread):
     def __init__(self, buffer, num_muestras, nombre):
         Thread.__init__(self, name=nombre)
@@ -50,7 +48,26 @@ class Consumidor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+
+            # Comprobar si hay un item
+            self.buffer.sem_items.acquire()
+
+            # Quitar un número del buffer en exc. mutua:
+            with self.buffer.mutex:
+                numero = self.buffer.buffer[self.buffer.ind_c]
+                self.buffer.buffer[self.buffer.ind_c] = -1
+                self.buffer.ind_c = (self.buffer.ind_c+1) % tam_buffer
+                print(self.buffer.buffer)
+
+            # Avisar del nuevo hueco
+            self.buffer.sem_huecos.release()
+
+            # Consumir el número:
+            print(self.getName(), ' consume: ',numero)
+
+            sleep(randint(1,3))
+
 
 
 class TBuffer:
