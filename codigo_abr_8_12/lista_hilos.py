@@ -3,6 +3,7 @@ Crear una lista de hilos y esperar a que terminen
 """
 
 from threading import Thread
+import threading
 from time import sleep
 from random import randint
 
@@ -25,7 +26,9 @@ if __name__=='__main__':
         hilos.append(hilo)
         hilo.start()
 
+    print(threading.enumerate(), threading.active_count)
+
     for hilo in hilos:
         hilo.join()
-        
+
     print('main termina')
