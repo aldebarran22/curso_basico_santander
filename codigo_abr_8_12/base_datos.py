@@ -36,7 +36,8 @@ def printTabla(path, tabla, sep=';', file=sys.stdout):
             print(cabs, file=file)
 
             for t in cur.fetchall():
-                csv = sep.join([str(i) for i in t])
+                csv = sep.join([str(i) if type(i)!=float \
+                    else str(i).replace('.',',') for i in t])
                 print(csv, file=file)
 
     except Exception as e:
