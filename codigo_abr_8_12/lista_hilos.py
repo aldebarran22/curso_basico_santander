@@ -22,5 +22,10 @@ if __name__=='__main__':
     hilos = []
     for i in range(4):
         hilo = Mensaje(f'H-{i+1}', randint(5,10))
+        hilos.append(hilo)
         hilo.start()
+
+    for hilo in hilos:
+        hilo.join()
+        
     print('main termina')
