@@ -48,9 +48,9 @@ def printTabla(path, tabla, sep=';', file=sys.stdout):
 
 def exportarTabla(path, tabla, sep=";"):
     path_fich = f"../ficheros/{tabla}.csv"
-    fich = open(path_fich, "w")
-    printTabla(path, tabla, sep, fich)
-    fich.close()
+    with open(path_fich, "w") as fich:
+        printTabla(path, tabla, sep, fich)
+    
 
 
 if __name__=='__main__':
