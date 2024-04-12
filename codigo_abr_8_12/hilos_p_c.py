@@ -11,7 +11,7 @@ num_muestras = 10
 tam_buffer = 5
 
 num_productores = 1
-num_consumidores = 1
+num_consumidores = 2
 
 
 class Productor(Thread):
@@ -38,7 +38,7 @@ class Productor(Thread):
             # Avisar que hay un nuevo número:
             self.buffer.sem_items.release()
 
-            sleep(randint(2,4))
+            sleep(randint(1,2))
 
 
 class Consumidor(Thread):
@@ -67,7 +67,7 @@ class Consumidor(Thread):
             # Consumir el número:
             print(self.getName(), ' consume: ',numero)
 
-            sleep(randint(2,3))
+            sleep(randint(2,4))
 
 
 
