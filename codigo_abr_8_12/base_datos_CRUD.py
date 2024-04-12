@@ -87,7 +87,26 @@ class ProductoCRUD:
         finally:
             if cur:cur.close()
 
+    def select(self, categoria=None):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = """select p.id as idp, p.nombre, c.id as idc, c.nombre as nombrecat, 
+            p.precio, p.existencias from productos p inner join categorias c 
+            on p.idcategoria = c.id"""
+            if categoria:
+                sql += " where c.nombre = ?"
+                cur.execute(sql, (categoria,))
 
+            else:
+                cur.execute(sql)
+
+            return [self.__getProducto(t) for t in cur.fetchall()]
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur:cur.close()
 
 
     def __del__(self):
