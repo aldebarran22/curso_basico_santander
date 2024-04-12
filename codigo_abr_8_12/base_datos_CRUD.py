@@ -67,11 +67,25 @@ class ProductoCRUD:
         try:
             cur = self.con.cursor()
             sql = """select p.id as idp, p.nombre, c.id as idc, c.nombre as nombrecat, 
-            p.precio, p.existencias from productos p inner join categorias c
-            p.idcategoria = c.id where p.id = ?"""
+            p.precio, p.existencias from productos p inner join categorias c 
+            on p.idcategoria = c.id where p.id = ?"""
             cur.execute(sql, (pk,))
+            t = cur.fetchone()
+            if t == None:
+                raise ValueError(f"El producto con pk: {pk} no existe en la BD")
+            else:
+                cat = Categoria(*t[2:4])               
+                t2 = t[:2]+(cat,)+t[4:]
+                prod = Producto(*t2)
+                return prod
 
-            
+        except Exception as e:
+            raise e
+        finally:
+            if cur:cur.close()
+
+
+
 
     def __del__(self):
         if hasattr(self, 'con'):
@@ -80,6 +94,8 @@ class ProductoCRUD:
 if __name__=='__main__':
     try:
         bd = ProductoCRUD('../bd/empresa3.db')
+        obj = bd.read(1)
+        print(obj)
 
     except Exception as e:
         print(e)
