@@ -13,7 +13,7 @@ def ecuacion(a, b, c):
         x2 = (-b - math.sqrt(raiz)) / (2 * a)
         return x1, x2
     else:
-        return None
+        raise ValueError('La ecuación no tiene solución')
 
 
 def csvTojson(csv, sep=";"):
