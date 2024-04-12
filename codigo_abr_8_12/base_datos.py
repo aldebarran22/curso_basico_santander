@@ -34,6 +34,9 @@ def printTabla(path, tabla, file=sys.stdout):
             cur.execute(sql)
             print(cur.description)
 
+            for t in cur.fetchall():
+                print(t)
+
     except Exception as e:
         print(e)
     finally:
