@@ -33,8 +33,7 @@ class Productor(Thread):
             with self.buffer.mutex:
                 self.buffer.buffer[self.buffer.ind_p] = numero
                 self.buffer.ind_p = (self.buffer.ind_p+1) % tam_buffer
-                print(self.getName(), ' coloca: ',numero)
-                print(self.buffer.buffer)
+                print(self.buffer.buffer,'-',self.getName(), ' coloca: ',numero)
 
             # Avisar que hay un nuevo número:
             self.buffer.sem_items.release()
@@ -59,8 +58,8 @@ class Consumidor(Thread):
                 numero = self.buffer.buffer[self.buffer.ind_c]
                 self.buffer.buffer[self.buffer.ind_c] = -1
                 self.buffer.ind_c = (self.buffer.ind_c+1) % tam_buffer
-                print(self.buffer.buffer)
-                print(self.getName(), ' quita: ',numero)
+                print(self.buffer.buffer,'-',self.getName(), ' quita: ',numero)
+               
 
             # Avisar del nuevo hueco
             self.buffer.sem_huecos.release()
