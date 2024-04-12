@@ -8,11 +8,11 @@ import unittest
 class TestEcuacion(unittest.TestCase):
 
     def testExcepcion(self):
-        pass
+        self.assertRaises(ValueError, ecuacion, 1,2,3)
 
     def testResultado(self):
         resul = ecuacion(1,5,4)
-        self.assertEqual(resul, (-1, -5), msg="No coincide el resultado de la ecu.")
+        self.assertEqual(resul, (-1, -4), msg="No coincide el resultado de la ecu.")
 
 
 if __name__=='__main__':
