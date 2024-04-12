@@ -120,7 +120,9 @@ if __name__=='__main__':
         print(obj)
 
         L = bd.select()
-        L = bd.select("Bebidas")
+        #L = bd.select("Bebidas")
+        for prod in L:
+            print(prod)
 
     except Exception as e:
         print(e)
