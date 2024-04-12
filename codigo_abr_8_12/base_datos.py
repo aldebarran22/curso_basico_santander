@@ -45,5 +45,12 @@ def printTabla(path, tabla, sep=';', file=sys.stdout):
         if cur: cur.close()
         if con: con.close()
 
+def exportarTabla(path, tabla, sep=";"):
+    path_fich = f"../ficheros/{tabla}.csv"
+    fich = open(path_fich, "w")
+    printTabla(path, tabla, sep, fich)
+    fich.close()
+
+
 if __name__=='__main__':
-    printTabla("../bd/empresa3.db","pedidos")
+    exportarTabla("../bd/empresa3.db","pedidos")
