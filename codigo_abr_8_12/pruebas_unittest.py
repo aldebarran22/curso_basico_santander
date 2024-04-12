@@ -6,13 +6,13 @@ import unittest
 
 class ClaseTest(unittest.TestCase):
 
-    def testOk():
+    def testOk(self):
         return True
 
-    def testError():
+    def testError(self):
         raise ValueError('Error de prueba')
 
-    def testAssert():
+    def testAssert(self):
         raise AssertionError('Error assert')
 
 if __name__=='__main__':
