@@ -108,6 +108,25 @@ class ProductoCRUD:
         finally:
             if cur:cur.close()
 
+    def delete(self, pk):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "delete from productos where id=?"
+            cur.execute(sql, (pk,))
+            n = cur.rowcount
+            self.con.commit()
+            if n == 0:
+                raise ValueError(f"El producto con pk: {pk} no existe en la BD")
+            else:
+                return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:cur.close()
+
     def create(self, prod):
         cur = None
         try:
@@ -124,8 +143,6 @@ class ProductoCRUD:
             raise e
         finally:
             if cur:cur.close()
-
-
 
     def __del__(self):
         if hasattr(self, 'con'):
@@ -147,6 +164,11 @@ if __name__=='__main__':
             print('Producto creado: ', nuevo)
         else:
             print('No se ha creado')
+
+        if bd.delete(2000):
+            print('producto borrado')
+        else:
+            print('no se ha borrado')
 
     except Exception as e:
         print(e)
