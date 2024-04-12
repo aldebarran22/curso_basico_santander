@@ -1,4 +1,13 @@
-
+"""
+Implementación de las operaciones CRUD:
+Create -> insert into
+Read -> select (pk)
+Update -> update
+Delete -> delete
+select (categoria=None)
+"""
+import sqlite3 as db
+from os.path import isfile
 
 class Categoria:
 
@@ -44,3 +53,21 @@ class Producto:
     def getTupla2(self):
         return (self.nombre, self.cat.id, self.precio, self.exis, self.id)
 
+class ProductoCRUD:
+
+    def __init__(self, path):
+
+        if not isfile(path):
+            raise FileNotFoundError(f"No se encuentra el fichero: {path}")
+        else:
+            self.con = db.connect(path)
+
+    def __del__(self):
+        self.con.close()
+
+if __name__=='__main__':
+    try:
+        bd = ProductoCRUD('../bd/empresa3.db')
+
+    except Exception as e:
+        print(e)
