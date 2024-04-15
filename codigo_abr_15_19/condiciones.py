@@ -27,10 +27,15 @@ if not (ini <= num <= fin):
 else:
     print(f'El número {num} está dentro del intervalo: {ini},{fin}')
 
-nombre1 = "ana".capitalize()
-nombre2 = 'Sara'.capitalize()
+nombre1 = "Sara"
+nombre2 = 'Sara'
+
 if nombre1 < nombre2:
-    print(nombre1)
+    print(nombre1, type(nombre1))
+
+elif nombre1 == nombre2:
+    print('Es el mismo nombre: ', nombre1)
+    
 else:
-    print(nombre2)
+    print(nombre2, type(nombre2))
 
