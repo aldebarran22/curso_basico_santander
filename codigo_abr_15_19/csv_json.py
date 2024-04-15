@@ -28,4 +28,5 @@ for i in L[1:]:
 print(empleados[:3])
 
 # Imprimir solo el nombre de los empleados:
-
+for emp in empleados:
+    print(emp['nombre'])
