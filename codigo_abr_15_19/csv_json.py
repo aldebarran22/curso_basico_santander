@@ -16,5 +16,6 @@ csv = """id;nombre;cargo
 
 # De CSV a lista de diccionarios:
 L = csv.split("\n")
-for i in L:
-    print(i, len(i))
+cabs = L[0].split(";")
+for i in L[1:]:
+    print(i)
