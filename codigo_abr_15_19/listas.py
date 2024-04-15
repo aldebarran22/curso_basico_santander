@@ -2,6 +2,7 @@
 Crear listas
 Funciones sobre listas
 Recorrer listas con bucles: for
+Operadores: + * in
 Función list
 Acceso a los elementos
 modificar elementos
@@ -26,3 +27,11 @@ for i in L:
 
 for t in enumerate(L):
     print(t)
+
+# Operadores: + * in
+print([12,34] + [45,77])
+print([12,34] * 7)
+if 34 in L:
+    print('El 34 está en L')
+else:
+    print('No está')
