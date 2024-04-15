@@ -82,7 +82,7 @@ print('Fichero: ', L2[-1])
 
 # print(L[30]) IndexError: Nos hemos salido de los límites de la lista
 
-# Slicing: L[ini:fin-1:salto=1]
+# Slicing: L[ini:fin-1:salto=1]: list, tuple y en str
 print(L)
 print("Los 3 primeros: ", L[0:3], L[:3])
 print('los 3 últimos: ', L[-3:])
