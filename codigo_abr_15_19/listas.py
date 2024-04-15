@@ -76,10 +76,18 @@ print('El primero: ', L[0], L[-6])
 print('El último: ', L[5], L[-1])
 
 path = "C:/mis documentos/libros/gastos.xlsx"
-L = path.split("/")
-print(L)
-print('Fichero: ', L[-1])
+L2 = path.split("/")
+print(L2)
+print('Fichero: ', L2[-1])
 
+# print(L[30]) IndexError: Nos hemos salido de los límites de la lista
+
+# Slicing: L[ini:fin-1:salto=1]
+print(L)
+print("Los 3 primeros: ", L[0:3], L[:3])
+print('los 3 últimos: ', L[-3:])
+print('Todos: ', L, L[:])
+print('Todos de dos en dos: ', L[::2])
 
 
 
