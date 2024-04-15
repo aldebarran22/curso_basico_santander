@@ -17,7 +17,15 @@ csv = """id;nombre;cargo
 # De CSV a lista de diccionarios:
 L = csv.split("\n")
 cabs = L[0].split(";")
+empleados = []
+
 for i in L[1:]:
     lval = i.split(";")
     emp = dict(zip(cabs, lval))
-    print(emp)
+    #print(emp)
+    empleados += [emp]
+
+print(empleados[:3])
+
+# Imprimir solo el nombre de los empleados:
+
