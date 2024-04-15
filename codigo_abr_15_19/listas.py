@@ -70,5 +70,16 @@ for i in L1:
         R += [i]
 print(R)
 
+print('-'*30)
+print(L)
+print('El primero: ', L[0], L[-6])
+print('El último: ', L[5], L[-1])
+
+path = "C:/mis documentos/libros/gastos.xlsx"
+L = path.split("/")
+print(L)
+print('Fichero: ', L[-1])
+
+
 
 
