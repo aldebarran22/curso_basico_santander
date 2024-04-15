@@ -6,7 +6,7 @@ ax^2 + bx + c = 0
 import math
 
 # Inicialización múltiples:
-a,b,c = 1,2,3
+a,b,c = 1,5,4
 
 raiz = b**2 - 4*a*c
 if raiz > 0:
