@@ -22,3 +22,6 @@ else:
 
 menor2 = n1 if n1 < n2 else n2
 
+semaforo = "ambar"
+print("parar" if semaforo=='rojo' else "pasar" if semaforo == 'verde' else 'precaucion')
+
