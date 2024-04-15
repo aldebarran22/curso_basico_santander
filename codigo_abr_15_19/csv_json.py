@@ -18,4 +18,6 @@ csv = """id;nombre;cargo
 L = csv.split("\n")
 cabs = L[0].split(";")
 for i in L[1:]:
-    print(i)
+    lval = i.split(";")
+    emp = dict(zip(cabs, lval))
+    print(emp)
