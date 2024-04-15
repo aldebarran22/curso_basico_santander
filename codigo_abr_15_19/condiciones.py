@@ -25,4 +25,12 @@ else:
 if not (ini <= num <= fin):
     print('Fuera del intervalo')
 else:
-    print(f"El número {num} está dentro del intervalo: {ini},{fin}")
+    print(f'El número {num} está dentro del intervalo: {ini},{fin}')
+
+nombre1 = "ana".capitalize()
+nombre2 = 'Sara'.capitalize()
+if nombre1 < nombre2:
+    print(nombre1)
+else:
+    print(nombre2)
+
