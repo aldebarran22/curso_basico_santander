@@ -35,3 +35,29 @@ if 34 in L:
     print('El 34 está en L')
 else:
     print('No está')
+
+cad = "hola que tal"
+L3 = list(cad)
+print(L3)
+
+L4 = [5]
+
+# Acceso a los elementos:
+print(L)
+print(L[3])
+L[0] = 1000
+print(L)
+
+L += [2000] # L = L + [2000]
+print(L)
+
+# Crear Listas vacías:
+L1 = []
+L2 = list()
+
+if not L1:
+    print('L1 es vacía')
+else:
+    print('L1 tiene elementos')
+
+
