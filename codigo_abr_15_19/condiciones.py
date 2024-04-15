@@ -8,6 +8,11 @@ fin = 40
 num = 14
 
 if num >= ini and num <= fin:
-    print(f"El número {num} está dentro del intervalo")
+    print(f"El número {num} está dentro del intervalo: {ini},{fin}")
+else:
+    print('Fuera del intervalo')
+
+if  ini <= num <= fin:
+    print(f"El número {num} está dentro del intervalo: {ini},{fin}")
 else:
     print('Fuera del intervalo')
