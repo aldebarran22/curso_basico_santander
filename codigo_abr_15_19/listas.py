@@ -88,6 +88,16 @@ print("Los 3 primeros: ", L[0:3], L[:3])
 print('los 3 últimos: ', L[-3:])
 print('Todos: ', L, L[:])
 print('Todos de dos en dos: ', L[::2])
+print('Quitar el primero y el último: ', L[1:-1])
+print('Invertida: ', L[::-1])
+
+# Comprobar si el número es capicua:
+num = 12321
+cad = str(num)
+print(cad, type(cad))
+print('Es capicua: ', cad==cad[::-1])
+print('Es capicua: ', str(num)==str(num)[::-1])
+
 
 
 
