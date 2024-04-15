@@ -65,5 +65,10 @@ L1 = [1,2,3,4,4,2,31,6,7,8]
 L2 = [8,9,0,1,2,34,3,4,4]
 # Obtener otra lista con los valores comunes (sin repetidos)
 R = [] 
+for i in L1:
+    if i in L2 and i not in R:
+        R += [i]
+print(R)
+
 
 
