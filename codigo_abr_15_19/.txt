@@ -1,0 +1,11 @@
+- Script + Shell: bash
+- aplicaciones Web: Django
+- servicios: SOAP / Rest
+- análisis de datos: machine learning, deep learning
+- Trabajo ficheros (CSV, Excel) --> pandas
+- Aplicaciones de Escritorio: PyQt
+- Acceso a BD: Relacionales (oracle, mysql, SQL Server)
+ NoSQL: mongo, redis, ...
+Big data
+
+No app nativa para Smartphone
