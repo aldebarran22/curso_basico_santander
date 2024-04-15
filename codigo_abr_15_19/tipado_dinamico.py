@@ -16,4 +16,6 @@ cad1 = "120"
 cad2 = "300"
 print(cad1+cad2)
 
-print(n1+cad1)
+# print(n1+cad1)
+
+print(cad1 * 5)
