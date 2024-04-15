@@ -7,6 +7,13 @@ str() : Convertir a texto
 """
 
 # Leer dos variables y sumarlas:
-n1 = float(input("Dame número 1: "))
-n2 = float(input("Dame número 2: "))
+cad1 = input("Dame número 1: ")
+cad2 = input("Dame número 2: ")
+
+if cad1.isnumeric():
+    n1 = int(cad1)
+
+if cad2.isnumeric():
+    n2 = int(cad2)
+    
 print(n1 + n2)
