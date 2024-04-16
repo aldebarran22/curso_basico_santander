@@ -29,11 +29,14 @@ print(t3)
 print(t3[0])
 # t3[0] = 1000 ERROR NO SE PUEDEN MODIFICAR
 
-print((1,2,3) + (8,9))
+print((1, 2, 3) + (8, 9))
 
 # Representar en Python una ruta grabada con un GPS.
 L = [(40.2, -3.76), (35.8, -15.9), (40.5, -3.55)]
 print("Número de coordenas:", len(L))
+for i in L:
+    print(i[0], i[1])
 
-
-
+L = [(40.2, -3.76, 660), (35.8, -15.9, 550), (40.5, -3.55, 600)]
+for lat, lon, alt in L:
+    print(lat, lon, alt)
