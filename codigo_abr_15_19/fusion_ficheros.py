@@ -25,11 +25,19 @@ emp3 = """id;nombre;cargo
 10;George;Representante de ventas"""
 
 # Partir el contenido de emp2 en filas:
+Lemp2 = emp2.split("\n")
 
 # Partir el contenido de emp3 en filas:
+Lemp3 = emp3.split("\n")
+print(Lemp3[:3])
 
 # Convertir las dos listas en conjuntos
+cemp2 = set(Lemp2)
+cemp3 = set(Lemp3)
 
 # Unión de conjuntos:
+empleados = cemp2 | cemp3
 
 # Imprimir el resultado:
+for e in empleados:
+    print(e)
