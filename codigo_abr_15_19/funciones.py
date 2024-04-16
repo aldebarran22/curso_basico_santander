@@ -77,5 +77,6 @@ L = [(12, 4, 5), (8, 30, 56), (13, 4, 22), (7, 8, 10)]
 R = []
 for t in L:
     sg = segundos(*t)
-    R += [sg]  # R.append(sg)
+    R.append(sg)  # R += [sg]
+    # R.append(segundos(*t))
 print(R)
