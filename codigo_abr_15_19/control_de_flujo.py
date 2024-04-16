@@ -47,7 +47,7 @@ print()
 
 # 3 intentos: para teclear un múltiplo
 for i in range(3):
-    importe = int(input("Importe: "))
+    importe = int(input("Importe (for 3 intentos): "))
     if importe % 10 != 0:
         print("Teclear múltiplos de 10")
     else:
@@ -67,11 +67,19 @@ while True:
 
 # Sin número de intentos:
 while True:
-    importe = int(input("Importe: "))
+    importe = int(input("Importe while: "))
     if importe % 10 != 0:
         print("Teclear múltiplos de 10")
     else:
         break
-    
-if importe % 10  == 0:
-    print('importe correcto')
+
+if importe % 10 == 0:
+    print("importe correcto")
+
+print("continue:")
+i = 0
+while i < 10:
+    i = i + 1
+    if i % 2 == 0:
+        continue
+    print(i)
