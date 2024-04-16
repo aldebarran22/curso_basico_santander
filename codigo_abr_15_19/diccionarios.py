@@ -9,8 +9,8 @@
 d = {"a":1, "b":2, "c":3}
 print(d, type(d))
 
-L = [1,2,3]
-cad = "ABCDE"
+L = [1,2,3,4,5,6,7]
+cad = "ABCDEDD"
 d2 = dict(zip(cad, L))
 print(d2)
 d3 = dict(zip(L, cad))
