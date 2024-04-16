@@ -43,3 +43,11 @@ print("IVA: ", calcularIVA(100, 4))
 print("segundos: ", segundos(s=60))
 print("segundos: ", segundos(m=5, s=30))
 print("segundos: ", segundos(12, 30))  # h = 12, m = 30
+
+print('-'*30)
+print('Con tuplas:')
+t = (12, 45, 34)
+print("Segundos: ", segundos(t[0], t[1], t[2]))
+print("Segundos: ", segundos(*t))
+
+
