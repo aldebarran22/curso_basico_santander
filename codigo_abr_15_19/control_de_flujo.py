@@ -58,3 +58,20 @@ if importe % 10 == 0:
 
 elif i == 2:
     print("Número de intentos consumido ...")
+
+# Bucle infinito: se corta con control+C
+"""
+while True:
+    print("hola")
+"""
+
+# Sin número de intentos:
+while True:
+    importe = int(input("Importe: "))
+    if importe % 10 != 0:
+        print("Teclear múltiplos de 10")
+    else:
+        break
+    
+if importe % 10  == 0:
+    print('importe correcto')
