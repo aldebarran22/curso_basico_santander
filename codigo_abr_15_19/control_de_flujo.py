@@ -54,8 +54,7 @@ for i in range(3):
         break
 
 if importe % 10 == 0:
-    print('El importe es válido')
-    
+    print("El importe es válido")
+
 elif i == 2:
     print("Número de intentos consumido ...")
-
