@@ -4,6 +4,15 @@ Implementación de funciones en Python
 Formas de llamar a una función:
 1) posicional: la posición que ocupan de izq a der
 2) nominal: con los nombres de los parámetros
+3) tupla o lista (con un asterisco)
+4) diccionario (con doble asterisco)
+
+Parámetros:
+- obligatorios
+- opcionales
+
+- *args --> una tupla
+- **kwargs --> un diccionario
 """
 
 
