@@ -16,8 +16,9 @@ def ecuacion(a, b, c):
     else:
         return None
 
-if __name__=='__main__':
-    #print("__name__:", __name__)
+
+if __name__ == "__main__":
+    # print("__name__:", __name__)
 
     # Inicialización múltiples:
     num1, num2, num3 = 1, 5, 4
