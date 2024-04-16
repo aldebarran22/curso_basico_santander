@@ -20,6 +20,7 @@ emp3 = """id;nombre;cargo
 5;Buchanan;Gerente de ventas
 6;Suyama;Representante de ventas
 7;King;Representante de ventas
+5;Buchanan;Gerente de ventas
 8;Callahan;Coordinador ventas interno
 9;Dodsworth;Representante de ventas
 10;George;Representante de ventas"""
