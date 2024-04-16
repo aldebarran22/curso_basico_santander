@@ -69,3 +69,12 @@ print("-" * 30)
 print("Con Listas:")
 t = [12, 45, 34]
 print("Segundos: ", segundos(*t))
+
+
+# Partimos de una lista de horas: h,m,s (en tuplas) y queremos
+# almacenar en otra lista los resultados en segundos.
+L = [(12, 4, 5), (8, 30, 56), (13, 4, 22), (7, 8, 10)]
+R = []
+for t in L:
+    print(t)
+print(R)
