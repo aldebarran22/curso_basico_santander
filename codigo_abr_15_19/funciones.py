@@ -14,6 +14,14 @@ def sumar(a, b):
 def sumar3(a, b, c):
     return a + b + c
 
+def calcularIVA(importe, iva=21):
+    return round(importe * iva / 100, 2)
+
+def segundos(h=0, m=0, s=0):
+    return h*3600 + m*60 + s
+
+
+
 
 # Con tipos anotados: funcionan a título informativo.
 def concatenar(a: str, b: str) -> str:
@@ -28,3 +36,7 @@ print("Concatenar: ", concatenar(34, 77))
 
 # Nominal:
 print("Resul: ", sumar(b=34, a=12))
+
+print('IVA: ', calcularIVA(100))
+print('IVA: ', calcularIVA(100, 4))
+print('segundos: ', segundos(s=60))
