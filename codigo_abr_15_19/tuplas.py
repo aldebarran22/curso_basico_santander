@@ -46,3 +46,6 @@ total = 0
 for t in L:
     total += t[2]
 print("La media:", round(total / len(L),2))
+
+# index:
+
