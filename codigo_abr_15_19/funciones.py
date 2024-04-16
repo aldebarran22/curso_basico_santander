@@ -40,3 +40,6 @@ print("Resul: ", sumar(b=34, a=12))
 print('IVA: ', calcularIVA(100))
 print('IVA: ', calcularIVA(100, 4))
 print('segundos: ', segundos(s=60))
+print('segundos: ', segundos(m=5, s=30))
+print('segundos: ', segundos(12,30)) # h = 12, m = 30
+
