@@ -40,3 +40,9 @@ for i in L:
 L = [(40.2, -3.76, 660), (35.8, -15.9, 550), (40.5, -3.55, 600)]
 for lat, lon, alt in L:
     print(lat, lon, alt)
+
+# Calcular la altitud media de todas las coordenadas:
+total = 0
+for t in L:
+    total += t[2]
+print("La media:", round(total / len(L),2))
