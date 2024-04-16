@@ -5,17 +5,20 @@ ax^2 + bx + c = 0
 
 import math
 
+
+def ecuacion(a,b,c):
+    raiz = b**2 - 4*a*c
+    if raiz > 0:
+        x1 = (-b + math.sqrt(raiz)) / (2*a)
+        x2 = (-b - math.sqrt(raiz)) / (2*a)
+        return x1, x2
+    else:
+        return None
+
+
 # Inicialización múltiples:
-a,b,c = 1,5,4
+num1, num2, num3 = 1,5,4
 
-raiz = b**2 - 4*a*c
-if raiz > 0:
-    x1 = (-b + math.sqrt(raiz)) / (2*a)
-    x2 = (-b - math.sqrt(raiz)) / (2*a)
-    print("x1:",x1,"x2:",x2)
-
-    #f-string
-    print(f"x1: {x1}, x2: {x2}")
-else:
-    print('No hay solución')
+# llamada a la función:
+ecuacion(num1, num2, num3)
 
