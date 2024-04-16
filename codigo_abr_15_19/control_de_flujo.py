@@ -49,10 +49,13 @@ print()
 for i in range(3):
     importe = int(input("Importe: "))
     if importe % 10 != 0:
-        print('Teclear múltiplos de 10')
+        print("Teclear múltiplos de 10")
     else:
         break
-if i == 3:
-    print('Número de intentos consumido ...')
-else:
-    print('ok')
+
+if importe % 10 == 0:
+    print('El importe es válido')
+    
+elif i == 2:
+    print("Número de intentos consumido ...")
+
