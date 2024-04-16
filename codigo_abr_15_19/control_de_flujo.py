@@ -6,10 +6,10 @@ while
 
 # Imprimir si un número es par o impar:
 numero = 22
-if numero % 2  == 0:
-    print('par')
+if numero % 2 == 0:
+    print("par")
 else:
-    print('impar')
+    print("impar")
 
 print("par" if numero % 2 == 0 else "impar")
 
@@ -23,5 +23,24 @@ else:
 menor2 = n1 if n1 < n2 else n2
 
 semaforo = "ambar"
-print("parar" if semaforo=='rojo' else "pasar" if semaforo == 'verde' else 'precaucion')
+print(
+    "parar" if semaforo == "rojo" else "pasar" if semaforo == "verde" else "precaucion"
+)
 
+# Bucles:
+# range(ini, fin-1, salto=1)
+
+# Del 0 al 9
+for i in range(10):
+    print(i, end=" ")
+print()
+
+# Del 1 al 10
+for i in range(1, 11):
+    print(i, end=" ")
+print()
+
+# Del 0 al 100 de 5 en 5
+for i in range(0, 101, 5):
+    print(i, end=" ")
+print()
