@@ -32,6 +32,12 @@ if __name__ == "__main__":
     p2 = Persona("Pedro", 33, 1.8)
     p3 = Persona("Juan", 45, altura=1.82)
 
+    if p1 == p2:
+        print('p1 y p2 son iguales')
+    else:
+        print('Son distintos')
+
+
     L = [p1, p2, p3, Persona("Sonia", 23, 1.77)]
     print(L)
     # Ordenar por Edad ASC
