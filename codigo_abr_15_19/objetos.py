@@ -46,6 +46,12 @@ class Persona:
             and self.altura == other.altura
         )
 
+    def hablarCon(self, other=None):
+        if not other:
+            print("La persona está hablando sola")
+        else:
+            print(self.nombre, "habla con", other.nombre)
+
     def cumpleaños(self):
         self.edad += 1
 
@@ -58,12 +64,13 @@ class Empleado(Persona):
 
     def __init__(self, nombre="", edad=0, altura=0.0, empresa="", sueldo=0.0):
         # Llamar al constructor de la clase padre: Persona
-        Persona.__init__(self, nombre, edad, altura)
+        # Persona.__init__(self, nombre, edad, altura)
+        super().__init__(nombre, edad, altura)
 
         # Definir los att. de la clase Empleado:
         self.empresa = empresa
         self.sueldo = sueldo
-       
+
 
 def testPersona():
     print("NumPersonas. ", Persona.getNumPersonas())
@@ -108,19 +115,22 @@ def testPersona():
     persona1 = p1.__class__("Jorge")
     print(persona1)
 
+
 def testEmpleado():
     emp1 = Empleado("Sandra", 44, 1.77, "Santander", 2000.0)
     emp2 = Empleado("Eva", 42, 1.78, "TTR", 2200.0)
+    emp1.hablarCon(emp2)
     emp2.cumpleaños()
 
     if emp1 < emp2:
-        print(emp1.nombre,"es menor que",emp2.nombre)
+        print(emp1.nombre, "es menor que", emp2.nombre)
     else:
-        print(emp2.nombre,"es menor que",emp1.nombre)
+        print(emp2.nombre, "es menor que", emp1.nombre)
 
-    L = [emp1, emp2, Empleado("Juan",46,1.76,"DDR",1500.0)]
+    L = [emp1, emp2, Empleado("Juan", 46, 1.76, "DDR", 1500.0)]
     L.sort()
     print(L)
+
 
 if __name__ == "__main__":
     # testPersona()
