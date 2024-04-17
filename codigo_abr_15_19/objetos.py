@@ -42,6 +42,7 @@ if __name__ == "__main__":
     print(L)
 
     L.sort()
+    print("L.sort() -> ",L)
 
     # print(str(p1))
     # print(p1.__str__())
