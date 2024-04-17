@@ -13,7 +13,8 @@ class Persona:
         self.edad = edad
         self.altura = altura
 
-        Persona.numPersonas+=1
+        Persona.numPersonas += 1
+
     """
     def __str__(self):
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
@@ -46,23 +47,41 @@ class Persona:
             and self.altura == other.altura
         )
 
+    def cumpleaños(self):
+        self.edad += 1
+
     def __del__(self):
-        Persona.numPersonas-=1
+        Persona.numPersonas -= 1
         # print("Eliminando a: ", self.nombre)
+
+
+class Empleado(Persona):
+
+    def __init__(self, nombre="", edad=0, altura=0.0, empresa="", sueldo=0.0):
+        # Llamar al constructor de la clase padre: Persona
+        Persona.__init__(self, nombre, edad, altura)
+
+        # Definir los att. de la clase Empleado:
+        self.empresa = empresa
+        self.sueldo = sueldo
+
+        
+
+        
 
 class Grupo:
     pass
 
 
 if __name__ == "__main__":
-    print('NumPersonas. ', Persona.getNumPersonas())
+    print("NumPersonas. ", Persona.getNumPersonas())
     p1 = Persona("Ana", 47, 1.76)
     p2 = Persona("Pedro", 46, 1.75)
     p3 = Persona("Juan", 45, altura=1.82)
-    person1 = Persona('Angel')
-    print('NumPersonas. ', Persona.getNumPersonas())
+    person1 = Persona("Angel")
+    print("NumPersonas. ", Persona.getNumPersonas())
     del person1
-    print('NumPersonas. ', Persona.getNumPersonas())
+    print("NumPersonas. ", Persona.getNumPersonas())
 
     if p1 == p2:
         print("p1 y p2 son iguales")
@@ -89,7 +108,7 @@ if __name__ == "__main__":
     p1.movil = 600455654
     print(p1.__dict__)
     del p1.nombre  # Borra el att
-    print(p1) 
+    print(p1)
     print(p1.__class__)
     print(p1.__class__.__name__)
 
