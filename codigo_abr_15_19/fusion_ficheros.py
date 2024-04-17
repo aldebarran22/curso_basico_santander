@@ -39,6 +39,9 @@ cemp3 = set(Lemp3)
 # Unión de conjuntos:
 empleados = cemp2 | cemp3
 
+# Ordenar:
+Lemp = sorted(empleados)
+
 # Imprimir el resultado:
-for e in empleados:
+for e in Lemp:
     print(e)

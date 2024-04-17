@@ -18,4 +18,4 @@ R = sorted(histo.items(), key=lambda t: t[1], reverse=True)
 for valor, cuenta in R:
     print(f"{valor} se repite {cuenta} veces")
 
-print(histo.items())
+
