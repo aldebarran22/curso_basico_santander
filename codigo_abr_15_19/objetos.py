@@ -62,7 +62,9 @@ class Persona:
 
 class Empleado(Persona):
 
-    def __init__(self, nombre="", edad=0, altura=0.0, empresa="", sueldo=0.0):
+    def __init__(
+        self, nombre="", edad=0, altura=0.0, empresa="", sueldo=0.0, idiomas=[]
+    ):
         # Llamar al constructor de la clase padre: Persona
         # Persona.__init__(self, nombre, edad, altura)
         super().__init__(nombre, edad, altura)
@@ -70,6 +72,13 @@ class Empleado(Persona):
         # Definir los att. de la clase Empleado:
         self.empresa = empresa
         self.sueldo = sueldo
+        self.idiomas = idiomas
+
+    def hablarCon(self, other=None):
+        if not other:
+            super().hablarCon(other)
+        else:
+            pass
 
 
 def testPersona():
@@ -117,8 +126,8 @@ def testPersona():
 
 
 def testEmpleado():
-    emp1 = Empleado("Sandra", 44, 1.77, "Santander", 2000.0)
-    emp2 = Empleado("Eva", 42, 1.78, "TTR", 2200.0)
+    emp1 = Empleado("Sandra", 44, 1.77, "Santander", 2000.0, ["inglés", "francés"])
+    emp2 = Empleado("Eva", 42, 1.78, "TTR", 2200.0, ["inglés", "alemán"])
     emp1.hablarCon(emp2)
     emp2.cumpleaños()
 
