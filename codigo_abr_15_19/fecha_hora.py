@@ -41,6 +41,16 @@ class Date:
             return False
 
 
+class DateTime2:
+
+    def __init__(self,dd=1, mm=1, yy=1970, h=0, m=0, s=0):
+        self.date = Date(dd,mm,yy)
+        self.time = Time(h,m,s)
+
+    def __str__(self):
+        return self.date.__str__() + " " + self.time.__str__()
+
+
 class DateTime(Time, Date):
 
     def __init__(self, dd=1, mm=1, yy=1970, h=0, m=0, s=0):
@@ -66,3 +76,6 @@ if __name__ == "__main__":
 
     dt = DateTime(17, 4, 2024, 14, 37, 21)
     print(dt)  # 17/04/2024 14:37:21
+
+    dt2 = DateTime2(17, 4, 2024, 14, 37, 21)
+    print(dt2)  # 17/04/2024 14:37:21
