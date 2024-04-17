@@ -78,7 +78,14 @@ class Empleado(Persona):
         if not other:
             super().hablarCon(other)
         else:
-            pass
+            c1 = set(self.idiomas)
+            c2 = set(other.idiomas)
+
+            comun = c1 & c2
+            if len(comun) == 0:
+                print('No pueden hablar')
+            else:
+                print('Pueden hablar en: ', " o ".join(comun))
 
 
 def testPersona():
