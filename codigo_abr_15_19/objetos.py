@@ -134,7 +134,7 @@ def testPersona():
 
 def testEmpleado():
     emp1 = Empleado("Sandra", 44, 1.77, "Santander", 2000.0, ["inglés", "francés"])
-    emp2 = Empleado("Eva", 42, 1.78, "TTR", 2200.0, ["inglés", "alemán"])
+    emp2 = Empleado("Eva", 42, 1.78, "TTR", 2200.0, ["inglés", "alemán", "francés"])
     emp1.hablarCon(emp2)
     emp2.cumpleaños()
 
