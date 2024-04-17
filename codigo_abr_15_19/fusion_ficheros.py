@@ -25,6 +25,11 @@ emp3 = """id;nombre;cargo
 9;Dodsworth;Representante de ventas
 10;George;Representante de ventas"""
 
+
+def criterio(linea):
+    return linea
+
+
 # Partir el contenido de emp2 en filas:
 Lemp2 = emp2.split("\n")
 
@@ -40,7 +45,7 @@ cemp3 = set(Lemp3)
 empleados = cemp2 | cemp3
 
 # Ordenar:
-Lemp = sorted(empleados)
+Lemp = sorted(empleados, key=criterio)
 
 # Imprimir el resultado:
 for e in Lemp:
