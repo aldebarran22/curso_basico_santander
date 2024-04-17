@@ -27,7 +27,11 @@ emp3 = """id;nombre;cargo
 
 
 def criterio(linea):
-    return linea
+    col = linea.partition(";")[0]
+    if col.isnumeric():
+        return int(col)
+    else:
+        return 0
 
 
 # Partir el contenido de emp2 en filas:
