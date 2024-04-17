@@ -30,5 +30,8 @@ if __name__ == "__main__":
         print(i)
     print()
 
+
+
+
     L = list(genMul3(1,10))
     print(L)

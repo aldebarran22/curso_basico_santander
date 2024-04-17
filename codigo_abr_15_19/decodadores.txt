@@ -1,0 +1,30 @@
+def buscarCliente(xxxxx):
+	if tienePermiso(xxx):
+            buscamos el cliente
+        else:
+            lanzar error
+
+def altaCliente(xxxx):
+	
+	if tienePermiso(xxx):
+            alta del cliente
+        else:
+            lanzar error
+
+###################################################
+
+def seguridad(f):
+   def inner(*args, **kwargs):
+	if tienePermiso():
+            f(*args, **kwargs)
+        else:
+            lanzar error
+
+@seguridad
+def buscarCliente(xxxxx):
+       buscamos el cliente
+       
+@seguridad
+def altaCliente(xxxx):
+       alta del cliente
+
