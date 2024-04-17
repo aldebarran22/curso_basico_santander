@@ -15,12 +15,19 @@ class Persona:
 
     def __repr__(self):
         return str(self)
-    
+
     def __lt__(self, other):
         if self.edad < other.edad:
             return True
         else:
             return False
+
+    def __eq__(self, other):
+        return (
+            self.nombre == other.nombre
+            and self.edad == other.edad
+            and self.altura == other.altura
+        )
 
     def __del__(self):
         pass
@@ -29,14 +36,13 @@ class Persona:
 
 if __name__ == "__main__":
     p1 = Persona("Ana", 47, 1.76)
-    p2 = Persona("Pedro", 33, 1.8)
+    p2 = Persona("Ana", 47, 1.76)
     p3 = Persona("Juan", 45, altura=1.82)
 
     if p1 == p2:
-        print('p1 y p2 son iguales')
+        print("p1 y p2 son iguales")
     else:
-        print('Son distintos')
-
+        print("Son distintos")
 
     L = [p1, p2, p3, Persona("Sonia", 23, 1.77)]
     print(L)
@@ -48,7 +54,7 @@ if __name__ == "__main__":
     print(L)
 
     L.sort()
-    print("L.sort() -> ",L)
+    print("L.sort() -> ", L)
 
     # print(str(p1))
     # print(p1.__str__())
