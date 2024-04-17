@@ -4,16 +4,24 @@
 class Persona:
     """Implementación de la clase persona"""
 
+    # Att de clase:
+    numPersonas = 0
+
     def __init__(self, nombre="", edad=0, altura=0.0):
         # Definir att de la clase:
         self.nombre = nombre
         self.edad = edad
         self.altura = altura
 
+        Persona.numPersonas+=1
     """
     def __str__(self):
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
     """
+
+    @staticmethod
+    def getNumPersonas():
+        return Persona.numPersonas
 
     def __str__(self):
         resul = ""
@@ -39,14 +47,22 @@ class Persona:
         )
 
     def __del__(self):
-        pass
+        Persona.numPersonas-=1
         # print("Eliminando a: ", self.nombre)
+
+class Grupo:
+    pass
 
 
 if __name__ == "__main__":
+    print('NumPersonas. ', Persona.getNumPersonas())
     p1 = Persona("Ana", 47, 1.76)
     p2 = Persona("Pedro", 46, 1.75)
     p3 = Persona("Juan", 45, altura=1.82)
+    person1 = Persona('Angel')
+    print('NumPersonas. ', Persona.getNumPersonas())
+    del person1
+    print('NumPersonas. ', Persona.getNumPersonas())
 
     if p1 == p2:
         print("p1 y p2 son iguales")
@@ -74,3 +90,9 @@ if __name__ == "__main__":
     print(p1.__dict__)
     del p1.nombre  # Borra el att
     print(p1) 
+    print(p1.__class__)
+    print(p1.__class__.__name__)
+
+    # Crear objetos:
+    persona1 = p1.__class__("Jorge")
+    print(persona1)
