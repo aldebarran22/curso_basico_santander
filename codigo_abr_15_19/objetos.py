@@ -111,6 +111,7 @@ def testPersona():
 def testEmpleado():
     emp1 = Empleado("Sandra", 44, 1.77, "Santander", 2000.0)
     emp2 = Empleado("Eva", 42, 1.78, "TTR", 2200.0)
+    emp2.cumpleaños()
 
     if emp1 < emp2:
         print(emp1.nombre,"es menor que",emp2.nombre)
