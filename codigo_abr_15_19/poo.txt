@@ -2,6 +2,7 @@ Personas
 
 Características: 
 peso, altura, color de pelo ... --> atributos 
+nombreApellidos
 
 Acciones:
 correr(), andar(), dormir() --> métodos (def)
@@ -18,6 +19,8 @@ self -> el objeto que está en curso.
 Instanciar la clase --> a crear un objeto
 - constructor de la clase: __init__(self, ....)
 - destructor: __del__(self)
+
+Python tiene una superclase que se llama: object
 
 Relaciones entre clases:
 - Herencia: clases que tienen cosas en común.
