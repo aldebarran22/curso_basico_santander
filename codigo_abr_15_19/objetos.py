@@ -10,8 +10,17 @@ class Persona:
         self.edad = edad
         self.altura = altura
 
+    """
     def __str__(self):
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
+    """
+
+    def __str__(self):
+        resul = ""
+        for k, v in self.__dict__.items():
+            resul += k + " = " + str(v) + "\n"
+
+        return resul
 
     def __repr__(self):
         return str(self)  # return self.__str__()
@@ -63,3 +72,5 @@ if __name__ == "__main__":
     p1.__dict__["tno"] = 912233445
     p1.movil = 600455654
     print(p1.__dict__)
+    del p1.nombre  # Borra el att
+    print(p1) 

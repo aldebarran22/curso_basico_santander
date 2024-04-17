@@ -61,6 +61,9 @@ del()		__del__()  -> destructor de la clase
 Python es un lenguaje de POO dinámico:
 __dict__
 
+Y si no queremos que se pueda modificar la clase 
+en t.de ejecución: __slots__
+
 
 
 
