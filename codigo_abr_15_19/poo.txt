@@ -58,6 +58,8 @@ repr()		__repr__()
 del()		__del__()  -> destructor de la clase
 
 
+Python es un lenguaje de POO dinámico:
+__dict__
 
 
 

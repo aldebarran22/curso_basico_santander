@@ -14,7 +14,7 @@ class Persona:
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
 
     def __repr__(self):
-        return str(self)
+        return str(self)  # return self.__str__()
 
     def __lt__(self, other):
         if self.edad < other.edad:
@@ -36,7 +36,7 @@ class Persona:
 
 if __name__ == "__main__":
     p1 = Persona("Ana", 47, 1.76)
-    p2 = Persona("Ana", 47, 1.76)
+    p2 = Persona("Pedro", 46, 1.75)
     p3 = Persona("Juan", 45, altura=1.82)
 
     if p1 == p2:
@@ -58,3 +58,8 @@ if __name__ == "__main__":
 
     # print(str(p1))
     # print(p1.__str__())
+
+    print(p1.__dict__)
+    p1.__dict__["tno"] = 912233445
+    p1.movil = 600455654
+    print(p1.__dict__)
