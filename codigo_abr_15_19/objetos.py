@@ -15,9 +15,16 @@ class Persona:
 
     def __repr__(self):
         return str(self)
+    
+    def __lt__(self, other):
+        if self.edad < other.edad:
+            return True
+        else:
+            return False
 
     def __del__(self):
-        print("Eliminando a: ", self.nombre)
+        pass
+        # print("Eliminando a: ", self.nombre)
 
 
 if __name__ == "__main__":
@@ -30,8 +37,11 @@ if __name__ == "__main__":
     # Ordenar por Edad ASC
     L.sort(key=lambda obj: obj.edad)
     print(L)
-    # Ordenar por Edadaltura DESC
+    # Ordenar por altura DESC
     L.sort(key=lambda obj: obj.altura, reverse=True)
     print(L)
+
+    L.sort()
+
     # print(str(p1))
     # print(p1.__str__())
