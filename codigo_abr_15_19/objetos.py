@@ -64,16 +64,9 @@ class Empleado(Persona):
         # Definir los att. de la clase Empleado:
         self.empresa = empresa
         self.sueldo = sueldo
+       
 
-        
-
-        
-
-class Grupo:
-    pass
-
-
-if __name__ == "__main__":
+def testPersona():
     print("NumPersonas. ", Persona.getNumPersonas())
     p1 = Persona("Ana", 47, 1.76)
     p2 = Persona("Pedro", 46, 1.75)
@@ -115,3 +108,10 @@ if __name__ == "__main__":
     # Crear objetos:
     persona1 = p1.__class__("Jorge")
     print(persona1)
+
+def testEmpleado():
+    pass
+
+if __name__ == "__main__":
+    # testPersona()
+    testEmpleado()
