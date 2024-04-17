@@ -52,3 +52,21 @@ __lt__  <
 suma = hora1 + hora2  --> __add__
 
 
+Funciones	Funciones Especiales (dentro de las clases)
+str()		__str__()
+repr()		__repr__()
+del()		__del__()  -> destructor de la clase
+
+
+
+
+
+
+
+
+
+
+
+
+
+

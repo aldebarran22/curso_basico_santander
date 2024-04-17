@@ -21,12 +21,13 @@ class Persona:
 
 
 if __name__ == "__main__":
-    p1 = Persona("Ana")
-    p2 = Persona("Pedro", 33)
-    p3 = Persona("Juan", altura=1.8)
+    p1 = Persona("Ana", 47, 1.76)
+    p2 = Persona("Pedro", 33, 1.8)
+    p3 = Persona("Juan", 45, altura=1.82)
 
     L = [p1, p2, p3, Persona("Sonia", 23, 1.77)]
     print(L)
-    print(p1)
+    L.sort(key=lambda obj: obj.edad)  # ASC por Edad
+    print(L)
     # print(str(p1))
     # print(p1.__str__())
