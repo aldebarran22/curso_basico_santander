@@ -25,7 +25,7 @@ class Time:
 
 class Date:
 
-    def __init__(self, dd, mm, yy):
+    def __init__(self, dd=1, mm=1, yy=1970):
         self.dd = dd
         self.mm = mm
         self.yy = yy
@@ -39,6 +39,13 @@ class Date:
             return True
         else:
             return False
+
+
+class DateTime(Date, Time):
+
+    def __init__(self, dd=1, mm=1, yy=1970, h=0, m=0, s=0):
+        Date.__init__(self, dd, mm, yy)
+        Time.__init__(self, h, m, s)
 
 
 if __name__ == "__main__":
