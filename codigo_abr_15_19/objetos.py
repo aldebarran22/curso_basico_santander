@@ -27,7 +27,11 @@ if __name__ == "__main__":
 
     L = [p1, p2, p3, Persona("Sonia", 23, 1.77)]
     print(L)
-    L.sort(key=lambda obj: obj.edad)  # ASC por Edad
+    # Ordenar por Edad ASC
+    L.sort(key=lambda obj: obj.edad)
+    print(L)
+    # Ordenar por Edadaltura DESC
+    L.sort(key=lambda obj: obj.altura, reverse=True)
     print(L)
     # print(str(p1))
     # print(p1.__str__())
