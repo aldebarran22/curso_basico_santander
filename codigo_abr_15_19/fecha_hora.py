@@ -17,6 +17,10 @@ class Time:
         self.ss %= 60
         self.mm += minutos
 
+        horas = self.mm // 60
+        self.mm %= 60
+        self.hh += horas
+
 
 
     def __str__(self):        
