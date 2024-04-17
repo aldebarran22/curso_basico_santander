@@ -27,8 +27,7 @@ class Persona:
     def __str__(self):
         resul = ""
         for k, v in self.__dict__.items():
-            resul += k + " = " + str(v) + "\n"
-
+            resul += str(v) + " "
         return resul
 
     def __repr__(self):
@@ -110,7 +109,17 @@ def testPersona():
     print(persona1)
 
 def testEmpleado():
-    pass
+    emp1 = Empleado("Sandra", 44, 1.77, "Santander", 2000.0)
+    emp2 = Empleado("Eva", 42, 1.78, "TTR", 2200.0)
+
+    if emp1 < emp2:
+        print(emp1.nombre,"es menor que",emp2.nombre)
+    else:
+        print(emp2.nombre,"es menor que",emp1.nombre)
+
+    L = [emp1, emp2, Empleado("Juan",46,1.76,"DDR",1500.0)]
+    L.sort()
+    print(L)
 
 if __name__ == "__main__":
     # testPersona()
