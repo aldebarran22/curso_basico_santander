@@ -1,0 +1,51 @@
+Personas
+
+Características: 
+peso, altura, color de pelo ... --> atributos 
+
+Acciones:
+correr(), andar(), dormir() --> métodos (def)
+
+1 persona <--> 1 objeto (instancia)
+peso = 80
+altura = 1.9
+...
+
+1 clase -> N objetos de la clase
+
+self -> el objeto que está en curso.
+
+Instanciar la clase --> a crear un objeto
+- constructor de la clase: __init__(self, ....)
+- destructor: __del__(self)
+
+Relaciones entre clases:
+- Herencia: clases que tienen cosas en común.
+Empleados: programador, analista, jefedeproyecto
+Empleado hereda de persona: Un empleado es una persona
+persona: clase padre, superclase
+empleado: clase hija, subclase
+
+            Coche
+     C.Gasolina   C.Electrico
+             Hibrido
+
+- Composición: Una clase que se desglosa en partes / piezas
+que pueden atributos de otras clase.
+Coche
+   motor
+   chasis
+   ruedad
+
+- Asociación: Dos objetos independientes, en un momento
+dado se relacionan.
+
+coche.repostar(surtidorGas)
+
+
+Sobrecarga operadores: aritméticos, relacionales
+__lt__  <
+
+suma = hora1 + hora2  --> __add__
+
+
