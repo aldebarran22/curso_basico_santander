@@ -8,7 +8,16 @@ class Time:
         self.ss = ss
 
     def __add__(self,other):
-        pass
+          tsuma = Time(self.hh+other.hh, self.mm+other.mm, self.ss+other.ss)
+          tsuma.ajustar()
+          return tsuma
+    
+    def ajustar(self):
+        minutos = self.ss // 60
+        self.ss %= 60
+        self.mm += minutos
+
+
 
     def __str__(self):        
         return '%02d:%02d:%02d' % (self.hh,self.mm,self.ss)
