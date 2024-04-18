@@ -75,5 +75,5 @@ if __name__ == "__main__":
 
     serializarShelve("../ficheros/objetos_shelve", d, t, [1, 2, 3, 4, 5])
 
-    obj1 = deserializarShelve("../ficheros/objetos_shelve", "K-2")
+    obj1 = deserializarShelve("../ficheros/objetos_shelve", "K-1")
     print(obj1)
