@@ -3,6 +3,7 @@ Captura de errores en Python:
 try, except, finally, raise
 """
 
+from os import listdir
 
 def prueba1():
     # Capturar una excepción
@@ -70,9 +71,27 @@ def prueba4():
         if fich != None:
             fich.close()
 
+def procesarFich(path):
+    ext = path.partition('.')[2]
+
+    if ext == "txt":
+        raise ValueError(f"Error en el fichero: {path}")
+    else:
+        print('procesando el fichero: ', path)
+
+def prueba5():
+    # Recorrer una carpeta de archivos, procesarlos y controlar los
+    # ficheros que fallen en un proceso simulado:
+    try:
+        for f in listdir('../ficheros_curso'):
+            procesarFich(f)
+    except Exception as e:
+        print(e)
+
 
 if __name__ == "__main__":
     # prueba1()
     # prueba2()
     # prueba3()
-    prueba4()
+    # prueba4()
+    prueba5()
