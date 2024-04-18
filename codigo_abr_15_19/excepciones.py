@@ -57,13 +57,19 @@ def prueba3():
 
 def prueba4():
     # Apertura y cierre de un fichero con control de excepciones
+    fich = None
     try:
         fich = open("../ficheros_curso/Alemania.txt", "r")
         txt = fich.read()
-        print(len(txt)/0)
-        fich.close()
+        #print(len(txt) / 0)
+
     except Exception as e:
         print(e.__class__.__name__, e)
+
+    finally:
+        if fich != None:
+            fich.close()
+
 
 if __name__ == "__main__":
     # prueba1()
