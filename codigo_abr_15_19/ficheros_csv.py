@@ -3,14 +3,14 @@ Leer un fichero CSV por líneas
 """
 
 
-def leerFichero(path, *paises):
+def leerFichero(path, *paises, sep=";"):
     """Leer un fichero CSV por linea y filtrar información"""
     fich = None
     try:
         fich = open(path, "r", encoding="iso-8859-1")
         for fila in fich:
             fila = fila.rstrip()
-            pais = fila.split(";")[-1]
+            pais = fila.split(sep)[-1]
             if pais in paises:
                 print(fila)
 
