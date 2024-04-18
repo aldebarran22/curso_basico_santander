@@ -1,7 +1,9 @@
 """
 Gestión de ficheros en Python
 """
+
 import sys
+
 
 def leerFicheroEntero(path):
     """Cargar todo el contenido de un fichero, lo separa en filas
@@ -50,17 +52,16 @@ def fusionFicheros(path1, path2):
 
 
 def grabarFicheroDePrueba():
-    fich = open("../ficheros/pruebas.txt","w")
+    fich = open("../ficheros/pruebas.txt", "w")
     for i in range(10):
-        print(f"Linea {i+1} del fichero", file=fich)
+        print(f"LINEA {i+1} del fichero", file=fich)
     fich.close()
 
 
-
 if __name__ == "__main__":
-    """
+
     fusionFicheros(
         "../ficheros_curso/Empleados2.txt", "../ficheros_curso/Empleados3.txt"
     )
-    """
-    grabarFicheroDePrueba()
+
+    # grabarFicheroDePrueba()
