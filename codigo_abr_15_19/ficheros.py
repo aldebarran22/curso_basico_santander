@@ -10,11 +10,12 @@ def leerFicheroEntero(path):
     try:
         fich = open(path, "r")
         txt = fich.read()
-        L = txt.split("\n")        
+        L = txt.split("\n")
         return set(L)
 
     except Exception as e:
-        print(e.__class__.__name__, e)
+        # print(e.__class__.__name__, e)
+        raise e
 
     finally:
         if fich != None:
@@ -30,17 +31,21 @@ def criterio(linea):
 
 
 def fusionFicheros(path1, path2):
-    cemp2 = leerFicheroEntero(path1)
-    cemp3 = leerFicheroEntero(path2)
+    try:
+        cemp2 = leerFicheroEntero(path1)
+        cemp3 = leerFicheroEntero(path2)
 
-    # Unión de conjuntos:
-    empleados = cemp2 | cemp3
+        # Unión de conjuntos:
+        empleados = cemp2 | cemp3
 
-    # Ordenar:
-    Lemp = sorted(empleados, key=criterio)
+        # Ordenar:
+        Lemp = sorted(empleados, key=criterio)
 
-    # Imprimir el resultado:
-    for e in Lemp:
+        # Imprimir el resultado:
+        for e in Lemp:
+            print(e)
+
+    except Exception as e:
         print(e)
 
 
