@@ -28,13 +28,13 @@ def criterio(linea):
 def fusionFicheros(path1, path2):
     emp2 = leerFicheroEntero(path1)
     emp3 = leerFicheroEntero(path2)
+
     # Partir el contenido de emp2 en filas:
     Lemp2 = emp2.split("\n")
 
     # Partir el contenido de emp3 en filas:
     Lemp3 = emp3.split("\n")
-    print(Lemp3[:3])
-
+    
     # Convertir las dos listas en conjuntos
     cemp2 = set(Lemp2)
     cemp3 = set(Lemp3)
