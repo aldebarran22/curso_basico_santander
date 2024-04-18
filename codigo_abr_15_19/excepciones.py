@@ -55,7 +55,17 @@ def prueba3():
         print("ERROR: ", e.__class__.__name__, e)
 
 
+def prueba4():
+    # Apertura y cierre de un fichero con control de excepciones
+    try:
+        fich = open("no_existe.txt", "r")
+        txt = fich.read()
+        fich.close()
+    except Exception as e:
+        print(e.__class__.__name__, e)
+
 if __name__ == "__main__":
     # prueba1()
     # prueba2()
-    prueba3()
+    # prueba3()
+    prueba4()
