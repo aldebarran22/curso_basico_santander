@@ -29,6 +29,15 @@ L = ["12345678", "12345678A", "12345678b", "12345678AA", "12B", "1A", ""]
 validar(patron, L)
 
 # Validar Matrícula europea:
-patron = ""
-L = ["1234", "1234GGTS", "DDC1111", "3344WSA", "5566FRt"]
+patron = "\d{4}[BD]{3}$"
+L = ["1234", "1234---", "1234GGTS", "DDC1111", "3344WSA", "5566FRt", "1234GGT"]
 validar(patron, L)
+
+patron1 = "\d{4}[A-Z]{3}$"
+patron2 = "\d{4}[^AEIOU]{3}$"
+for mat in L:
+    if re.match(patron1, mat) and re.match(patron2, mat):
+        print(mat, "True")
+    else:
+        print(mat, "False")
+
