@@ -11,7 +11,7 @@ def leerFicheroEntero(path):
     fich = None
     try:
         fich = open(path, "r")
-        txt = fich.read()
+        txt = fich.read().strip()
         L = txt.split("\n")
         return set(L)
 
