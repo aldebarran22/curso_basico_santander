@@ -62,4 +62,4 @@ if __name__ == "__main__":
     L2 = deserializarPickle("../ficheros/pickle_obj.bin")
     print(L2[0], L2[1])
 
-    serializarShelve("objetos_shelve", d, t, [1, 2, 3, 4, 5])
+    serializarShelve("../ficheros/objetos_shelve", d, t, [1, 2, 3, 4, 5])
