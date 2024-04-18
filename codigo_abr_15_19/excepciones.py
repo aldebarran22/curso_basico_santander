@@ -82,11 +82,16 @@ def procesarFich(path):
 def prueba5():
     # Recorrer una carpeta de archivos, procesarlos y controlar los
     # ficheros que fallen en un proceso simulado:
-    try:
-        for f in listdir('../ficheros_curso'):
+    numErrores = 0
+    for f in listdir('../ficheros_curso'):
+        try:
             procesarFich(f)
-    except Exception as e:
-        print(e)
+        except Exception as e:
+            print(e)
+            numErrores += 1
+            
+    if numErrores > 0:
+        print(f'Se han encontrado {numErrores} ficheros con error!')
 
 
 if __name__ == "__main__":
