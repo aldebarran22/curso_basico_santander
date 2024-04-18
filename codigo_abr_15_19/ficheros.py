@@ -50,6 +50,8 @@ def fusionFicheros(path1, path2, pathD):
         for e in Lemp:
             print(e, file=fich)
 
+        print(f"Se ha generado correctamente el fichero: {pathD}")
+
     except Exception as e:
         print(e)
 
