@@ -51,8 +51,17 @@ def deserializarPickle(path):
         if fich != None:
             fich.close()
 
+
 def deserializarShelve(path, clave):
-    pass
+    Shelf = s.open(path)
+    print("Claves: ", list(Shelf.keys()))
+    if clave in Shelf:
+        obj = Shelf[clave]
+    else:
+        obj = None
+    Shelf.close()
+    return obj
+
 
 if __name__ == "__main__":
     t = Time(12, 34)
@@ -65,6 +74,6 @@ if __name__ == "__main__":
     print(L2[0], L2[1])
 
     serializarShelve("../ficheros/objetos_shelve", d, t, [1, 2, 3, 4, 5])
-    
-    obj1 = deserializarShelve("../ficheros/objetos_shelve","K-2")
+
+    obj1 = deserializarShelve("../ficheros/objetos_shelve", "K-2")
     print(obj1)
