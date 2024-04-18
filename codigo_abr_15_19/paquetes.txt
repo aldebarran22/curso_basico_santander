@@ -1,0 +1,26 @@
+dominio.empresa.aplicacion
+
+es.santander.gestion
+
+app
+	principal.py -> import es.santander.gestion.ficheros
+	es
+   	__init__.py
+
+	   santander
+        	  __init__.py
+
+	          gestion
+        	         __init__.py
+                	 ficheros.py
+
+#####################################################
+
+app
+   main.py  -> if __name__ == '__main__':
+   modulos
+      __init__.py
+      fecha.py  -> class Date
+      hora.py   -> class Time
+      fechahora.py -> class DateTime
+      
