@@ -58,8 +58,9 @@ def prueba3():
 def prueba4():
     # Apertura y cierre de un fichero con control de excepciones
     try:
-        fich = open("no_existe.txt", "r")
+        fich = open("../ficheros_curso/Alemania.txt", "r")
         txt = fich.read()
+        print(len(txt)/0)
         fich.close()
     except Exception as e:
         print(e.__class__.__name__, e)
