@@ -32,8 +32,11 @@ def criterio(linea):
         return 0
 
 
-def fusionFicheros(path1, path2):
+def fusionFicheros(path1, path2, pathD):
+    fich = None
     try:
+        fich = open(pathD, "w")
+
         cemp2 = leerFicheroEntero(path1)
         cemp3 = leerFicheroEntero(path2)
 
@@ -45,10 +48,14 @@ def fusionFicheros(path1, path2):
 
         # Imprimir el resultado:
         for e in Lemp:
-            print(e)
+            print(e, file=fich)
 
     except Exception as e:
         print(e)
+
+    finally:
+        if fich != None:
+            fich.close()
 
 
 def grabarFicheroDePrueba():
@@ -61,7 +68,9 @@ def grabarFicheroDePrueba():
 if __name__ == "__main__":
 
     fusionFicheros(
-        "../ficheros_curso/Empleados2.txt", "../ficheros_curso/Empleados3.txt"
+        "../ficheros_curso/Empleados2.txt",
+        "../ficheros_curso/Empleados3.txt",
+        "../ficheros/Empleados_TODO.txt",
     )
 
     # grabarFicheroDePrueba()
