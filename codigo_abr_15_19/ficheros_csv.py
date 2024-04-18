@@ -10,7 +10,9 @@ def leerFichero(path, *paises):
         fich = open(path, "r", encoding="iso-8859-1")
         for fila in fich:
             fila = fila.rstrip()
-            print(fila)
+            pais = fila.split(";")[-1]
+            if pais in paises:
+                print(fila)
 
     except Exception as e:
         print(e.__class__.__name__, e)
@@ -21,4 +23,4 @@ def leerFichero(path, *paises):
 
 
 if __name__ == "__main__":
-    leerFichero("../ficheros_curso/pedidos.csv", "Finlandia","Suiza")
+    leerFichero("../ficheros_curso/pedidos.csv", "Finlandia", "Suiza")
