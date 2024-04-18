@@ -4,12 +4,14 @@ Gestión de ficheros en Python
 
 
 def leerFicheroEntero(path):
-    """Devuelve todo el contenido de un fichero"""
+    """Cargar todo el contenido de un fichero, lo separa en filas
+    y lo devuelve en un conjunto"""
     fich = None
     try:
         fich = open(path, "r")
         txt = fich.read()
-        return txt
+        L = txt.split("\n")        
+        return set(L)
 
     except Exception as e:
         print(e.__class__.__name__, e)
@@ -18,6 +20,7 @@ def leerFicheroEntero(path):
         if fich != None:
             fich.close()
 
+
 def criterio(linea):
     col = linea.partition(";")[0]
     if col.isnumeric():
@@ -25,19 +28,10 @@ def criterio(linea):
     else:
         return 0
 
+
 def fusionFicheros(path1, path2):
-    emp2 = leerFicheroEntero(path1)
-    emp3 = leerFicheroEntero(path2)
-
-    # Partir el contenido de emp2 en filas:
-    Lemp2 = emp2.split("\n")
-
-    # Partir el contenido de emp3 en filas:
-    Lemp3 = emp3.split("\n")
-    
-    # Convertir las dos listas en conjuntos
-    cemp2 = set(Lemp2)
-    cemp3 = set(Lemp3)
+    cemp2 = leerFicheroEntero(path1)
+    cemp3 = leerFicheroEntero(path2)
 
     # Unión de conjuntos:
     empleados = cemp2 | cemp3
@@ -48,6 +42,7 @@ def fusionFicheros(path1, path2):
     # Imprimir el resultado:
     for e in Lemp:
         print(e)
+
 
 if __name__ == "__main__":
     fusionFicheros(
