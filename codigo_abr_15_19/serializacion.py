@@ -10,6 +10,17 @@ import shelve as s
 from fecha_hora import Date, Time
 
 
+def serializarShelve(path, *objetos):
+    Shelf = s.open(path)
+    k = 1
+    for obj in objetos:
+        clave = f"K-{k}"
+        k += 1
+        Shelf[clave] = obj
+
+    Shelf.close()
+
+
 def serializarPickle(path, obj):
     """Serializa un objeto con pickle"""
     fich = None
@@ -50,3 +61,5 @@ if __name__ == "__main__":
     serializarPickle("../ficheros/pickle_obj.bin", L)
     L2 = deserializarPickle("../ficheros/pickle_obj.bin")
     print(L2[0], L2[1])
+
+    serializarShelve("objetos_shelve", d, t, [1, 2, 3, 4, 5])
