@@ -11,6 +11,11 @@ def validar(patron, L):
         print(cad, "True" if re.match(patron, cad) else "False")
     print("-" * 30)
 
+# Validar terminaciones de ython
+patron = ".ython"
+L = ["python", "jython", "ython", "4ython"]
+validar(patron, L)
+
 
 # Validar DNI:
 patron = ""
