@@ -9,11 +9,11 @@ def ls(ruta="."):
     print("Actual: ", dir)
     print("Subdirectorios: ", subdirs)
     print("Archivos: ", archivos[:3])  # Devuelve la lista de
-
+   
     for subdir in subdirs:
         print("*" * 30)
         ls(dir + "/" + subdir)
 
 
 if __name__ == "__main__":
-    ls('..')
+    ls("..")
