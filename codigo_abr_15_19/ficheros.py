@@ -67,10 +67,14 @@ def grabarFicheroDePrueba():
 
 if __name__ == "__main__":
 
-    fusionFicheros(
-        "../ficheros_curso/Empleados2.txt",
-        "../ficheros_curso/Empleados3.txt",
-        "../ficheros/Empleados_TODO.txt",
-    )
+    if len(sys.argv) == 4:
+        fusionFicheros(sys.argv[1], sys.argv[2], sys.argv[3])
+
+    else:
+        fusionFicheros(
+            "../ficheros_curso/Empleados2.txt",
+            "../ficheros_curso/Empleados3.txt",
+            "../ficheros/Empleados_TODO.txt",
+        )
 
     # grabarFicheroDePrueba()
