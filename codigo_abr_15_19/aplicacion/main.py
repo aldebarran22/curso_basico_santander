@@ -1,4 +1,8 @@
 
+from modulos.hora import Time
+from modulos.fecha import Date
+from modulos.fechahora import DateTime, DateTime2
+
 if __name__ == "__main__":
     t1 = Time(12, 4, 6)  # 12:04:06
     print(t1)

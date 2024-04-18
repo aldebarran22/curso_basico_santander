@@ -1,3 +1,5 @@
+from modulos.fecha import Date
+from modulos.hora import Time
 
 class DateTime(Time, Date):
 
