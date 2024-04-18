@@ -7,6 +7,7 @@ shelve: mejor para varios objetos, se puede tratar como si fuera un dict.
 
 import pickle as p
 import shelve as s
+from fecha_hora import Date, Time
 
 
 def serializarPickle(path, obj):
@@ -14,6 +15,7 @@ def serializarPickle(path, obj):
     fich = None
     try:
         fich = open(path, "wb")
+        p.dump(obj, fich)
 
     except Exception as e:
         print(e.__class__.__name__, e)
@@ -28,6 +30,8 @@ def deserializarPickle(path):
     fich = None
     try:
         fich = open(path, "rb")
+        obj = p.load(fich)
+        return obj
 
     except Exception as e:
         print(e.__class__.__name__, e)
@@ -35,3 +39,14 @@ def deserializarPickle(path):
     finally:
         if fich != None:
             fich.close()
+
+
+if __name__ == "__main__":
+    t = Time(12, 34)
+    d = Date(15, 4, 2024)
+    L = [d, t]
+    print(L)
+
+    serializarPickle("../ficheros/pickle_obj.bin", L)
+    L2 = deserializarPickle("../ficheros/pickle_obj.bin")
+    print(L2)
