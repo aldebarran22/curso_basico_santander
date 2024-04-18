@@ -12,10 +12,15 @@ def validar(patron, L):
     print("-" * 30)
 
 # Validar terminaciones de ython
-patron = ".ython"
-L = ["python", "jython", "ython", "4ython"]
+patron = r".ython$"
+L = ["python","python38", "jython", "ython", "4ython"]
 validar(patron, L)
 
+
+# Validar terminaciones de ython terminando en un punto
+patron = r".ython\.$"
+L = ["python.","python.38", "jython.", "ython", "4ython"]
+validar(patron, L)
 
 # Validar DNI:
 patron = ""
