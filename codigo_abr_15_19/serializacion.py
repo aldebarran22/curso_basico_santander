@@ -45,8 +45,8 @@ if __name__ == "__main__":
     t = Time(12, 34)
     d = Date(15, 4, 2024)
     L = [d, t]
-    print(L)
+    print(L[0], L[1])
 
     serializarPickle("../ficheros/pickle_obj.bin", L)
     L2 = deserializarPickle("../ficheros/pickle_obj.bin")
-    print(L2)
+    print(L2[0], L2[1])
