@@ -29,7 +29,7 @@ L = ["12345678", "12345678A", "12345678b", "12345678AA", "12B", "1A", ""]
 validar(patron, L)
 
 # Validar Matrícula europea:
-patron = "\d{4}[BD]{3}$"
+patron = "\d{4}[BCDFGHJKLMNPQRSTVWXYZ]{3}$"
 L = ["1234", "1234---", "1234GGTS", "DDC1111", "3344WSA", "5566FRt", "1234GGT"]
 validar(patron, L)
 
