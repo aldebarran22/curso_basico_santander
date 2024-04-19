@@ -54,3 +54,23 @@ if __name__ == "__main__":
     num_muestras_con = num_muestras // num_consumidores
 
     buf = TBuffer()
+
+    productores = []
+    consumidores = []
+
+    for i  in range(num_productores):
+        prod = Productor(buf, num_muestras_prod, f"P-{i+1}")
+        prod.start()
+        productores.append(prod)
+
+    for p in productores:
+        p.join()
+
+    for i in range(consumidores):
+        con = Consumidor(buf, num_muestras_con, f"C{i+1}")
+        con.start()
+        consumidores.append(con)
+
+    for c in consumidores:
+        c.join()
+
