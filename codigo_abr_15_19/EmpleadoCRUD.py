@@ -161,11 +161,16 @@ if __name__ == "__main__":
         for e in L:
             print(e)
 
-        emp1 = Empleado(0, "Sandra", "Gerente de Ventas")
+        emp1 = Empleado(0, "Juan Pedro", "Gerente de Ventas")
         if bd.create(emp1):
             print("Create ok: ", emp1)
         else:
             print("No se ha podido crear")
+
+        if bd.delete(15):
+            print("Registro borrado")
+        else:
+            print("No se ha podido borrar")
 
     except Exception as e:
         print(e)
