@@ -22,7 +22,7 @@ def conexion(path):
         if con:
             con.close()
 
-def imprimirTabla(path, tabla, file=sys.stdout):
+def imprimirTabla(path, tabla, sep=';', file=sys.stdout):
     con = None
     cur = None
     try:
@@ -34,8 +34,11 @@ def imprimirTabla(path, tabla, file=sys.stdout):
         sql = f"select * from {tabla}"
 
         cur.execute(sql)
-        print(cur.description)
-        # id;nombre;cargo
+        cabs = sep.join([t[0] for t in cur.description]) # id;nombre;cargo
+        print(cabs, file=file)  
+
+        for t in cur.fetchall():
+            print(t)
 
     except Exception as e:
         print(e)
@@ -46,4 +49,4 @@ def imprimirTabla(path, tabla, file=sys.stdout):
 
 if __name__ == "__main__":
     # conexion("../bd/empresa3.db")
-    imprimirTabla("../bd/empresa3.db", "empleados")
+    imprimirTabla("../../bd/empresa3.db", "empleados")
