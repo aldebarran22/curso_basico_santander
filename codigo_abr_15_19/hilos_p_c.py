@@ -116,13 +116,13 @@ if __name__ == "__main__":
         prod.start()
         productores.append(prod)
 
-    for p in productores:
-        p.join()
-
     for i in range(num_consumidores):
         con = Consumidor(buf, num_muestras_con, f"C{i+1}")
         con.start()
         consumidores.append(con)
+
+    for p in productores:
+        p.join()
 
     for c in consumidores:
         c.join()
