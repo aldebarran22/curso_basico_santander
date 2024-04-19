@@ -1,0 +1,25 @@
+Hilos:
+
+Semáforos:
+
+
+Local vacío: Aforo(20)
+
+Entran	Aforo
+	20
+2	18
+5	13
+8	5
+2	3
+3	0	
+
+acquire()  -> capturar el semáforo
+release()  -> liberar el semáforo
+
+Lock: (semáforos binarios / mutex)
+0 / 1
+acquire() --> capturar el cerrojo
+release() --> liberar el cerrojo
+
+
+
