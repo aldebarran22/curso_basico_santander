@@ -10,8 +10,8 @@ from time import sleep
 num_muestras = 10
 tam_buffer = 5
 
-num_productores = 2
-num_consumidores = 2
+num_productores = 1
+num_consumidores = 1
 
 
 class Productor(Thread):
@@ -21,7 +21,33 @@ class Productor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+
+            # Generar un nuevo item:
+            numero = randint(1, 40)
+
+            # Comprobar si hay hueco: sem_huecos
+            self.buffer.sem_huecos.acquire()
+
+            # Modificar el buffer en exclusión mutua
+            with self.buffer.mutex:
+                print(self.name, "numero: ", numero)
+
+                # Colocar el número en el buffer:
+                self.buffer.buffer[self.buffer.ind_p] = numero
+
+                # Modificar el indice:
+                self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
+
+                # Imprimir el buffer:
+                print(self.buffer.buffer)
+
+            # Avisar de que hay un nuevo item: sem_items
+            self.buffer.sem_items.release()
+
+            sleep(2, 4)
+
+        print("Fin del productor: ", self.name)
 
 
 class Consumidor(Thread):
@@ -58,7 +84,7 @@ if __name__ == "__main__":
     productores = []
     consumidores = []
 
-    for i  in range(num_productores):
+    for i in range(num_productores):
         prod = Productor(buf, num_muestras_prod, f"P-{i+1}")
         prod.start()
         productores.append(prod)
@@ -73,4 +99,3 @@ if __name__ == "__main__":
 
     for c in consumidores:
         c.join()
-
