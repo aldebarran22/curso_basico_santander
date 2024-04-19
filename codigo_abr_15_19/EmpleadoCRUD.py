@@ -58,7 +58,8 @@ class EmpleadoBD:
         self.con = dbapi.connect(path)
 
     def __del__(self):
-        self.con.close()
+        if hasattr(self, "con"):
+            self.con.close()
 
 
 if __name__ == "__main__":
