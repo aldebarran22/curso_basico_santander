@@ -38,7 +38,8 @@ def imprimirTabla(path, tabla, sep=';', file=sys.stdout):
         print(cabs, file=file)  
 
         for t in cur.fetchall():
-            print(t)
+            fila = sep.join([str(i) for i in t])
+            print(fila, file=file)
 
     except Exception as e:
         print(e)
@@ -49,4 +50,4 @@ def imprimirTabla(path, tabla, sep=';', file=sys.stdout):
 
 if __name__ == "__main__":
     # conexion("../bd/empresa3.db")
-    imprimirTabla("../../bd/empresa3.db", "empleados")
+    imprimirTabla("../../bd/empresa3.db", "pedidos")
