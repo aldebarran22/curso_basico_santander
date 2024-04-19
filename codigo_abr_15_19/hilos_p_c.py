@@ -10,8 +10,8 @@ from time import sleep
 num_muestras = 10
 tam_buffer = 5
 
-num_productores = 1
-num_consumidores = 1
+num_productores = 2
+num_consumidores = 2
 
 
 class Productor(Thread):
@@ -31,7 +31,6 @@ class Productor(Thread):
 
             # Modificar el buffer en exclusión mutua
             with self.buffer.mutex:
-                print(self.name, "coloca numero: ", numero)
 
                 # Colocar el número en el buffer:
                 self.buffer.buffer[self.buffer.ind_p] = numero
@@ -40,7 +39,7 @@ class Productor(Thread):
                 self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
 
                 # Imprimir el buffer:
-                print(self.buffer.buffer)
+                print(self.name, numero, self.buffer.buffer, "\n")
 
             # Avisar de que hay un nuevo item: sem_items
             self.buffer.sem_items.release()
@@ -67,11 +66,10 @@ class Consumidor(Thread):
 
                 # Recuperar el numero del buffer:
                 numero = self.buffer.buffer[self.buffer.ind_c]
-                print(self.name, "quita numero: ", numero)
 
                 # Vaciar la casilla que apunta ind_c:
                 self.buffer.buffer[self.buffer.ind_c] = -1
-                print(self.buffer.buffer)
+                print(self.name, numero, self.buffer.buffer, "\n")
 
                 # Actualizar el indice:
                 self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
@@ -80,7 +78,7 @@ class Consumidor(Thread):
             self.buffer.sem_huecos.release()
 
             # Consume el item:
-            print(self.name, "consume numero: ", numero)
+            # print(self.name, "consume numero: ", numero)
 
             sleep(randint(3, 5))
 
