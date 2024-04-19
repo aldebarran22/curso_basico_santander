@@ -1,0 +1,49 @@
+"""
+Implementar las operaciones CRUD (
+    create -> insert into
+    read -> select pk
+    update -> update pk
+    delete -> delete pk
+    select -> select * from empleados
+para los empleados de la base de datos.
+"""
+from os.path import isfile
+import sqlite3 as dbapi
+
+
+class Empleado:
+    def __init__(self, id=0, nombre="", cargo=""):
+        self.__id = id
+        self.__nombre = nombre
+        self.__cargo = cargo
+
+    def getId(self):
+        return self.__id
+
+    def setId(self, id):
+        self.__id = id
+
+    def getNombre(self):
+        return self.__nombre
+
+    def setNombre(self, nombre):
+        self.__nombre = nombre
+
+    def getCargo(self):
+        return self.__cargo
+
+    def setCargo(self, cargo):
+        self.__cargo = cargo
+
+    def getTupla(self):
+        return (self.__nombre, self.__cargo)
+
+    def getTupla2(self):
+        return (self.__nombre, self.__cargo, self.__id)
+
+    def __str__(self):
+        return str(self.__id) + " " + self.__nombre + " " + self.__cargo
+
+    def __repr__(self):
+        return str(self)
+
