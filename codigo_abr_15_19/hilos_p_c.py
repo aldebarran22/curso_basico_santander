@@ -45,7 +45,7 @@ class Productor(Thread):
             # Avisar de que hay un nuevo item: sem_items
             self.buffer.sem_items.release()
 
-            sleep(2, 4)
+            sleep(randint(2, 4))
 
         print("Fin del productor: ", self.name)
 
@@ -82,7 +82,7 @@ class Consumidor(Thread):
             # Consume el item:
             print(self.name, "consume numero: ", numero)
 
-            sleep(3, 5)
+            sleep(randint(3, 5))
 
         print("Fin del consumidor: ", self.name)
 
