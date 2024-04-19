@@ -75,6 +75,26 @@ class EmpleadoBD:
             if cur:
                 cur.close()
 
+    def select(self, cargo=None):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "select * from empleados "
+            if not cargo:
+                cur.execute(sql)
+            else:
+                sql += " where cargo like ?"
+                param = f"%{cargo}%"
+                cur.execute(sql, (param,))
+
+            return [Empleado(*t) for t in cur.fetchall()]
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -87,6 +107,7 @@ if __name__ == "__main__":
         emp = bd.read(4)
         print(emp)
 
+        L = bd.select("Gerente")
 
         emp1 = Empleado(0, "Sandra", "Gerente de Ventas")
         # bd.create(emp1)
