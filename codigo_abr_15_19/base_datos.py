@@ -35,7 +35,7 @@ def imprimirTabla(path, tabla, file=sys.stdout):
 
         cur.execute(sql)
         print(cur.description)
-
+        # id;nombre;cargo
 
     except Exception as e:
         print(e)
@@ -45,4 +45,5 @@ def imprimirTabla(path, tabla, file=sys.stdout):
 
 
 if __name__ == "__main__":
-    conexion("../bd/empresa3.db")
+    # conexion("../bd/empresa3.db")
+    imprimirTabla("../bd/empresa3.db", "empleados")
