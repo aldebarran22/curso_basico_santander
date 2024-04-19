@@ -95,6 +95,24 @@ class EmpleadoBD:
             if cur:
                 cur.close()
 
+    def create(self, emp):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "insert into empleados(nombre, cargo) values(?,?)"
+            cur.execute(sql, emp.getTupla())
+            emp.setId(cur.lastrowid)  # Recupera el id asignado al empleado
+            n = cur.rowcount
+            self.con.commit()
+            return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -108,12 +126,15 @@ if __name__ == "__main__":
         print(emp)
 
         print("\nListado:")
-        L = bd.select("Gerente")
+        L = bd.select("ventas")
         for e in L:
             print(e)
 
         emp1 = Empleado(0, "Sandra", "Gerente de Ventas")
-        # bd.create(emp1)
+        if bd.create(emp1):
+            print("Create ok: ", emp1)
+        else:
+            print("No se ha podido crear")
 
     except Exception as e:
         print(e)
