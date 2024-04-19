@@ -47,7 +47,13 @@ def imprimirTabla(path, tabla, sep=';', file=sys.stdout):
         if con:
             con.close()
 
+def exportarTabla(path, tabla, sep=";"):
+    pathFile = f"../ficheros/{tabla}.csv"
+    fich = open(pathFile, "w")
+    imprimirTabla(path, tabla, sep, file=fich)
+    fich.close()
 
 if __name__ == "__main__":
     # conexion("../bd/empresa3.db")
-    imprimirTabla("../../bd/empresa3.db", "pedidos")
+    # imprimirTabla("../../bd/empresa3.db", "pedidos")
+    exportarTabla("../../bd/empresa3.db", "pedidos")
