@@ -24,13 +24,13 @@ class Hilo(Thread):
             self.lista.append(numero)
             sleep(randint(1, 3))
 
-        print(self.getName, " ha terminado!")
+        print(self.getName(), " ha terminado!")
 
 
 if __name__ == "__main__":
     L = []
     for i in range(5):
-        hilo = Hilo(f"H-{i+1}", randint(5, 12))
+        hilo = Hilo(f"H-{i+1}", randint(3, 6))
         L.append(hilo)
         hilo.start()
 
