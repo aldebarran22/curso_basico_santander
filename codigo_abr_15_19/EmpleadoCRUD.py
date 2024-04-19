@@ -150,6 +150,11 @@ if __name__ == "__main__":
 
         emp = bd.read(4)
         print(emp)
+        emp.setCargo("Gerente de ventas")
+        if bd.update(emp):
+            print(emp, "actualizado")
+        else:
+            print("No se ha podido actualizar!")
 
         print("\nListado:")
         L = bd.select("ventas")
