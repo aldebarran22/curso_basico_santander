@@ -7,6 +7,7 @@ Implementar las operaciones CRUD (
     select -> select * from empleados
 para los empleados de la base de datos.
 """
+
 from os.path import isfile
 import sqlite3 as dbapi
 
@@ -47,3 +48,25 @@ class Empleado:
     def __repr__(self):
         return str(self)
 
+
+class EmpleadoBD:
+
+    def __init__(self, path):
+        if not isfile(path):
+            raise FileNotFoundError(f"No se encuentra el fichero: {path}")
+
+        self.con = dbapi.connect(path)
+
+    def __del__(self):
+        self.con.close()
+
+
+if __name__ == "__main__":
+    try:
+        bd = EmpleadoBD("../../bd/empresa3.db")
+
+        emp1 = Empleado(0, "Sandra", "Gerente de Ventas")
+        # bd.create(emp1)
+
+    except Exception as e:
+        print(e)
