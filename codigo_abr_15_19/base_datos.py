@@ -38,7 +38,9 @@ def imprimirTabla(path, tabla, sep=';', file=sys.stdout):
         print(cabs, file=file)  
 
         for t in cur.fetchall():
-            fila = sep.join([str(i) for i in t])
+            fila = sep.join([str(i) \
+                             if not type(i)==float \
+                                else str(i).replace(".",",") for i in t])
             print(fila, file=file)
 
     except Exception as e:
