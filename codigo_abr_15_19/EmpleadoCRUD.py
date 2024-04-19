@@ -95,6 +95,32 @@ class EmpleadoBD:
             if cur:
                 cur.close()
 
+    def delete(self, id):
+        t = (id,)
+        sql = "delete from empleados where id=?"
+        return self.__update_delete(t, sql)
+
+    def update(self, emp):
+        t = emp.getTupla2()
+        sql = "update empleados set nombre=?, cargo=? where id=?"
+        return self.__update_delete(t, sql)
+
+    def __update_delete(self, t, sql):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            cur.execute(sql, t)
+            n = cur.rowcount
+            self.con.commit()
+            return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def create(self, emp):
         cur = None
         try:
