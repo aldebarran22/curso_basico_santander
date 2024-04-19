@@ -21,11 +21,11 @@ class Hilo(Thread):
     def run(self):
         for i in range(self.n):
             numero = randint(1, 25)
-            print(self.getName(), " numero: ", numero)
+            print(self.name, " numero: ", numero)
             self.lista.append(numero)
             sleep(randint(1, 3))
 
-        print(self.getName(), " ha terminado!")
+        print(self.name, " ha terminado!")
 
 
 if __name__ == "__main__":
@@ -35,7 +35,7 @@ if __name__ == "__main__":
         L.append(hilo)
         hilo.start()
 
-    print("Tenemos ", threading.activeCount(), "hilos")
+    print("Tenemos ", threading.active_count(), "hilos")
     print(threading.enumerate())
 
     for hilo in L:
