@@ -57,6 +57,24 @@ class EmpleadoBD:
 
         self.con = dbapi.connect(path)
 
+    def read(self, id):
+        cur = None
+        try:
+            sql = "select * from empleados where id=?"
+            cur = self.con.cursor()
+            cur.execute(sql, (id,))
+            t = cur.fetchone()
+            if t == None:
+                raise ValueError(f"El empleado con id: {id} no existe en la BD")
+            else:
+                return Empleado(*t)
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
