@@ -107,7 +107,10 @@ if __name__ == "__main__":
         emp = bd.read(4)
         print(emp)
 
+        print("\nListado:")
         L = bd.select("Gerente")
+        for e in L:
+            print(e)
 
         emp1 = Empleado(0, "Sandra", "Gerente de Ventas")
         # bd.create(emp1)
