@@ -84,6 +84,10 @@ if __name__ == "__main__":
     try:
         bd = EmpleadoBD("../../bd/empresa3.db")
 
+        emp = bd.read(4)
+        print(emp)
+
+
         emp1 = Empleado(0, "Sandra", "Gerente de Ventas")
         # bd.create(emp1)
 
