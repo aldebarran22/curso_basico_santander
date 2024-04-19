@@ -6,6 +6,7 @@ la tarea.
 """
 
 from threading import Thread
+import threading
 from time import sleep
 from random import randint
 
@@ -33,6 +34,9 @@ if __name__ == "__main__":
         hilo = Hilo(f"H-{i+1}", randint(3, 6))
         L.append(hilo)
         hilo.start()
+
+    print("Tenemos ", threading.activeCount(), "hilos")
+    print(threading.enumerate())
 
     for hilo in L:
         hilo.join()
