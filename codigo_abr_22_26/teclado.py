@@ -5,6 +5,7 @@ float()
 str()
 """
 
+# Conversiones de str a int
 n1 = input("Dame un número:")
 print(n1, type(n1))
 
@@ -15,3 +16,10 @@ if n1.isnumeric() and n2.isnumeric():
     print(num1 + num2)
 else:
     print("Tienen que ser dos enteros!")
+
+
+# Conversiones de int a str
+# Obtener el número de cifras:
+numero = 12345
+cad = str(numero)
+print("Num cifras: ", len(cad))
