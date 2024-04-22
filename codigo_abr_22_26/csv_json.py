@@ -26,8 +26,10 @@ print(f"Tenemos {len(emp)} empleados.")
 
 # De json a CSV
 cabs = emp[0].keys()
-print(cabs)
+cabeceras = ";".join(cabs)
+resul = [cabeceras]
 for e in emp:
-    print(e.values())
-
-
+    valores = ";".join(e.values())
+    resul.append(valores)
+csv2 = "\n".join(resul)
+print(csv == csv2)
