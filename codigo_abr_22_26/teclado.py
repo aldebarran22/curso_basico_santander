@@ -21,5 +21,7 @@ else:
 # Conversiones de int a str
 # Obtener el número de cifras:
 numero = 12345
-cad = str(numero)
-print("Num cifras: ", len(cad))
+# Comprobar si el tipo es un entero:
+if type(numero) == int:
+    cad = str(numero)
+    print("Num cifras: ", len(cad))
