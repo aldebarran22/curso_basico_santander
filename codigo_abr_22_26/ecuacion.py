@@ -15,3 +15,4 @@ if raiz > 0:
     print(f"x1: {x1} x2: {x2}")
 else:
     print('No hay solución')
+print('fin de programa')
