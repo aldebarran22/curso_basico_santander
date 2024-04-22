@@ -47,3 +47,19 @@ print("par" if n1 % 2 == 0 else "impar")
 menor = n1 if n1 < n2 else n2
 sem = "ambar"
 print("pasar" if sem == "verde" else "parar" if sem == "rojo" else "precaución")
+
+
+# Es false en Python: 0, cad. vacía, None, lista vacía ...
+numero = 0
+if numero:
+    print("numero true")
+else:
+    print("numero false")
+
+cad = ""
+if cad:
+    print('cad es true')
+else:
+    print('cad es false')
+
+print(print("Hola"))
