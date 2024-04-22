@@ -11,3 +11,6 @@ csv = """id;nombre;cargo
 6;Suyama;Representante de ventas
 7;King;Representante de ventas
 9;Dodsworth;Representante de ventas"""
+
+lineas = csv.split("\n")
+print(lineas[:2])
