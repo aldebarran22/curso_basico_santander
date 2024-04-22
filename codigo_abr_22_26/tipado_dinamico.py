@@ -19,3 +19,4 @@ n2 = "200"
 resul = 23 + 2.55 + 5+8j
 print(resul, type(resul))
 
+# print(m) Variable no definida!

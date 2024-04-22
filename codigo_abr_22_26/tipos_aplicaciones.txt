@@ -1,0 +1,10 @@
+Tipos de aplicaciones:
+- App Escritorio: PyQt
+- App Web: Django
+- Servicios rest: Flask
+- Machine Learning
+- Análisis de datos: pandas, matplotlib
+- Acceso a BD Relaciones: oracle, postgre, mysql, ...
+BD NoSQL: mongo, redis ...
+
+- App nativas para móviles.
