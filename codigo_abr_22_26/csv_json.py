@@ -12,6 +12,7 @@ csv = """id;nombre;cargo
 7;King;Representante de ventas
 9;Dodsworth;Representante de ventas"""
 
+# De CSV a json
 lineas = csv.split("\n")
 cabs = lineas[0].split(";")
 emp = []  # list()
@@ -21,3 +22,12 @@ for datos in lineas[1:]:
     print(e)
     emp.append(e)  # emp += [e]
 print(f"Tenemos {len(emp)} empleados.")
+
+
+# De json a CSV
+cabs = emp[0].keys()
+print(cabs)
+for e in emp:
+    print(e.values())
+
+
