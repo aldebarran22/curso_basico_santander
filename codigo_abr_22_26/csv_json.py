@@ -13,4 +13,11 @@ csv = """id;nombre;cargo
 9;Dodsworth;Representante de ventas"""
 
 lineas = csv.split("\n")
-print(lineas[:2])
+cabs = lineas[0].split(";")
+emp = []  # list()
+for datos in lineas[1:]:
+    Ldatos = datos.split(";")
+    e = dict(zip(cabs, Ldatos))
+    print(e)
+    emp.append(e)  # emp += [e]
+print(f"Tenemos {len(emp)} empleados.")
