@@ -25,10 +25,10 @@ def sumar(a: int = 10, b: str = "") -> str:
     return b * a
 
 
-print(sumar(b="hola"))
-# print(sumar(23, 45))
-# print(sumar("23", "45"))
-print(sumar(3, [45]))
-
-
-print()
+if __name__ == '__main__':
+    print("__name__: ", __name__)
+    print(sumar(b="hola"))
+    # print(sumar(23, 45))
+    # print(sumar("23", "45"))
+    print(sumar(3, [45]))
+    print()
