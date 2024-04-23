@@ -18,25 +18,24 @@ def filtroFicheros(*extensiones, path=None):
     return R
 
 
-def histograma():
-    n = 1000
+def histograma(n=1000, ini=1, fin=20):
     L = []
     histo = dict()
-    # El intervalo de números:
-    ini = 1
-    fin = 20
 
     # Almacenar n números aleatorios en la lista L
     for i in range(n):
         L.append(random.randint(ini, fin))
-   
+
     # Quitar los repetidos y almacenarlos en un conjunto
     numeros = set(L)
-   
+
     # Contar los valores del conjunto en la lista y almacenar
     # en el diccionario (la clave -> el número), (el valor -> el recuento)
     for i in numeros:
         histo[i] = L.count(i)
+
+    return histo
+
 
 def testFiltroFicheros():
     L = filtroFicheros("txt")
@@ -51,9 +50,12 @@ def testFiltroFicheros():
 
 
 def testHistograma():
-    pass
+    histo = histograma()
+    # Imprimir resultados:
+    for numero, cuenta in histo.items():
+        print(f"{numero} se repite {cuenta} veces")
 
 
 if __name__ == "__main__":
-    testFiltroFicheros()
-    #testHistograma()
+    # testFiltroFicheros()
+    testHistograma()
