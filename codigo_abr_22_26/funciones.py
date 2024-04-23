@@ -1,18 +1,14 @@
 """
 Funciones en python:
-Paso de parámetros y tipos de parámetros:
-- obligatorios
-- opcionales
-- tupla
-- diccionario
-
 - Tipos anotados
 """
-
 
 def saludar(nombre):
     """Devuelve un saludo"""
     return "Hola " + nombre.capitalize()
+
+def saludar3(nombre, apellidos):
+    return "Hola "+nombre+" "+apellidos
 
 
 def saludar2(nombre: str) -> str:
@@ -25,7 +21,8 @@ def sumar(a: int = 10, b: str = "") -> str:
     return b * a
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    print("saludar: "+saludar("Juan"))
     print("__name__: ", __name__)
     print(sumar(b="hola"))
     # print(sumar(23, 45))
