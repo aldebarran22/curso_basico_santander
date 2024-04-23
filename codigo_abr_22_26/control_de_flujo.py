@@ -79,7 +79,7 @@ if importe % 10 == 0:
 print("continue:")
 i = 0
 while i < 10:
-    i = i + 1
+    i = i + 1 # i+=1
     if i % 2 == 0:
         continue
     print(i)
