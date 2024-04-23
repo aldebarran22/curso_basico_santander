@@ -89,6 +89,12 @@ def testHistograma():
         print(f"{numero} se repite {cuenta} veces")
 
 
+def testFusionFicheros():
+    csvFinal = fusionFicheros(emp2, emp3)
+    print(csvFinal)
+
+
 if __name__ == "__main__":
     # testFiltroFicheros()
-    testHistograma()
+    # testHistograma()
+    testFusionFicheros()
