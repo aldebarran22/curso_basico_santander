@@ -60,9 +60,17 @@ print(comunes)
 print("-" * 20)
 
 # Filas de cEmp2 que NO están en cEmp3: diferencia
-# c1 = {1,2,3,4}, c2 = {3,4,5,6}  
+# c1 = {1,2,3,4}, c2 = {3,4,5,6}
 # c1 - c2 -> {1,2}
 # c2 - c1 -> {5,6}
 filasDeEmp2 = cEmp2 - cEmp3
 print(filasDeEmp2)
 print("-" * 20)
+
+#################################################
+
+difSim = cEmp2 ^ cEmp3
+for i in difSim:
+    print(i)
+
+# Dif Sim: {c1 | c2} - {c1 & c2}
