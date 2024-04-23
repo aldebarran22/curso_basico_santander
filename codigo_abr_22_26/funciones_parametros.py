@@ -58,11 +58,15 @@ if __name__ == "__main__":
     print(calcularIVA(100, 4))
 
     # Con una tupla:
-    t = (3,4)
+    t = (3, 4)
     print(sumar(*t))
 
-    L = [3,4]
+    L = [3, 4]
     print(sumar(*L))
 
-    d = {"a":3, "b":4}
+    d = {"a": 3, "b": 4}
     print(sumar(**d))
+
+    # Convertir la lista de horas en segundos:
+    SG = []
+    L = [(12,), (11, 40), (8, 32, 15), (9, 45, 11)]
