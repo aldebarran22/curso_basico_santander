@@ -23,4 +23,5 @@ if __name__ == "__main__":
     #L = filtroFicheros("txt", "png", "py")
 
     t = ("txt", "py")
-    L = filtroFicheros(*t, "../ficheros_curso")
+    L = filtroFicheros(*t, path="../ficheros_curso")
+    print(L)
