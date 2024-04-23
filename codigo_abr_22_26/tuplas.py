@@ -33,3 +33,13 @@ for i in range(n):
     pos = t2.index(valor, inicio)
     print(pos, end=' ')
     inicio = pos + 1
+print()
+
+## Expansión de tuplas en una lista:
+L = [(40.4, -3.68), (42.5, -4.9), (38.6, -5.7)]
+for t in L:
+    print(f'latitud: {t[0]}, longitud: {t[1]}')
+print()
+
+for lat, lon in L:
+    print(f'latitud: {lat}, longitud: {lon}')
