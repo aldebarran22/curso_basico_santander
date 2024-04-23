@@ -70,3 +70,9 @@ if __name__ == "__main__":
     # Convertir la lista de horas en segundos:
     SG = []
     L = [(12,), (11, 40), (8, 32, 15), (9, 45, 11)]
+    for t in L:
+        SG.append(segundos(*t))
+    print(SG)
+
+    d = {"h":12}
+    print(segundos(**d))
