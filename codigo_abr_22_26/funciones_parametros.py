@@ -12,6 +12,19 @@ Formas de llamar a una función (con respecto a los parámetros):
 - Con un diccionario
 """
 
-
 def sumar(a, b):
     return a + b
+
+def segundos(h=0, m=0, s=0):
+    return h*3600 + m*60 + s
+
+# 1) Forma posicional
+print(sumar(3,4))
+
+# 2) Nominal:
+print(sumar(b=4, a=3))
+print(segundos(12,30))
+print(segundos(m=5))
+print(segundos(m=5, s=30))
+print(segundos(12,s=30))
+
