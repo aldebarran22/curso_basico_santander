@@ -11,3 +11,7 @@ def mulCadena(cad, n=10):
 
 def ejecutar(f, *args, **kwargs):
     return f(*args, **kwargs)
+
+if __name__ == '__main__':
+    print(ejecutar(sumar, 12,34))
+    print(ejecutar(mulCadena, "hola"))
