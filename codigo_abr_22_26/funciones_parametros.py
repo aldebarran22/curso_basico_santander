@@ -12,6 +12,13 @@ Formas de llamar a una función (con respecto a los parámetros):
 - Con un diccionario
 """
 
+import matplotlib.pyplot as plt
+
+x = list(range(5))
+y = [10, 40, 23, 55, 2]
+plt.plot(x, y, color="red", lw=5)
+plt.show()
+
 
 def sumar(a, b):
     return a + b
@@ -35,7 +42,7 @@ def funcion(ob, op=0, *args, **kwargs):
 
 if __name__ == "__main__":
     funcion(1)
-    funcion(1,2,3,4,5,6,7,8,x=100, y=200)
+    funcion(1, 2, 3, 4, 5, 6, 7, 8, x=100, y=200)
 
     exit()
 
