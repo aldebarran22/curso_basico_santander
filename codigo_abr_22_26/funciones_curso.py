@@ -6,6 +6,39 @@ Funciones del curso:
 import os
 import random
 
+emp2 = """id;nombre;cargo
+1;Davolio;Representante de ventas
+2;Fuller;Vicepresidente comercial
+3;Leverling;Representante de ventas
+4;Peacock;Representante de ventas
+6;Suyama;Representante de ventas
+7;King;Representante de ventas
+9;Dodsworth;Representante de ventas"""
+
+
+emp3 = """id;nombre;cargo
+2;Fuller;Vicepresidente comercial
+3;Leverling;Representante de ventas
+4;Peacock;Gerente de ventas
+5;Buchanan;Gerente de ventas
+6;Suyama;Representante de ventas
+7;King;Representante de ventas
+8;Callahan;Coordinador ventas interno
+9;Dodsworth;Representante de ventas
+10;George;Representante de ventas"""
+
+
+def fusionFicheros(csv1, csv2):
+
+    def csv_to_set(csv):
+        return set(csv.split("\n"))
+
+    # cuerpo de la funcion: fusionFicheros
+    c1 = csv_to_set(csv1)
+    c2 = csv_to_set(csv2)
+    todo = c1 | c2  # La unión a nivel de filas
+    return "\n".join(todo)
+
 
 def filtroFicheros(*extensiones, path=None):
     R = list()
