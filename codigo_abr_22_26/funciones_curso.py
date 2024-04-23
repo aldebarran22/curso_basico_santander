@@ -5,9 +5,10 @@ Funciones del curso:
 
 import os
 
+
 def filtroFicheros(*extensiones, path=None):
     R = list()
-    L = os.listdir(path)    
+    L = os.listdir(path)
     for f in L:
         t = f.partition(".")
         ext = t[2]
@@ -15,13 +16,23 @@ def filtroFicheros(*extensiones, path=None):
             R.append(f)
     return R
 
-if __name__ == "__main__":
+
+def testFiltroFicheros():
     L = filtroFicheros("txt")
     print(L)
     L = filtroFicheros("txt", "png")
     print(L)
-    #L = filtroFicheros("txt", "png", "py")
+    # L = filtroFicheros("txt", "png", "py")
 
     t = ("txt", "py")
     L = filtroFicheros(*t, path="../ficheros_curso")
     print(L)
+
+
+def testHistograma():
+    pass
+
+
+if __name__ == "__main__":
+    testFiltroFicheros()
+    #testHistograma()
