@@ -3,7 +3,11 @@ Conjuntos en Python:
 - Quitar repetidos
 - Creación
 - Añadir elementos
-- Operadores: & | - ^
+- Operadores: 
+& intersección 
+| unión 
+- diferencia 
+^ diferencia simétrica
 """
 
 c = {1, 1, 1, 2, 3, 1, 2, 6}
@@ -45,3 +49,7 @@ emp3 = """id;nombre;cargo
 8;Callahan;Coordinador ventas interno
 9;Dodsworth;Representante de ventas
 10;George;Representante de ventas"""
+
+# Crear conjuntos a nivel de fila con cada uno de los bloques:
+cEmp2 = set(emp2.split("\n"))
+cEmp3 = set(emp3.split("\n"))
