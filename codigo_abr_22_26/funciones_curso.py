@@ -4,6 +4,7 @@ Funciones del curso:
 """
 
 import os
+import random
 
 
 def filtroFicheros(*extensiones, path=None):
@@ -16,6 +17,26 @@ def filtroFicheros(*extensiones, path=None):
             R.append(f)
     return R
 
+
+def histograma():
+    n = 1000
+    L = []
+    histo = dict()
+    # El intervalo de números:
+    ini = 1
+    fin = 20
+
+    # Almacenar n números aleatorios en la lista L
+    for i in range(n):
+        L.append(random.randint(ini, fin))
+   
+    # Quitar los repetidos y almacenarlos en un conjunto
+    numeros = set(L)
+   
+    # Contar los valores del conjunto en la lista y almacenar
+    # en el diccionario (la clave -> el número), (el valor -> el recuento)
+    for i in numeros:
+        histo[i] = L.count(i)
 
 def testFiltroFicheros():
     L = filtroFicheros("txt")
