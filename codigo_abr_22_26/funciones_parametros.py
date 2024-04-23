@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 x = list(range(5))
 y = [10, 40, 23, 55, 2]
-plt.plot(x, y, color="red", lw=5)
+plt.plot(x, y, color="green", lw=5)
 plt.show()
 
 
@@ -44,8 +44,6 @@ if __name__ == "__main__":
     funcion(1)
     funcion(1, 2, 3, 4, 5, 6, 7, 8, x=100, y=200)
 
-    exit()
-
     # 1) Forma posicional
     print(sumar(3, 4))
 
@@ -58,3 +56,13 @@ if __name__ == "__main__":
 
     print(calcularIVA(100))
     print(calcularIVA(100, 4))
+
+    # Con una tupla:
+    t = (3,4)
+    print(sumar(*t))
+
+    L = [3,4]
+    print(sumar(*L))
+
+    d = {"a":3, "b":4}
+    print(sumar(**d))
