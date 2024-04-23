@@ -15,3 +15,8 @@ def ejecutar(f, *args, **kwargs):
 if __name__ == '__main__':
     print(ejecutar(sumar, 12,34))
     print(ejecutar(mulCadena, "hola"))
+
+    # sumar(23,45)
+    cad = "{}({},{})".format("sumar",23,45)
+    print(cad)
+    print(eval(cad))
