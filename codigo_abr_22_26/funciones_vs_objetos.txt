@@ -1,0 +1,8 @@
+Funciones:
+nombre_funcion(obj)
+len(unaLista)
+
+POO:
+obj.metodo()
+unaLista.sort()
+sort(unaLista) --> ERROR!

@@ -1,0 +1,7 @@
+Listas:
+
+[3,4,5,6,7] -> el item es un número
+
+[[1,2,3],[4,5,6]] -> el item es una lista
+
+[{"a":1,"b":2}, {"a":1,"b":2}, ... ]
