@@ -15,6 +15,9 @@ ini = 1
 fin = 25
 
 # Almacenar n números aleatorios en la lista L
+for i in range(n):
+    L.append(random.randint(ini, fin))
+print(L[:5])
 
 # Quitar los repetidos y almacenarlos en un conjunto
 
