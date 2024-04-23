@@ -4,6 +4,8 @@ Funciones del curso:
 """
 
 import os
+#from os import listdir
+
 import random
 
 emp2 = """id;nombre;cargo
