@@ -4,6 +4,10 @@ Obj mutables -> por referencia
 Obj inmutables -> por valor/copia
 """
 
+def porCopia(num, tupla, cad):
+    num += 100
+    tupla += (100,)
+    cad += "adios"
 
 def porRef(lista, conjunto, dicc):
     lista.append(100)
@@ -21,3 +25,10 @@ if __name__ == "__main__":
     print("L", L)
     print("conjunto:", conjunto)
     print("dicc:", dicc)
+
+    numero = 0
+    cad = "hola"
+    t = 1,2,3
+
+    porCopia(numero, t, cad)
+    
