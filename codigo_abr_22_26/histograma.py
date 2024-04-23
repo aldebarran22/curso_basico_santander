@@ -12,7 +12,7 @@ L = []
 histo = dict()
 # El intervalo de números:
 ini = 1
-fin = 25
+fin = 20
 
 # Almacenar n números aleatorios en la lista L
 for i in range(n):
