@@ -45,8 +45,9 @@ def prueba4():
     si ha conseguido abrirlo"""
     f = None
     try:
-        f = open("no_existe.txt", "r")
+        f = open("fecha_hora.py", "r")
         txt = f.read()
+        print(txt)
     except Exception as e:
         print(e.__class__.__name__, e)
     finally:
