@@ -37,7 +37,11 @@ def fusionFicheros(csv1, csv2):
         return set(csv.split("\n"))
     
     def criterio(fila):
-        return fila
+        t = fila.partition(";")
+        if t[0].isnumeric():
+            return int(t[0])
+        else:
+            return 0
 
     # cuerpo de la funcion: fusionFicheros
     c1 = csv_to_set(csv1)
