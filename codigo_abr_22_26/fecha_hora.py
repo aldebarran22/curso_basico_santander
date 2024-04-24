@@ -75,6 +75,10 @@ class DateTime(Time, Date):
 if __name__ == "__main__":
     dt = DateTime(24, 4, 2024, 11, 33, 15)
     print(dt)
+    if dt.esBisiesto():
+        print(f"El año: {dt.yy} es bisiesto")
+    else:
+        print("No es bisiesto")
     exit()
 
     print("Num instancias: ", Time.getNumInstancias())
