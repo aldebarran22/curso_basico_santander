@@ -18,6 +18,9 @@ class Empleado:
         return resul
         #return str(self.id) + " " + self.nombre + " " + self.cargo
 
+    def __repr__(self):
+        return str(self)
+
     def __lt__(self, other):
         return self.id < other.id
 
@@ -31,6 +34,8 @@ def testEmpleado():
     emp2 = Empleado(15, "Juan", "Contabilidad")
     print(emp)
     L = [emp, emp2, Empleado(23, "Ana", "Gerente")]
+    print(L)
+    L.sort(reverse=True)    
     print(L)
     exit()
     #print(str(emp))
