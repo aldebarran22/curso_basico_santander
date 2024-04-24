@@ -2,6 +2,7 @@
 POO en Python
 """
 
+
 class Empleado:
     """Implementación de la clase empleado"""
 
@@ -10,15 +11,20 @@ class Empleado:
         self.nombre = nombre
         self.cargo = cargo
 
+    def __str__(self):
+        return str(self.id) + " " + self.nombre + " " + self.cargo
+
     def __del__(self):
         pass
-        #print('Eliminando a ', self.nombre)
+        # print('Eliminando a ', self.nombre)
+
 
 def testEmpleado():
-    emp = Empleado(12, 'Pedro', 'Ventas')
+    emp = Empleado(12, "Pedro", "Ventas")
     print(emp)
     print(str(emp))
     print(emp.__str__())
+
 
 if __name__ == "__main__":
     testEmpleado()
