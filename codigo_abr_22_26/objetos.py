@@ -12,7 +12,11 @@ class Empleado:
         self.cargo = cargo
 
     def __str__(self):
-        return str(self.id) + " " + self.nombre + " " + self.cargo
+        resul = ""
+        for k, v in self.__dict__.items():
+            resul += str(v) + " "
+        return resul
+        #return str(self.id) + " " + self.nombre + " " + self.cargo
 
     def __del__(self):
         pass
