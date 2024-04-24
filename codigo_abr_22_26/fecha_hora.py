@@ -1,9 +1,14 @@
 class Time:
 
+    # Att. de clase:
+    num_instancias = 0
+
     def __init__(self, h=0, m=0, s=0):
         self.h = h
         self.m = m
         self.s = s
+
+        Time.num_instancias += 1
 
     def __ajustar(self):
         minutos = self.s // 60
@@ -14,6 +19,14 @@ class Time:
         self.m %= 60
         self.h = (self.h + horas) % 24
 
+    @staticmethod
+    def getNumInstancias():
+        return Time.num_instancias
+    
+    @classmethod
+    def getNumInstancias2(cls):
+        return Time.num_instancias
+
     def __add__(self, other):
         obj = Time(self.h + other.h, self.m + other.m, self.s + other.s)
         obj.__ajustar()
@@ -21,6 +34,9 @@ class Time:
 
     def __str__(self):
         return "%02d:%02d:%02d" % (self.h, self.m, self.s)
+    
+    def __del__(self):
+        Time.num_instancias -= 1
 
 
 class Date:
@@ -42,11 +58,17 @@ class Date:
 
 
 if __name__ == "__main__":
+    print("Num instancias: ", Time.getNumInstancias())
     t = Time(2, 4, 34)
     print(t)
-
+    
     t2 = Time(12, 14, 51)
     print(t2)
 
     suma = t + t2  # suma = t.__add__(t2)
+    print("Num instancias: ", Time.getNumInstancias())
     print(suma)
+
+    del(suma) # Fuerza a llamar al destructor: __del__
+    print("Num instancias: ", Time.getNumInstancias())
+
