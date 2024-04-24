@@ -30,6 +30,9 @@ def testEmpleado():
     emp = Empleado(12, "Pedro", "Ventas")
     emp2 = Empleado(15, "Juan", "Contabilidad")
     print(emp)
+    L = [emp, emp2, Empleado(23, "Ana", "Gerente")]
+    print(L)
+    exit()
     #print(str(emp))
     #print(emp.__str__())
     emp.tno = 915887788
