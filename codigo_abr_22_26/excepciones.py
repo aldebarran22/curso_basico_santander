@@ -26,6 +26,21 @@ def prueba2():
         print(e.__class__.__name__, e)
 
 
+def prueba3():
+    """Capturar y tratar dos excepciones
+    particulares y otra más general"""
+    try:
+        L = [1, 2, 3]
+        print(L[1] / 10)
+        print(L[1] + "hola")
+        print("mas código")
+    except (ZeroDivisionError, IndexError) as e:
+        print(e.__class__.__name__, e)
+    except Exception as e:
+        print(e.__class__.__name__, e)
+
+
 if __name__ == "__main__":
     # prueba1()
-    prueba2()
+    # prueba2()
+    prueba3()
