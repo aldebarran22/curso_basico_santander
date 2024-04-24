@@ -35,7 +35,7 @@ def fusionFicheros(csv1, csv2):
 
     def csv_to_set(csv):
         return set(csv.split("\n"))
-    
+
     def criterio(fila):
         t = fila.partition(";")
         if t[0].isnumeric():
@@ -111,5 +111,5 @@ def testFusionFicheros():
 
 if __name__ == "__main__":
     # testFiltroFicheros()
-    # testHistograma()
-    testFusionFicheros()
+    testHistograma()
+    # testFusionFicheros()
