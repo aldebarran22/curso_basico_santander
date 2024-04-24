@@ -56,6 +56,9 @@ class Date:
         else:
             return False
 
+def make_object(clase, *args, **kwargs):
+    return clase(*args, **kwargs)
+
 
 if __name__ == "__main__":
     print("Num instancias: ", Time.getNumInstancias())
@@ -71,4 +74,15 @@ if __name__ == "__main__":
 
     del(suma) # Fuerza a llamar al destructor: __del__
     print("Num instancias: ", Time.getNumInstancias())
+
+    print(t.__class__)
+    print(t.__class__.__name__)
+
+    obj = t.__class__()
+    print(obj)
+
+    obj1 = make_object(Time, 12,34,8)
+    obj2 = make_object(Date, 12,3,2024)
+    print(obj1)
+    print(obj2)
 
