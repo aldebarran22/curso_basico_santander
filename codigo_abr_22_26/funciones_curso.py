@@ -35,12 +35,16 @@ def fusionFicheros(csv1, csv2):
 
     def csv_to_set(csv):
         return set(csv.split("\n"))
+    
+    def criterio(fila):
+        return fila
 
     # cuerpo de la funcion: fusionFicheros
     c1 = csv_to_set(csv1)
     c2 = csv_to_set(csv2)
     todo = c1 | c2  # La unión a nivel de filas
-    return "\n".join(todo)
+    L = sorted(todo, key=criterio)
+    return "\n".join(L)
 
 
 def filtroFicheros(*extensiones, path=None):
@@ -103,5 +107,5 @@ def testFusionFicheros():
 
 if __name__ == "__main__":
     # testFiltroFicheros()
-    testHistograma()
-    # testFusionFicheros()
+    # testHistograma()
+    testFusionFicheros()
