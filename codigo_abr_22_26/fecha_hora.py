@@ -22,7 +22,7 @@ class Time:
     @staticmethod
     def getNumInstancias():
         return Time.num_instancias
-    
+
     @classmethod
     def getNumInstancias2(cls):
         return Time.num_instancias
@@ -34,7 +34,7 @@ class Time:
 
     def __str__(self):
         return "%02d:%02d:%02d" % (self.h, self.m, self.s)
-    
+
     def __del__(self):
         Time.num_instancias -= 1
 
@@ -56,25 +56,31 @@ class Date:
         else:
             return False
 
+
 def make_object(clase, *args, **kwargs):
     return clase(*args, **kwargs)
 
-class DateTime(Date, Time):
+
+class DateTime(Time, Date):
+    """Uso de la herencia múltiple para crear la clase DateTime"""
 
     def __init__(self, dd=1, mm=1, yy=1970, h=0, m=0, s=0):
         Date.__init__(self, dd, mm, yy)
-        Time.__init__(self, h,m,s)
-        
+        Time.__init__(self, h, m, s)
+
+    def __str__(self):
+        return Date.__str__(self) + " " + Time.__str__(self)
+
 
 if __name__ == "__main__":
-    dt = DateTime(24, 4, 2024, 11,33,15)
+    dt = DateTime(24, 4, 2024, 11, 33, 15)
     print(dt)
-
+    exit()
 
     print("Num instancias: ", Time.getNumInstancias())
     t = Time(2, 4, 34)
     print(t)
-    
+
     t2 = Time(12, 14, 51)
     print(t2)
 
@@ -82,7 +88,7 @@ if __name__ == "__main__":
     print("Num instancias: ", Time.getNumInstancias())
     print(suma)
 
-    del(suma) # Fuerza a llamar al destructor: __del__
+    del suma  # Fuerza a llamar al destructor: __del__
     print("Num instancias: ", Time.getNumInstancias())
 
     print(t.__class__)
@@ -91,8 +97,7 @@ if __name__ == "__main__":
     obj = t.__class__()
     print(obj)
 
-    obj1 = make_object(Time, 12,34,8)
-    obj2 = make_object(Date, 12,3,2024)
+    obj1 = make_object(Time, 12, 34, 8)
+    obj2 = make_object(Date, 12, 3, 2024)
     print(obj1)
     print(obj2)
-
