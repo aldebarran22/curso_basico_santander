@@ -70,13 +70,14 @@ class DateTime(Time, Date):
 
     def __str__(self):
         return Date.__str__(self) + " " + Time.__str__(self)
-    
+
+
 class DateTime2:
     """Implementación de la clase DateTime por composición"""
 
     def __init__(self, dd=1, mm=1, yy=1970, h=0, m=0, s=0):
-        self.fecha = Date(dd,mm,yy)
-        self.hora = Time(h,m,s)
+        self.fecha = Date(dd, mm, yy)
+        self.hora = Time(h, m, s)
 
     def esBisiesto(self):
         return self.fecha.esBisiesto()
@@ -85,14 +86,20 @@ class DateTime2:
         return str(self.fecha) + " " + str(self.hora)
 
 
-
-if __name__ == "__main__":
-    dt = DateTime(24, 4, 2024, 11, 33, 15)
+def testFechaHora(clase, *args, **kwargs):
+    print("Clase: ", clase.__name__)
+    dt = clase(*args, **kwargs)
     print(dt)
     if dt.esBisiesto():
-        print(f"El año: {dt.yy} es bisiesto")
+        print("El año es bisiesto")
     else:
         print("No es bisiesto")
+
+
+if __name__ == "__main__":
+
+    testFechaHora(DateTime, 24, 4, 2024, 11, 33, 15)
+    testFechaHora(DateTime2, 24, 4, 2024, 11, 33, 15)
     exit()
 
     print("Num instancias: ", Time.getNumInstancias())
