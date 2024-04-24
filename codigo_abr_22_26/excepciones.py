@@ -3,6 +3,8 @@ Capturar excepciones en Python
 try, except, finally, raise
 """
 
+from os import listdir
+
 
 def prueba1():
     """Capturar y tratar una excepción"""
@@ -47,16 +49,43 @@ def prueba4():
     try:
         f = open("fecha_hora.py", "r")
         txt = f.read()
+        raise ValueError("Error en un parámetro")
         print(txt)
     except Exception as e:
         print(e.__class__.__name__, e)
+        raise e
     finally:
         if f:
             f.close()
+
+
+def procesarFich(path):
+    ext = path.partition(".")[2]
+
+    if ext == "txt":
+        raise ValueError(f"Error en el fichero: {path}")
+    else:
+        print("procesando el fichero: ", path)
+
+
+def prueba5():
+    # Recorrer una carpeta de archivos, procesarlos y controlar los
+    # ficheros que fallen en un proceso simulado:
+    numErrores = 0
+    for f in listdir("../ficheros_curso"):
+        try:
+            procesarFich(f)
+        except Exception as e:
+            print(e)
+            numErrores += 1
+
+    if numErrores > 0:
+        print(f"Se han encontrado {numErrores} ficheros con error!")
 
 
 if __name__ == "__main__":
     # prueba1()
     # prueba2()
     # prueba3()
-    prueba4()
+    # prueba4()
+    prueba5()
