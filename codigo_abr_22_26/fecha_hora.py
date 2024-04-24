@@ -97,10 +97,9 @@ def testFechaHora(clase, *args, **kwargs):
 
 
 if __name__ == "__main__":
-
     testFechaHora(DateTime, 24, 4, 2024, 11, 33, 15)
     testFechaHora(DateTime2, 24, 4, 2024, 11, 33, 15)
-    exit()
+    
 
     print("Num instancias: ", Time.getNumInstancias())
     t = Time(2, 4, 34)
