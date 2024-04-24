@@ -1,0 +1,55 @@
+Personas:
+
+describe características:
+- peso, edad, altura --> atributos
+
+acciones:
+andar(), correr(), hablar()  --> métodos (funciones)
+
+1 persona -> 1 objeto (instancia)
+
+instanciar --> construir una persona: __init__ (constructor de la clase)
+__del__ --> destructor
+
+clase (1) objetos (muchos)
+
+objeto en curso: self
+
+Relación entre las clases:
+- Herencia: Clases que tienen un conocimiento en común
+   Persona -> Empleado -> programador, jefeDeProyecto,
+
+- Composición: Un objeto se desglosa en partes que son objetos de otras clases.
+Coche:
+   - Motor
+   -chasis
+  
+ - Asociación: 
+coche.repostar(surtidor)
+
+
+Python:
+- Herencia: Simple y múltiple
+- Clases abstractas -> módulo abc.ABC
+	Figura (dibujar)
+Figura2D	Figura3D
+Tri, Cir	Cub, Cil
+
+- Sobrecarga de operadores: relacionales, aritméticos
+ + --> __add__
+
+ < --> __lt__
+
+ __str__()  --> str()
+
+
+- superclase --> object
+
+- Dinámico: se puede modificar un objeto en t.ejecución
+  __dict__
+
+- __slots__
+
+
+
+

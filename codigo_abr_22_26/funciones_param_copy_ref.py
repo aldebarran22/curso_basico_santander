@@ -31,4 +31,8 @@ if __name__ == "__main__":
     t = 1,2,3
 
     porCopia(numero, t, cad)
+
+    print("numero: ", numero)
+    print("cad: ", cad)
+    print("t:", t)
     
