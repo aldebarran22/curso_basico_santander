@@ -54,12 +54,13 @@ def filtroFicheros(*extensiones, path=None):
 
 
 def histograma(n=1000, ini=1, fin=20):
-    L = []
+    #L = []
     histo = dict()
 
     # Almacenar n números aleatorios en la lista L
-    for i in range(n):
-        L.append(random.randint(ini, fin))
+    #for i in range(n):
+    #    L.append(random.randint(ini, fin))
+    L = [random.randint(ini, fin) for _ in range(n)]
 
     # Quitar los repetidos y almacenarlos en un conjunto
     numeros = set(L)
