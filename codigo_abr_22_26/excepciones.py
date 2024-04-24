@@ -40,7 +40,22 @@ def prueba3():
         print(e.__class__.__name__, e)
 
 
+def prueba4():
+    """Abrir fichero y que lo deje cerrado
+    si ha conseguido abrirlo"""
+    f = None
+    try:
+        f = open("no_existe.txt", "r")
+        txt = f.read()
+    except Exception as e:
+        print(e.__class__.__name__, e)
+    finally:
+        if f:
+            f.close()
+
+
 if __name__ == "__main__":
     # prueba1()
     # prueba2()
-    prueba3()
+    # prueba3()
+    prueba4()
