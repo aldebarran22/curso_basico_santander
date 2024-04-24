@@ -59,8 +59,18 @@ class Date:
 def make_object(clase, *args, **kwargs):
     return clase(*args, **kwargs)
 
+class DateTime(Date, Time):
+
+    def __init__(self, dd=1, mm=1, yy=1970, h=0, m=0, s=0):
+        Date.__init__(self, dd, mm, yy)
+        Time.__init__(self, h,m,s)
+        
 
 if __name__ == "__main__":
+    dt = DateTime(24, 4, 2024, 11,33,15)
+    print(dt)
+
+
     print("Num instancias: ", Time.getNumInstancias())
     t = Time(2, 4, 34)
     print(t)
