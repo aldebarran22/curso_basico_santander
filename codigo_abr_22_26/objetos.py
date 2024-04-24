@@ -18,6 +18,9 @@ class Empleado:
         return resul
         #return str(self.id) + " " + self.nombre + " " + self.cargo
 
+    def __lt__(self, other):
+        return self.id < other.id
+
     def __del__(self):
         pass
         # print('Eliminando a ', self.nombre)
@@ -25,9 +28,18 @@ class Empleado:
 
 def testEmpleado():
     emp = Empleado(12, "Pedro", "Ventas")
+    emp2 = Empleado(15, "Juan", "Contabilidad")
     print(emp)
-    print(str(emp))
-    print(emp.__str__())
+    #print(str(emp))
+    #print(emp.__str__())
+    emp.tno = 915887788
+    emp.__dict__['movil'] = 600998877
+    print(emp)
+
+    if emp < emp2: # if emp.__lt__(emp2):
+        print("emp < emp2")
+    else:
+        print("emp2 < emp")
 
 
 if __name__ == "__main__":
