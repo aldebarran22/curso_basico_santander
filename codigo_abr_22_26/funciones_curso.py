@@ -69,7 +69,8 @@ def histograma(n=1000, ini=1, fin=20):
     for i in numeros:
         histo[i] = L.count(i)
 
-    return histo
+    L = sorted(histo.items(), key=lambda t : t[1], reverse=True)
+    return L
 
 
 def testFiltroFicheros():
@@ -87,7 +88,7 @@ def testFiltroFicheros():
 def testHistograma():
     histo = histograma()
     # Imprimir resultados:
-    for numero, cuenta in histo.items():
+    for numero, cuenta in histo:
         print(f"{numero} se repite {cuenta} veces")
 
 
@@ -98,5 +99,5 @@ def testFusionFicheros():
 
 if __name__ == "__main__":
     # testFiltroFicheros()
-    # testHistograma()
-    testFusionFicheros()
+    testHistograma()
+    # testFusionFicheros()
