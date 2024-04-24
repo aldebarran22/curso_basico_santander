@@ -4,7 +4,8 @@ Funciones del curso:
 """
 
 import os
-#from os import listdir
+
+# from os import listdir
 
 import random
 
@@ -54,11 +55,11 @@ def filtroFicheros(*extensiones, path=None):
 
 
 def histograma(n=1000, ini=1, fin=20):
-    #L = []
-    histo = dict()
+    # L = []
+    # histo = dict()
 
     # Almacenar n números aleatorios en la lista L
-    #for i in range(n):
+    # for i in range(n):
     #    L.append(random.randint(ini, fin))
     L = [random.randint(ini, fin) for _ in range(n)]
 
@@ -67,10 +68,12 @@ def histograma(n=1000, ini=1, fin=20):
 
     # Contar los valores del conjunto en la lista y almacenar
     # en el diccionario (la clave -> el número), (el valor -> el recuento)
-    for i in numeros:
-        histo[i] = L.count(i)
+    # for i in numeros:
+    #    histo[i] = L.count(i)
 
-    L = sorted(histo.items(), key=lambda t : t[1], reverse=True)
+    histo = {i: L.count(i) for i in numeros}
+
+    L = sorted(histo.items(), key=lambda t: t[1], reverse=True)
     return L
 
 
