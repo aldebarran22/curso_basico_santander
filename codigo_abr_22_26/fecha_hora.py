@@ -6,7 +6,13 @@ class Time:
         self.s = s
 
     def __ajustar(self):
-        pass
+        minutos = self.s // 60
+        self.s %= 60
+
+        self.m += minutos
+        horas = self.m // 60
+        self.m %= 60
+        self.h = (self.h + horas) % 24
 
     def __add__(self, other):
         obj = Time(self.h + other.h, self.m + other.m, self.s + other.s)
@@ -36,7 +42,7 @@ class Date:
 
 
 if __name__ == "__main__":
-    t = Time(2, 4, 340)
+    t = Time(2, 4, 34)
     print(t)
 
     t2 = Time(12, 14, 51)
