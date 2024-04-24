@@ -31,11 +31,13 @@ class Empleado:
 
 def testEmpleado():
     emp = Empleado(12, "Pedro", "Ventas")
-    emp2 = Empleado(15, "Juan", "Contabilidad")
+    emp2 = Empleado(15, "Alberto", "Contabilidad")
     print(emp)
     L = [emp, emp2, Empleado(23, "Ana", "Gerente")]
     print(L)
     L.sort(reverse=True)    
+    print(L)
+    L.sort(key=lambda obj: obj.nombre)
     print(L)
     exit()
     #print(str(emp))
