@@ -10,9 +10,15 @@ class Empleado:
         self.nombre = nombre
         self.cargo = cargo
 
+    def __del__(self):
+        pass
+        #print('Eliminando a ', self.nombre)
+
 def testEmpleado():
     emp = Empleado(12, 'Pedro', 'Ventas')
     print(emp)
+    print(str(emp))
+    print(emp.__str__())
 
 if __name__ == "__main__":
     testEmpleado()
