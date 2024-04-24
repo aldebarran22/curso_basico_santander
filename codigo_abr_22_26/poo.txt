@@ -1,7 +1,8 @@
 Personas:
 
 describe características:
-- peso, edad, altura --> atributos
+- peso, edad, altura --> atributos: getters/setters
+- __peso, __edad
 
 acciones:
 andar(), correr(), hablar()  --> métodos (funciones)
