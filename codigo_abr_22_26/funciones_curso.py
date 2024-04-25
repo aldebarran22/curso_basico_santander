@@ -56,11 +56,21 @@ def fusion(path1, path2, pathDestino):
             return 0
 
     # cuerpo de la funcion: fusionFicheros
-    c1 = csv_to_set(path1)
-    c2 = csv_to_set(path2)
-    todo = c1 | c2  # La unión a nivel de filas
-    L = sorted(todo, key=criterio)
-    return "\n".join(L)
+    fich = None
+    try:
+        fich = open(pathDestino, "w")
+        c1 = csv_to_set(path1)
+        c2 = csv_to_set(path2)
+        todo = c1 | c2  # La unión a nivel de filas
+        L = sorted(todo, key=criterio)
+        fich.writelines(L)
+        print(f'Se ha generado el fichero: {pathDestino} correctamente ...')
+
+    except Exception as e:
+        raise e
+
+    finally:
+        if fich: fich.close()
 
 def fusionFicheros(csv1, csv2):
 
@@ -142,10 +152,10 @@ def testFusionFicheros():
 
 def testFusion():
     try:
-        csv = fusion("../ficheros_curso/Empleados22.txt",
+        fusion("../ficheros_curso/Empleados22.txt",
         "../ficheros_curso/Empleados3.txt",
         "../ficheros/empleados_todo.txt")
-        print(csv)
+        
     except Exception as e:
         print(e.__class__.__name__, e)
 
