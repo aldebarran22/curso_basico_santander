@@ -35,9 +35,25 @@ def calcularTotalPedidos(path, *paises, sep=";"):
     f = None
     try:
         f = open(path, "r")
+
+        # Inicializar el dict con las claves (paises)
+        dict_paises = dict.fromkeys(paises, 0)
+
         for fila in f:
             fila = fila.rstrip() # Objeto inmutable -> machacar la variable!
-            print(fila)
+            
+            # Partir con split (utilizar el sep)
+            cols = fila.split(sep)
+
+            # El país es la última col, comprobar si está o no en paises
+            pais = col[-1]
+            if pais in paises:
+                # Si está, incrementar con el importe: utilizar antes float() para convertirlo
+                importe = float(col[-2])
+
+                # Actualizar la clave del dict:
+                dict_paises[pais] += importe
+
     except Exception as e:
         print(e)
     finally:
@@ -48,4 +64,4 @@ if __name__ == "__main__":
     # grabarFichero("../ficheros/prueba.txt")
     # ficheroEnCols()
     # leerFichero("../ficheros_curso/pedidos.csv")
-    calcularTotalPedido("../ficheros_curso/pedidos.csv", "Francia", "Alemania")
+    calcularTotalPedidos("../ficheros_curso/pedidos.csv", "Francia", "Alemania")
