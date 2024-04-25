@@ -4,6 +4,7 @@ class TimeError(Exception):
 
     def __init__(self, msg=""):
         super().__init__(msg)
+        # Exception.__init__(self, msg)
 
 
 class Time:
