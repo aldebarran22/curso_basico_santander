@@ -1,9 +1,27 @@
+
+class TimeError(Exception):
+    """Gestión de errores de la hora"""
+
+    def __init__(self, msg=""):
+        super().__init__(msg)
+
+
 class Time:
 
     # Att. de clase:
     num_instancias = 0
 
     def __init__(self, h=0, m=0, s=0):
+
+        if not (0 <= s <= 59):
+            raise TimeError(f"El valor de los sg: {s} no es correcto")
+
+        if not (0 <= m <= 59):
+            raise TimeError(f"El valor de los min: {m} no es correcto")
+        
+        if not (0 <= h <= 23):
+            raise TimeError(f"El valor de las horas: {h} no es correcto")
+
         self.h = h
         self.m = m
         self.s = s
@@ -96,11 +114,18 @@ def testFechaHora(clase, *args, **kwargs):
         print("No es bisiesto")
 
 
+def testTimeError():
+    try:
+        t = Time(12,34,100)
+        print(t)
+    except Exception as e:
+        print(e.__class__.__name__, e)
+
 if __name__ == "__main__":
+    testTimeError()
     testFechaHora(DateTime, 24, 4, 2024, 11, 33, 15)
     testFechaHora(DateTime2, 24, 4, 2024, 11, 33, 15)
     
-
     print("Num instancias: ", Time.getNumInstancias())
     t = Time(2, 4, 34)
     print(t)

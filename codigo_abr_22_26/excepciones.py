@@ -83,6 +83,8 @@ def prueba5():
         print(f"Se han encontrado {numErrores} ficheros con error!")
 
 
+
+
 if __name__ == "__main__":
     # prueba1()
     # prueba2()
