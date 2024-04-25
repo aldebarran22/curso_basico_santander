@@ -36,11 +36,11 @@ if __name__ == "__main__":
     t2 = Time(12, 14, 51)
     print(t2)
 
-    suma = t + t2  # suma = t.__add__(t2)
+    #suma = t + t2  # suma = t.__add__(t2)
     print("Num instancias: ", Time.getNumInstancias())
-    print(suma)
+    #print(suma)
 
-    del suma  # Fuerza a llamar al destructor: __del__
+    #del suma  # Fuerza a llamar al destructor: __del__
     print("Num instancias: ", Time.getNumInstancias())
 
     print(t.__class__)

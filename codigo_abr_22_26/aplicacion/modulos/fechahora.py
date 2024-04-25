@@ -1,5 +1,10 @@
 
-
+try:
+    from modulos.fecha import Date
+    from modulos.hora import Time
+except:
+    from fecha import Date
+    from hora import Time
 
 class DateTime(Time, Date):
     """Uso de la herencia múltiple para crear la clase DateTime"""
@@ -25,3 +30,6 @@ class DateTime2:
     def __str__(self):
         return str(self.fecha) + " " + str(self.hora)
 
+if __name__ == '__main__':
+    dt = DateTime()
+    print(dt)
