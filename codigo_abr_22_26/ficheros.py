@@ -22,6 +22,21 @@ def leerFichero(path):
     try:
         f = open(path, "r")
         for fila in f:
+            fila = fila.rstrip() # Objeto inmutable -> machacar la variable!
+            print(fila)
+    except Exception as e:
+        print(e)
+    finally:
+        if f:f.close()
+
+
+def calcularTotalPedidos(path, *paises, sep=";"):
+    """Leer un fichero CSV por filas"""
+    f = None
+    try:
+        f = open(path, "r")
+        for fila in f:
+            fila = fila.rstrip() # Objeto inmutable -> machacar la variable!
             print(fila)
     except Exception as e:
         print(e)
@@ -30,6 +45,7 @@ def leerFichero(path):
 
 
 if __name__ == "__main__":
-    #grabarFichero("../ficheros/prueba.txt")
+    # grabarFichero("../ficheros/prueba.txt")
     # ficheroEnCols()
-    leerFichero("../ficheros_curso/pedidos.csv")
+    # leerFichero("../ficheros_curso/pedidos.csv")
+    calcularTotalPedido("../ficheros_curso/pedidos.csv", "Francia", "Alemania")
