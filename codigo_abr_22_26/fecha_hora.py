@@ -54,6 +54,9 @@ class Time:
     def __str__(self):
         return "%02d:%02d:%02d" % (self.h, self.m, self.s)
 
+    def __repr__(self):
+        return str(self)
+
     def __del__(self):
         Time.num_instancias -= 1
 

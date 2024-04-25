@@ -28,4 +28,6 @@ if __name__ == '__main__':
     L = [Time(randint(0,23), randint(0, 59)) for _ in range(20)]
     print(L[:3])
     serializarPickle("../ficheros/objetos_pickle.dat", L)
+    L2 = deserializarPickle("../ficheros/objetos_pickle.dat")
+    print(L2[:3])
 
