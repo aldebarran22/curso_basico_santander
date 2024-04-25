@@ -8,6 +8,7 @@ para acceder directamente a los objetos.
 import pickle as p
 import shelve as s
 
+from random import randint
 from fecha_hora import Time, Date, DateTime
 
 def serializarPickle(path, objeto):
@@ -21,3 +22,10 @@ def serializarPickle(path, objeto):
 
     finally:
         if f: f.close()
+
+
+if __name__ == '__main__':
+    L = [Time(randint(0,23), randint(0, 59)) for _ in range(20)]
+    print(L[:3])
+    serializarPickle("../ficheros/objetos_pickle.dat")
+    
