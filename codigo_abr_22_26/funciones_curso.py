@@ -63,7 +63,7 @@ def fusion(path1, path2, pathDestino):
         c2 = csv_to_set(path2)
         todo = c1 | c2  # La unión a nivel de filas
         L = sorted(todo, key=criterio)
-        fich.writelines(L)
+        fich.writelines([fila+"\n" for fila in L])
         print(f'Se ha generado el fichero: {pathDestino} correctamente ...')
 
     except Exception as e:
@@ -152,7 +152,7 @@ def testFusionFicheros():
 
 def testFusion():
     try:
-        fusion("../ficheros_curso/Empleados22.txt",
+        fusion("../ficheros_curso/Empleados2.txt",
         "../ficheros_curso/Empleados3.txt",
         "../ficheros/empleados_todo.txt")
         
