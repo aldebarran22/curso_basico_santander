@@ -43,7 +43,7 @@ def fusion(path1, path2, pathDestino):
             return set(csv.split("\n"))
 
         except Exception as e:
-            print(e.__class__.__name__, e)
+            raise e
 
         finally:
             if f: f.close()
@@ -141,10 +141,13 @@ def testFusionFicheros():
 
 
 def testFusion():
-    csv = fusion("../ficheros_curso/Empleados2.txt",
-    "../ficheros_curso/Empleados3.txt",
-    "../ficheros/empleados_todo.txt")
-    print(csv)
+    try:
+        csv = fusion("../ficheros_curso/Empleados22.txt",
+        "../ficheros_curso/Empleados3.txt",
+        "../ficheros/empleados_todo.txt")
+        print(csv)
+    except Exception as e:
+        print(e.__class__.__name__, e)
 
 if __name__ == "__main__":
     # testFiltroFicheros()
