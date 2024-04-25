@@ -31,6 +31,37 @@ emp3 = """id;nombre;cargo
 10;George;Representante de ventas"""
 
 
+def fusion(path1, path2, pathDestino):
+
+    def csv_to_set(path):
+        """Leer un fichero de empleados y lo devuelve en un 
+        conjunto de filas"""
+        f= None
+        try:
+            f = open(path, "r")
+            csv = f.read()
+            return set(csv.split("\n"))
+
+        except Exception as e:
+            print(e.__class__.__name__, e)
+            
+        finally:
+            if f: f.close()
+
+    def criterio(fila):
+        t = fila.partition(";")
+        if t[0].isnumeric():
+            return int(t[0])
+        else:
+            return 0
+
+    # cuerpo de la funcion: fusionFicheros
+    c1 = csv_to_set(csv1)
+    c2 = csv_to_set(csv2)
+    todo = c1 | c2  # La unión a nivel de filas
+    L = sorted(todo, key=criterio)
+    return "\n".join(L)
+
 def fusionFicheros(csv1, csv2):
 
     def csv_to_set(csv):
