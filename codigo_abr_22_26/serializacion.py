@@ -36,6 +36,10 @@ def deserializarPickle(path):
     finally:
         if f: f.close()
 
+def  serializarShelve(path, *objetos):
+    for obj in objetos:
+        print("Clave: ", obj.__class__.__name__)
+        print("Objeto: ", obj)
 
 if __name__ == '__main__':
     L = [Time(randint(0,23), randint(0, 59)) for _ in range(20)]
@@ -50,6 +54,6 @@ if __name__ == '__main__':
     print(objetos)
 
     serializarShelve("../ficheros/tiempo", *objetos)
-    objeto = deserializarShelve("../ficheros/tiempo", "Time")
-    
+    #objeto = deserializarShelve("../ficheros/tiempo", "Time")
+
 
