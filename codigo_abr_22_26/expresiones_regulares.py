@@ -17,9 +17,10 @@ comprobarPatron(patron, L)
 
 # Pruebas con el .
 patron = ".ython$"
-L = ["python", "jython", "*ython", "ython", "pythonnnn"]
+L = ["python", "  jython", "*ython", "ython", "pythonnnn"]
 comprobarPatron(patron, L)
 
+# Cadenas de 3 caracteres que empiezan y terminan por .  ==> ".123.."
 
 # Validar hora:
 
