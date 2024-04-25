@@ -44,7 +44,7 @@ def fusion(path1, path2, pathDestino):
 
         except Exception as e:
             print(e.__class__.__name__, e)
-            
+
         finally:
             if f: f.close()
 
@@ -56,8 +56,8 @@ def fusion(path1, path2, pathDestino):
             return 0
 
     # cuerpo de la funcion: fusionFicheros
-    c1 = csv_to_set(csv1)
-    c2 = csv_to_set(csv2)
+    c1 = csv_to_set(path1)
+    c2 = csv_to_set(path2)
     todo = c1 | c2  # La unión a nivel de filas
     L = sorted(todo, key=criterio)
     return "\n".join(L)
@@ -140,7 +140,14 @@ def testFusionFicheros():
     print(csvFinal)
 
 
+def testFusion():
+    csv = fusion("../ficheros_curso/Empleados2.txt",
+    "../ficheros_curso/Empleados3.txt",
+    "../ficheros/empleados_todo.txt")
+    print(csv)
+
 if __name__ == "__main__":
     # testFiltroFicheros()
-    testHistograma()
+    # testHistograma()
     # testFusionFicheros()
+    testFusion()
