@@ -43,8 +43,15 @@ def  serializarShelve(path, *objetos):
         valor = obj
 
         Shelf[clave] = obj
-        
+
     Shelf.close()
+
+def deserializarShelve(path, clave):
+    Shelf = s.open(path)
+    obj = Shelf.get(clave, f"No existe la clave: {clave}") 
+    Shelf.close()
+    return obj
+
 
 if __name__ == '__main__':
     L = [Time(randint(0,23), randint(0, 59)) for _ in range(20)]
@@ -58,7 +65,7 @@ if __name__ == '__main__':
     objetos = [c() for c in clases]
     print(objetos)
 
-    serializarShelve("../ficheros/tiempo", *objetos)
-    #objeto = deserializarShelve("../ficheros/tiempo", "Time")
-
+    serializarShelve("../ficheros/tiempo2", *objetos)
+    objeto = deserializarShelve("../ficheros/tiempo", "Time2")
+    print(objeto)
 
