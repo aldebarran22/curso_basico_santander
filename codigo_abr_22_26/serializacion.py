@@ -23,6 +23,19 @@ def serializarPickle(path, objeto):
     finally:
         if f: f.close()
 
+def deserializarPickle(path):
+    f = None
+    try:
+        f = open(path, "rb")
+        objeto = p.load(f)
+        return objeto
+
+    except Exception as e:
+        print(e)
+
+    finally:
+        if f: f.close()
+
 
 if __name__ == '__main__':
     L = [Time(randint(0,23), randint(0, 59)) for _ in range(20)]
@@ -30,4 +43,13 @@ if __name__ == '__main__':
     serializarPickle("../ficheros/objetos_pickle.dat", L)
     L2 = deserializarPickle("../ficheros/objetos_pickle.dat")
     print(L2[:3])
+
+    # Serializar con shelve
+    clases = [Time, Date, DateTime]
+    objetos = [c() for c in clases]
+    print(objetos)
+
+    serializarShelve("../ficheros/tiempo", *objetos)
+    objeto = deserializarShelve("../ficheros/tiempo", "Time")
+    
 
