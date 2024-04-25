@@ -11,9 +11,10 @@ def comprobarPatron(patron, L):
     print('-' * 20)
 
 # Validar dni
-patron = ""
-L = ["12345678", "12345678A", "12345678AA"]
+patron = "[0-9]{8}[A-Z]$"
+L = ["12345678", "12345678A","12345678b", "12345678AA"]
 comprobarPatron(patron, L)
+exit()
 
 # Pruebas con el .
 patron = ".ython$"
