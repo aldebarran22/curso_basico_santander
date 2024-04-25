@@ -54,6 +54,8 @@ def calcularTotalPedidos(path, *paises, sep=";"):
                 # Actualizar la clave del dict:
                 dict_paises[pais] += importe
 
+        return dict_paises
+
     except Exception as e:
         print(e)
     finally:
@@ -64,4 +66,5 @@ if __name__ == "__main__":
     # grabarFichero("../ficheros/prueba.txt")
     # ficheroEnCols()
     # leerFichero("../ficheros_curso/pedidos.csv")
-    calcularTotalPedidos("../ficheros_curso/pedidos.csv", "Francia", "Alemania")
+    d = calcularTotalPedidos("../ficheros_curso/pedidos.csv", "Francia", "Alemania")
+    print(d)
