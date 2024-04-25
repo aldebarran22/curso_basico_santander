@@ -15,6 +15,12 @@ patron = ""
 L = ["12345678", "12345678A", "12345678AA"]
 comprobarPatron(patron, L)
 
+# Pruebas con el .
+patron = ".ython$"
+L = ["python", "jython", "*ython", "ython", "pythonnnn"]
+comprobarPatron(patron, L)
+
+
 # Validar hora:
 
     
