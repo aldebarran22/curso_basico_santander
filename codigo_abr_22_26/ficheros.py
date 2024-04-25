@@ -11,10 +11,10 @@ def grabarFichero(path):
     f.close()
 
 def ficheroEnCols():
-    L = [("HP", 1200.0), ("Portatil",577.8), ("Teclado",56.77)]
-    print("%s\t%s", ("PRODUCTO","IMPORTE"))
+    L = [("HP", 1200.0), ("Portatil",577.8), ("Teclado",56.776)]
+    print("%-15s\t%8s" % ("PRODUCTO","IMPORTE"))
     for t in L:
-        print("%s\t%f" % t)
+        print("%-15s\t%8.2f" % t)
 
 if __name__ == "__main__":
     #grabarFichero("../ficheros/prueba.txt")
