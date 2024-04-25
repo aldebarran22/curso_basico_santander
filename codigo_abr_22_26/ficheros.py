@@ -16,6 +16,20 @@ def ficheroEnCols():
     for t in L:
         print("%-15s\t%8.2f" % t)
 
+def leerFichero(path):
+    """Leer un fichero CSV por filas"""
+    f = None
+    try:
+        f = open(path, "r")
+        for fila in f:
+            print(fila)
+    except Exception as e:
+        print(e)
+    finally:
+        if f:f.close()
+
+
 if __name__ == "__main__":
     #grabarFichero("../ficheros/prueba.txt")
-    ficheroEnCols()
+    # ficheroEnCols()
+    leerFichero("../ficheros_curso/pedidos.csv")

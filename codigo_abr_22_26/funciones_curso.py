@@ -39,7 +39,7 @@ def fusion(path1, path2, pathDestino):
         f= None
         try:
             f = open(path, "r")
-            csv = f.read().rstrip()
+            csv = f.read().rstrip() # Leer y limpiar filas en blanco!
             return set(csv.split("\n"))
 
         except Exception as e:
