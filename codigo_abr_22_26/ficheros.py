@@ -46,10 +46,10 @@ def calcularTotalPedidos(path, *paises, sep=";"):
             cols = fila.split(sep)
 
             # El país es la última col, comprobar si está o no en paises
-            pais = col[-1]
+            pais = cols[-1]
             if pais in paises:
                 # Si está, incrementar con el importe: utilizar antes float() para convertirlo
-                importe = float(col[-2])
+                importe = float(cols[-2].replace(",","."))
 
                 # Actualizar la clave del dict:
                 dict_paises[pais] += importe
