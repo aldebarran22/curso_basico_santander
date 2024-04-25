@@ -28,9 +28,15 @@ comprobarPatron(patron, L)
 
 # Validar hora:
 patron = "([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$"
-hora = "12:04:23"
+hora = "la hora es:  12:04:23"
 obj = re.match(patron, hora)
 print(obj)
-print(obj.groups())
+if obj:
+    print(obj.groups())
+
+obj = re.search(patron, hora)
+print(obj)
+if obj:
+    print(obj.groups())
 
     
