@@ -21,6 +21,10 @@ L = ["python", "  jython", "*ython", "ython", "pythonnnn"]
 comprobarPatron(patron, L)
 
 # Cadenas de 3 caracteres que empiezan y terminan por .  ==> ".123.."
+patron = "\....\.$"
+L = [".....", "123.", ".acd", ".123.", ".12344.",".123.."]
+comprobarPatron(patron, L)
+
 
 # Validar hora:
 
