@@ -37,9 +37,14 @@ def deserializarPickle(path):
         if f: f.close()
 
 def  serializarShelve(path, *objetos):
+    Shelf = s.open(path)
     for obj in objetos:
-        print("Clave: ", obj.__class__.__name__)
-        print("Objeto: ", obj)
+        clave = obj.__class__.__name__
+        valor = obj
+
+        Shelf[clave] = obj
+        
+    Shelf.close()
 
 if __name__ == '__main__':
     L = [Time(randint(0,23), randint(0, 59)) for _ in range(20)]
