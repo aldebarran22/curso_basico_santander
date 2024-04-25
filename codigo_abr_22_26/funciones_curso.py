@@ -8,6 +8,7 @@ import os
 # from os import listdir
 
 import random
+import sys
 
 emp2 = """id;nombre;cargo
 1;Davolio;Representante de ventas
@@ -164,3 +165,5 @@ if __name__ == "__main__":
     # testHistograma()
     # testFusionFicheros()
     testFusion()
+
+   

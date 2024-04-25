@@ -23,7 +23,7 @@ def leerFichero(path):
         f = open(path, "r")
         for fila in f:
             fila = fila.rstrip() # Objeto inmutable -> machacar la variable!
-            print(fila, f.tell())
+            print(fila)
     except Exception as e:
         print(e)
     finally:
