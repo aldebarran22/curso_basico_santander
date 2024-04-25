@@ -27,9 +27,10 @@ comprobarPatron(patron, L)
 
 
 # Validar hora:
-patron = ""
+patron = "([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$"
 hora = "12:04:23"
 obj = re.match(patron, hora)
 print(obj)
+print(obj.groups())
 
     
