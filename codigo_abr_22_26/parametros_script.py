@@ -12,11 +12,11 @@ if __name__ == '__main__':
             testFusion()
 
         elif len(sys.argv)==4:
-            pass
+            fusion(sys.argv[1], sys.argv[2], sys.argv[3])
 
         else:
             print('Se esperaban 3 parámetros. Sintaxis:')
             print('python parametros_script.py <<path1>> <<path2>> <<pathDestino>>')
-            
+
     except Exception as e:
         print(e)
