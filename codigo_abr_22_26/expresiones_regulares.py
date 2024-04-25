@@ -7,14 +7,13 @@ import re
 def comprobarPatron(patron, L):
     print("Patrón: ", patron)
     for cad in L:
-        print(cad, True if re.match(patron, cad) else False)
+        print(cad, True if re.match(patron, cad, re.IGNORECASE) else False)
     print('-' * 20)
 
 # Validar dni
 patron = "[0-9]{8}[A-Z]$"
 L = ["12345678", "12345678A","12345678b", "12345678AA"]
 comprobarPatron(patron, L)
-exit()
 
 # Pruebas con el .
 patron = ".ython$"
@@ -28,5 +27,9 @@ comprobarPatron(patron, L)
 
 
 # Validar hora:
+patron = ""
+hora = "12:04:23"
+obj = re.match(patron, hora)
+print(obj)
 
     
