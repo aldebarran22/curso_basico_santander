@@ -132,6 +132,12 @@ def testClases():
         emp = bd.read(1)
         print(emp)
 
+        L = bd.select()
+        print(L)
+
+        L = bd.select("Gerente")
+        print(L)
+
     except Exception as e:
         print(e)
 
