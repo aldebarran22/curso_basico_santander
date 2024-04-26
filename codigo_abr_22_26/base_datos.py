@@ -115,11 +115,37 @@ class EmpleadoCRUD:
         sql = "delete from empleados where id=?"
         t = (pk, )
         return self.__update_delete(sql, t)
+        
 
     def update(self, emp):
         sql = "update empleados set nombre=?, cargo=? where id=?"
         t = emp.getTuple() + (emp.id,)
         return self.__update_delete(sql, t)
+
+    def __update_delete(self, sql, t):
+        cur = None
+        try:            
+            cur = self.con.cursor()
+            cur.execute(sql, t)
+            n = cur.rowcount
+
+            self.con.commit() # Confirmar la TX
+            if n > 0:
+                return True
+            else:  
+                if sql[:6] == "delete":
+                    pk = t[0]              
+                else:
+                    pk = t[-1]
+                    
+                raise ValueError(f"El empleado con clave: {pk} no ")
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+
+        finally:
+            if cur:cur.close()    
 
 
     def create(self, emp):
