@@ -18,7 +18,7 @@ class Hilo(Thread):
         for i in range(self.n):
             print(self.name, "n = ", i)
             sleep(randint(1,3))
-            
+
         print('Termina', self.name)
 
 
@@ -30,5 +30,8 @@ if __name__=='__main__':
         hilo = Hilo(f"hilo-{i+1}", 5)
         L.append(hilo)
         hilo.start()
+
+    for hilo in L:
+        hilo.join()
 
     print('Termina main!')
