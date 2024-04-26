@@ -138,6 +138,13 @@ def testClases():
         L = bd.select("Gerente")
         print(L)
 
+        emp2 = Empleado(0, "Juan Gomez", "Presidente")
+        if bd.create(emp2):
+            print('Creado:', emp2)
+        else:
+            print('No se ha podido crear')
+
+
     except Exception as e:
         print(e)
 
