@@ -15,6 +15,7 @@ num_consumidores = 1
 
 
 class Productor(Thread):
+    
     def __init__(self, buffer, num_muestras, nombre):
         Thread.__init__(self, name=nombre)
         self.buffer = buffer
@@ -49,6 +50,7 @@ class Productor(Thread):
 
 
 class Consumidor(Thread):
+
     def __init__(self, buffer, num_muestras, nombre):
         Thread.__init__(self, name=nombre)
         self.buffer = buffer
@@ -56,7 +58,28 @@ class Consumidor(Thread):
 
     def run(self):
         for i in range(self.num_muestras):
-            pass
+            
+            # Comprobar si hay algún item en el buffer:
+            self.buffer.sem_items.acquire()
+
+            # Recuperar un valor del buffer en exclusión mutua:
+            with self.buffer.mutex:
+                # Coger el numero y vaciar la casilla:
+                numero = self.buffer.buffer[self.buffer.ind_c]
+                self.buffer.buffer[self.buffer.ind_c] = -1
+
+                # Actualizar el indice del consumidor:
+                self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
+
+                print(self.buffer.buffer, " ===>>> ", numero)
+
+            # Avisar que hay un nuevo hueco en el buffer:
+            self.buffer.sem_huecos.release()
+
+            # Consumir el item:
+            print(self.name, " CONSUME: ",numero)
+
+            sleep(randint(2,4))
 
 
 class TBuffer:
