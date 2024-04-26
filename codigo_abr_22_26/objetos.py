@@ -11,6 +11,9 @@ class Empleado:
         self.nombre = nombre
         self.cargo = cargo
 
+    def getTuple(self):
+        return self.nombre, self.cargo
+
     def __str__(self):
         resul = ""
         for k, v in self.__dict__.items():

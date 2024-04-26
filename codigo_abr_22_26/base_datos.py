@@ -111,7 +111,25 @@ class EmpleadoCRUD:
         finally:
             if cur:cur.close()
 
-        
+    def create(self, emp):
+        cur = None
+        try:
+            sql = "insert into empleados(nombre, cargo) values (?, ?)"
+            cur = self.con.cursor()
+            cur.execute(sql, emp.getTuple())
+
+            emp.id = cur.lastrowid # Recuperar la pk asignada por la BD
+            n = cur.rowcount
+
+            self.con.commit() # Confirmar la TX
+            return n > 0
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+
+        finally:
+            if cur:cur.close()
 
     def __del__(self):
         if hasattr(self, "con"):
