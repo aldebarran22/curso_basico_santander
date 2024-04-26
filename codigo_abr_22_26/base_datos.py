@@ -111,6 +111,17 @@ class EmpleadoCRUD:
         finally:
             if cur:cur.close()
 
+    def delete(self, pk):
+        sql = "delete from empleados where id=?"
+        t = (pk, )
+        return self.__update_delete(sql, t)
+
+    def update(self, emp):
+        sql = "update empleados set nombre=?, cargo=? where id=?"
+        t = emp.getTuple() + (emp.id,)
+        return self.__update_delete(sql, t)
+
+
     def create(self, emp):
         cur = None
         try:
@@ -156,11 +167,13 @@ def testClases():
         L = bd.select("Gerente")
         print(L)
 
+        """
         emp2 = Empleado(0, "Juan Gomez", "Presidente")
         if bd.create(emp2):
             print('Creado:', emp2)
         else:
             print('No se ha podido crear')
+        """
 
 
     except Exception as e:
