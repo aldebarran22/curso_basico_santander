@@ -34,6 +34,7 @@ class Productor(Thread):
             with self.buffer.mutex:
                 # Escribir el numero en el buffer:
                 self.buffer.buffer[self.buffer.ind_p] = numero
+                print(self.buffer.buffer, " <<<=== ", numero)
 
                 # Actualizar el indice del productor
                 self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
@@ -45,10 +46,6 @@ class Productor(Thread):
 
             # Espera de tiempo con sleep:
             sleep(randint(2,4))
-
-
-
-
 
 
 class Consumidor(Thread):
