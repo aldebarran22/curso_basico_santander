@@ -23,18 +23,28 @@ class Productor(Thread):
     def run(self):
         for i in range(self.num_muestras):
             # Generar el número aleatorio:
+            numero = randint(1,20)
+            print(self.name, " PRODUCE: ",numero)
 
             # Comprobar si hay hueco
+            self.buffer.sem_huecos.acquire()
 
             # Modificar el buffer en exclusión mutua: 
             # comprobar el mutex
+            with self.buffer.mutex:
                 # Escribir el numero en el buffer:
-                # Actualizar el indice del productor
+                self.buffer.buffer[self.buffer.ind_p] = numero
 
-            # liberar el mutex
+                # Actualizar el indice del productor
+                self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
+
+                # liberar el mutex
+
             # Avisar que hay un nuevo item:
+            self.buffer.sem_items.release()
 
             # Espera de tiempo con sleep:
+            sleep(randint(2,4))
 
 
 
