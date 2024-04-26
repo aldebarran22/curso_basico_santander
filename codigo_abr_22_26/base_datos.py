@@ -207,6 +207,13 @@ def testClases():
             print('No se ha podido crear')
         """
 
+        if bd.delete(18):
+            print('Eliminado')
+        else:
+            print('No se ha podido eliminar')
+
+        bd.delete(100)
+
 
     except Exception as e:
         print(e)
