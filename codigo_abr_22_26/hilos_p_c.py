@@ -10,8 +10,8 @@ from time import sleep
 num_muestras = 10
 tam_buffer = 5
 
-num_productores = 2
-num_consumidores = 2
+num_productores = 1
+num_consumidores = 1
 
 
 class Productor(Thread):
@@ -54,3 +54,22 @@ if __name__ == "__main__":
     num_muestras_con = num_muestras // num_consumidores
 
     buf = TBuffer()
+
+    productores = []
+    consumidores = []
+
+    for i in range(num_productores):
+        productor = Productor(buf, num_muestras_prod, f"P-{i+1}")
+        productores.append(productor)
+        productor.start()
+
+    for i in range(num_consumidores):
+        consumidor = Consumidor(buf, num_muestras_con, f"C-{i+1}")
+        consumidores.append(consumidor)
+        consumidor.start()
+
+    for hilo in productores:
+        hilo.join()
+
+    for hilo in consumidores:
+        hilo.join()
