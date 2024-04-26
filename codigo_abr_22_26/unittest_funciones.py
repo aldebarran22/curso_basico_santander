@@ -5,16 +5,18 @@ con unittest
 
 import unittest
 
+from ecuacion import calcularEcuacion
+
 class TestFunciones(unittest.TestCase):
 
-    def test_ok(self):
+    def test_resultado(self):
+        resul = calcularEcuacion(1,5,4)
+        self.assertEqual(resul, (-1, -4), msg="No coincide el resultado")
         return True
 
     def test_exception(self):
-        raise ValueError('Error general')
-
-    def test_assertion(self):
-        raise AssertionError("Assert error")
+        pass
+        
 
 if __name__ == '__main__':
     unittest.main()
