@@ -50,6 +50,13 @@ def printTabla(path, tabla, file=sys.stdout, sep=";"):
         if cur: cur.close()
         if con: con.close()
 
+def exportarTabla(path, tabla, sep=";"):
+    path_file = f"../ficheros/{tabla}.csv"
+    fich = open(path_file, "w")
+    printTabla(path, tabla, file=fich, sep=sep)
+    fich.close()
+
+
 if __name__ == '__main__':
     try:
         #conexion("../../empresa3.db")
