@@ -9,6 +9,7 @@ D: Delete
 
 import sqlite3 as db
 from os.path import isfile
+import sys
 
 def conexion(path):
     con = None
@@ -24,7 +25,7 @@ def conexion(path):
     finally:
         if con: con.close()
 
-def printTabla(path, tabla):
+def printTabla(path, tabla, file=sys.stdout, sep=";"):
     con = None
     cur = None
     try:
@@ -37,9 +38,11 @@ def printTabla(path, tabla):
         sql = f"select * from {tabla}"
         cur.execute(sql)
 
-        print(cur.description)
+        cabs = sep.join([t[0] for t in cur.description])
+        print(cabs, file=file)
         for t in cur.fetchall():
-            print(t)
+            fila = sep.join([str(i) for i in t])
+            print(fila, file=file)
 
     except Exception as e:
         raise e
@@ -50,6 +53,6 @@ def printTabla(path, tabla):
 if __name__ == '__main__':
     try:
         #conexion("../../empresa3.db")
-        printTabla("../../empresa3.db", "pedidos")
+        printTabla("../../empresa3.db", "categorias")
     except Exception as e:
         print(e)
