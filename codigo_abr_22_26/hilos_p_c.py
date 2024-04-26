@@ -22,7 +22,23 @@ class Productor(Thread):
 
     def run(self):
         for i in range(self.num_muestras):
-            pass
+            # Generar el número aleatorio:
+
+            # Comprobar si hay hueco
+
+            # Modificar el buffer en exclusión mutua: 
+            # comprobar el mutex
+                # Escribir el numero en el buffer:
+                # Actualizar el indice del productor
+
+            # liberar el mutex
+            # Avisar que hay un nuevo item:
+
+            # Espera de tiempo con sleep:
+
+
+
+
 
 
 class Consumidor(Thread):
