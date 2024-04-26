@@ -137,7 +137,7 @@ class EmpleadoCRUD:
                     pk = t[0]              
                 else:
                     pk = t[-1]
-                    
+
                 raise ValueError(f"El empleado con clave: {pk} no ")
 
         except Exception as e:
@@ -186,11 +186,17 @@ def testClases():
         bd = EmpleadoCRUD("../../empresa3.db")
         emp = bd.read(1)
         print(emp)
+        emp.cargo = "Presidente de Ventas"
+        if bd.update(emp):
+            print('Registro actualizado')
+        else:
+            print('No se ha podido actualizar')
+
 
         L = bd.select()
         print(L)
 
-        L = bd.select("Gerente")
+        L = bd.select("Presidente")
         print(L)
 
         """
