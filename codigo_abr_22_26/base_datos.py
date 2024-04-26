@@ -41,7 +41,8 @@ def printTabla(path, tabla, file=sys.stdout, sep=";"):
         cabs = sep.join([t[0] for t in cur.description])
         print(cabs, file=file)
         for t in cur.fetchall():
-            fila = sep.join([str(i) for i in t])
+            fila = sep.join([str(i).replace(".",",") \
+                if isinstance(i,float) else str(i) for i in t])
             print(fila, file=file)
 
     except Exception as e:
@@ -60,6 +61,7 @@ def exportarTabla(path, tabla, sep=";"):
 if __name__ == '__main__':
     try:
         #conexion("../../empresa3.db")
-        printTabla("../../empresa3.db", "categorias")
+        #printTabla("../../empresa3.db", "categorias")
+        exportarTabla("../../empresa3.db", "pedidos")
     except Exception as e:
         print(e)
