@@ -21,7 +21,8 @@ class Productor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+            pass
 
 
 class Consumidor(Thread):
@@ -31,7 +32,8 @@ class Consumidor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+            pass
 
 
 class TBuffer:
