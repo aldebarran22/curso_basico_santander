@@ -58,10 +58,33 @@ def exportarTabla(path, tabla, sep=";"):
     fich.close()
 
 
-if __name__ == '__main__':
+class EmpleadoCRUD:
+    """Operaciones del empleado en la BD: C, R, U, D"""
+
+    def __init__(self, path):
+        if not isfile(path):
+            raise FileNotFoundError(f"No existe el fichero: {path}")
+        
+        self.con = db.connect(path)
+
+    def __del__(self):
+        self.con.close()
+
+
+def testFunciones():
     try:
         #conexion("../../empresa3.db")
         #printTabla("../../empresa3.db", "categorias")
         exportarTabla("../../empresa3.db", "pedidos")
     except Exception as e:
         print(e)
+
+def testClases():
+    try:
+        bd = EmpleadoCRUD("../../empresa3.db")
+    except Exception as e:
+        print(e)
+
+if __name__ == '__main__':
+    testClases()
+    
