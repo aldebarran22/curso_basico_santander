@@ -1,0 +1,20 @@
+
+Semáforos: Aforo de un local
+
+Clientes	Aforo
+0		20
+2		18
+10		8
+8		0 
+-1		1
+-2		3
+2		1
+1		0
+
+Cerrojos, Lock (mutex o sem. binarios 0/1)
+
+acquire() --> si cont. > 0: puedes pasar! contador--
+              si el cerrojo está libre -> pasar!
+
+release() --> contador++
+              libre=True
