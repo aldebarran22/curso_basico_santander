@@ -4,7 +4,7 @@ Poner en marcha varios hilos y esperar a que terminen
 Listas con hilos
 """
 
-from threading import Thread
+from threading import Thread, active_count, enumerate
 from time import sleep
 from random import randint
 
@@ -30,6 +30,9 @@ if __name__=='__main__':
         hilo = Hilo(f"hilo-{i+1}", 5)
         L.append(hilo)
         hilo.start()
+
+    print("Activos: ", active_count())
+    print('hilos: ', enumerate())
 
     for hilo in L:
         hilo.join()
