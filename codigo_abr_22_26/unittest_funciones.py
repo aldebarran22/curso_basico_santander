@@ -15,7 +15,7 @@ class TestFunciones(unittest.TestCase):
         return True
 
     def test_exception(self):
-        pass
+        self.assertRaises(ValueError, calcularEcuacion, 1,2,3)
         
 
 if __name__ == '__main__':
