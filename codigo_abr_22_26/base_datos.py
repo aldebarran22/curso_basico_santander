@@ -10,6 +10,7 @@ D: Delete
 import sqlite3 as db
 from os.path import isfile
 import sys
+from objetos import Empleado
 
 def conexion(path):
     con = None
@@ -67,6 +68,27 @@ class EmpleadoCRUD:
         
         self.con = db.connect(path)
 
+    def read(self, pk):
+        """Recupera un empleado a través de su clave primaria"""
+        cur = None
+        try:
+            sql = "select * from empleados where id=?"
+            cur = self.con.cursor()
+            cur.execute(sql, (pk,))
+            t = cur.fetchone()
+            if t == None:
+                raise ValueError(f"El empleado con clave: {pk} no existe en la BD")
+            else:
+                return Empleado(*t)
+
+        except Exception as e:
+            raise e
+
+        finally:
+            if cur:cur.close()
+
+        
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -83,6 +105,9 @@ def testFunciones():
 def testClases():
     try:
         bd = EmpleadoCRUD("../../empresa3.db")
+        emp = bd.read(1)
+        print(emp)
+
     except Exception as e:
         print(e)
 
