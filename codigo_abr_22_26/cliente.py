@@ -35,12 +35,13 @@ if len(sys.argv) == 2:
             mensajeSer = mensajeSer.decode("utf-8")
             print("El Server dice: ", mensajeSer)
 
-    except Exception as e:
-        print("ERROR", e)
-
     except KeyboardInterrupt as e:
         print("Interrupcion de teclado")
         sock_c.send("fin".encode("utf-8"))
+  
+    except Exception as e:
+        print("ERROR", e)
+ 
 
     finally:
         if sock_c != None:

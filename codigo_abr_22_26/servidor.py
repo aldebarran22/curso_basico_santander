@@ -44,12 +44,13 @@ if len(sys.argv) == 2:
 
         print("Fin de comunicación")
 
-    except Exception as e:
-        print("ERROR: ", e)
-
     except KeyboardInterrupt as e1:
         print("Servidor Control+C")
 
+    except Exception as e:
+        print("ERROR: ", e)
+
+   
     finally:
         if s_client:
             s_client.close()
