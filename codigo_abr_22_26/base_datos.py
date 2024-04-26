@@ -26,6 +26,7 @@ def conexion(path):
 
 def printTabla(path, tabla):
     con = None
+    cur = None
     try:
         if not isfile(path):
             raise FileNotFoundError(f"No existe el fichero: {path}")
@@ -37,10 +38,13 @@ def printTabla(path, tabla):
         cur.execute(sql)
 
         print(cur.description)
+        for t in cur.fetchall():
+            print(t)
 
     except Exception as e:
         raise e
     finally:
+        if cur: cur.close()
         if con: con.close()
 
 if __name__ == '__main__':
