@@ -87,6 +87,30 @@ class EmpleadoCRUD:
         finally:
             if cur:cur.close()
 
+    def select(self, cargo=None):
+        """Recupera una colección de empleados de la base de datos"""
+
+        cur = None
+        try:
+            sql = "select * from empleados"
+            cur = self.con.cursor()
+
+            if not cargo:
+                # Quieren todos
+                cur.execute(sql)
+            else:
+                param = f"%{cargo}%"
+                sql += " where cargo like ?"
+                cur.execute(sql, (param,))
+
+            return [Empleado(*t) for t  in cur.fetchall()]
+
+        except Exception as e:
+            raise e
+
+        finally:
+            if cur:cur.close()
+
         
 
     def __del__(self):
