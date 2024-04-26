@@ -138,7 +138,7 @@ class EmpleadoCRUD:
                 else:
                     pk = t[-1]
 
-                raise ValueError(f"El empleado con clave: {pk} no ")
+                raise ValueError(f"El empleado con clave: {pk} no se ha podido realizar la operación")
 
         except Exception as e:
             self.con.rollback()
