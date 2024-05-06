@@ -39,23 +39,23 @@ L3.insert(3, "A")
 print(L3, len(L3))
 
 # Append vs extend
-L = [3,4,5,6,2,1,0]
-L2 = [1,2,3]
+L = [3, 4, 5, 6, 2, 1, 0]
+L2 = [1, 2, 3]
 
 L.append(L2)
 L.append(10)
 print(L)
 
-L = [3,4,5,6,2,1,0]
-L2 = [1,2,3]
+L = [3, 4, 5, 6, 2, 1, 0]
+L2 = [1, 2, 3]
 
 L.extend(L2)
-#L.extend(10) necesita un iterable
+# L.extend(10) necesita un iterable
 print(L)
 
-# Operadores: 
-L1 = [1,2,3]
-L2 = [4,5,6]
+# Operadores:
+L1 = [1, 2, 3]
+L2 = [4, 5, 6]
 print(L1 + L2)
 print(L1 * 5)
 print("2  in L1: ", 2 in L1)
@@ -63,7 +63,7 @@ print("2  in L1: ", 2 in L1)
 # bucle for:
 for i in L:
     print(i, end=" ")
-print() # Salto de linea
+print()  # Salto de linea
 
 # bucle for con índices:
 for pos, i in enumerate(L):
@@ -75,20 +75,31 @@ print()
 
 # Crear listas con list y range:
 # range(ini, fin-1, salto=1)
-L = list(range(10)) # del 0 al 9
+L = list(range(10))  # del 0 al 9
 print(L)
 # del 1 al 10
-L = list(range(1,11))
+L = list(range(1, 11))
 print(L)
 # del 0 al 100 de 5 en 5
 L = list(range(0, 101, 5))
 print(L)
 # del 10 al 1
-L = list(range(10,0,-1))
+L = list(range(10, 0, -1))
 print(L)
 print(range(10))
 
 # Slicing: L[ini:fin-1:salto=1]
-L = [1,2,3,4,5,6,7,8,9,10]
-print('los 3 primeros:', L[0:3])
-print('los 3 primeros:', L[:3])
+L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("los 3 primeros:", L[0:3])
+print("los 3 primeros:", L[:3])
+print("los 3 últimos:", L[-3:])
+print("Toda la lista:", L[:])
+print("Toda la lista de 2 en 2:", L[::2])
+print("invertir: ", L[::-1])
+
+# Es palíndromo:
+cad = "acurruca"
+if cad == cad[::-1]:
+    print("es un palíndromo")
+else:
+    print("no lo es")
