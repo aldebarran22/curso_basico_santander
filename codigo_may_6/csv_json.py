@@ -17,15 +17,17 @@ filas = csv.split("\n")
 
 # Almacenar las cabeceras y separarlas:
 cabs = filas[0].split(";")
+empleados = []  # empleados = list()
 
 # Recorrer las filas pero saltando las cabeceras:
 for datos in filas[1:]:
 
     # Separar los datos de cada empleado a partir del ;
     Ldatos = datos.split(";")
-    print(Ldatos)
 
     # Mezclar las cabs con los datos del empleado y generar un diccionario
     # por cada empleado
     emp = dict(zip(cabs, Ldatos))
-    print(emp)
+    empleados.append(emp)
+
+print(empleados)
