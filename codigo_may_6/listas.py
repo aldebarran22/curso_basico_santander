@@ -113,8 +113,11 @@ path = "C:/onedrive/documents/libro1.xlsx"
 L = path.split("/")
 print(L[-1])
 
-# Extraer los valores en común de una lista:
-L1 = [1,3,4,5,6,1,2,3]
-L2 = [5,8,9,5,1,0,5]
+# Extraer los valores en común de dos listas:
+L1 = [1, 3, 4, 5, 6, 1, 2, 3]
+L2 = [5, 8, 9, 5, 1, 0, 5]
 R = []  # R = list()
-
+for i in L1:
+    if i in L2 and i not in R:
+        R.append(i)  # R += [i]
+print(R)
