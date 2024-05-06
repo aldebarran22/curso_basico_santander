@@ -53,3 +53,13 @@ print("par" if numero % 2 == 0 else "impar")
 n1 = 10
 n2 = 5
 menor = n1 if n1 < n2 else n2
+
+# En Python es False: 0 "" cadena vacía, None, [] lista vacía
+numero = 0
+if numero:
+    # Si número es distinto de cero: if numero != 0:
+    print('numero != 0')
+else:
+    print('numero es cero')
+
+
