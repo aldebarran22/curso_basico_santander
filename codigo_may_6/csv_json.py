@@ -31,3 +31,6 @@ for datos in filas[1:]:
     empleados.append(emp)
 
 print(empleados)
+
+# Recorrer diccionario, acceder a un campo
+# histogramas
