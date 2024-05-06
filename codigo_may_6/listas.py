@@ -72,3 +72,11 @@ for pos, i in enumerate(L):
 for i in range(10):
     print(i, end=" ")
 print()
+
+# Crear listas con list y range:
+# range(ini, fin-1, salto=1)
+L = list(range(10)) # del 0 al 9
+print(L)
+# del 1 al 10
+L = list(range(1,10))
+print(L)
