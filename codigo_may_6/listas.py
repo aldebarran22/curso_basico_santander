@@ -108,3 +108,13 @@ num = 12344321
 snum = str(num)
 if snum == snum[::-1]:
     print("es capicua")
+
+path = "C:/onedrive/documents/libro1.xlsx"
+L = path.split("/")
+print(L[-1])
+
+# Extraer los valores en común de una lista:
+L1 = [1,3,4,5,6,1,2,3]
+L2 = [5,8,9,5,1,0,5]
+R = []  # R = list()
+
