@@ -24,6 +24,12 @@ print(numero + int(txt1))
 # str: convierte numeros a texto.
 print(str(numero) + txt1)
 
+# Leer de teclado un valor:
+# Leer dos números y sumarlos:
+num1 = input("Teclear un numero:")
+num2 = input("Teclear otro numero:")
+print(num1 + num2)
+
 
 
 
