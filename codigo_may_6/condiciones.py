@@ -36,6 +36,9 @@ elif sem == "ambar":
 else:
     print("pasar")
 
+print("parar" if sem == "rojo" else \
+       "precaución" if sem=="ambar" else "pasar")
+
 # A if cond else B
 
 # Imprimir si un número es par o impar
@@ -46,3 +49,7 @@ else:
     print("impar")
 
 print("par" if numero % 2 == 0 else "impar")
+
+n1 = 10
+n2 = 5
+menor = n1 if n1 < n2 else n2
