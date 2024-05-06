@@ -20,3 +20,8 @@ if num < ini or num > fin:
     print("Fuera del intervalo")
 else:
     print(f"{num} cumple el intervalo")
+
+if not (ini <= num <= fin):
+    print("Fuera del intervalo")
+else:
+    print(f"{num} cumple el intervalo")
