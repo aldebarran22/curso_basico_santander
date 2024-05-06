@@ -121,3 +121,5 @@ for i in L1:
     if i in L2 and i not in R:
         R.append(i)  # R += [i]
 print(R)
+
+# print(R[10]) Excepción IndexError, nos salimos con el índice
