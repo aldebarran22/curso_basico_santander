@@ -53,4 +53,10 @@ L.extend(L2)
 #L.extend(10) necesita un iterable
 print(L)
 
+# Operadores: 
+L1 = [1,2,3]
+L2 = [4,5,6]
+print(L1 + L2)
+print(L1 * 5)
+print("2  in L1: ", 2 in L1)
 
