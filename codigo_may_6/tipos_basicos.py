@@ -15,4 +15,17 @@ print(txt1, type(txt1))
 txt2 = '200'
 print(txt1 + txt2)
 
+# print(numero + txt1) Error operación con tipos incompatibles
+
+# Operación con números:
+# int: convierte texto a numero.
+print(numero + int(txt1))
+
+# str: convierte numeros a texto.
+print(str(numero) + txt1)
+
+
+
+
+
 
