@@ -103,3 +103,8 @@ if cad == cad[::-1]:
     print("es un palíndromo")
 else:
     print("no lo es")
+
+num = 12344321
+snum = str(num)
+if snum == snum[::-1]:
+    print("es capicua")
