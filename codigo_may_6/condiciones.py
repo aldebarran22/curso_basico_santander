@@ -25,3 +25,13 @@ if not (ini <= num <= fin):
     print("Fuera del intervalo")
 else:
     print(f"{num} cumple el intervalo")
+
+sem = "rojo"
+if sem == "rojo":
+    print("parar")
+
+elif sem == "ambar":
+    print("precaución")
+
+else:
+    print("pasar")
