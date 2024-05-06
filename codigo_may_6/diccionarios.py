@@ -18,3 +18,7 @@ print(d["2"])
 # Cargar un dicc con dos cadenas (con un sep)
 claves = "id;nombre;cargo"
 valores = "1;Davolio;Representante de ventas"
+Lclaves = claves.split(";")
+print(Lclaves)
+Lvalores = valores.split(";")
+print(Lvalores)
