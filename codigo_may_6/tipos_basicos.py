@@ -26,8 +26,8 @@ print(str(numero) + txt1)
 
 # Leer de teclado un valor:
 # Leer dos números y sumarlos:
-num1 = input("Teclear un numero:")
-num2 = input("Teclear otro numero:")
+num1 = int(input("Teclear un numero:"))
+num2 = int(input("Teclear otro numero:"))
 print(num1 + num2)
 
 
