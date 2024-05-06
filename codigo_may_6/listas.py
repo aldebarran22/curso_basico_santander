@@ -60,3 +60,15 @@ print(L1 + L2)
 print(L1 * 5)
 print("2  in L1: ", 2 in L1)
 
+# bucle for:
+for i in L:
+    print(i, end=" ")
+print() # Salto de linea
+
+# bucle for con índices:
+for pos, i in enumerate(L):
+    print(pos, i)
+
+for i in range(10):
+    print(i, end=" ")
+print()
