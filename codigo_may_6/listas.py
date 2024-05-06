@@ -78,5 +78,17 @@ print()
 L = list(range(10)) # del 0 al 9
 print(L)
 # del 1 al 10
-L = list(range(1,10))
+L = list(range(1,11))
 print(L)
+# del 0 al 100 de 5 en 5
+L = list(range(0, 101, 5))
+print(L)
+# del 10 al 1
+L = list(range(10,0,-1))
+print(L)
+print(range(10))
+
+# Slicing: L[ini:fin-1:salto=1]
+L = [1,2,3,4,5,6,7,8,9,10]
+print('los 3 primeros:', L[0:3])
+print('los 3 primeros:', L[:3])
