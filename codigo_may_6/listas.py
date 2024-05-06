@@ -29,3 +29,4 @@ print("El 2: ", L2[3][1])
 frase = "hola que tal"
 L3 = list(frase)
 print(L3)
+print("num letras: ", len(L3), len(frase))
