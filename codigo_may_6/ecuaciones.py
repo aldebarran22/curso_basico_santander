@@ -4,9 +4,10 @@ Ecuaciones de segundo grado
 import math 
 
 # Inicialización múltiple
-a,b,c = 1,5,4
+a,b,c = 1,2,3
 
-x1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
-x2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2*a)
+raiz = b**2 - 4*a*c
+x1 = (-b + math.sqrt(raiz)) / (2*a)
+x2 = (-b - math.sqrt(raiz)) / (2*a)
 print("x1: ", x1)
 print("x2: ", x2)
