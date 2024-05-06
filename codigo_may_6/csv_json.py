@@ -14,4 +14,18 @@ csv = """id;nombre;cargo
 9;Dodsworth;Representante de ventas"""
 
 filas = csv.split("\n")
-print(filas)
+
+# Almacenar las cabeceras y separarlas:
+cabs = filas[0].split(";")
+
+# Recorrer las filas pero saltando las cabeceras:
+for datos in filas[1:]:
+
+    # Separar los datos de cada empleado a partir del ;
+    Ldatos = datos.split(";")
+    print(Ldatos)
+
+    # Mezclar las cabs con los datos del empleado y generar un diccionario
+    # por cada empleado
+    emp = dict(zip(cabs, Ldatos))
+    print(emp)
