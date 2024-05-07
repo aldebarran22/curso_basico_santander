@@ -22,3 +22,15 @@ t1 = (1,2,3,4)
 t2 = 5,6,7,8
 print(t1, type(t1))
 print(t2, type(t2))
+
+gps = [(40.4, -3.65), (40.41, -3.67), (41.01, -3.77)]
+print(len(gps),'coordenadas')
+for i in gps:
+    print('latitud:',i[0])
+    print('longitud:',i[1])
+
+for lat, lon in gps:
+    print('lat: ', lat,' lon: ', lon)
+
+
+
