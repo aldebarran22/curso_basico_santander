@@ -52,3 +52,9 @@ t = (1, 2, 3, 2, 1, 1, 2, 3, 4, 5)
 numero = 1
 # Obtener todas las posiciones que ocupa el valor de numero:
 # 0, 4, 5
+n = t.count(numero)
+print(f'se repite: {n} veces')
+for i in range(n):
+    pos = t.index(numero)
+    print(f'El {numero} esta en la pos: {pos}')
+    
