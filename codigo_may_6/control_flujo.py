@@ -12,9 +12,13 @@ while True:
 # Leer un valor de teclado y solo se aceptan
 # multiplos de 10:
 while True:
-    numero = int(input("Teclear importe:> "))
-    if numero % 10 != 0:
-        print('Solo se aceptan multiplos de 10')
+    cadNumero = input("Teclear importe:> ")
+    if cadNumero.isnumeric():
+        numero = int(cadNumero)
+
+        if numero % 10 != 0:
+            print("Solo se aceptan multiplos de 10")
+        else:
+            break
     else:
-        break
-        
+        print(f"El número: {cadNumero} no es correcto")
