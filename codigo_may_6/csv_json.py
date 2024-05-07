@@ -36,6 +36,13 @@ print(empleados)
 for emp in empleados:
     print(emp['nombre'])
 
+# Imprimir todos los empleados relacionados con las ventas:
+print('\nBuscar representantes:')
+for emp in empleados:
+    if 'representante' in emp['cargo']:
+        print(emp)
+
+
 
 # Recorrer diccionario, acceder a un campo
 # histogramas
