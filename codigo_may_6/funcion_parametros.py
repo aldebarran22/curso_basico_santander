@@ -2,6 +2,15 @@
 Declaración de parámetros en las funciones de Python
 """
 
+import matplotlib.pyplot as plt
+
+
+def generarGrafica():
+    x = list(range(5))
+    y = [12, 5, 6, 23, 7]
+    plt.plot(x, y)
+    plt.show()
+
 
 def funcion(ob, op=0, *args, **kwargs):
     print("obligatorio: ", ob)
@@ -12,6 +21,9 @@ def funcion(ob, op=0, *args, **kwargs):
 
 
 if __name__ == "__main__":
+    generarGrafica()
+    exit()
+    
     funcion(1)
     funcion(1, 2)
     funcion(1, 2, 3, 4, 5, 6)
