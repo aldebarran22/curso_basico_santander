@@ -26,13 +26,17 @@ csv3 = """id;nombre;cargo
 # definir una función que reciba el bloque de texto: CSV
 # y devuelva un conjunto a nivel de filas.
 
-# Convertir el texto csv a un conjunto de filas:
-L2 = csv2.split("\n")
-# print(L2)
-c2 = set(L2)
-# print(c2)
 
-c3 = set(csv3.split("\n"))
-todo = c2 | c3
-for fila in todo:
-    print(fila)
+def csvToSet(csv: str, sep: str = "\n") -> set:
+    lineas = csv.split(sep)
+    return set(lineas)
+
+
+if __name__ == "__main__":
+    # Convertir el texto csv a un conjunto de filas:
+    c2 = csvToSet(csv2)
+    c3 = csvToSet(csv3)
+
+    todo = c2 | c3
+    for fila in todo:
+        print(fila)
