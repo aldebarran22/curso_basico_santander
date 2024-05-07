@@ -27,5 +27,7 @@ csv3 = """id;nombre;cargo
 # print(c2)
 
 # Convertir el texto csv a un conjunto de filas:
-L = csv2.split("\n")
-print(L)
+L2 = csv2.split("\n")
+print(L2)
+c2 = set(L2)
+print(c2)
