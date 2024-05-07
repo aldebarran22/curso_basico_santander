@@ -39,5 +39,9 @@ n2 = 20
 n1,n2 = n2,n1
 print(n1, n2)
 
+L = [1,3,4,5,3,1,2]
+t = tuple(L)
+print(t)
+
 
 
