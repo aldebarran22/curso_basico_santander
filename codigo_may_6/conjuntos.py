@@ -13,4 +13,5 @@ print("Quien va a comer y cenar: ", comida & cena)
 print("Quien va solo a comer: ", comida - cena)
 print("Quien va solo a cenar: ", cena - comida)
 print("Quienes han participado en los eventos: ", comida | cena)
+print("Va a comer o a cenar pero no a los dos: ", comida ^ cena)
 
