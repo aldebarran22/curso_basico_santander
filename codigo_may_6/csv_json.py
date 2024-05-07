@@ -34,14 +34,14 @@ print(empleados)
 
 # Imprimir el nombre de los empleados:
 for emp in empleados:
-    print(emp['nombre'])
+    print(emp["nombre"])
 
 # Imprimir todos los empleados relacionados con las ventas:
-print('\nBuscar representantes:')
+print("\nBuscar representantes:")
+buscar = "REPRESENTANTE"
 for emp in empleados:
-    if 'representante' in emp['cargo']:
+    if buscar.lower() in emp["cargo"].lower():
         print(emp)
-
 
 
 # Recorrer diccionario, acceder a un campo
