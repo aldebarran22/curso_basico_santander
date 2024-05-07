@@ -31,3 +31,6 @@ L2 = csv2.split("\n")
 print(L2)
 c2 = set(L2)
 print(c2)
+
+c3 = set(csv3.split("\n"))
+
