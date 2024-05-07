@@ -22,8 +22,6 @@ def funcion(ob, op=0, *args, **kwargs):
 
 if __name__ == "__main__":
     generarGrafica()
-    exit()
-
     funcion(1)
     funcion(1, 2)
     funcion(1, 2, 3, 4, 5, 6)
