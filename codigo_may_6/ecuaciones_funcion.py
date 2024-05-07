@@ -16,4 +16,6 @@ def ecuacion(a, b, c):
         return None
 
 
-print(ecuacion(1, 5, 4))
+if __name__ == "__main__":
+    # Solo se ejecuta cuando ejecutamos el módulo
+    print(ecuacion(1, 5, 4))
