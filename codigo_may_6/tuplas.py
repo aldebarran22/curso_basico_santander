@@ -32,5 +32,12 @@ for i in gps:
 for lat, lon in gps:
     print('lat: ', lat,' lon: ', lon)
 
+# Intercambiar dos variables:
+n1 = 10
+n2 = 20
+
+n1,n2 = n2,n1
+print(n1, n2)
+
 
 
