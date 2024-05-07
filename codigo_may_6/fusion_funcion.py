@@ -27,16 +27,21 @@ csv3 = """id;nombre;cargo
 # y devuelva un conjunto a nivel de filas.
 
 
-def csvToSet(csv: str, sep: str = "\n") -> set:
-    lineas = csv.split(sep)
-    return set(lineas)
+def fusion():
+
+    def csvToSet(csv: str, sep: str = "\n") -> set:
+        lineas = csv.split(sep)
+        return set(lineas)
+
+    # Codigo de la funcion fusion
+    c2 = csvToSet(csv2)
+    c3 = csvToSet(csv3)
+    todo = c2 | c3
+    return todo
 
 
 if __name__ == "__main__":
     # Convertir el texto csv a un conjunto de filas:
-    c2 = csvToSet(csv2)
-    c3 = csvToSet(csv3)
-
-    todo = c2 | c3
+    todo = fusion()
     for fila in todo:
         print(fila)
