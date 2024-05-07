@@ -21,3 +21,11 @@ csv3 = """id;nombre;cargo
 8;Callahan;Coordinador ventas interno
 9;Dodsworth;Representante de ventas
 10;George;Representante de ventas"""
+
+# Esto no sirve porque lo hace a nivel de letras y queremos filas
+# c2 = set(csv2)
+# print(c2)
+
+# Convertir el texto csv a un conjunto de filas:
+L = csv2.split("\n")
+print(L)
