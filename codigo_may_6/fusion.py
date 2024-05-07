@@ -28,9 +28,11 @@ csv3 = """id;nombre;cargo
 
 # Convertir el texto csv a un conjunto de filas:
 L2 = csv2.split("\n")
-print(L2)
+# print(L2)
 c2 = set(L2)
-print(c2)
+# print(c2)
 
 c3 = set(csv3.split("\n"))
-
+todo = c2 | c3
+for fila in todo:
+    print(fila)
