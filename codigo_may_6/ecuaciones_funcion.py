@@ -14,3 +14,6 @@ def ecuacion(a, b, c):
         return x1, x2
     else:
         return None
+
+
+print(ecuacion(1, 5, 4))
