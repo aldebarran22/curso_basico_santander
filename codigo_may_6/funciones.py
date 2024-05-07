@@ -33,3 +33,18 @@ print(segundos(12,30))
 print(segundos(m=30, s=15))
 print(segundos(s=60))
 print(segundos(12, s=60))
+
+L = [(12,), (5,30), (8,32,45),(17,30,40)]
+"""
+for h,m,s in L:
+    print(segundos(h,m,s))
+"""
+
+"""
+for t in L:
+    print(segundos(t[0], t[1], t[2]))
+"""
+
+for t in L:
+    print(segundos(*t))
+
