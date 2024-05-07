@@ -42,7 +42,3 @@ buscar = "REPRESENTANTE"
 for emp in empleados:
     if buscar.lower() in emp["cargo"].lower():
         print(emp)
-
-
-# Recorrer diccionario, acceder a un campo
-# histogramas
