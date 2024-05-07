@@ -32,5 +32,10 @@ for datos in filas[1:]:
 
 print(empleados)
 
+# Imprimir el nombre de los empleados:
+for emp in empleados:
+    print(emp['nombre'])
+
+
 # Recorrer diccionario, acceder a un campo
 # histogramas
