@@ -90,6 +90,18 @@ class Grupo:
         self.grupo.append(persona)
         self.grupo.extend(personas)
 
+def pruebaGrupo():
+    g1 = Guia("Pedro", 45, 1.77, "N", ["inglés", "alemán"])
+    p1 = Persona("Miguel", 34, 1.8)
+    p3 = Persona("Ana", 32, 1.82)
+    p4 = Persona("Paula", 31, 1.71)
+
+    grupo = Grupo("Viaje1", g1)
+    grupo.alta(p1, p3, p4)
+    print('Num personas: ', len(grupo))
+    for p in grupo:
+        print(p)
+
 
 def pruebaGuia():
     g1 = Guia("Pedro", 45, 1.77, "N", ["inglés", "alemán"])
@@ -158,4 +170,5 @@ def pruebaStatic():
 if __name__ == "__main__":
     # pruebaPersona()
     # pruebaGuia()
-    pruebaStatic()
+    # pruebaStatic()
+    pruebaGrupo()
