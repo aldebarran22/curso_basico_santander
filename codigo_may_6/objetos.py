@@ -106,4 +106,5 @@ def pruebaPersona():
 
 
 if __name__ == "__main__":
-    pruebaPersona()
+    # pruebaPersona()
+    pruebaGuia()
