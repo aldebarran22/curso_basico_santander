@@ -33,6 +33,7 @@ class Persona:
 
 def pruebaPersona():
     p1 = Persona("Miguel", 34, 1.8)
+    p3 = Persona("Miguel", 34, 1.8)
     p2 = Persona("Eva", 44, 1.79)
     print(p1)
     # print(str(p1))
@@ -53,6 +54,16 @@ def pruebaPersona():
         print(p1.nombre, "es menor que", p2.nombre)
     else:
         print(p2.nombre, "es menor que", p1.nombre)
+
+    if p1 > p2:
+        print(p1.nombre, "es mayor que", p2.nombre)
+    else:
+        print(p2.nombre, "es mayor que", p1.nombre)
+
+    if p1 == p3:
+        print('iguales')
+    else:
+        print('no iguales')
 
 
 if __name__ == "__main__":
