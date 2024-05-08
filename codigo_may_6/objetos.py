@@ -39,6 +39,12 @@ def pruebaPersona():
     L = [p1, p2, Persona("Jose", 15, 1.77)]
     print(L)
 
+    print("La clase del objeto: ", p1.__class__.__name__)
+    print("Dic:", p1.__dict__)
+    p1.tno = 915674433
+    p1.__dict__['movil'] = 678456788
+    print("Dic:", p1.__dict__)
+
 
 if __name__ == "__main__":
     pruebaPersona()
