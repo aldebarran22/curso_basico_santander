@@ -10,10 +10,15 @@ Diseño de clases
 class Persona:
     """Implementación de la clase Persona"""
 
+    # Variable de clase:
+    contador = 0
+
     def __init__(self, nombre="", edad=0, altura=0.0):
         self.nombre = nombre
         self.altura = altura
         self.edad = edad
+
+        Persona.contador += 1
 
     def __str__(self):
         return self.nombre + " " + str(self.altura) + " " + str(self.edad)
@@ -39,8 +44,12 @@ class Persona:
         else:
             print(self.nombre, "y", other.nombre, "están hablando")
 
+    @staticmethod
+    def getContador():
+        return Persona.contador
+
     def __del__(self):
-        pass
+        Persona.contador -= 1
         # print('Se está borrando: ', self.nombre)
 
 
