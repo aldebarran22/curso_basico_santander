@@ -53,6 +53,11 @@ class Guia(Persona):
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def __str__(self):
+        return Persona.__str__(self)+ " "+self.ambito+" "+ \
+        ",".join(self.idiomas)
+    
+
 
 def pruebaGuia():
     g1 = Guia("Pedro", 45, 1.77, "N", ["inglés", "francés"])
@@ -64,6 +69,8 @@ def pruebaGuia():
         print(g2.nombre, "es menor que", g1.nombre)
 
     g1.hablarCon(g2)
+
+    print(g1)
 
 
 def pruebaPersona():
