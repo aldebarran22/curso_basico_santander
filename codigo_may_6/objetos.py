@@ -79,6 +79,18 @@ class Guia(Persona):
         return Persona.__str__(self) + " " + self.ambito + " " + ",".join(self.idiomas)
 
 
+class Grupo:
+
+    def __init__(self, nombre="", *personas):
+        self.nombre = nombre
+        self.grupo = []
+        self.grupo.extend(personas)
+
+    def alta(self, persona, *personas):
+        self.grupo.append(persona)
+        self.grupo.extend(personas)
+
+
 def pruebaGuia():
     g1 = Guia("Pedro", 45, 1.77, "N", ["inglés", "alemán"])
     g2 = Guia("José", 55, 1.78, "I", ["italiano", "francés"])
