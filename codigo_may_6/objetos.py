@@ -6,7 +6,6 @@ Diseño de clases
 - Listas de objetos
 """
 
-
 from typing import Any
 
 
@@ -23,7 +22,7 @@ class Persona:
 
     def __repr__(self):
         return str(self)
-    
+
     def __lt__(self, other):
         return self.edad < other.edad
 
@@ -45,14 +44,15 @@ def pruebaPersona():
     print("La clase del objeto: ", p1.__class__.__name__)
     print("Dic:", p1.__dict__)
     p1.tno = 915674433
-    p1.__dict__['movil'] = 678456788
+    p1.__dict__["movil"] = 678456788
     print("Dic:", p1.__dict__)
 
-    L.sort()
+    L.sort(reverse=True)
     print(L)
-    #if p1 < p2:
-    #    pass
-
+    if p1 < p2:
+        print(p1.nombre, "es menor que", p2.nombre)
+    else:
+        print(p2.nombre, "es menor que", p1.nombre)
 
 
 if __name__ == "__main__":
