@@ -7,6 +7,9 @@ Diseño de clases
 """
 
 
+from typing import Any
+
+
 class Persona:
     """Implementación de la clase Persona"""
 
@@ -17,15 +20,24 @@ class Persona:
 
     def __str__(self):
         return self.nombre + " " + str(self.altura) + " " + str(self.edad)
-    
+
+    def __repr__(self):
+        return str(self)
+
     def __del__(self):
-        print('Se está borrando: ', self.nombre)
+        pass
+        # print('Se está borrando: ', self.nombre)
+
 
 def pruebaPersona():
     p1 = Persona("Miguel", 34, 1.8)
+    p2 = Persona("Eva", 44, 1.79)
     print(p1)
-    #print(str(p1))
-    #print(p1.__str__())
+    # print(str(p1))
+    # print(p1.__str__())
+
+    L = [p1, p2, Persona("Jose", 15, 1.77)]
+    print(L)
 
 
 if __name__ == "__main__":
