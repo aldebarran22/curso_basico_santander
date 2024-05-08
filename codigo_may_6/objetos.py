@@ -23,6 +23,9 @@ class Persona:
 
     def __repr__(self):
         return str(self)
+    
+    def __lt__(self, other):
+        return self.edad < other.edad
 
     def __del__(self):
         pass
@@ -44,6 +47,12 @@ def pruebaPersona():
     p1.tno = 915674433
     p1.__dict__['movil'] = 678456788
     print("Dic:", p1.__dict__)
+
+    L.sort()
+    print(L)
+    #if p1 < p2:
+    #    pass
+
 
 
 if __name__ == "__main__":
