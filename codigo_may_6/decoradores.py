@@ -1,4 +1,4 @@
-AUTHENTICATED = False
+AUTHENTICATED = True
 
 
 def autenticado(f):
@@ -26,7 +26,6 @@ def log(f):
 
 
 @autenticado
-@log
 def abrir_puerta(a, b, c=0):
     print("en abrir puerta")
     print("a,b,c", a, b, c)

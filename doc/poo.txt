@@ -20,6 +20,8 @@ una Persona -> objeto (instancia)
    persona1 = Persona("nombre",peso, altura)
    persona1.saltar()
 
+La clase es UNA --> pero tenemmos muchos objetos
+
 
 Constructor: __init__() --> para inicializar
 objeto en curso: self

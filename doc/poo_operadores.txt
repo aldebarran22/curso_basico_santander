@@ -1,3 +1,11 @@
+Herencia simple y múltiple
+
+POO Dinámico: t.de ejecución modificar un objeto
+__dict__ --> uso dinámico
+__slots__ --> uso estático
+
+
+
 Funciones del lenguaje vs Funciones Especiales
 str() 				__str__()
 repr()				__repr__()
@@ -7,6 +15,7 @@ del()				__del__()
 <				__lt__()
 >				__gt__()
 ==				__eq__()
+!=				__ne__()
 
 +				__add__()
 -				__sub__()
