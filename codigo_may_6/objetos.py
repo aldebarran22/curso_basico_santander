@@ -15,10 +15,14 @@ class Persona:
         self.altura = altura
         self.edad = edad
 
+    def __str__(self):
+        return self.nombre + " " + str(self.altura) + " " + str(self.edad)
 
 def pruebaPersona():
     p1 = Persona("Miguel", 34, 1.8)
     print(p1)
+    print(str(p1))
+    print(p1.__str__())
 
 
 if __name__ == "__main__":
