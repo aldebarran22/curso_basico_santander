@@ -132,6 +132,18 @@ def pruebaPersona():
     p1.hablarCon(p2)
 
 
+def pruebaStatic():
+    print("Num instancias:", Persona.getContador())
+    p1 = Persona("Miguel", 34, 1.8)
+    print("Num instancias:", Persona.getContador())
+    p2 = Persona("Miguel", 34, 1.8)
+    p3 = Persona("Miguel", 34, 1.8)
+    print("Num instancias:", Persona.getContador())
+    del p1  # llama al destructor de la clase: __del__
+    print("Num instancias:", Persona.getContador())
+
+
 if __name__ == "__main__":
     # pruebaPersona()
-    pruebaGuia()
+    # pruebaGuia()
+    pruebaStatic()
