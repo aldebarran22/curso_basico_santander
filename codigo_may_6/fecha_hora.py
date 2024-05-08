@@ -9,7 +9,15 @@ class Time:
         return "%02d:%02d:%02d" % (self.hh, self.mm, self.ss)
 
     def __ajustar(self):
-        pass
+        minutos = self.ss // 60
+        self.ss %= 60
+
+        self.mm += minutos
+        horas = self.mm // 60
+        self.mm %= 60
+
+        self.hh += horas
+        self.hh %= 24
 
     def __add__(self, other):
         resul = Time(self.hh + other.hh, self.mm + other.mm, self.ss + other.ss)
@@ -36,7 +44,7 @@ class Date:
 
 
 if __name__ == "__main__":
-    h1 = Time(1, 5, 5)  # 01:05:05
+    h1 = Time(1, 50, 50)  # 01:05:05
     h2 = Time(23, 45, 50)
 
     suma = h1 + h2  # suma = h1.__add__(h2)
