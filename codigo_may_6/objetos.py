@@ -26,6 +26,15 @@ class Persona:
     def __lt__(self, other):
         return self.edad < other.edad
 
+    def __eq__(self, other: object) -> bool:
+        for k, v in self.__dict__.items():
+            if k in other.__dict__:
+                if v != other.__dict__[k]:
+                    return False
+            else:
+                return False
+        return True
+
     def __del__(self):
         pass
         # print('Se está borrando: ', self.nombre)
@@ -61,9 +70,9 @@ def pruebaPersona():
         print(p2.nombre, "es mayor que", p1.nombre)
 
     if p1 == p3:
-        print('iguales')
+        print("iguales")
     else:
-        print('no iguales')
+        print("no iguales")
 
 
 if __name__ == "__main__":
