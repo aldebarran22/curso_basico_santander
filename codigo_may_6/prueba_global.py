@@ -2,8 +2,9 @@ myGlobal = 5
 
 
 def func1():
-    global myGlobal
+    # global myGlobal
     myGlobal = 42
+    print(f"{myGlobal} dentro de func1")
 
 
 def func2():
