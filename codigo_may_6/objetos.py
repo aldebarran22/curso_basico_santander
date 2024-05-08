@@ -85,10 +85,27 @@ class Grupo:
         self.nombre = nombre
         self.grupo = []
         self.grupo.extend(personas)
+        self.indice = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.indice == len(self.grupo):
+            self.indice = 0
+            raise StopIteration  # Cortar el bucle for
+        else:
+            emp = self.grupo[self.indice]
+            self.indice += 1
+            return emp
+
+    def __len__(self):
+        return len(self.grupo)
 
     def alta(self, persona, *personas):
         self.grupo.append(persona)
         self.grupo.extend(personas)
+
 
 def pruebaGrupo():
     g1 = Guia("Pedro", 45, 1.77, "N", ["inglés", "alemán"])
@@ -98,7 +115,7 @@ def pruebaGrupo():
 
     grupo = Grupo("Viaje1", g1)
     grupo.alta(p1, p3, p4)
-    print('Num personas: ', len(grupo))
+    print("Num personas: ", len(grupo))
     for p in grupo:
         print(p)
 
