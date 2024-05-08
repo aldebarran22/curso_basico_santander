@@ -13,7 +13,8 @@ for i in c:
     histo[i] = L.count(i)
 
 # histogramas
-for numero, cuenta in histo.items():
+R = sorted(histo.items(), key=lambda t: t[1], reverse=True)
+for numero, cuenta in R:
     print(f"{numero} se repite {cuenta} veces")
 
 
