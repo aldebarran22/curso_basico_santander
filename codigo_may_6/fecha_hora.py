@@ -8,8 +8,12 @@ class Time:
     def __str__(self):
         return "%02d:%02d:%02d" % (self.hh, self.mm, self.ss)
 
+    def __ajustar(self):
+        pass
+
     def __add__(self, other):
         resul = Time(self.hh + other.hh, self.mm + other.mm, self.ss + other.ss)
+        resul.__ajustar()
         return resul
 
 
