@@ -30,7 +30,6 @@ csv3 = """id;nombre;cargo
 def fusion(sep: str = "\n") -> str:
 
     def ordenar(fila):
-
         datos = fila.partition(";")
         if datos[0].isnumeric():
             return int(datos[0])

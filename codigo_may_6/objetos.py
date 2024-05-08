@@ -172,6 +172,11 @@ def pruebaPersona():
     p1.hablarCon()
     p1.hablarCon(p2)
 
+    # Ordenar por al altura DESC:
+    L.sort(key=lambda obj:obj.altura, reverse=True)
+    print(L)
+    L.sort(key=lambda obj:obj.nombre)
+    print(L)
 
 def pruebaStatic():
     print("Num instancias:", Persona.getContador())
@@ -185,7 +190,7 @@ def pruebaStatic():
 
 
 if __name__ == "__main__":
-    # pruebaPersona()
+    pruebaPersona()
     # pruebaGuia()
     # pruebaStatic()
-    pruebaGrupo()
+    # pruebaGrupo()
