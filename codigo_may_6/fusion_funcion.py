@@ -29,6 +29,14 @@ csv3 = """id;nombre;cargo
 
 def fusion(sep: str = "\n") -> str:
 
+    def ordenar(fila):
+
+        datos = fila.partition(";")
+        if datos[0].isnumeric():
+            return int(datos[0])
+        else:
+            return 0
+
     def csvToSet(csv: str, sep: str = "\n") -> set:
         lineas = csv.split(sep)
         return set(lineas)
@@ -37,7 +45,9 @@ def fusion(sep: str = "\n") -> str:
     c2 = csvToSet(csv2)
     c3 = csvToSet(csv3)
     todo = c2 | c3
-    return sep.join(todo)
+    L = sorted(todo, key=ordenar)
+    # print(todo)
+    return sep.join(L)
 
 
 if __name__ == "__main__":
