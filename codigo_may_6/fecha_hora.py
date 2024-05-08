@@ -43,9 +43,16 @@ class Date:
             return False
 
 
+class DateTime(Date, Time):
+    pass
+
+
 if __name__ == "__main__":
     h1 = Time(1, 50, 50)  # 01:05:05
     h2 = Time(23, 45, 50)
 
     suma = h1 + h2  # suma = h1.__add__(h2)
     print(suma)
+
+    dt = DateTime(8, 5, 2024, 11, 45, 24)
+    print(dt)  # 08/05/2024 11:45:24
