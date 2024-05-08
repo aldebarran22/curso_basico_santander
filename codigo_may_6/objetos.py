@@ -17,12 +17,15 @@ class Persona:
 
     def __str__(self):
         return self.nombre + " " + str(self.altura) + " " + str(self.edad)
+    
+    def __del__(self):
+        print('Se está borrando: ', self.nombre)
 
 def pruebaPersona():
     p1 = Persona("Miguel", 34, 1.8)
     print(p1)
-    print(str(p1))
-    print(p1.__str__())
+    #print(str(p1))
+    #print(p1.__str__())
 
 
 if __name__ == "__main__":
