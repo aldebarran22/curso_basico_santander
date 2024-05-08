@@ -53,10 +53,22 @@ class Guia(Persona):
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def hablarCon(self, other=None):
+        if not other:
+            Persona.hablarCon(self)
+        else:
+            c1 = set(self.idiomas)
+            c2 = set(other.idiomas)
+
+            comun = c1 & c2
+            if len(comun) == 0:
+                print('No tienen un idioma en común')
+            else:
+                print(self.nombre,'habla con',other.nombre, \
+                      'en'," o ".join(comun))
+
     def __str__(self):
-        return Persona.__str__(self)+ " "+self.ambito+" "+ \
-        ",".join(self.idiomas)
-    
+        return Persona.__str__(self) + " " + self.ambito + " " + ",".join(self.idiomas)
 
 
 def pruebaGuia():
