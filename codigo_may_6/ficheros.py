@@ -26,7 +26,8 @@ def procesarCSV(path, sep=";"):
                 # Es la primera vez que aparece el país
                 paises[pais] = importe
 
-        return paises
+        return sorted(paises.items(), key=lambda t: t[1], reverse=True)
+    
     except Exception as e:
         raise e
     finally:
