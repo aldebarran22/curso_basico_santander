@@ -27,7 +27,7 @@ def procesarCSV(path, sep=";"):
                 paises[pais] = importe
 
         return sorted(paises.items(), key=lambda t: t[1], reverse=True)
-    
+
     except Exception as e:
         raise e
     finally:
@@ -36,10 +36,11 @@ def procesarCSV(path, sep=";"):
 
 
 def grabar(path, paises):
-    fich = open(path, 'w')
+    fich = open(path, "w")
     for t in paises:
-        print("%s\t%f" % t, file=fich)
+        print("%-15s\t%8.2f" % t, file=fich)
     fich.close()
+
 
 if __name__ == "__main__":
     paises = procesarCSV("../ficheros_curso/pedidos.csv")

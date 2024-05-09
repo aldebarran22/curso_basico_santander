@@ -1,22 +1,22 @@
-Estados Unidos	13882.330000
-Alemania	11283.280000
-Austria	7391.500000
-Brasil	4880.190000
-Francia	4205.460000
-Suecia	3248.560000
-Reino Unido	2943.310000
-Irlanda	2755.240000
-Venezuela	2735.180000
-Canada	2198.090000
-Dinamarca	1396.190000
-Suiza	1368.530000
-Belgica	1280.140000
-España	1200.000000
-Mexico	1122.780000
-Finlandia	943.270000
-Italia	864.440000
-Espanya	861.890000
-Portugal	643.530000
-Argentina	598.580000
-Noruega	275.500000
-Polonia	163.700000
+Estados Unidos 	13882.33
+Alemania       	11283.28
+Austria        	 7391.50
+Brasil         	 4880.19
+Francia        	 4205.46
+Suecia         	 3248.56
+Reino Unido    	 2943.31
+Irlanda        	 2755.24
+Venezuela      	 2735.18
+Canada         	 2198.09
+Dinamarca      	 1396.19
+Suiza          	 1368.53
+Belgica        	 1280.14
+España         	 1200.00
+Mexico         	 1122.78
+Finlandia      	  943.27
+Italia         	  864.44
+Espanya        	  861.89
+Portugal       	  643.53
+Argentina      	  598.58
+Noruega        	  275.50
+Polonia        	  163.70
