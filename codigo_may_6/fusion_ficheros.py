@@ -23,7 +23,7 @@ def fusion(path1: str, path2: str, pathD: str, sep: str = "\n") -> str:
             lineas = csv.split(sep)
             return set(lineas)
         except Exception as e:
-            print(e)
+            raise e
         finally:
             if fich:
                 fich.close()
@@ -39,9 +39,12 @@ def fusion(path1: str, path2: str, pathD: str, sep: str = "\n") -> str:
 
 if __name__ == "__main__":
     # Convertir el texto csv a un conjunto de filas:
-    todo = fusion(
-        "../ficheros_curso/Empleados2.txt",
-        "../ficheros_curso/Empleados3.txt",
-        "../ficheros/empleados_final.txt",
-    )
-    print(todo)
+    try:
+        todo = fusion(
+            "../ficheros_curso/Empleados22.txt",
+            "../ficheros_curso/Empleados3.txt",
+            "../ficheros/empleados_final.txt",
+        )
+        print(todo)
+    except Exception as e: 
+        print(e)
