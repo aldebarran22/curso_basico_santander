@@ -1,9 +1,9 @@
-
-
+from modulos.hora import Time, TimeError
+from modulos.fechahora import DateTime, DateTime2
 
 if __name__ == "__main__":
     try:
-        h1 = Time(1, 70, 50)  # 01:05:05
+        h1 = Time(1, 50, 50)  # 01:05:05
         h2 = Time(23, 45, 50)
 
         suma = h1 + h2  # suma = h1.__add__(h2)
