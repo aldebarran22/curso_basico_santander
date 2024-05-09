@@ -6,7 +6,7 @@ Fusionar dos ficheros de empleados en uno solo, quitando repetidos
 # y devuelva un conjunto a nivel de filas.
 
 
-def fusion(path1: str, path2: str, pathD: str, sep: str = "\n") -> str:
+def fusion(path1: str, path2: str, pathD: str, sep: str = "\n") -> None:
 
     def ordenar(fila):
         datos = fila.partition(";")
@@ -33,8 +33,11 @@ def fusion(path1: str, path2: str, pathD: str, sep: str = "\n") -> str:
     c3 = csvToSet(path2)
     todo = c2 | c3
     L = sorted(todo, key=ordenar)
-    # print(todo)
-    return sep.join(L)
+    # Grabar a un fichero:
+    txt = sep.join(L)
+    fich = open(pathD, "w")
+    fich.write(txt)
+    fich.close()
 
 
 if __name__ == "__main__":
@@ -45,6 +48,6 @@ if __name__ == "__main__":
             "../ficheros_curso/Empleados3.txt",
             "../ficheros/empleados_final.txt",
         )
-        print(todo)
+        print("todo ok!")
     except Exception as e:
         print(e)
