@@ -35,13 +35,12 @@ def procesarCSV(path, sep=";"):
             fich.close()
 
 
-def grabar(path):
+def grabar(path, paises):
     fich = open(path, 'w')
-    for i in range(10):
-        print(f"Fila {i+1}", file=fich)
+    for t in paises:
+        print("%s\t%f" % t, file=fich)
     fich.close()
 
 if __name__ == "__main__":
-    #paises = procesarCSV("../ficheros_curso/pedidos.csv")
-    #print(paises)
-    grabar("../ficheros/prueba.txt")
+    paises = procesarCSV("../ficheros_curso/pedidos.csv")
+    grabar("../ficheros/prueba.txt", paises)
