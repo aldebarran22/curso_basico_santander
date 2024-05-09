@@ -24,20 +24,27 @@ class Time:
     def __str__(self):
         return "%02d:%02d:%02d" % (self.hh, self.mm, self.ss)
 
-    def __ajustar(self):
-        minutos = self.ss // 60
-        self.ss %= 60
+    @staticmethod
+    def __ajustar(h, m, s):
+        minutos = s // 60
+        s %= 60
 
-        self.mm += minutos
-        horas = self.mm // 60
-        self.mm %= 60
+        m += minutos
+        horas = m // 60
+        m %= 60
 
-        self.hh += horas
-        self.hh %= 24
+        h += horas
+        h %= 24
+
+        return h, m, s
 
     def __add__(self, other):
-        resul = Time(self.hh + other.hh, self.mm + other.mm, self.ss + other.ss)
-        resul.__ajustar()
+        h = self.hh + other.hh
+        m = self.mm + other.mm
+        s = self.ss + other.ss
+
+        t = Time.__ajustar(h, m, s)
+        resul = Time(*t)
         return resul
 
 
@@ -94,6 +101,6 @@ if __name__ == "__main__":
 
         dt2 = DateTime2(8, 5, 2024, 11, 45, 24)
         print(dt2)  # 08/05/2024 11:45:24
-        
-    except  TimeError as e:
+
+    except TimeError as e:
         print(e)
