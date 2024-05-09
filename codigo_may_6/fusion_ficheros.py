@@ -21,7 +21,7 @@ def fusion(path1: str, path2: str, pathD: str, sep: str = "\n") -> str:
             fich = open(path, "r")
             csv = fich.read()
             lineas = csv.split(sep)
-            return set(lineas)
+            return set(filter(lambda fila: len(fila) > 1, lineas))
         except Exception as e:
             raise e
         finally:
@@ -46,5 +46,5 @@ if __name__ == "__main__":
             "../ficheros/empleados_final.txt",
         )
         print(todo)
-    except Exception as e: 
+    except Exception as e:
         print(e)
