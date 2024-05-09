@@ -20,6 +20,15 @@ def serializarShelve(path, *objetos):
     Shelf.close()
 
 
+def deserializarShelve(path, clave):
+    Shelf = s.open(path)
+    if clave in Shelf:
+        return Shelf[clave]
+    else:
+        print(f"No existe la clave: {clave}")
+    Shelf.close()
+
+
 def serializarPickle(path, obj):
     f = None
     try:
@@ -72,3 +81,6 @@ if __name__ == "__main__":
     serializarShelve(
         "../ficheros/serializar_shelve", Date(1, 5, 2024), Time(15), DateTime()
     )
+
+    obj = deserializarShelve("../ficheros/serializar_shelve", "K-9")
+    print(obj)
