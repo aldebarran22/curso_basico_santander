@@ -26,7 +26,18 @@ def serializarPickle(path, obj):
 
 
 def deserializarPickle(path):
-    pass
+    f = None
+    try:
+        f = open(path, "rb")
+        obj = p.load(f)
+        return obj
+
+    except Exception as e:
+        print(e)
+
+    finally:
+        if f:
+            f.close()
 
 
 def generarDict():
@@ -46,3 +57,5 @@ def generarDict():
 if __name__ == "__main__":
     cand = generarDict()
     serializarPickle("../ficheros/cand_pickle.dat", cand)
+    cand2 = deserializarPickle("../ficheros/cand_pickle.dat")
+    print(cand == cand2)
