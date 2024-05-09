@@ -25,12 +25,14 @@ def test2():
     except (ZeroDivisionError, IndexError) as e:
         print(e.__class__.__name__, e)
 
+
 def test3():
     # Capturar dos excepciones y una más genérica
     try:
         L = [1, 2, 3, 4, 5]
         print(L[1])
         print(L[0] / 2)
+        print(2 + "2")
 
     except (ZeroDivisionError, IndexError) as e:
         print(e.__class__.__name__, e)
@@ -41,4 +43,5 @@ def test3():
 
 if __name__ == "__main__":
     # test1()
-    test2()
+    # test2()
+    test3()

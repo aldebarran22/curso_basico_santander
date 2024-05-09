@@ -1,6 +1,22 @@
+class TimeError(Exception):
+
+    def __init__(self, mensaje=""):
+        Exception.__init__(self, mensaje)
+
+
 class Time:
 
     def __init__(self, hh=0, mm=0, ss=0):
+
+        if not (0 <= hh <= 23):
+            raise TimeError(f"No es correcto el valor: {hh} para las horas")
+
+        if not (0 <= mm <= 59):
+            raise TimeError(f"No es correcto el valor: {mm} para los minutos")
+
+        if not (0 <= ss <= 59):
+            raise TimeError(f"No es correcto el valor: {ss} para las sg")
+
         self.hh = hh
         self.mm = mm
         self.ss = ss
