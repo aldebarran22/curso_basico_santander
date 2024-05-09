@@ -41,3 +41,8 @@ def generarDict():
         for letra in ascii_letters
     ]
     return candidatos
+
+
+if __name__ == "__main__":
+    cand = generarDict()
+    serializarPickle("../ficheros/cand_pickle.dat", cand)
