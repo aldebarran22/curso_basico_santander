@@ -2,6 +2,8 @@
 Fusionar dos ficheros de empleados en uno solo, quitando repetidos
 """
 
+import sys
+
 # definir una función que reciba el bloque de texto: CSV
 # y devuelva un conjunto a nivel de filas.
 
@@ -43,11 +45,16 @@ def fusion(path1: str, path2: str, pathD: str, sep: str = "\n") -> None:
 if __name__ == "__main__":
     # Convertir el texto csv a un conjunto de filas:
     try:
-        todo = fusion(
-            "../ficheros_curso/Empleados2.txt",
-            "../ficheros_curso/Empleados3.txt",
-            "../ficheros/empleados_final.txt",
-        )
+        if len(sys.argv) == 4:
+            todo = fusion(sys.argv[1], sys.argv[2], sys.argv[3])
+
+        else:
+            todo = fusion(
+                "../ficheros_curso/Empleados2.txt",
+                "../ficheros_curso/Empleados3.txt",
+                "../ficheros/empleados_final.txt",
+            )
         print("todo ok!")
+
     except Exception as e:
         print(e)
