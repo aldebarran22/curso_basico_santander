@@ -6,7 +6,7 @@ exportar datos a ficheros con la función print
 
 def procesarCSV(path, sep=";"):
     fich = None
-    cabs = True    
+    cabs = True
     try:
         paises = dict()
         fich = open(path, "r")
@@ -14,13 +14,19 @@ def procesarCSV(path, sep=";"):
             if cabs:
                 cabs = False
                 continue
-            
+
             fila = fila.rstrip()
             L = fila.split(sep)
             pais = L[-1]
-            importe = float(L[-2].replace(",","."))
-            print(pais, importe)
+            importe = float(L[-2].replace(",", "."))
+            if pais in paises:
+                # El país ya existe se actualiza el importe
+                paises[pais] += importe
+            else:
+                # Es la primera vez que aparece el país
+                paises[pais] = importe
 
+        return paises
     except Exception as e:
         raise e
     finally:
@@ -29,4 +35,5 @@ def procesarCSV(path, sep=";"):
 
 
 if __name__ == "__main__":
-    procesarCSV("../ficheros_curso/pedidos.csv")
+    paises = procesarCSV("../ficheros_curso/pedidos.csv")
+    print(paises)
