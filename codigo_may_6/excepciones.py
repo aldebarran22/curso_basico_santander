@@ -69,9 +69,18 @@ def procesarFichero(path):
 
 def test5():
     # procesar una carpeta y contar los errores que se producen
+
     L = os.listdir()
+    errores = 0
     for f in L:
-        procesarFichero(f)
+        try:
+            procesarFichero(f)
+        except Exception as e:
+            errores += 1
+            print(e.__class__.__name__, e)
+
+    if errores:
+        print(f"Se han producido {errores} errores")
 
 
 if __name__ == "__main__":
