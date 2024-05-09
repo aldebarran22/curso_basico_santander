@@ -45,8 +45,9 @@ def test4():
     # Capturar excepciones con un fichero y dejarlo cerrado en finally
     f = None
     try:
-        f = open("no_existe.txt", "r")
+        f = open("fecha_hora.py", "r", encoding="utf-8")
         txt = f.read()
+        print(txt)
 
     except Exception as e:
         print(e.__class__.__name__, e)
