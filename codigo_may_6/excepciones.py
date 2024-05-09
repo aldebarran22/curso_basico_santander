@@ -78,6 +78,7 @@ def test5():
         except Exception as e:
             errores += 1
             print(e.__class__.__name__, e)
+            # raise e Relanzar la excepción
 
     if errores:
         print(f"Se han producido {errores} errores")
