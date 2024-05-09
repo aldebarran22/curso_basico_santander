@@ -3,6 +3,8 @@ Capturar excepciones en Python:
 try / except / finally / raise
 """
 
+import os
+
 
 def test1():
     # Capturar una excepción
@@ -57,8 +59,24 @@ def test4():
             f.close()
 
 
+def procesarFichero(path):
+    ext = path.partition(".")[2]
+    if ext != "py":
+        raise ValueError(f"Ha fallado el fichero: {path}")
+    else:
+        print(f"procesando el fichero: {path}")
+
+
+def test5():
+    # procesar una carpeta y contar los errores que se producen
+    L = os.listdir()
+    for f in L:
+        procesarFichero(f)
+
+
 if __name__ == "__main__":
     # test1()
     # test2()
     # test3()
-    test4()
+    # test4()
+    test5()
