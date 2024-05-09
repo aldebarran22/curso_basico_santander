@@ -13,7 +13,7 @@ import shelve as s
 
 
 def serializarShelve(path, *objetos):
-    Shelf = p.open(path)
+    Shelf = s.open(path)
     for pos, obj in enumerate(objetos):
         clave = f"K-{pos+1}"
         Shelf[clave] = obj
@@ -68,3 +68,7 @@ if __name__ == "__main__":
     serializarPickle("../ficheros/cand_pickle.dat", cand)
     cand2 = deserializarPickle("../ficheros/cand_pickle.dat")
     print(cand == cand2)
+
+    serializarShelve(
+        "../ficheros/serializar_shelve", Date(1, 5, 2024), Time(15), DateTime()
+    )
