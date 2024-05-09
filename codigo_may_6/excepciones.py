@@ -41,7 +41,23 @@ def test3():
         print(e.__class__.__name__, e)
 
 
+def test4():
+    # Capturar excepciones con un fichero y dejarlo cerrado en finally
+    f = None
+    try:
+        f = open("no_existe.txt", "r")
+        txt = f.read()
+
+    except Exception as e:
+        print(e.__class__.__name__, e)
+
+    finally:
+        if f:
+            f.close()
+
+
 if __name__ == "__main__":
     # test1()
     # test2()
-    test3()
+    # test3()
+    test4()
