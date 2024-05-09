@@ -82,5 +82,5 @@ if __name__ == "__main__":
         "../ficheros/serializar_shelve", Date(1, 5, 2024), Time(15), DateTime()
     )
 
-    obj = deserializarShelve("../ficheros/serializar_shelve", "K-9")
+    obj = deserializarShelve("../ficheros/serializar_shelve", "K-1")
     print(obj)
