@@ -1,4 +1,0 @@
-producto    	   importe
-portatil    	    450.90
-hp          	   1450.69
-teclado     	     45.00

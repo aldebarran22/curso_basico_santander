@@ -51,5 +51,7 @@ def fusion(sep: str = "\n") -> str:
 
 if __name__ == "__main__":
     # Convertir el texto csv a un conjunto de filas:
-    todo = fusion()
+    todo = fusion("../ficheros_curso/Empleados2.txt",
+                  "../ficheros_curso/Empleados3.txt",
+                  "../ficheros/empleados_final.txt")
     print(todo)
