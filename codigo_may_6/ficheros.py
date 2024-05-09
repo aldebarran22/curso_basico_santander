@@ -37,8 +37,9 @@ def procesarCSV(path, sep=";"):
 
 def grabar(path, paises):
     fich = open(path, "w")
+    print("%-8s\t%8s" % ("PAIS","IMPORTE"),file=fich)
     for t in paises:
-        print("%-15s\t%8.2f" % t, file=fich)
+        print("%-8s\t%8.2f" % t, file=fich)
     fich.close()
 
 
