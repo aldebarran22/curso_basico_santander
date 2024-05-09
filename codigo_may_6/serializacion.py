@@ -6,9 +6,18 @@ shelve -> varios objetos (diccionario)
 
 from random import randint
 from string import ascii_letters
+from fecha_hora import Date, DateTime, Time
 
 import pickle as p
 import shelve as s
+
+
+def serializarShelve(path, *objetos):
+    Shelf = p.open(path)
+    for pos, obj in enumerate(objetos):
+        clave = f"K-{pos+1}"
+        Shelf[clave] = obj
+    Shelf.close()
 
 
 def serializarPickle(path, obj):
