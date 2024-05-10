@@ -110,6 +110,23 @@ class BaseDatos:
             raise FileNotFoundError(f"No existe el fichero: {path}")
         self.con = db.connect(path)
 
+    def deleteProducto(self, id):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "delete from productos where id=?"
+            cur.execute(sql,(id,))
+            n = cur.rowcount
+            self.con.commit()
+            return n == 1
+                        
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def createCategoria(self, categoria):
         cur = None
         try:
