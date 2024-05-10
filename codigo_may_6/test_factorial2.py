@@ -8,5 +8,5 @@ def fact(n):
 
 
 def testFact2():
-    for i in range(100):
+    for i in range(1000):
         fact(900)
