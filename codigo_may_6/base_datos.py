@@ -195,7 +195,7 @@ def testBaseDatos():
             print("No se ha podido crear...")
 
     except Exception as e:
-        print(e)
+        print(e.__class__.__name__, e)
 
 
 if __name__ == "__main__":
