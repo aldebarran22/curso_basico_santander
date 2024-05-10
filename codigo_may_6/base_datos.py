@@ -141,7 +141,9 @@ class BaseDatos:
                 cur.execute(sql)
 
             for t in cur.fetchall():
-                print(t)
+                cat = Categoria(*t[-2:])
+                tuplaProd = t[:-2]
+                print(tuplaProd, cat)
 
         except Exception as e:
             raise e
