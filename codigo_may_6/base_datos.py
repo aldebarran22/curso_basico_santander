@@ -110,6 +110,24 @@ class BaseDatos:
             raise FileNotFoundError(f"No existe el fichero: {path}")
         self.con = db.connect(path)
 
+    def createCategoria(self, categoria):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "insert into categorias(nombre) values(?)"
+            cur.execute(sql, (categoria.nombre,))
+            categoria.id = cur.lastrowid
+            n = cur.rowcount
+            self.con.commit()
+            return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def selectCategorias(self):
         """Devuelve una col. de objetos categoria"""
         cur = None
