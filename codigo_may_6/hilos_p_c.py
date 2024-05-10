@@ -21,7 +21,22 @@ class Productor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+            pass
+
+            # Generar un item -> un numero aleatorio
+
+            # Comprobar si hay huecos: sem_huecos
+
+            # Escribir en el buffer en exclusión mutua:
+            # Colocar el numero en el buffer
+            # Cambiar el indice: ind_p
+
+            # liberar el buffer
+
+            # Avisar de que hay nuevo item.
+
+            # Retardo:
 
 
 class Consumidor(Thread):
@@ -31,7 +46,20 @@ class Consumidor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+            pass
+
+            # Comprobar si un nuevo elemento:
+
+            #  # Leer del buffer en exclusión mutua:
+            # Quitar el numero en el buffer
+            # Cambiar el indice: ind_c
+
+            # liberar el buffer
+
+            # Avisar de que hay nuevo hueco.
+
+            # Retardo:
 
 
 class TBuffer:
