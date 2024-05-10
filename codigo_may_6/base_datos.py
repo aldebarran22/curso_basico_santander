@@ -141,9 +141,10 @@ class BaseDatos:
              inner join productos p on c.id = p.idcategoria"""
             if categoria:
                 # Filtro de la categoria:
-                sql += " where c.nombre = ?"
+                sql += " where c.nombre = ? order by c.nombre, p.nombre"
                 cur.execute(sql, (categoria,))
             else:
+                sql += " order by c.nombre, p.nombre"
                 cur.execute(sql)
 
             return [self.__getProducto(t) for t in cur.fetchall()]
@@ -165,7 +166,7 @@ def testBaseDatos():
         categorias = bd.selectCategorias()
         print(categorias)
 
-        productos = bd.selectProductos("Bebidas")
+        productos = bd.selectProductos()
         for p in productos:
             print(p)
 
