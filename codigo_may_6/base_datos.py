@@ -6,14 +6,18 @@ import sqlite3 as db
 from os.path import isfile
 
 
-def conexion(path):
+def conexion(path, tabla):
     con = None
+    cur = None
     try:
         if not isfile(path):
             raise FileNotFoundError(f"No existe el fichero: {path}")
 
         con = db.connect(path)
-        print("conexion ok!")
+        cur = con.cursor()
+        sql = f"select * from {tabla}"
+        cur.execute(sql)
+        print(cur.description)
 
     except Exception as e:
         print(e)
