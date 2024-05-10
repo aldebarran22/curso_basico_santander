@@ -178,6 +178,19 @@ class BaseDatos:
             self.con.close()
 
 
+def borrarProducto():
+    try:
+        bd = BaseDatos("../../bd/empresa3.db")
+        id = int(input("Dame producto: "))
+        if bd.deleteProducto(id):
+            print("Se ha borrado el producto: ", id)
+        else:
+            print("No se ha podido borrar")
+
+    except Exception as e:
+        print(e.__class__.__name__, e)
+
+
 def testBaseDatos():
     try:
         bd = BaseDatos("../../bd/empresa3.db")
@@ -195,13 +208,14 @@ def testBaseDatos():
             print("No se ha podido crear...")
 
         if bd.deleteProducto(83):
-            print('producto borrado')
+            print("producto borrado")
         else:
-            print('no se ha borrado')
+            print("no se ha borrado")
 
     except Exception as e:
         print(e.__class__.__name__, e)
 
 
 if __name__ == "__main__":
-    testBaseDatos()
+    # testBaseDatos()
+    borrarProducto()
