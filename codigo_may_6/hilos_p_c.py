@@ -25,6 +25,7 @@ class Productor(Thread):
 
             # Generar un item -> un numero aleatorio
             numero = randint(1, 10)
+            print(f"{self.name} GENERA: {numero}")
 
             # Comprobar si hay huecos: sem_huecos
             self.buffer.sem_huecos.acquire()
@@ -55,19 +56,30 @@ class Consumidor(Thread):
 
     def run(self):
         for i in range(self.num_muestras):
-            pass
 
             # Comprobar si un nuevo elemento: sem_items
+            self.buffer.sem_items.acquire()
 
             #  Leer del buffer en exclusión mutua:
-            # Quitar el numero en el buffer
-            # Cambiar el indice: ind_c
+            with self.buffer.mutex:
+                # Quitar el numero del buffer
+                numero = self.buffer.buffer[self.buffer.ind_c]
+                self.buffer.buffer[self.buffer.ind_c] = -1
+                print(f"{self.name} QUITAR {numero} <- {self.buffer.buffer}")
 
-            # liberar el buffer
+                # Cambiar el indice: ind_c
+                self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
+
+                # liberar el buffer
 
             # Avisar de que hay nuevo hueco: sem_huecos
+            self.buffer.sem_huecos.release()
+
+            # Consumir el numero:
+            print(f"{self.name} CONSUME: {numero}")
 
             # Retardo:
+            sleep(randint(2, 4))
 
 
 class TBuffer:
