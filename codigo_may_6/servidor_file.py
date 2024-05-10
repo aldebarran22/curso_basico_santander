@@ -40,7 +40,8 @@ if len(sys.argv) == 2:
                 break
 
             print(mensaje, file=fich)
-            s_client.send(mensaje.upper().encode("utf-8"))
+            print(mensaje)
+            #s_client.send(mensaje.upper().encode("utf-8"))
 
         print("Fin de comunicación")
 
