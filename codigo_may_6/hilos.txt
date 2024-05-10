@@ -17,3 +17,10 @@ Salen	Aforo
 3	3
 
 lock: 0/1 
+
+
+# Exclusión mutua:
+with lock:
+   lista.append(obj)
+
+# Fuera del with
