@@ -65,7 +65,7 @@ class EmpleadoCRUD:
             cur.execute(sql, emp.getTupla2())
             n = cur.rowcount  # Número de registros afectado
             if n == 0:
-                raise ValueError(f"No existe el empleado: {id}")
+                raise ValueError(f"No existe el empleado: {emp.id}")
             else:
                 self.con.commit()
                 return n == 1
