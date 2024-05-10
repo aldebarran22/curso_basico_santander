@@ -19,10 +19,15 @@ def conexion(path, tabla, sep=";"):
         cur.execute(sql)
         cabs = sep.join([t[0] for t in cur.description])
         print(cabs)
+        for t in cur.fetchall():
+            print(t)
+
     except Exception as e:
         print(e)
 
     finally:
+        if cur:
+            cur.close()
         if con:
             con.close()
 
