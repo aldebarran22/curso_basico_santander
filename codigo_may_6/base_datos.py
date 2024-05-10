@@ -73,7 +73,7 @@ class Categoria:
 
 class Producto:
 
-    def __init__(self, id=0, nombre="", cat=Categoria(), precio=0.0, exis=0):
+    def __init__(self, id=0, nombre="", precio=0.0, exis=0, cat=Categoria()):
         self.id = id
         self.nombre = nombre
         self.cat = cat
@@ -125,6 +125,12 @@ class BaseDatos:
             if cur:
                 cur.close()
 
+    def __getProducto(self, t):
+        cat = Categoria(*t[-2:])
+        tuplaProd = t[:-2]
+        tp = tuplaProd + (cat,)
+        return Producto(*tp)
+
     def selectProductos(self, categoria=None):
         cur = None
         try:
@@ -140,10 +146,7 @@ class BaseDatos:
             else:
                 cur.execute(sql)
 
-            for t in cur.fetchall():
-                cat = Categoria(*t[-2:])
-                tuplaProd = t[:-2]
-                print(tuplaProd, cat)
+            return [self.__getProducto(t) for t in cur.fetchall()]
 
         except Exception as e:
             raise e
