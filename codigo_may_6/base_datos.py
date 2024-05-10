@@ -6,7 +6,7 @@ import sqlite3 as db
 from os.path import isfile
 
 
-def conexion(path, tabla):
+def conexion(path, tabla, sep=";"):
     con = None
     cur = None
     try:
@@ -17,8 +17,8 @@ def conexion(path, tabla):
         cur = con.cursor()
         sql = f"select * from {tabla}"
         cur.execute(sql)
-        print(cur.description)
-
+        cabs = sep.join([t[0] for t in cur.description])
+        print(cabs)
     except Exception as e:
         print(e)
 
@@ -28,4 +28,4 @@ def conexion(path, tabla):
 
 
 if __name__ == "__main__":
-    conexion("../../bd/empresa3.db")
+    conexion("../../bd/empresa3.db", "pedidos")
