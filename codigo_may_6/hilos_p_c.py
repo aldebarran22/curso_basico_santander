@@ -25,7 +25,7 @@ class Productor(Thread):
 
             # Generar un item -> un numero aleatorio
             numero = randint(1, 10)
-            print(f"{self.name} GENERA: {numero}")
+            print(f"{self.name} GENERA: {numero}\n")
 
             # Comprobar si hay huecos: sem_huecos
             self.buffer.sem_huecos.acquire()
@@ -34,7 +34,7 @@ class Productor(Thread):
             with self.buffer.mutex:
                 # Colocar el numero en el buffer
                 self.buffer.buffer[self.buffer.ind_p] = numero
-                print(f"{self.name} COLOCA {numero} -> {self.buffer.buffer}")
+                print(f"{self.name} COLOCA {numero} -> {self.buffer.buffer}\n")
 
                 # Cambiar el indice: ind_p
                 self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
@@ -65,7 +65,7 @@ class Consumidor(Thread):
                 # Quitar el numero del buffer
                 numero = self.buffer.buffer[self.buffer.ind_c]
                 self.buffer.buffer[self.buffer.ind_c] = -1
-                print(f"{self.name} QUITAR {numero} <- {self.buffer.buffer}")
+                print(f"{self.name} QUITAR {numero} <- {self.buffer.buffer}\n")
 
                 # Cambiar el indice: ind_c
                 self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
@@ -76,7 +76,7 @@ class Consumidor(Thread):
             self.buffer.sem_huecos.release()
 
             # Consumir el numero:
-            print(f"{self.name} CONSUME: {numero}")
+            print(f"{self.name} CONSUME: {numero}\n")
 
             # Retardo:
             sleep(randint(2, 4))
