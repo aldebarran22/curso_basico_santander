@@ -14,6 +14,7 @@ class Pruebas(unittest.TestCase):
         self.assertEqual(resul, (-1, -4), msg="Cálculo incorrecto")
 
     def test_error(self):
+        """Comprobar si lanza una excepción cuando no tiene solución"""
         pass
 
     def test_assert(self):
