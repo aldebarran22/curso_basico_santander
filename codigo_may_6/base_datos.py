@@ -1,5 +1,12 @@
 """
 Conectar con la BD sqlite3. Crear conexiones, cursores, exportar datos
+
+CRUD:
+Create -> insert into
+Read -> select (pk)
+Update -> update (pk)
+delete -> delete (pk)
+select
 """
 
 import sqlite3 as db
@@ -46,6 +53,29 @@ def exportar(path, tabla, sep=";"):
     fich.close()
 
 
-if __name__ == "__main__":
-    # conexion("../../bd/empresa3.db", "pedidos")
+def testExportar():
+    conexion("../../bd/empresa3.db", "pedidos")
     exportar("../../bd/empresa3.db", "pedidos")
+
+
+class BaseDatos:
+
+    def __init__(self, path):
+        if not isfile(path):
+            raise FileNotFoundError(f"No existe el fichero: {path}")
+
+        self.con = db.connect(path)
+
+    def __del__(self):
+        self.con.close()
+
+
+def testBaseDatos():
+    try:
+        bd = BaseDatos("../../bd/empresa3.db")
+    except Exception as e:
+        print(e)
+
+
+if __name__ == "__main__":
+    testBaseDatos()
