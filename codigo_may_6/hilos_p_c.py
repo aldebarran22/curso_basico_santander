@@ -11,7 +11,7 @@ num_muestras = 10
 tam_buffer = 5
 
 num_productores = 1
-num_consumidores = 1
+num_consumidores = 2
 
 
 class Productor(Thread):
@@ -24,7 +24,7 @@ class Productor(Thread):
         for i in range(self.num_muestras):
 
             # Generar un item -> un numero aleatorio
-            numero = randint(1, 10)
+            numero = randint(1, 50)
             print(f"{self.name} GENERA: {numero}\n")
 
             # Comprobar si hay huecos: sem_huecos
@@ -64,7 +64,7 @@ class Consumidor(Thread):
             with self.buffer.mutex:
                 # Quitar el numero del buffer
                 numero = self.buffer.buffer[self.buffer.ind_c]
-                self.buffer.buffer[self.buffer.ind_c] = -1
+                self.buffer.buffer[self.buffer.ind_c] = "-"
                 print(f"{self.name} QUITAR {numero} <- {self.buffer.buffer}\n")
 
                 # Cambiar el indice: ind_c
@@ -86,7 +86,7 @@ class TBuffer:
     def __init__(self):
         self.ind_c = 0
         self.ind_p = 0
-        self.buffer = [-1] * tam_buffer
+        self.buffer = ["-"] * tam_buffer
         self.mutex = Lock()
         self.sem_huecos = Semaphore(tam_buffer)
         self.sem_items = Semaphore(0)
