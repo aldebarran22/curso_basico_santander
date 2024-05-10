@@ -63,16 +63,16 @@ class BaseDatos:
     def __init__(self, path):
         if not isfile(path):
             raise FileNotFoundError(f"No existe el fichero: {path}")
-
         self.con = db.connect(path)
 
     def __del__(self):
-        self.con.close()
+        if hasattr(self, "con"):
+            self.con.close()
 
 
 def testBaseDatos():
     try:
-        bd = BaseDatos("../../bd/empresa3.db")
+        bd = BaseDatos("../../bd/empresa33.db")
     except Exception as e:
         print(e)
 
