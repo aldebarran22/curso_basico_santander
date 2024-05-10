@@ -194,6 +194,11 @@ def testBaseDatos():
         else:
             print("No se ha podido crear...")
 
+        if bd.deleteProducto(83):
+            print('producto borrado')
+        else:
+            print('no se ha borrado')
+
     except Exception as e:
         print(e.__class__.__name__, e)
 
