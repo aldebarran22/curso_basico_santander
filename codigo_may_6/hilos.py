@@ -3,7 +3,7 @@ Hilos en Python
 Listas de hilos, método join
 """
 
-from threading import Thread
+from threading import Thread, enumerate, activeCount
 from time import sleep
 from random import randint
 
@@ -28,6 +28,9 @@ if __name__ == "__main__":
         h = Hilo(f"H-{i+1}", randint(5, 10))
         L.append(h)
         h.start()
+
+    print(enumerate())
+    print("activos: ", activeCount())
 
     for h in L:
         h.join()
