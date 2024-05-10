@@ -165,7 +165,9 @@ def testBaseDatos():
         categorias = bd.selectCategorias()
         print(categorias)
 
-        bd.selectProductos("Bebidas")
+        productos = bd.selectProductos("Bebidas")
+        for p in productos:
+            print(p)
 
     except Exception as e:
         print(e)
