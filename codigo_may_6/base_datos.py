@@ -20,7 +20,8 @@ def conexion(path, tabla, sep=";"):
         cabs = sep.join([t[0] for t in cur.description])
         print(cabs)
         for t in cur.fetchall():
-            print(t)
+            fila = sep.join([str(i) for i in t])
+            print(fila)
 
     except Exception as e:
         print(e)
