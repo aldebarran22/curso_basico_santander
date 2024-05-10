@@ -19,9 +19,14 @@ def conexion(path, tabla, file=sys.stdout, sep=";"):
         sql = f"select * from {tabla}"
         cur.execute(sql)
         cabs = sep.join([t[0] for t in cur.description])
-        print(cabs,file=file)
+        print(cabs, file=file)
         for t in cur.fetchall():
-            fila = sep.join([str(i) for i in t])
+            fila = sep.join(
+                [
+                    str(i).replace(".", ",") if isinstance(i, float) else str(i)
+                    for i in t
+                ]
+            )
             print(fila, file=file)
 
     except Exception as e:
@@ -33,12 +38,14 @@ def conexion(path, tabla, file=sys.stdout, sep=";"):
         if con:
             con.close()
 
+
 def exportar(path, tabla, sep=";"):
     path_file = f"../ficheros/{tabla}.csv"
-    fich = open(path_file, "w")    
+    fich = open(path_file, "w")
     conexion(path, tabla, fich, sep)
     fich.close()
 
+
 if __name__ == "__main__":
-    #conexion("../../bd/empresa3.db", "pedidos")
+    # conexion("../../bd/empresa3.db", "pedidos")
     exportar("../../bd/empresa3.db", "pedidos")
