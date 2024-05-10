@@ -34,7 +34,7 @@ class Productor(Thread):
 
             # liberar el buffer
 
-            # Avisar de que hay nuevo item.
+            # Avisar de que hay nuevo item: sem_items
 
             # Retardo:
 
@@ -49,15 +49,15 @@ class Consumidor(Thread):
         for i in range(self.num_muestras):
             pass
 
-            # Comprobar si un nuevo elemento:
+            # Comprobar si un nuevo elemento: sem_items
 
-            #  # Leer del buffer en exclusión mutua:
+            #  Leer del buffer en exclusión mutua:
             # Quitar el numero en el buffer
             # Cambiar el indice: ind_c
 
             # liberar el buffer
 
-            # Avisar de que hay nuevo hueco.
+            # Avisar de que hay nuevo hueco: sem_huecos
 
             # Retardo:
 
