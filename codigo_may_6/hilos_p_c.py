@@ -7,11 +7,11 @@ from threading import Thread, Lock, Semaphore
 from random import randint
 from time import sleep
 
-num_muestras = 10
+num_muestras = 15
 tam_buffer = 5
 
-num_productores = 1
-num_consumidores = 2
+num_productores = 3
+num_consumidores = 1
 
 
 class Productor(Thread):
