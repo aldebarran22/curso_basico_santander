@@ -166,9 +166,15 @@ def testBaseDatos():
         categorias = bd.selectCategorias()
         print(categorias)
 
-        productos = bd.selectProductos()
+        productos = bd.selectProductos("Carnes")
         for p in productos:
             print(p)
+
+        nuevaCat = Categoria(nombre="Viajes")
+        if bd.createCategoria(nuevaCat):
+            print(nuevaCat)
+        else:
+            print("No se ha podido crear...")
 
     except Exception as e:
         print(e)
