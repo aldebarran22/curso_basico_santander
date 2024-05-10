@@ -8,16 +8,23 @@ import unittest
 
 from ficheros_paises import leerEscribirFichero
 
+from os import listdir
+
 
 class Pruebas(unittest.TestCase):
 
     L = ["Francia", "Estados Unidos", "Finlandia", "Suiza"]
 
     def setUp(self):
-        pass
+        for pais in Pruebas.L:
+            leerEscribirFichero("../ficheros_curso/pedidos.csv", pais)
 
     def test_paises(self):
-        return True
+        """Comprobar si el numero de ficheros coincide con la lista"""
+        lista = listdir("../ficheros")
+        self.assertEqual(
+            len(lista), len(Pruebas.L), msg="No coincide el número de ficheros"
+        )
 
     def tearDown(self):
         pass
