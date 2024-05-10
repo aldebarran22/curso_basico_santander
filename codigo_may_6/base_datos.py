@@ -126,7 +126,28 @@ class BaseDatos:
                 cur.close()
 
     def selectProductos(self, categoria=None):
-        pass
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = """select p.id as idprod, p.nombre as nombreProd,
+            p.precio, p.existencias, c.id as idcat, 
+            c.nombre as nombrecat from categorias c
+             inner join productos p on c.id = p.idcategoria"""
+            if categoria:
+                # Filtro de la categoria:
+                sql += " where c.nombre = ?"
+                cur.execute(sql, (categoria,))
+            else:
+                cur.execute(sql)
+
+            for t in cur.fetchall():
+                print(t)
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
 
     def __del__(self):
         if hasattr(self, "con"):
@@ -135,7 +156,12 @@ class BaseDatos:
 
 def testBaseDatos():
     try:
-        bd = BaseDatos("../../bd/empresa33.db")
+        bd = BaseDatos("../../bd/empresa3.db")
+        categorias = bd.selectCategorias()
+        print(categorias)
+
+        bd.selectProductos("Bebidas")
+
     except Exception as e:
         print(e)
 
