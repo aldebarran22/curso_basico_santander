@@ -8,7 +8,7 @@ import unittest
 
 from ficheros_paises import leerEscribirFichero
 
-from os import listdir
+from os import listdir, remove
 
 
 class Pruebas(unittest.TestCase):
@@ -21,13 +21,15 @@ class Pruebas(unittest.TestCase):
 
     def test_paises(self):
         """Comprobar si el numero de ficheros coincide con la lista"""
-        lista = listdir("../ficheros")
+        self.lista = listdir("../ficheros")
         self.assertEqual(
-            len(lista), len(Pruebas.L), msg="No coincide el número de ficheros"
+            len(self.lista), len(Pruebas.L), msg="No coincide el número de ficheros"
         )
 
     def tearDown(self):
-        pass
+        """Borrar todos los ficheros generados en el contexto"""
+        for path in self.lista:
+            remove(path)
 
 
 if __name__ == "__main__":
