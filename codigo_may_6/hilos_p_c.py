@@ -112,7 +112,7 @@ if __name__ == "__main__":
         p.start()
 
     for i in range(num_consumidores):
-        c = Consumidor(buf, num_muestras_con, f"P-{i+1}")
+        c = Consumidor(buf, num_muestras_con, f"C-{i+1}")
         consumidores.append(c)
         c.start()
 
