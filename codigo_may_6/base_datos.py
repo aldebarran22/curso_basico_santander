@@ -110,6 +110,24 @@ class BaseDatos:
             raise FileNotFoundError(f"No existe el fichero: {path}")
         self.con = db.connect(path)
 
+    def selectCategorias(self):
+        """Devuelve una col. de objetos categoria"""
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "select * from categorias"
+            cur.execute(sql)
+            return [Categoria(*t) for t in cur.fetchall()]
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
+    def selectProductos(self, categoria=None):
+        pass
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
