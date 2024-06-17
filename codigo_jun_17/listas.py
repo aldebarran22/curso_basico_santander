@@ -103,6 +103,8 @@ print('del 1 al 10: ', list(range(1,11)))
 print(list('hola que tal'))
 print('del 0 al 100 de 5 en 5: ', list(range(0,101, 5)))
 
-
+# Cadena inmutable:
+frase = "hola que tal"
+#frase[0] = 'H' NO se puede modificar.
 
 
