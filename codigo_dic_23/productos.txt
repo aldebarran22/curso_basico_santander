@@ -1,4 +1,0 @@
-id   	producto       	  precio
-00001	portatil       	 1200.57
-00002	HP             	 2250.60
-00003	Impresora      	  566.00

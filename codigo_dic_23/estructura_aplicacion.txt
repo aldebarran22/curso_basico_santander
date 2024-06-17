@@ -1,8 +1,0 @@
-codigo_dic_23
-  aplicacion <dir>
-      main.py  -> testPersona(), testGuia(), testGrupo()
-      modulos <dir>
-         __init__.py
-         persona.py -> class Persona
-         grupo.py   -> class Grupo
-         guia.py    -> class Guia

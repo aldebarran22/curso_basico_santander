@@ -1,9 +1,0 @@
-
-Función Python		Función especial
-str			__str__
-del			__del__
-repr			__repr__
-len			__len__
-<			__lt__
->			__gt__
-+			__add__

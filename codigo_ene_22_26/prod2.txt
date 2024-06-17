@@ -1,4 +1,0 @@
-producto  	  precio	uds	   total
-portatil  	  566.70	  2	 1133.40
-HP        	 1269.34	  1	 1269.34
-teclado   	   55.80	  3	  167.40

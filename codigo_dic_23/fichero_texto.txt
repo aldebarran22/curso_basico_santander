@@ -1,9 +1,0 @@
-linea1EOL -> end of line
-linea2EOL
-linea3EOL
-EOF  --> end of file
-
-Se limpia con 
-strip -> limpia una cadena por ini y fin
-rstrip -> lo mismo solo por la derecha
-lstrip -> lo mismo solo por la izquierda
