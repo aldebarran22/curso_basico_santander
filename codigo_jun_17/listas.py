@@ -65,7 +65,7 @@ print('Es capicua: ', cad == cad[::-1])
 # Ejemplo índices negativos:
 path = "C:/user/admin/documentos/cv.pdf"
 L = path.split("/")
-print('fichero: ', L[-1])
+print('fichero:', L[-1])
 
 # Modificar elementos de la lista:
 L = [1,2,3,4,5,6,7,8]
@@ -82,6 +82,27 @@ print(L)
 L1 = [33,55,44,11,22,"hola",11,True]
 L2 = [44,11,"hola","adios"]
 R = [] # Crear lista vacía
+
+for i in L1:
+    if i in L2 and i not in R:
+        R += [i]
+print(R)
+
+# print('Salir fuera: ', L1[20]) # IndexError
+numero = 120
+#print(numero[0]) # Poner corchetes a una variable que NO ES indexable
+
+# for i in 10: print(i) # int NO ES iterable
+
+# range(ini, fin-1, salto=1)
+for i in range(10):
+    print(i, end=' ')
+print()
+
+print('del 1 al 10: ', list(range(1,11)))
+print(list('hola que tal'))
+print('del 0 al 100 de 5 en 5: ', list(range(0,101, 5)))
+
 
 
 
