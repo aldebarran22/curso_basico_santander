@@ -42,7 +42,15 @@ for pos, i in enumerate(L1):
     print(pos, i)
 
 
+# Slicing: L[ini:fin-1:salto=1] (funciona igual en: listas, tuplas y cadenas)
+L = [1,2,3,4,5,6,7,8]
+print(L, type(L))
 
-# Slicing: L[ini:fin-1:salto=1]
+# Los tres primeros:
+print('los 3 primeros: ', L[0:3])
+print('los 3 primeros: ', L[:3])
+
+print('los 3 últimos: ', L[-3:])
+print('quitar el primero y el último: ')
 
 
