@@ -23,7 +23,7 @@ print('El ocho: ', L2[-1][-1])
 
 
 # Operadores: + * in (funciona igual en: listas, tuplas y cadenas)
-L1 = [1,2,3]
+L1 = [10,20,30]
 L2 = [4,5,6]
 print(L1 + L2) # concatena
 print(L1 * 5) # concatena 5 veces
@@ -32,6 +32,14 @@ if num in L1:
     print(f'num: {num} está en la lista')
 else:
     print('no está')
+
+# Bucle:
+for i in L1:
+    print(i)
+
+# Bucle con los índices:
+for pos, i in enumerate(L1):
+    print(pos, i)
 
 
 
