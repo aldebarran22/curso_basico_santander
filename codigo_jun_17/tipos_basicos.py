@@ -52,5 +52,11 @@ if cadena:
 else:
     print("cadena vacía")
 
+var = None
+if var:
+    print('es true')
+else:
+    print('es false')
+
 
 
