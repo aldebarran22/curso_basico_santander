@@ -51,6 +51,15 @@ print('los 3 primeros: ', L[0:3])
 print('los 3 primeros: ', L[:3])
 
 print('los 3 últimos: ', L[-3:])
-print('quitar el primero y el último: ')
+print('quitar el primero y el último: ', L[1:-1])
+
+print('Toda la lista:', L, L[:])
+print('todos pero de dos en dos: ', L[::2])
+print('lista invertida: ', L[::-1])
+
+# Calcular si un número es capicua:
+numero = "1234321"
+cad = str(numero)
+print('Es capicua: ', cad == cad[::-1])
 
 
