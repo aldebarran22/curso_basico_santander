@@ -28,4 +28,21 @@ else:
     print('edad dentro del intervalo')
 
 
+semaforo = "rojo"    
+if semaforo == 'rojo':
+    print('parar')
+
+    if semaforo == "rojo oscuro":
+        print('parar rápido')
+    else:
+        # Comodín para no dejar vacía una instrucción de tipo bloque
+        pass
+
+elif semaforo == "verde":
+    print("pasar")
+
+else:
+    print('precaución')
+
+
 
