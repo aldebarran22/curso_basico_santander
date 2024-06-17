@@ -67,4 +67,21 @@ path = "C:/user/admin/documentos/cv.pdf"
 L = path.split("/")
 print('fichero: ', L[-1])
 
+# Modificar elementos de la lista:
+L = [1,2,3,4,5,6,7,8]
+print(L)
+L[0] = 999
+L[-1] = 1000
+print(L)
+
+# añadir elementos al final:
+L += [200] # L = L + [200]
+print(L)
+
+# Buscar elementos comunes en dos listas. El resultado dejarlo en otra lista
+L1 = [33,55,44,11,22,"hola",11,True]
+L2 = [44,11,"hola","adios"]
+R = [] # Crear lista vacía
+
+
 
