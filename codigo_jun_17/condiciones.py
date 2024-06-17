@@ -17,5 +17,10 @@ if edad_ini <= edad <= edad_fin:
 else:
     print('no lo cumple')
 
+if xxx
+    print('no lo cumple')
+else:
+    print('edad dentro del intervalo')
+
 
 
