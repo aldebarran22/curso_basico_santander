@@ -44,5 +44,20 @@ elif semaforo == "verde":
 else:
     print('precaución')
 
+# if compacto:
+num = 34
+print("par" if num % 2 == 0 else "impar")
+
+if num % 2 == 0:
+    print("par")
+else:
+    print("impar")
+
+# El menor de dos números:
+n1 = 34
+n2 = 23
+menor = n1 if n1 < n2 else n2
+print(menor)
+
 
 
