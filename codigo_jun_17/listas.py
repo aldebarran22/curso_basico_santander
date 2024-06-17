@@ -14,10 +14,27 @@ print('Mínimo: ', min(L))
 print('Máximo: ', max(L))
 print('El primero: ', L[0], L[-5])
 
+# Indices + y - (funciona igual en: listas, tuplas y cadenas)
 L2 = [[1,2,3,4], [5,6,7,8]]
 print("len de L2: ", len(L2))
 print("El primero: ", L2[0])
 print('El primero del primero: ', L2[0][0])
 print('El ocho: ', L2[-1][-1])
+
+
+# Operadores: + * in (funciona igual en: listas, tuplas y cadenas)
+L1 = [1,2,3]
+L2 = [4,5,6]
+print(L1 + L2) # concatena
+print(L1 * 5) # concatena 5 veces
+num = 3
+if num in L1:
+    print(f'num: {num} está en la lista')
+else:
+    print('no está')
+
+
+
+# Slicing: L[ini:fin-1:salto=1]
 
 
