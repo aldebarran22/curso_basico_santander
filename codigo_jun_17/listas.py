@@ -62,4 +62,9 @@ numero = "1234321"
 cad = str(numero)
 print('Es capicua: ', cad == cad[::-1])
 
+# Ejemplo índices negativos:
+path = "C:/user/admin/documentos/cv.pdf"
+L = path.split("/")
+print('fichero: ', L[-1])
+
 
