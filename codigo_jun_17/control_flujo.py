@@ -31,7 +31,7 @@ while True:
 print("importe: ", importe)
 
 
-# Imprime los número impares:
+# Imprime los números impares:
 i = 0
 while i < 10:
     i = i + 1
