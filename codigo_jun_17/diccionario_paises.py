@@ -83,4 +83,4 @@ for pedido in Lpaises:
         total_paises[pais] = importe
 
 for pais, importe in total_paises.items():
-    print(pais, importe)
+    print(pais, round(importe,2))
