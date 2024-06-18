@@ -9,6 +9,8 @@ Indices: positivos y negativos
 - [("Alemania", 1000), ("Francia",56)]
 """
 
+import os
+
 t1 = 1, 2, 3, 4
 t2 = (5, 6, 7, 8)
 print(t1, type(t1))
@@ -30,3 +32,7 @@ for t in gps:
 # Expansión de tuplas:
 for lat, lon in gps:
     print(lat, lon)
+
+
+ficheros = os.listdir()
+print(ficheros)
