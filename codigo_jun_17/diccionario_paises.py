@@ -47,3 +47,25 @@ paises = """99;Estados Unidos
 22.77;Reino Unido
 79.7;Brasil
 6.4;Brasil"""
+
+
+"""
+EJEMPLO:
+Lpaises = [[99, "Estados Unidos"], \
+           [32.38, "Finlandia"], \
+            [11.61, "Alemania"]]
+
+# EL segundo pedido:
+print(Lpaises[1])
+
+# El país del tercer pedido:
+print(Lpaises[2][1])
+"""
+
+Lpaises = paises.split("\n")
+
+# Crear un histograma para calcular el importe
+# total por pais:
+for pedido in Lpaises:
+    Lpedido = pedido.split(";")
+    print(Lpedido)
