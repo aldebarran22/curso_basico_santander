@@ -81,5 +81,6 @@ for pedido in Lpaises:
         # Es la primera vez que encontramos el país. Se crea una nueva
         # clave con el país y el importe:
         total_paises[pais] = importe
-    
-print(pais, importe)
+
+for pais, importe in total_paises.items():
+    print(pais, importe)
