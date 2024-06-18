@@ -28,3 +28,9 @@ if __name__ == "__main__":
     print(segundos(12, s=4))
     # 00:56:03
     print(segundos(m=56, s=3))
+    print(s=9, h=23, m=8) # 23:08:09
+
+    # Con una tupla (vale también una lista)
+    t = (12,34,6)
+    #print(segundos(t[0], t[1], t[2]))
+    print(segundos(*t))
