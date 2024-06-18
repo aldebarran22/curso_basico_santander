@@ -35,4 +35,8 @@ for lat, lon in gps:
 
 
 ficheros = os.listdir()
-print(ficheros)
+for fich in ficheros:
+    nombre, _, ext = fich.partition(".")
+    if ext == 'ipynb':
+        print(fich)
+
