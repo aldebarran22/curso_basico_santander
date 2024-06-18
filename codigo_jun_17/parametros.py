@@ -21,7 +21,7 @@ def funcion(ob, op=0, *args, **kwargs):
 
 
 funcion(1)
-
+funcion(1,2,3,4,5, x=10, y=20)
 exit()
 print(sumar("hola", "adios"))
 print(sumar(12, 34))
