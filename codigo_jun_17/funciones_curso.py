@@ -5,7 +5,7 @@ Ejemplos de funciones
 import math
 import os
 
-def filtroFicheros(path, *extensiones):
+def filtroFicheros(*extensiones, path=None):
     ficheros = os.listdir(path)
     for fich in ficheros:
         nombre, _, ext = fich.partition(".")
@@ -25,5 +25,5 @@ if __name__ == "__main__":
     solucion = ecuacion(1,5,4)
     print(solucion)
 
-    filtroFicheros(".", "py", "ipynb")
-    filtroFicheros(".", "py", "ipynb", "xlsx", "pdf")
+    filtroFicheros("zip", "ipynb", path="D:\OneDrive\Escritorio\python_basico_santander")
+   
