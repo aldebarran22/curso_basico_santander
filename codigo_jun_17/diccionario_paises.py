@@ -74,4 +74,12 @@ for pedido in Lpaises:
     importe = float(Lpedido[0])
     pais = Lpedido[1]
 
-    print(pais, importe)
+    if pais in total_paises:
+        # El país ya existe en el diccionario: incrementar el importe
+        total_paises[pais] += importe
+    else:
+        # Es la primera vez que encontramos el país. Se crea una nueva
+        # clave con el país y el importe:
+        total_paises[pais] = importe
+    
+print(pais, importe)
