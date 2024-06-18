@@ -6,9 +6,9 @@ import math
 import os
 
 def filtroFicheros(path, *extensiones):
-    ficheros = os.listdir()
+    ficheros = os.listdir(path)
     for fich in ficheros:
-        nombre, _, ext = fich.partition(path)
+        nombre, _, ext = fich.partition(".")
         if ext in extensiones:
             print(fich)
 
