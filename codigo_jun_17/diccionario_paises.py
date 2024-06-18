@@ -64,8 +64,14 @@ print(Lpaises[2][1])
 
 Lpaises = paises.split("\n")
 
+# Crear un diccionario vacío:
+total_paises = dict()
+
 # Crear un histograma para calcular el importe
 # total por pais:
 for pedido in Lpaises:
     Lpedido = pedido.split(";")
-    print(Lpedido)
+    importe = float(Lpedido[0])
+    pais = Lpedido[1]
+
+    print(pais, importe)
