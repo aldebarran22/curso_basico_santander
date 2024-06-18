@@ -84,3 +84,9 @@ for pedido in Lpaises:
 
 for pais, importe in total_paises.items():
     print(pais, round(importe,2))
+
+
+# A que países se han emitido pedidos:
+print("Países: ", total_paises.keys())
+print('Tenemos: ', len(total_paises.keys()),"paises")
+print('Total importe: ', round(sum(total_paises.values()),2))
