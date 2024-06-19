@@ -28,7 +28,14 @@ class Producto:
             + str(self.existencias)
         )
 
+    def __del__(self):
+        print("borrando: ", self.nombre)
+
 
 if __name__ == "__main__":
     p1 = Producto(1, "CocaCola", 1, 1.5, 100)
+    # del(p1) fuerza la llamada al destructor!
     print(p1)  # print(p1.__str__())
+
+    p2 = Producto(2, "Fanta limón", 1, 1.25, 200)
+    print(p2)
