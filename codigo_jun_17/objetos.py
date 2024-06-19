@@ -64,3 +64,7 @@ if __name__ == "__main__":
     for pro in L:
         L2.append(pro.__dict__)
     print(L2)
+
+    print(p1.__class__)
+    p3 = p1.__class__(nombre="patatas", precio=2.21)
+    print(p3)
