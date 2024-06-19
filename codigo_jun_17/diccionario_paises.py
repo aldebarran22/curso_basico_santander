@@ -82,7 +82,7 @@ for pedido in Lpaises:
         # clave con el país y el importe:
         total_paises[pais] = importe
 
-L = sorted(total_paises.items())
+L = sorted(total_paises.items(), key=lambda t:t[1], reverse=True)
 
 for pais, importe in L:
     print(pais, round(importe,2))
