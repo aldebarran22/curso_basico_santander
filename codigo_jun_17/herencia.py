@@ -38,9 +38,21 @@ class Guia(Persona):
     def __str__(self):
         return super().__str__()+" "+self.ambito+" "+",".join(self.idiomas)
 
+    def hablarCon(self, other=None):
+        if other is None:
+            Persona.hablarCon(other)
+        else:
+            c1 = set(self.idiomas)
+            c2 = set(other.idiomas)
+            comunes = c1 & c2
+            if len(comunes) == 0:
+                print("No tienen un idioma en común")
+            else:
+                print(self.nombre, "y", other.nombre, "pueden hablar en: "," o ".join(comunes))
+
 def testGuia():
     g1 = Guia("Laura", 24, 1.8, "I", ["inglés","francés"])
-    g2 = Guia("Ana", 44, 1.7, "N", ["italiano","francés"])
+    g2 = Guia("Ana", 44, 1.7, "N", ["italiano","francés","inglés"])
 
     print(g1)
     if g1 < g2:
