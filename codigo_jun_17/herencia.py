@@ -52,7 +52,7 @@ class Guia(Persona):
 
 def testGuia():
     g1 = Guia("Laura", 24, 1.8, "I", ["inglés","francés"])
-    g2 = Guia("Ana", 44, 1.7, "N", ["italiano","francés","inglés"])
+    g2 = Guia("Ana", 44, 1.7, "N", ["italiano","chino","portugués"])
 
     print(g1)
     if g1 < g2:
