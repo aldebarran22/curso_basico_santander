@@ -27,9 +27,13 @@ class Producto:
             + " "
             + str(self.existencias)
         )
+    
+    def __repr__(self):
+        return str(self)
 
     def __del__(self):
-        print("borrando: ", self.nombre)
+        # print("borrando: ", self.nombre)
+        pass
 
 
 if __name__ == "__main__":
@@ -39,3 +43,6 @@ if __name__ == "__main__":
 
     p2 = Producto(2, "Fanta limón", 1, 1.25, 200)
     print(p2)
+
+    L = [p1, p2, Producto(3,"Pan",2,1.0, 10)]
+    print(L)
