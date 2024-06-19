@@ -3,7 +3,7 @@ num = 234
 L=[1,2,3]
 
 
-def funcion():
+def funcion():	
 	print("num:",num)
 	print("L:",L)
 	

@@ -1,0 +1,57 @@
+Clase:
+
+Personas:
+- características físicas: peso, altura, edad ... --> atributos / propiedades
+
+- acciones: hablar(), correr(), andar() ... --> métodos (funciones)
+
+  def hablar(self, otraPersona):
+     pass
+
+
+Objeto <--> Persona (instancia)
+
+Clase es UNA los objetos muchos
+
+
+objeto en curso -> self
+
+crear personas --> instanciar la clase --> constructor ( __init__ ) inicializar
+                                       --> destructor ( __del__ )  liberar recursos
+
+
+================================================================================
+
+Relaciones entre clases:
+- Herencia: clases que tienen cosas en común
+   Perfiles de empleados --> administrativo, programador, jefedeproyecto ...
+     Empleado:
+      - programador: lenguajes
+      - Jefeproyecto: grupoDeProg.
+
+
+- Composición:  Una clase se desglosa en partes que son objetos de otras clases:
+     Coche: motor, chasis, ruedas
+
+	- En la clase hay att. que son objetos de otras clases
+
+- Asociación: dos se relacionan en un instante pero son independientes.
+    Coche c, SurtidorGas sur.
+
+    c.repostar(sur)
+
+===================================================================================
+-  Super clase: object
+-  Simple y múltiple
+-  clases anidadas
+-  sobrecarga de operadores: 
+	<	__lt__
+	>	__gt__
+	+	__add__
+
+	str()	__str__()
+	del	__del__()
+
+
+
+
