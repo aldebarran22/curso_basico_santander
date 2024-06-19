@@ -38,8 +38,19 @@ class Producto:
         # print("borrando: ", self.nombre)
         pass
 
+class Tienda:
 
-if __name__ == "__main__":
+    def __init__(self, *prod):
+        self.productos = []
+        self.productos.extend(prod)
+
+
+def testTienda():
+    p1 = Producto(1, "CocaCola", 1, 1.5, 100)
+    p2 = Producto(2, "Fanta limón", 1, 1.85, 200)
+    t1 = Tienda(p1, p2)
+    
+def testProducto():
     p1 = Producto(1, "CocaCola", 1, 1.5, 100)
     # del(p1) fuerza la llamada al destructor!
     print(p1)  # print(p1.__str__())
@@ -68,3 +79,9 @@ if __name__ == "__main__":
     print(p1.__class__)
     p3 = p1.__class__(nombre="patatas", precio=2.21)
     print(p3)
+
+    
+
+if __name__ == "__main__":
+    #testProducto()
+    testTienda()
