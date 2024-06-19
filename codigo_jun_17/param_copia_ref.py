@@ -4,6 +4,9 @@ Paso de parámetros a las funciones:
 - por ref: los mutables: list, set, dict
 """
 
+def menor(a,b):
+    return a if a < b else b
+
 
 def porCopia(numero, tupla, cadena):
     numero += 10
