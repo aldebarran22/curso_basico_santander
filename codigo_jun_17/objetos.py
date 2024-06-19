@@ -27,9 +27,12 @@ class Producto:
             + " "
             + str(self.existencias)
         )
-    
+
     def __repr__(self):
         return str(self)
+    
+    def __lt__(self, other):
+        return self.precio < other.precio
 
     def __del__(self):
         # print("borrando: ", self.nombre)
@@ -44,5 +47,10 @@ if __name__ == "__main__":
     p2 = Producto(2, "Fanta limón", 1, 1.25, 200)
     print(p2)
 
-    L = [p1, p2, Producto(3,"Pan",2,1.0, 10)]
+    L = [p1, p2, Producto(3, "Pan", 2, 1.0, 10)]
     print(L)
+
+    if p1 < p2:  # if p1.__lt__(p2):
+        print(p1.nombre, "mas barato", p2.nombre)
+    else:
+        print(p2.nombre, "mas barato", p1.nombre)
