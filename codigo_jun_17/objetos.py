@@ -71,6 +71,7 @@ def testTienda():
     for p in t1:
         print(p)
     
+    
 def testProducto():
     p1 = Producto(1, "CocaCola", 1, 1.5, 100)
     # del(p1) fuerza la llamada al destructor!
