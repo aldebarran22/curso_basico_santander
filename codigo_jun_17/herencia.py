@@ -1,3 +1,8 @@
+"""
+Ejemplo de herencia simple
+"""
+
+
 class Persona:
     """Implementación de la clase Persona"""
 
@@ -20,3 +25,23 @@ class Persona:
             print(self.nombre, "habla solo")
         else:
             print(self.nombre, "y", other.nombre, "están hablando")
+
+
+class Guia:
+    pass
+
+
+def testPersona():
+    p1 = Persona("José", 23, 1.8)
+    p2 = Persona("Paula", 22, 1.81)
+    p1.hablarCon()
+    p1.hablarCon(p2)
+
+
+def testGuia():
+    pass
+
+
+if __name__ == "__main__":
+    # testPersona()
+    testGuia()
