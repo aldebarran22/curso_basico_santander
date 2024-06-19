@@ -52,6 +52,8 @@ Relaciones entre clases:
 	str()	__str__()
 	del	__del__()
 
+- Dinámico
+
 
 
 
