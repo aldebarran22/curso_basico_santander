@@ -54,6 +54,12 @@ if __name__ == '__main__':
     print(hora2)
     print(suma)
 
+    d = Date(19,6,2024)
+    print(d)
+
+    dt = DateTime(19,6,2024,12,34,12) 
+    print(dt) # 19/06/2024 12:34:12
+
 
 
  
