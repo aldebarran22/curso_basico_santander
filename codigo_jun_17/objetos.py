@@ -43,12 +43,33 @@ class Tienda:
     def __init__(self, *prod):
         self.productos = []
         self.productos.extend(prod)
+        self.indice = 0
+
+    def __len__(self):
+        return len(self.productos)
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.indice == len(self.productos):
+            self.indice = 0
+            raise StopIteration
+        else:
+            p = self.productos[self.indice]
+            self.indice += 1
+            return p
+        
+
 
 
 def testTienda():
     p1 = Producto(1, "CocaCola", 1, 1.5, 100)
     p2 = Producto(2, "Fanta limón", 1, 1.85, 200)
     t1 = Tienda(p1, p2)
+    print("Tenemos ",len(t1),"productos")
+    for p in t1:
+        print(p)
     
 def testProducto():
     p1 = Producto(1, "CocaCola", 1, 1.5, 100)
