@@ -24,3 +24,8 @@ nombres.sort(key=lambda t:t[1])
 print(nombres)
 nombres.sort(key=lambda t:t[2], reverse=True)
 print(nombres)
+
+c = {3,5,1,2,3,4,7}
+L = sorted(c, reverse=True)
+print(c)
+print(L)
