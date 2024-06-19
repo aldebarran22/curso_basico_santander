@@ -84,6 +84,9 @@ def testProducto():
     print(L)
     L.sort(reverse=True)
     print(L)
+    L.sort(key=lambda obj : obj.nombre)
+    print(L)
+    exit()
 
     if p1 < p2:  # if p1.__lt__(p2):
         print(p1.nombre, "mas barato", p2.nombre)
@@ -105,5 +108,5 @@ def testProducto():
     
 
 if __name__ == "__main__":
-    #testProducto()
-    testTienda()
+    testProducto()
+    #testTienda()
