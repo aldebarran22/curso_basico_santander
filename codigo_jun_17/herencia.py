@@ -35,6 +35,9 @@ class Guia(Persona):
         self.ambito = ambito
         self.idiomas = idiomas
 
+    def __str__(self):
+        return super().__str__()+" "+self.ambito+" "+",".join(self.idiomas)
+
 def testGuia():
     g1 = Guia("Laura", 24, 1.8, "I", ["inglés","francés"])
     g2 = Guia("Ana", 44, 1.7, "N", ["italiano","francés"])
