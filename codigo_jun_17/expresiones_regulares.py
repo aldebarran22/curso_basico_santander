@@ -39,6 +39,6 @@ L = ["aee","aaaa","AWE","qwrr","aeo","iiiU"]
 validar(patron, L)
 
 # Validar matrículas europeas:
-patron = ""
+patron = "\d{4}[BCDFGHJKLMNPQRSTXYZ]{3}$"
 L = ["1009SDS", "3344", "12345TTG","8080HHY","1234FFE","9909JJU"]
 validar(patron, L)
