@@ -29,7 +29,8 @@ def deserializarShelve(path, clave):
     if clave in Shelf:
         return Shelf[clave]
     else:
-        raise ValueError(f"La clave: {clave} no existe")
+        claves = ",".join(Shelf.keys())
+        raise ValueError(f"La clave: {clave} no existe. Claves disponibles: {claves}")
 
     Shelf.close()
 
@@ -45,3 +46,6 @@ if __name__ == '__main__':
 
     t2 = deserializarShelve("../ficheros/objetos", "hora")
     print(t2)
+
+    d2 = deserializarShelve("../ficheros/objetos", "fecha2")
+    print(d2)
