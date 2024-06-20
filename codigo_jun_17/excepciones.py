@@ -81,13 +81,18 @@ def procesarArchivo(path):
     else:
         print(f"procesando fichero: {path}")
 
-def test6():
-    try:
-        L = listdir()
-        for f in L:
+def test6():    
+    errores = 0
+    L = listdir()
+    for f in L:
+        try:
             procesarArchivo(f)
-    except Exception as e:
-        print(e)
+        except Exception as e:
+            errores += 1
+            print(e)
+
+    if errores != 0:
+        print(f'Han fallado {errores} ficheros...')
 
 if __name__=='__main__':
     #test1()
@@ -99,4 +104,5 @@ if __name__=='__main__':
     except Exception as e:
         print(e.__class__.__name__, e)
     """
-    test5()
+    #test5()
+    test6()
