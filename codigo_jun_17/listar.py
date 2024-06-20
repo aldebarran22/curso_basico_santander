@@ -18,4 +18,8 @@ def leerFichero(path):
         if fich: fich.close()
 
 if __name__=='__main__':
-    print(sys.argv)
+    if len(sys.argv) == 2:
+        leerFichero(sys.argv[1])
+    else:
+        print('Falta un parámetro: ')
+        print('python listar.py path_fichero')
