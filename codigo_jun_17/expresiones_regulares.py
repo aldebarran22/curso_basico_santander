@@ -32,3 +32,13 @@ validar(patron, L)
 patron = "[0-9]{1,8}[A-Z]$"  # patron = "\d{1,8}[A-Z]$"
 L = ["12345678AA", "50999777","51234567B","1234"]
 validar(patron, L)
+
+# Validar cadenas de 3 vocales:
+patron = "[AEIOUaeiou]{3}$"
+L = ["aee","aaaa","AWE","qwrr","aeo","iiiU"]
+validar(patron, L)
+
+# Validar matrículas europeas:
+patron = ""
+L = ["1009SDS", "3344", "12345TTG","8080HHY","1234FFE","9909JJU"]
+validar(patron, L)
