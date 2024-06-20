@@ -61,7 +61,7 @@ def test4():
 def test5():
     fich = None
     try:
-        fich = open("no existe.txt", "r ")
+        fich = open("decodadores.txt", "r")
         txt = fich.read()
         print(txt)
 
