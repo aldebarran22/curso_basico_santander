@@ -24,6 +24,14 @@ def serializarShelve(path, **objetos):
         Shelf[k] = v
     Shelf.close()
 
+def deserializarShelve(path, clave):
+    Shelf = s.open(path)
+    if clave in Shelf:
+        return Shelf[clave]
+    else:
+        raise ValueError(f"La clave: {clave} no existe")
+
+    Shelf.close()
 
 if __name__ == '__main__':
     p1 = Producto(12, "ColaCola", 1, 1.55, 100)
@@ -34,3 +42,6 @@ if __name__ == '__main__':
     t1 = Time(12,30,45)
     d1 = Date(20,6,2024)
     serializarShelve("../ficheros/objetos", prod=p1, hora=t1, fecha=d1)
+
+    t2 = deserializarShelve("../ficheros/objetos", "hora")
+    print(t2)
