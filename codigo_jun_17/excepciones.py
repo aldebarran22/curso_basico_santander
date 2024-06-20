@@ -5,6 +5,8 @@ Capturar excepciones en Python:
  - raise: lanzar excepciones
 """
 
+from os import listdir
+
 def test1():
     """Capturar una excepcion"""
     try:
@@ -70,6 +72,22 @@ def test5():
 
     finally:
         if fich: fich.close()
+
+
+def procesarArchivo(path):
+    ext = path.partition(".")[2]
+    if ext == 'ipynb':
+        raise ValueError(f"El fichero: {path} tiene un formato incorrecto")
+    else:
+        print(f"procesando fichero: {path}")
+
+def test6():
+    try:
+        L = listdir()
+        for f in L:
+            procesarArchivo(f)
+    except Exception as e:
+        print(e)
 
 if __name__=='__main__':
     #test1()
