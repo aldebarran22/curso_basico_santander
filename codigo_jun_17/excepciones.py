@@ -58,11 +58,27 @@ def test4():
         #print(e.__class__.__name__, e)
         raise e
 
+def test5():
+    fich = None
+    try:
+        fich = open("no existe.txt", "r ")
+        txt = fich.read()
+        print(txt)
+
+    except Exception as e:
+        print(e.__class__.__name__, e)
+
+    finally:
+        if fich: fich.close()
+
 if __name__=='__main__':
     #test1()
     #test2()
     #test3()
+    """
     try:
         test4()
     except Exception as e:
         print(e.__class__.__name__, e)
+    """
+    test5()
