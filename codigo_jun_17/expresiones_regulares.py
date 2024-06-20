@@ -17,9 +17,16 @@ def validar(patron, L):
 
 
 # Validar cadenas de 3 chars que terminan en .
-patron = r"...\."
+patron = r"...\.$"
 L = ["123.", "FRF.","....", "()-.", "123.."]
 validar(patron, L)
+
+
+# Validar cadenas de 3 letras mayúsculas que terminan en .
+patron = r"[A-Z][A-Z][A-Z]\.$"  # patron = r"[A-Z]{3}\.$"
+L = ["123.", "FRF.","....", "()-.", "123.."]
+validar(patron, L)
+
 
 # Validar DNIs:
 patron = ""
