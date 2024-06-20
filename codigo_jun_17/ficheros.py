@@ -10,7 +10,9 @@ def leerFichero(path, sep=";"):
             fila = fila.rstrip()
             pais = fila.split(sep)[-1]
             pathPais = f"../ficheros/paises/{pais}.csv"
-            print(pathPais)            
+            fichPais = open(pathPais, "a")
+            print(fila, file=fichPais)            
+            fichPais.close()
 
     except Exception as e:
         print(e.__class__.__name__, e)
