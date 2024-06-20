@@ -60,10 +60,14 @@ pueden empezar por 0.
 COD_AEE_800959
 S/N_UOO_958474
 """
-patron = "(COD|S/N)"
-codigo1 = "COD_AEE_800959"
-codigo2 = "S/N_UOO_958474"
-obj = re.match(patron, codigo1)
+
+patron="(COD|S/N)_([AEIOU]{3})([1-9][0-9]{5})$"
+codigo1 = "mi codigo es: COD_AEE800959"
+codigo2 = "S/N_UOO958474"
+obj = re.search(patron, codigo1)
 print(obj)
+print(obj.groups())
+
+# html = "<p>hola</p>"
 
 
