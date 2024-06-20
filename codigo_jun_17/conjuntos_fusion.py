@@ -30,13 +30,13 @@ def ordenar(linea):
 #c3 = set(txt3.split("\n"))
 
 try:
-    c2 = leerFichero("../ficheros_curso/Empleados22.txt")
+    c2 = leerFichero("../ficheros_curso/Empleados2.txt")
     c3 = leerFichero("../ficheros_curso/Empleados3.txt")
 
     todo = c2 | c3
     L = sorted(todo, key=ordenar)
     csv = "\n".join(L)
     print(csv)
-    
+
 except Exception as e:
     print(e.__class__.__name__, e)
