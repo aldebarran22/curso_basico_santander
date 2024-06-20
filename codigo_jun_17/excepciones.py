@@ -39,9 +39,26 @@ def test3():
     except (IndexError, ValueError) as e:
         print(e.__class__.__name__, e)
   
+def test4():
+    """Agrupar dos excepciones en el mismo except y capturar otras excepciones"""
+    try:
+        c = {1,2,3,4}
+        L = [1,2,3,4,5,6]
+        print(c[0])
+        numero = int("hola")
+        print(L[10])
+        print("continua")
 
+    except (IndexError, ValueError) as e:
+        # Primero las excepciones más particulares
+        print(e.__class__.__name__, e)
+
+    except Exception as e:
+        # Segundo el resto de excepciones con la super clase.
+        print(e.__class__.__name__, e)
 
 if __name__=='__main__':
     #test1()
     #test2()
-    test3()
+    #test3()
+    test4()
