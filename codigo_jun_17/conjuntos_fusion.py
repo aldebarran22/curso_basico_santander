@@ -38,19 +38,22 @@ def grabarFichero(path, csv):
         if fich: fich.close()
 
 
-#c2 = set(txt2.split("\n"))
-#c3 = set(txt3.split("\n"))
+def fusion(pathOrigen1, pathOrigen2, pathDestino):
+    try:
+        c2 = leerFichero(pathOrigen1)
+        c3 = leerFichero(pathOrigen2)
 
-try:
-    c2 = leerFichero("../ficheros_curso/Empleados2.txt")
-    c3 = leerFichero("../ficheros_curso/Empleados3.txt")
+        todo = c2 | c3
+        L = sorted(todo, key=ordenar)
+        csv = "\n".join(L)
+        csv = csv.strip() # limpiar filas en blanco al final o al principio pero no en medio.
+        grabarFichero(pathDestino, csv)
+        print(f'fichero {pathDestino} generado correctamente ...')
 
-    todo = c2 | c3
-    L = sorted(todo, key=ordenar)
-    csv = "\n".join(L)
-    csv = csv.strip() # limpiar filas en blanco al final o al principio pero no en medio.
-    grabarFichero("../ficheros/empleados_final.csv", csv)
-    print('fichero generado correctamente ...')
+    except Exception as e:
+        print(e.__class__.__name__, e)
 
-except Exception as e:
-    print(e.__class__.__name__, e)
+if __name__ == '__main__':
+    fusion("../ficheros_curso/Empleados2.txt", \
+        "../ficheros_curso/Empleados3.txt", \
+        "../ficheros/empleados_final.csv")
