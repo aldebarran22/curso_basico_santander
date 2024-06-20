@@ -7,7 +7,7 @@ import sys
 def leerFichero(path):
     fich = None
     try:
-        fich = open(path, "r")
+        fich = open(path, "r", encoding="utf-8")
         txt = fich.read()
         print(txt)
 
