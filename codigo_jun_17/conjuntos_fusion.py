@@ -11,7 +11,7 @@ def leerFichero(path):
         return filas
 
     except Exception as e:
-        print(e.__class__.__name__, e)
+        raise e
 
     finally:
         if fich: fich.close()
@@ -29,10 +29,14 @@ def ordenar(linea):
 #c2 = set(txt2.split("\n"))
 #c3 = set(txt3.split("\n"))
 
-c2 = leerFichero("../ficheros_curso/Empleados2.txt")
-c3 = leerFichero("../ficheros_curso/Empleados3.txt")
+try:
+    c2 = leerFichero("../ficheros_curso/Empleados22.txt")
+    c3 = leerFichero("../ficheros_curso/Empleados3.txt")
 
-todo = c2 | c3
-L = sorted(todo, key=ordenar)
-csv = "\n".join(L)
-print(csv)
+    todo = c2 | c3
+    L = sorted(todo, key=ordenar)
+    csv = "\n".join(L)
+    print(csv)
+    
+except Exception as e:
+    print(e.__class__.__name__, e)
