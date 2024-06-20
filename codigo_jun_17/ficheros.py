@@ -2,12 +2,15 @@
 Gestión de ficheros
 """
 
-def leerFichero(path):
+def leerFichero(path, sep=";"):
     fich = None
     try:
         fich = open(path, "r")
         for fila in fich:
-            print(fila)            
+            fila = fila.rstrip()
+            pais = fila.split(sep)[-1]
+            pathPais = f"../ficheros/paises/{pais}.csv"
+            print(pathPais)            
 
     except Exception as e:
         print(e.__class__.__name__, e)
