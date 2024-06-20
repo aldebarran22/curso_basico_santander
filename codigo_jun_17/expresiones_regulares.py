@@ -28,7 +28,7 @@ L = ["123.", "FRF.","....", "()-.", "123.."]
 validar(patron, L)
 
 
-# Validar DNIs:
-patron = ""
+# Validar DNIs: dígitos de 1 a 8 y una letra mayúscula
+patron = "[0-9]{1,8}[A-Z]$"  # patron = "\d{1,8}[A-Z]$"
 L = ["12345678AA", "50999777","51234567B","1234"]
 validar(patron, L)
