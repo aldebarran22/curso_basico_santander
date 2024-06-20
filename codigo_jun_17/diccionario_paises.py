@@ -32,6 +32,7 @@ def leerFichero(path):
 try:
     paises = leerFichero("../ficheros_curso/paises.csv")
     Lpaises = paises.split("\n")
+    #Lpaises = [i for i in paises.split("\n") if len(i) > 1]
 
     # Crear un diccionario vacío:
     total_paises = dict()
@@ -39,6 +40,9 @@ try:
     # Crear un histograma para calcular el importe
     # total por pais:
     for pedido in Lpaises:
+        if pedido == "":
+            continue
+        
         Lpedido = pedido.split(";")
         importe = float(Lpedido[0])
         pais = Lpedido[1]
@@ -63,6 +67,6 @@ try:
     print('Total importe: ', round(sum(total_paises.values()),2))
 
     print(total_paises.items())
-    
+
 except Exception as e:
     print(e)
