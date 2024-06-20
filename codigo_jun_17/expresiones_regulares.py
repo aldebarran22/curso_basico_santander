@@ -16,6 +16,11 @@ def validar(patron, L):
     print('-'*30)
 
 
+# Validar cadenas de 3 chars que terminan en .
+patron = r"...\."
+L = ["123.", "FRF.","....", "()-.", "123.."]
+validar(patron, L)
+
 # Validar DNIs:
 patron = ""
 L = ["12345678AA", "50999777","51234567B","1234"]
