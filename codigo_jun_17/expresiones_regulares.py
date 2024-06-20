@@ -46,9 +46,24 @@ validar(patron, L)
 
 patron = "\d{4}[A-Z]{3}$"
 patron2 = "\d{4}[^AEIOU]{3}"
-L = ["1009SDS", "3344", "12345TTG","8080HHY","1234FFE","9909JJ*"]
+L = ["1009SDS", "3344", "12345TTG","8080HHY","1234FFE","9909JJ*","1234ccd","3344KKU"]
 for matricula in L:
     if re.match(patron, matricula) and re.match(patron2, matricula):
         print(matricula, "ok")
     else:
         print(matricula,'no')
+
+"""
+Comprobar la validez del siguiente código:
+Palabra COD o S/N, un guión bajo, 3 vocales mayúsculas, guión bajo y 6 números que no 
+pueden empezar por 0.
+COD_AEE_800959
+S/N_UOO_958474
+"""
+patron = "(COD|S/N)"
+codigo1 = "COD_AEE_800959"
+codigo2 = "S/N_UOO_958474"
+obj = re.match(patron, codigo1)
+print(obj)
+
+
