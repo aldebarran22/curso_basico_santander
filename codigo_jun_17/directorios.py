@@ -13,6 +13,7 @@ def ls(ruta="."):
     for subdir in subdirs:
         # print("*" * 30)
         print(dir + "/" + subdir)
+        #print("Archivos: ", archivos[:3])
         ls(dir + "/" + subdir)
 
 
