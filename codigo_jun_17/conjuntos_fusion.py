@@ -48,7 +48,9 @@ try:
     todo = c2 | c3
     L = sorted(todo, key=ordenar)
     csv = "\n".join(L)
+    csv = csv.strip() # limpiar filas en blanco al final o al principio pero no en medio.
     grabarFichero("../ficheros/empleados_final.csv", csv)
+    print('fichero generado correctamente ...')
 
 except Exception as e:
     print(e.__class__.__name__, e)
