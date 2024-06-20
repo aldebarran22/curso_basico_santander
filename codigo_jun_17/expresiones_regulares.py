@@ -40,5 +40,15 @@ validar(patron, L)
 
 # Validar matrículas europeas:
 patron = "\d{4}[BCDFGHJKLMNPQRSTXYZ]{3}$"
-L = ["1009SDS", "3344", "12345TTG","8080HHY","1234FFE","9909JJU"]
+L = ["1009SDS", "3344", "12345TTG","8080HHY","1234FFE","9909JJ*"]
 validar(patron, L)
+
+
+patron = "\d{4}[A-Z]{3}$"
+patron2 = "\d{4}[^AEIOU]{3}"
+L = ["1009SDS", "3344", "12345TTG","8080HHY","1234FFE","9909JJ*"]
+for matricula in L:
+    if re.match(patron, matricula) and re.match(patron2, matricula):
+        print(matricula, "ok")
+    else:
+        print(matricula,'no')
