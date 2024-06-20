@@ -70,4 +70,9 @@ print(obj.groups())
 
 # html = "<p>hola</p>"
 
+csv = ["nombre;apellidos;edad", "nombre,apellidos,edad"]
+for linea in csv:
+    L = re.split("[;,]", linea)
+    print(L)
+
 
