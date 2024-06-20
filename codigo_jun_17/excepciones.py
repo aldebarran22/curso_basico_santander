@@ -55,10 +55,14 @@ def test4():
 
     except Exception as e:
         # Segundo el resto de excepciones con la super clase.
-        print(e.__class__.__name__, e)
+        #print(e.__class__.__name__, e)
+        raise e
 
 if __name__=='__main__':
     #test1()
     #test2()
     #test3()
-    test4()
+    try:
+        test4()
+    except Exception as e:
+        print(e.__class__.__name__, e)
