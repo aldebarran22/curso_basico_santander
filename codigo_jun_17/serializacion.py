@@ -12,7 +12,14 @@ def serializarPickle(path, objeto):
     p.dump(objeto, fich)
     fich.close()
 
+def deserializarPickle(path):
+    fich = open(path, "rb")
+    obj = p.load(fich)
+    fich.close()
+    return obj
+
 if __name__ == '__main__':
     p1 = Producto(12, "ColaCola", 1, 1.55, 100)
-    serializarPickle("..ficheros/producto.bin", p1)
-
+    serializarPickle("../ficheros/producto.bin", p1)
+    obj = deserializarPickle("../ficheros/producto.bin")
+    print(obj)
