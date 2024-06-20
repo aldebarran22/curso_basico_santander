@@ -2,25 +2,19 @@
 Utilizar conjuntos para fusionar dos ficheros CSV
 """
 
-txt2 = """id;nombre;cargo
-1;Davolio;Representante de ventas
-2;Fuller;Vicepresidente comercial
-3;Leverling;Representante de ventas
-4;Peacock;Representante de ventas
-6;Suyama;Representante de ventas
-7;King;Representante de ventas
-9;Dodsworth;Representante de ventas"""
+def leerFichero(path):
+    fich = None
+    try:
+        fich = open(path, "r")
+        txt = fich.read()
+        filas = set(txt.split("\n"))
+        return filas
 
-txt3 = """id;nombre;cargo
-2;Fuller;Vicepresidente comercial
-3;Leverling;Representante de ventas
-4;Peacock;Gerente de ventas
-5;Buchanan;Gerente de ventas
-6;Suyama;Representante de ventas
-7;King;Representante de ventas
-8;Callahan;Coordinador ventas interno
-9;Dodsworth;Representante de ventas
-10;George;Representante de ventas"""
+    except Exception as e:
+        print(e.__class__.__name__, e)
+
+    finally:
+        if fich: fich.close()
 
 
 def ordenar(linea):
@@ -32,8 +26,11 @@ def ordenar(linea):
         return 0
 
 
-c2 = set(txt2.split("\n"))
-c3 = set(txt3.split("\n"))
+#c2 = set(txt2.split("\n"))
+#c3 = set(txt3.split("\n"))
+
+c2 = leerFichero("../ficheros_curso/Empleados2.txt")
+c3 = leerFichero("../ficheros_curso/Empleados3.txt")
 
 todo = c2 | c3
 L = sorted(todo, key=ordenar)

@@ -89,6 +89,7 @@ def test6():
             procesarArchivo(f)
         except Exception as e:
             errores += 1
+            #raise Exception('otro error')
             print(e)
 
     if errores != 0:
