@@ -2,9 +2,15 @@
 Gestión de ficheros
 """
 
+from os import listdir, remove
+
 def leerFichero(path, sep=";"):
     fich = None
     try:
+        # Borrar los ficheros de los países:
+        for fichero in listdir("../ficheros/paises"):
+            remove(f"../ficheros/paises/{fichero}")
+
         fich = open(path, "r")
         for fila in fich:
             fila = fila.rstrip()
