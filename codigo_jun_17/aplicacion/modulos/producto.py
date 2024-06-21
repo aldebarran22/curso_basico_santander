@@ -27,6 +27,9 @@ class Producto:
             + str(self.existencias)
         )
 
+    def getTupla(self):
+        return self.nombre, self.idcategoria, self.precio, self.existencias
+
     def __repr__(self):
         return str(self)
     
