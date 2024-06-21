@@ -35,7 +35,8 @@ class Productor(Thread):
                 # Escribir el número en el buffer con el ind_p
                 self.buffer.buffer[self.buffer.ind_p] = numero
 
-                print(self.buffer.buffer)
+                # Imprimir la lista del buffer:
+                print(self.name, self.buffer.buffer)
 
                 # Actualizar el índice del productor:
                 self.buffer.ind_p = (self.buffer.ind_p + 1)  % tam_buffer
@@ -53,7 +54,29 @@ class Consumidor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        for i in range(self.num_muestras):
+
+            # Comprobar si tiene un item para consumir:
+            self.buffer.sem_items.acquire()
+
+            with self.buffer.mutex:
+                
+                # Recuperar un numero del buffer:
+                numero = self.buffer.buffer[self.buffer.ind_c]
+
+                # Macar la casilla como libre
+                self.buffer.buffer[self.buffer.ind_c] = -1
+
+                # Imprimir la lista del buffer:
+                print(self.name, self.buffer.buffer)
+
+                # Actualizar el indice del consumidor:
+                self.buffer.ind_c = (self.buffer.ind_c + 1)  % tam_buffer
+
+            # Avisamos de que hay nuevo hueco:
+            self.buffer.sem_huecos.release()
+
+            sleep(randint(3,4))
 
 
 class TBuffer:
