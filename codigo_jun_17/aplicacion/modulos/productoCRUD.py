@@ -61,13 +61,13 @@ class ProductoCRUD:
     def delete(self, id):
         sql = "delete from productos where id=?"
         t = (id, )
-        return self.__delete_update(sql, tupla)
+        return self.__delete_update(sql, t)
 
     def update(self, prod):
         sql = """update productos set nombre=?, idcategoria=?, 
         precio=?, existencias=? where id=?"""
         t = prod.getTupla() + (prod.id, )
-        return self.__delete_update(sql, tupla)
+        return self.__delete_update(sql, t)
 
 
     def __delete_update(self, sql, tupla):
@@ -118,6 +118,11 @@ if __name__=="__main__":
         L = bd.select("Comidas")
         print(len(L), "productos")
         print(L[:3])
+
+        if bd.delete(88):
+            print('producto borrado')
+        else:
+            print('no se ha podido eliminar')
 
         nuevo = Producto(0, "ColaCola3", 1, 1.8, 230)
         if bd.create(nuevo):
