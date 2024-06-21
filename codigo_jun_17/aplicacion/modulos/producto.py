@@ -1,5 +1,6 @@
-
-
+"""
+Entidad producto: representa un producto de la BD.
+"""
 
 class Producto:
     """
