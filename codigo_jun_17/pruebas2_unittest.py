@@ -12,6 +12,12 @@ from funciones_curso import ecuacion
 
 class Pruebas(unittest.TestCase):
 
+    def setUp(self):
+        print("preparar contexto")
+
+    def tearDown(self):
+        print("limpiar el contexto")
+
     def testEcuacion(self):
         """
         Comprobar si el resultado de la ecuación es correcto.        
