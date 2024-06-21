@@ -50,6 +50,6 @@ def exportarTabla(path, tabla, sep=";"):
 
 if __name__=='__main__':
     try:
-        exportarTabla("../bd/empresa3.db", "pedidos")
+        listarTabla("../empresa3.db", "clientes")
     except Exception as e:
         print(e.__class__.__name__, e)
