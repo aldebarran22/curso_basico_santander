@@ -30,7 +30,7 @@ class ProductoCRUD:
             else:
                 sql = """select p.id, p.nombre, p.idcategoria, p.precio, 
                 p.existencias from productos p inner join categorias c
-                where c.nombre = ?"""
+                on p.idcategoria = c.id where c.nombre = ?"""
                 cur.execute(sql, (categoria,))
 
             return [Producto(*t) for t in cur.fetchall()]
