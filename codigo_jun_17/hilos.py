@@ -32,4 +32,7 @@ if __name__=='__main__':
         h.start() # Llama al método run()
         L.append(h)
 
+    for h in L:
+        h.join() # Esperar a que termine h!
+
     print('termina main')
