@@ -20,5 +20,16 @@ class Hilo(Thread):
             self.lista.append(numero)
             print(self.name, "número:", numero)
             sleep(randint(1,3))
-            
+
         print('Termina: ', self.name)
+
+    
+if __name__=='__main__':
+    L = []
+    for i in range(5):
+        nombre = f"H-{i+1}"
+        h = Hilo(nombre, randint(5,10))
+        h.start() # Llama al método run()
+        L.append(h)
+
+    print('termina main')
