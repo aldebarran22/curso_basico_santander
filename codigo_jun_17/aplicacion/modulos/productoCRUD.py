@@ -58,6 +58,25 @@ class ProductoCRUD:
         finally:
             if cur: cur.close()
 
+    def create(self, nuevo):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = """insert into productos(nombre, idcategoria, precio, existencias)
+            values(?,?,?,?)"""
+            cur.execute(sql, nuevo.getTupla())
+            nuevo.id = cur.lastrowid
+            n = cur.rowcount
+            self.con.commit()
+            return n==1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+
+        finally:
+            if cur: cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             self.con.close()
@@ -71,5 +90,12 @@ if __name__=="__main__":
         L = bd.select("Comidas")
         print(len(L), "productos")
         print(L[:3])
+
+        nuevo = Producto(0, "ColaCola", 1, 1.8, 230)
+        if bd.create(nuevo):
+            print('Registro creado: ', nuevo.id)
+        else:
+            print('no se ha creado')
+
     except Exception as e:
         print(e.__class__.__name__, e)
