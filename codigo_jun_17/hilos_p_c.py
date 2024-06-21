@@ -105,13 +105,13 @@ if __name__ == "__main__":
 
     for i in range(num_productores):
         nombre = f"P-{i+1}"
-        prod = Productor(buffer, num_muestras_prod, nombre)
+        prod = Productor(buf, num_muestras_prod, nombre)
         prod.start()
         productores.append(prod)
 
     for i in range(num_consumidores):
         nombre = f"C-{i+1}"
-        con = Consumidor(buffer, num_muestras_con, nombre)
+        con = Consumidor(buf, num_muestras_con, nombre)
         con.start()
         consumidores.append(con)
 
