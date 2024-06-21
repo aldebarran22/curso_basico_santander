@@ -20,9 +20,11 @@ class Pruebas(unittest.TestCase):
         self.assertEqual((-1,-4), resul, msg="No coincide el resultado")
 
     def testEcuacionExcept(self):
-        pass
+        """Comprobar si la función lanza la excepción ValueError cuando
+        pasamos unos parámetros que no tienen solución"""
 
-   
+        self.assertRaises(ValueError, ecuacion, 1,2,3)
+           
 
 if __name__ == '__main__':
     unittest.main()
