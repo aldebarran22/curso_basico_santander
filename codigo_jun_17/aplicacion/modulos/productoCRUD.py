@@ -58,6 +58,34 @@ class ProductoCRUD:
         finally:
             if cur: cur.close()
 
+    def delete(self, id):
+        sql = "delete from productos where id=?"
+        t = (id, )
+        return self.__delete_update(sql, tupla)
+
+    def update(self, prod):
+        sql = """update productos set nombre=?, idcategoria=?, 
+        precio=?, existencias=? where id=?"""
+        t = prod.getTupla() + (prod.id, )
+        return self.__delete_update(sql, tupla)
+
+
+    def __delete_update(self, sql, tupla):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            cur.execute(sql ,tupla)
+            n = cur.rowcount
+            self.con.commit()
+            return n==1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+
+        finally:
+            if cur: cur.close()
+
     def create(self, nuevo):
         cur = None
         try:
@@ -91,7 +119,7 @@ if __name__=="__main__":
         print(len(L), "productos")
         print(L[:3])
 
-        nuevo = Producto(0, "ColaCola", 1, 1.8, 230)
+        nuevo = Producto(0, "ColaCola3", 1, 1.8, 230)
         if bd.create(nuevo):
             print('Registro creado: ', nuevo.id)
         else:
