@@ -4,8 +4,9 @@ Conectar con la bd de sqlite3 y extraer registros (exportar a ficheros)
 
 import sqlite3 as db
 from os.path import isfile
+import sys
 
-def listarTabla(path, tabla, sep=";"):
+def listarTabla(path, tabla, sep=";", file=sys.stdout):
     con = None
     cur = None
     try:
@@ -27,12 +28,12 @@ def listarTabla(path, tabla, sep=";"):
 
             # Extraer los nombres de las columnas
             cabs = sep.join([t[0] for t in cur.description])
-            print(cabs)
+            print(cabs, file=file)
 
             # Recorrer los resultados
             for t in cur.fetchall():
                 datos = sep.join([str(i) for i in t])
-                print(datos)
+                print(datos, file=file)
 
     except Exception as e:
         raise e
@@ -42,6 +43,6 @@ def listarTabla(path, tabla, sep=";"):
 
 if __name__=='__main__':
     try:
-        listarTabla("../bd/empresa3.db", "categorias")
+        listarTabla("../bd/empresa3.db", "pedidos")
     except Exception as e:
         print(e.__class__.__name__, e)
