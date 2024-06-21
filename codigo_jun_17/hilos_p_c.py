@@ -10,7 +10,7 @@ from time import sleep
 num_muestras = 10
 tam_buffer = 5
 
-num_productores = 1
+num_productores = 2
 num_consumidores = 1
 
 
@@ -45,6 +45,8 @@ class Productor(Thread):
             self.buffer.sem_items.release()
 
             sleep(randint(2,4))
+        
+        print('TERMINA PRODUCTOR:',self.name)
 
 
 class Consumidor(Thread):
@@ -78,7 +80,9 @@ class Consumidor(Thread):
 
             print(self.name,"CONSUME",numero)
 
-            sleep(randint(3,4))
+            sleep(randint(4,5))
+
+        print('TERMINA CONSUMIDOR:',self.name)
 
 
 class TBuffer:
