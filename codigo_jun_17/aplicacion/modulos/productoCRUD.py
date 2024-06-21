@@ -30,7 +30,7 @@ class ProductoCRUD:
                 raise ValueError(f"No existe el producto con clave: {id}")
             else:
                 return Producto(*t)
-                
+
         except Exception as e:
             raise e
         finally:
@@ -41,6 +41,9 @@ class ProductoCRUD:
             self.con.close()
 
 if __name__=="__main__":
-    bd = ProductoCRUD("../../empresa3.db")
-    #prod = bd.read(1)
-    #print(prod)
+    try:
+        bd = ProductoCRUD("../../empresa3.db")
+        prod = bd.read(156)
+        print(prod)
+    except Exception as e:
+        print(e.__class__.__name__, e)
