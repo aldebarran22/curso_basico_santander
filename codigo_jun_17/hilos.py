@@ -35,4 +35,8 @@ if __name__=='__main__':
     for h in L:
         h.join() # Esperar a que termine h!
 
+    print('Resultados:')
+    for h in L:
+        print(h.lista)
+
     print('termina main')
