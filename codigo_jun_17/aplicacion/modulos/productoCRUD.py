@@ -29,7 +29,7 @@ class ProductoCRUD:
 
             else:
                 sql = """select p.id, p.nombre, p.idcategoria, p.precio, 
-                p.existencias from productos p inner join categoria c
+                p.existencias from productos p inner join categorias c
                 where c.nombre = ?"""
                 cur.execute(sql, (categoria,))
 
@@ -65,7 +65,11 @@ class ProductoCRUD:
 if __name__=="__main__":
     try:
         bd = ProductoCRUD("../../empresa3.db")
-        prod = bd.read(450)
+        prod = bd.read(1)
         print(prod)
+
+        L = bd.select("Comidas")
+        print(len(L), "productos")
+        print(L[:3])
     except Exception as e:
         print(e.__class__.__name__, e)
