@@ -19,9 +19,10 @@ class ProductoCRUD:
             self.con = db.connect(path)
 
     def __del__(self):
-        self.con.close()
+        if hasattr(self, "con"):
+            self.con.close()
 
 if __name__=="__main__":
-    bd = ProductoCRUD("../empresa3.db")
+    bd = ProductoCRUD("../../empresa33.db")
     #prod = bd.read(1)
     #print(prod)
