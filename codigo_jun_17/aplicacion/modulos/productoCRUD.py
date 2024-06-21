@@ -19,6 +19,28 @@ class ProductoCRUD:
         else:
             self.con = db.connect(path)
 
+    def select(self, categoria=None):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            if not categoria:
+                sql = "select * from productos"
+                cur.execute(sql)
+
+            else:
+                sql = """select p.id, p.nombre, p.idcategoria, p.precio, 
+                p.existencias from productos p inner join categoria c
+                where c.nombre = ?"""
+                cur.execute(sql, (categoria,))
+
+            return [Producto(*t) for t in cur.fetchall()]
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur: cur.close()
+
+
     def read(self, id):
         cur = None
         try:
@@ -43,7 +65,7 @@ class ProductoCRUD:
 if __name__=="__main__":
     try:
         bd = ProductoCRUD("../../empresa3.db")
-        prod = bd.read(156)
+        prod = bd.read(450)
         print(prod)
     except Exception as e:
         print(e.__class__.__name__, e)
