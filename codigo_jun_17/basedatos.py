@@ -32,7 +32,8 @@ def listarTabla(path, tabla, sep=";", file=sys.stdout):
 
             # Recorrer los resultados
             for t in cur.fetchall():
-                datos = sep.join([str(i) for i in t])
+                datos = sep.join([str(i) if type(i)!=float else str(i).replace(".",",") \
+                     for i in t])
                 print(datos, file=file)
 
     except Exception as e:
@@ -42,7 +43,7 @@ def listarTabla(path, tabla, sep=";", file=sys.stdout):
         if con: con.close()
 
 def exportarTabla(path, tabla, sep=";"):
-    path_fich = "../ficheros/{tabla}.csv"
+    path_fich = f"../ficheros/{tabla}.csv"
     fich = open(path_fich, "w")
     listarTabla(path, tabla, sep, fich)
     fich.close()
