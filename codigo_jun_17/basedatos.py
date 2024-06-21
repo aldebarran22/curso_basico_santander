@@ -41,8 +41,14 @@ def listarTabla(path, tabla, sep=";", file=sys.stdout):
         if cur: cur.close()
         if con: con.close()
 
+def exportarTabla(path, tabla, sep=";"):
+    path_fich = "../ficheros/{tabla}.csv"
+    fich = open(path_fich, "w")
+    listarTabla(path, tabla, sep, fich)
+    fich.close()
+
 if __name__=='__main__':
     try:
-        listarTabla("../bd/empresa3.db", "pedidos")
+        exportarTabla("../bd/empresa3.db", "pedidos")
     except Exception as e:
         print(e.__class__.__name__, e)
