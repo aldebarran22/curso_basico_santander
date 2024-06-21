@@ -62,7 +62,7 @@ class Consumidor(Thread):
             with self.buffer.mutex:
                 
                 # Recuperar un numero del buffer:
-                numero = self.buffer.buffer[self.buffer.ind_c]
+                numero = self.buffer.buffer[self.buffer.ind_c]                
 
                 # Macar la casilla como libre
                 self.buffer.buffer[self.buffer.ind_c] = -1
@@ -75,6 +75,8 @@ class Consumidor(Thread):
 
             # Avisamos de que hay nuevo hueco:
             self.buffer.sem_huecos.release()
+
+            print(self.name,"CONSUME",numero)
 
             sleep(randint(3,4))
 
