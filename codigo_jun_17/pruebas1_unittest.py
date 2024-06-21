@@ -11,7 +11,7 @@ import unittest
 class Pruebas(unittest.TestCase):
 
     def testOk(self):
-        print("resultado")
+        pass
 
     def testAssert(self):
         raise AssertionError("Error de assert")
