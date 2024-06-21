@@ -25,10 +25,12 @@ def listarTabla(path, tabla):
             # Ejecutar el SQL:
             cur.execute(sql)
 
+            # Extraer los nombres de las columnas
+            print(cur.description)
+
+            # Recorrer los resultados
             for t in cur.fetchall():
                 print(t)
-
-
 
     except Exception as e:
         raise e
@@ -38,6 +40,6 @@ def listarTabla(path, tabla):
 
 if __name__=='__main__':
     try:
-        listarTabla("../bd/empresa3.db", "productos")
+        listarTabla("../bd/empresa3.db", "categorias")
     except Exception as e:
-        print(e)
+        print(e.__class__.__name__, e)
