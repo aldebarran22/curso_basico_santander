@@ -10,4 +10,9 @@ print("numero:", numero, "tipo:", type(numero))
 numero2 = 150
 print("numero2:", numero2, "tipo:", type(numero2))
 resul = numero + numero2
-print("Resultados:", resul)
+print("Resultado de suma:", resul)
+
+resul = numero - numero2
+print("Resultado de la resta: ", resul)
+
+
