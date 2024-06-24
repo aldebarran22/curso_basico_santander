@@ -19,3 +19,9 @@ print(d2)
 
 d3 = dict(zip(cad, L))
 print(d3)
+
+# Cuidado con los repetidos en las claves:
+L = [1, 2, 2, 4, 4]
+cad = "adios"
+d2 = dict(zip(L, cad))
+print(d2)
