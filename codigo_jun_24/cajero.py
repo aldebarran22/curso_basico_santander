@@ -1,6 +1,6 @@
 # División entera: calcular el número de billetes necesarios de 50
 # para sacar 240 euros
-importe = 230
+importe = int(input("Teclear importe:>"))
 billetes50 = importe // 50
 if billetes50 > 0:
     importe = importe % 50
