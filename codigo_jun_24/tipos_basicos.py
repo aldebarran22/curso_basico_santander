@@ -15,4 +15,7 @@ print("Resultado de suma:", resul)
 resul = numero - numero2
 print("Resultado de la resta: ", resul)
 
-
+# Calcular el iva de un producto:
+importe = 240.56
+iva = round(importe * 0.21, 2)
+print("importe:", importe,'iva:',iva)
