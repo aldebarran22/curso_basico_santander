@@ -1,10 +1,11 @@
 
 # División entera: calcular el número de billetes necesarios de 50
 # para sacar 240 euros
-importe = 40
+importe = 10
 billetes50 = importe // 50
-importe = importe % 50
-print("bill de 50: ", billetes50)
+if billetes50 > 0:
+    importe = importe % 50
+    print("bill de 50: ", billetes50)
 
 billetes20 = importe // 20
 importe = importe % 20
