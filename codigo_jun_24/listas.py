@@ -27,10 +27,22 @@ L += [200]
 L.insert(0, 1000)  # Es la posición 0 colocamos el 1000.
 print(L)
 
-# print("pos: 20 ", L[20]) ERROR, nos salimos de la lista.
+# print("pos: 20 ", L[20]) # ERROR, nos salimos de la lista.
 
-# L += 300 son incompatibles list e int. ERROR
+# L += 300 # son incompatibles list e int. ERROR
+
+# FUNCIONAN PARA LISTA, CADENAS Y TUPLAS
 
 # Operadores de list: + * in
+L1 = [1, 2, 3]
+L2 = [4, 5, 6]
+resul = L1 + L2
+print(resul)
+print(resul * 4)
+if 5 in resul:
+    print("El numero esta")
+else:
+    print("no está")
+
 
 # Operadores relacionales: ==, <, <= ...
