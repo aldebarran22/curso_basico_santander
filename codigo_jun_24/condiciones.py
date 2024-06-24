@@ -20,3 +20,9 @@ if numero >= ini and numero <= fin:
     print(f"El {numero} está dentro del intervalo: {ini},{fin}")
 else:
     print("no está en el intervalo")
+
+
+if ini <= numero <= fin:
+    print(f"El {numero} está dentro del intervalo: {ini},{fin}")
+else:
+    print("no está en el intervalo")
