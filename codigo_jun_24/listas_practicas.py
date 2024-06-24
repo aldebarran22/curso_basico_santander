@@ -23,3 +23,13 @@ print(R)
 # Dada una lista crear dos listas una con los
 # números pares y otra con los impares
 L = [2, 4, 6, 5, 15, 6, 3, 2, 17, 8, 9, 11]
+I = []
+P = []
+for i in L:
+    if i % 2 == 0:
+        P.append(i)
+    else:
+        I.append(i)
+
+print(I)
+print(P)
