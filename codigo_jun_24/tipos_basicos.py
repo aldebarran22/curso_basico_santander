@@ -18,4 +18,17 @@ print("Resultado de la resta: ", resul)
 # Calcular el iva de un producto:
 importe = 240.56
 iva = round(importe * 0.21, 2)
-print("importe:", importe,'iva:',iva)
+print("importe:", importe, "iva:", iva)
+
+# Calcular el promedio de dos variables:
+num1 = 23
+num2 = 56
+media = (num1 + num2) / 2
+print('promedio:', media)
+
+"""
+Prioridades de los operadores:
+** potencia
+* / // % 
++ -
+"""
