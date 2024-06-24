@@ -18,11 +18,13 @@ print(L)
 
 # Recorrer la lista con un for:
 for i in L:
-    print(i, round(i*0.21, 2))
+    print(i, round(i * 0.21, 2))
 
 # Añadir elementos a una lista:
 L = [1, 2, 3, 4, 5]
 L.append(100)
 L += [200]
+L.insert(0,1000) # Es la posición 0 colocamos el 1000.
 print(L)
 
+# L += 300 son incompatibles list e int. ERROR
