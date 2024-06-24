@@ -20,3 +20,9 @@ print(L)
 for i in L:
     print(i, round(i*0.21, 2))
 
+# Añadir elementos a una lista:
+L = [1, 2, 3, 4, 5]
+L.append(100)
+L += [200]
+print(L)
+
