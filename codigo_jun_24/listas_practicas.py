@@ -33,3 +33,10 @@ for i in L:
 
 print(I)
 print(P)
+
+# Crear listas con list:
+frase = "hola que tal"
+L2 = list(frase)
+print(L2)
+L3 = frase.split(" ")
+print(L3)
