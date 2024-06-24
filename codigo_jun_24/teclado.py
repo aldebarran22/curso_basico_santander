@@ -2,11 +2,11 @@
 Leer variables de teclado.
 """
 
-numero = input("Dame un número: ")
-print(numero)
+numero = int(input("Dame un número: "))
+print(numero, type(numero))
 
-numero2 = input("Dame otro número: ")
-print(numero2)
+numero2 = int(input("Dame otro número: "))
+print(numero2, type(numero2))
 
 resul = numero + numero2
-print('Resultado: ', resul)
+print("Resultado: ", resul)
