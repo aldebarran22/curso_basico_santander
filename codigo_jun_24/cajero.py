@@ -2,6 +2,11 @@
 # para sacar 240 euros
 importe = int(input("Teclear importe:>"))
 if importe % 10 == 0:
+    billetes100 = importe // 100
+    if billetes100 > 0:
+        importe = importe % 100
+        print("bill de 100: ", billetes100)
+
     billetes50 = importe // 50
     if billetes50 > 0:
         importe = importe % 50
