@@ -28,7 +28,12 @@ else:
     print("no está en el intervalo")
 
 
-if cond:
+if not (ini <= numero <= fin):
+    print("no está en el intervalo")
+else:
+    print(f"El {numero} está dentro del intervalo: {ini},{fin}")
+
+if numero < ini or numero > fin:
     print("no está en el intervalo")
 else:
     print(f"El {numero} está dentro del intervalo: {ini},{fin}")
