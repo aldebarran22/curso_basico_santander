@@ -40,3 +40,7 @@ L2 = list(frase)
 print(L2)
 L3 = frase.split(" ")
 print(L3)
+
+emp = "1;Davolio;Representante de ventas"
+Lemp = emp.split(";")
+print(Lemp)
