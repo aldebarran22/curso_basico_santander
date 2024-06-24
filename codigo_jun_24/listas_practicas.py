@@ -44,3 +44,4 @@ print(L3)
 emp = "1;Davolio;Representante de ventas"
 Lemp = emp.split(";")
 print(Lemp)
+print(Lemp[1])
