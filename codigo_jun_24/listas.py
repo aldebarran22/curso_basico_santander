@@ -24,7 +24,13 @@ for i in L:
 L = [1, 2, 3, 4, 5]
 L.append(100)
 L += [200]
-L.insert(0,1000) # Es la posición 0 colocamos el 1000.
+L.insert(0, 1000)  # Es la posición 0 colocamos el 1000.
 print(L)
 
+# print("pos: 20 ", L[20]) ERROR, nos salimos de la lista.
+
 # L += 300 son incompatibles list e int. ERROR
+
+# Operadores de list: + * in
+
+# Operadores relacionales: ==, <, <= ...
