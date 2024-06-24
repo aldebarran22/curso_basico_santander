@@ -39,7 +39,8 @@ L2 = [4, 5, 6]
 resul = L1 + L2
 print(resul)
 print(resul * 4)
-if 5 in resul:
+numero = int(input('Número a buscar:'))
+if numero  in resul:
     print("El numero esta")
 else:
     print("no está")
