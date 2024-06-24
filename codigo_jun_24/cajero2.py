@@ -8,5 +8,8 @@ if importe % 10 == 0:
             numeroBilletes = importe // b
             importe = importe % b
             print(f"Billetes de {b} = {numeroBilletes}")
+
+        if importe == 0:
+            break
 else:
     print("El importe no es correcto")
