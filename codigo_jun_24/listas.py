@@ -15,3 +15,8 @@ print("Mínimo: ", min(L))
 print("EL primero: ", L[0], L[-5])
 L[-1] = 100
 print(L)
+
+# Recorrer la lista con un for:
+for i in L:
+    print(i, round(i*0.21, 2))
+
