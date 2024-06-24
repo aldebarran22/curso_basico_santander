@@ -10,3 +10,8 @@ print("Recuento: ", len(L))
 print("Promedio: ", sum(L) / len(L))
 print("Máximo: ", max(L))
 print("Mínimo: ", min(L))
+
+# Acceso a los elementos de la lista
+print("EL primero: ", L[0], L[-5])
+L[-1] = 100
+print(L)
