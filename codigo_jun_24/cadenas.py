@@ -14,7 +14,7 @@ resul = cad1 + " " + cad2
 print(resul)
 print(resul * 5)
 
-palabra = input("Dame palabra")
+palabra = input("Dame palabra:")
 if palabra in resul:
     print(palabra, "está en", resul)
 else:
