@@ -17,5 +17,7 @@ if importe % 10 == 0:
             break
 
     print("Desglose:", desgloseBilletes)
+    for billete, cuenta in desgloseBilletes.items():
+        print(f"{cuenta} de {billete}")
 else:
     print("El importe no es correcto")
