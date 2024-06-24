@@ -24,7 +24,14 @@ print("importe:", importe, "iva:", iva)
 num1 = 23
 num2 = 56
 media = (num1 + num2) / 2
-print('promedio:', media)
+print("promedio:", media)
+
+# División entera: calcular el número de billetes necesarios de 50
+# para sacar 240 euros
+importe = 240
+billetes50 = importe // 50
+importe = importe % 50
+print("bill de 50: ", billetes50)
 
 """
 Prioridades de los operadores:
