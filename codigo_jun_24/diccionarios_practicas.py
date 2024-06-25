@@ -34,6 +34,9 @@ print('el nombre del primer empleado: ', empleados[0]['nombre'])
 print('el cargo del último empleado: ', empleados[-1]['cargo'])
 
 # Imprimir el nombre de los empleados que se dedican a las ventas
+for emp in empleados:
+    if "ventas" in emp['cargo'].lower():
+        print(emp['nombre'])
 
 """
 for pos, i in enumerate(filas):
