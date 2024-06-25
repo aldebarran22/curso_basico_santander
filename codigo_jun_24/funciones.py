@@ -18,6 +18,11 @@ def restar(a, b):
     return a - b
 
 
+def restar(a, b, c):
+    return a - b - c
+
+
 if __name__ == "__main__":
     print("__name__ ", __name__)
     print("suma:", sumar(12, 88))
+    print("restar: ", restar(12, 4))
