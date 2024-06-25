@@ -20,3 +20,10 @@ c3 = set(cad)
 print(c3)
 
 # print(c3[0]) el conjunto no es indexable!
+
+# Operadores:
+comida = {"Ana", "Pedro", "Juan", "Sofia"}
+cena = {"Ana", "Pedro", "Miguel", "Raquel", "Sara"}
+
+print("Quienes van a comer y a cenar: ", cena & comida)
+print("Quien va solo a comer: ")
