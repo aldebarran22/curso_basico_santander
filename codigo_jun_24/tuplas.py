@@ -47,3 +47,5 @@ for i in range(t.count(numero)):
     pos = t.index(numero, ini)
     print(pos)
     ini = pos + 1
+
+
