@@ -19,4 +19,7 @@ txt3 = """id;nombre;cargo
 10;George;Representante de ventas"""
 
 c2 = set(txt2.split("\n"))
-print(c2)
+c3 = set(txt3.split("\n"))
+todo = c2 | c3
+csv = "\n".join(todo)
+print(csv)
