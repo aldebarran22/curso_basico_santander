@@ -26,4 +26,8 @@ comida = {"Ana", "Pedro", "Juan", "Sofia"}
 cena = {"Ana", "Pedro", "Miguel", "Raquel", "Sara"}
 
 print("Quienes van a comer y a cenar: ", cena & comida)
-print("Quien va solo a comer: ")
+print("Quien va solo a comer: ", comida - cena)
+print("Quien va solo a cenar: ", cena - comida)
+print('Quienes van solo a un evento pero no a los dos: ', comida ^ cena)
+print((comida | cena) - (comida & cena))
+print('Quienes han participado en los eventos:', comida | cena)
