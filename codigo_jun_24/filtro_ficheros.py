@@ -5,8 +5,7 @@ extensiones conocidas.
 
 import os
 
-
-L = os.listdir()
+L = os.listdir("")
 for fich in L:
     ext = fich.partition(".")[2]
     if ext in ("pdf", "py"):
