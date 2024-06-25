@@ -22,5 +22,11 @@ txt = """id;nombre;cargo
 9;Dodsworth;Representante de ventas"""
 
 filas = txt.split("\n")
+cabs = filas[0].split(";")
+for fila in filas[1:]:
+    pass
+
+"""
 for pos, i in enumerate(filas):
     print(pos, i)
+"""
