@@ -47,3 +47,11 @@ if __name__ == "__main__":
     # lista sg
     horas = [(8,), (12, 45), (9, 30, 33), (14, 56, 3), (6, 40)]
     sg = []
+    for t in horas:
+        sg.append(segundos(*t))
+
+    L = [23, 45, 12]
+    print("lista:", segundos(*L))
+
+    hora = {"h": 6, "m": 55}
+    print("dicc: ", segundos(**hora))
