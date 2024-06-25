@@ -17,3 +17,6 @@ txt3 = """id;nombre;cargo
 8;Callahan;Coordinador ventas interno
 9;Dodsworth;Representante de ventas
 10;George;Representante de ventas"""
+
+c2 = set(txt2.split("\n"))
+print(c2)
