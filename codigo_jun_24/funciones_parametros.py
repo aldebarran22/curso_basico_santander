@@ -17,3 +17,5 @@ def funcion(ob, op=1, *args, **kwargs):
 
 if __name__ == "__main__":
     funcion(100)
+    funcion(1,2,3,4,5,6,7)
+    funcion(1,2,3,4,5,6,7, x=100, y=200)
