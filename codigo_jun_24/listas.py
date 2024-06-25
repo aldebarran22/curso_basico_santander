@@ -46,4 +46,8 @@ else:
     print("no está")
 
 
+
+
+
+
 # Operadores relacionales: ==, <, <= ...
