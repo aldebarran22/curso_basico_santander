@@ -38,3 +38,12 @@ if __name__ == "__main__":
 
     print("30 min: ", segundos(m=30))
     print("05:30 ", segundos(5, 30))
+    print("05:00:30 ", segundos(5, s=30))
+
+    t = (12, 30, 4)
+    print("tupla: ", segundos(*t))
+
+    # Convertir las horas a segundos y guardar los resultados en la
+    # lista sg
+    horas = [(8,), (12, 45), (9, 30, 33), (14, 56, 3), (6, 40)]
+    sg = []
