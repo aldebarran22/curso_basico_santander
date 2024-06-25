@@ -19,6 +19,9 @@ while True:
 """
 
 i = 0
-while i < 10:
-    print(i)
+L = []
+while i < 100:
+    L.append(i)
     i += 1
+
+print(L[:10])
