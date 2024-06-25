@@ -6,8 +6,9 @@ extensiones conocidas.
 import os
 
 
-def filtro(*extensiones):
-    L = os.listdir("")
+def filtro(*extensiones, path=None):
+    #rpath = path.replace("\\","/")
+    L = os.listdir(path)
     for fich in L:
         ext = fich.partition(".")[2]
         if ext in extensiones:
@@ -15,5 +16,7 @@ def filtro(*extensiones):
 
 
 if __name__ == "__main__":
-    ficheros = filtro("pdf")
-    ficheros = filtro("pdf", "xlsx", "html")
+    ficheros = filtro("pdf", path=r"D:\OneDrive\Escritorio\python_basico_santander\repositorio\doc")
+    #ficheros = filtro("pdf", "xlsx", "html")
+
+    
