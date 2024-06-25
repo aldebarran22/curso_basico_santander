@@ -42,3 +42,8 @@ print(t2)
 t = (1,3,4,2,3,5,6,7,1,2,1)
 # imprimir las posiciones que ocupa un numero en la tupla
 numero = 1
+ini = 0
+for i in range(t.count(numero)):
+    pos = t.index(numero, ini)
+    print(pos)
+    ini = pos + 1
