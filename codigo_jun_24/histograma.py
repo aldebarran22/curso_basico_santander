@@ -2,6 +2,7 @@
 Generar un histograma con una lista de valores aleatorios.
 """
 
+import matplotlib.pyplot as plt
 import random
 
 def generarHisto(N=1000,ini=1,fin=20):
@@ -25,8 +26,8 @@ if __name__ == '__main__':
     x = histograma.keys()
     y = histograma.values()
 
-    print(x)
-    print(y)
+    plt.plot(x, y)
+    plt.show()
 
     #for k, v in histograma.items():
     #    print(k,v)
