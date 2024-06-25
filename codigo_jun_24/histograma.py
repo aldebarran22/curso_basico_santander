@@ -5,7 +5,8 @@ Generar un histograma con una lista de valores aleatorios.
 import matplotlib.pyplot as plt
 import random
 
-def generarHisto(N=1000,ini=1,fin=20):
+
+def generarHisto(N=1000, ini=1, fin=20):
 
     # Generar una lista con N números aleatorios:
     L = []
@@ -20,14 +21,13 @@ def generarHisto(N=1000,ini=1,fin=20):
     return histograma
 
 
-
-if __name__ == '__main__':
-    histograma = generarHisto(500, 1, 15)
+if __name__ == "__main__":
+    histograma = generarHisto(5000, 1, 25)
     x = histograma.keys()
     y = histograma.values()
 
     plt.plot(x, y)
     plt.show()
 
-    #for k, v in histograma.items():
+    # for k, v in histograma.items():
     #    print(k,v)

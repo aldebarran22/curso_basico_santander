@@ -5,9 +5,15 @@ extensiones conocidas.
 
 import os
 
-L = os.listdir("")
-for fich in L:
-    ext = fich.partition(".")[2]
-    if ext in ("pdf", "py"):
-        print(fich)
 
+def filtro(*extensiones):
+    L = os.listdir("")
+    for fich in L:
+        ext = fich.partition(".")[2]
+        if ext in extensiones:
+            print(fich)
+
+
+if __name__ == "__main__":
+    ficheros = filtro("pdf")
+    ficheros = filtro("pdf", "xlsx", "html")
