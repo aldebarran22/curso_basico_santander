@@ -18,7 +18,7 @@ txt = """id;nombre;cargo
 3;Leverling;Representante de ventas
 4;Peacock;Representante de ventas
 6;Suyama;Representante de ventas
-7;King;Representante de ventas
+7;King;Gerente de ventas
 9;Dodsworth;Representante de ventas"""
 
 filas = txt.split("\n")
@@ -30,6 +30,10 @@ for fila in filas[1:]:
     empleados.append(emp)
 
 print(empleados)
+print('el nombre del primer empleado: ', empleados[0]['nombre'])
+print('el cargo del último empleado: ', empleados[-1]['cargo'])
+
+# Imprimir el nombre de los empleados que se dedican a las ventas
 
 """
 for pos, i in enumerate(filas):
