@@ -8,6 +8,10 @@ Tipos de llamada:
 """
 
 
-def sumar(a, b):
+def sumar(a:str, b:str) -> str:
     """Retorna la suma de los dos parámetros"""
     return a + b
+
+def restar(a,b):
+    """Retorna la resta de los dos parámetros"""
+    return a-b
