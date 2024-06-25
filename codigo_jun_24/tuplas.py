@@ -27,3 +27,18 @@ t = 1, 2, 3
 a, b, c = t
 
 L = [(40.2, -3.65), (42.6, -2.7), (55.5, 12.5)]
+for t in L:
+    print(t[0],t[1])
+
+for lat, lon in L:
+    print(lat, lon)
+
+
+t2 += (8,9,10) # t2 = t2 + (8,9,10)
+print(t2)
+#t2[0] = 1000
+
+# index y count:
+t = (1,3,4,2,3,5,6,7,1,2,1)
+# imprimir las posiciones que ocupa un numero en la tupla
+numero = 1
