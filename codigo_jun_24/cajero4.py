@@ -10,11 +10,15 @@ billetes = [100, 50, 20, 10]
 desgloseBilletes = dict()  # Crear un dict vacio
 
 while True:
-    importe = int(input("Teclear importe:>"))
-    if importe % 10 == 0:
-        break
+    simporte = input("Teclear importe:>")
+    if simporte.isnumeric():
+        importe = int(simporte)
+        if importe % 10 == 0:
+            break
+        else:
+            print("El importe no es correcto")
     else:
-        print("El importe no es correcto")
+        print('Solo se admiten números enteros')
 
 for b in billetes:
     if importe >= b:
