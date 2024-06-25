@@ -11,4 +11,10 @@ L = []
 for i in range(N):
     L.append(random.randint(1,20))
 
-print(L[:10])
+claves = set(L)
+histograma = dict()
+for num in claves:
+    histograma[num] = L.count(num)
+
+for k, v in histograma.items():
+    print(k,v)
