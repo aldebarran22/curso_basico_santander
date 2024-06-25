@@ -23,8 +23,13 @@ txt = """id;nombre;cargo
 
 filas = txt.split("\n")
 cabs = filas[0].split(";")
+empleados = list()
 for fila in filas[1:]:
-    pass
+    Lvalores = fila.split(";")
+    emp = dict(zip(cabs, Lvalores))
+    empleados.append(emp)
+
+print(empleados)
 
 """
 for pos, i in enumerate(filas):
