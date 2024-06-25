@@ -10,5 +10,5 @@ L = os.listdir()
 for fich in L:
     ext = fich.partition(".")[2]
     if ext in ("pdf", "py"):
-        print(ext)
+        print(fich)
 
