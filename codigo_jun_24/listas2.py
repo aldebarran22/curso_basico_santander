@@ -12,5 +12,18 @@ print('Quitar el primero y el último: ', L[1:-1])
 print('Toda la lista de dos en dos: ', L[::2])
 print('invertida: ', L[::-1])
 
+cad = "acurruca"
+if cad == cad[::-1]:
+    print("Es un palíndromo")
+else:
+    print('no lo es')
+
+numero = 12344321
+cad2 = str(numero)
+if cad2 == cad2[::-1]:
+    print("Es un capicua")
+else:
+    print('no lo es')
+
 
 
