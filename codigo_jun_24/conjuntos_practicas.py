@@ -20,8 +20,12 @@ txt3 = """id;nombre;cargo
 
 
 def ordenar(fila):
-    print("fila: ", fila)
-    return fila
+    aux = fila.partition(";")[0]
+    if aux.isnumeric():
+        return int(aux)
+    else:
+        return 0
+    
 
 
 c2 = set(txt2.split("\n"))
