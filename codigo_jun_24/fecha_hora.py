@@ -19,6 +19,8 @@ class Time:
         self.mm %= 60
         self.hh += horas
 
+        self.hh %= 24
+
     def __str__(self):
         return "%02d:%02d:%02d" % (self.hh, self.mm, self.ss)
 
