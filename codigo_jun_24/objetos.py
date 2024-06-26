@@ -66,6 +66,12 @@ class Traductor(Candidato):
         self.idiomas = idiomas
 
 
+def testTraductor():
+    t1 = Traductor("Sara", 10, 4, True, ["inglés", "italiano"])
+    print(t1)
+    print(t1.generarCode())
+
+
 def testCandidato():
     c1 = Candidato("Ana", 9, 3, True)
     print(c1)  # print(str(c1)) # print(c1.__str__())
@@ -99,4 +105,4 @@ def testCandidato():
 
 if __name__ == "__main__":
     # testCandidato()
-    pass
+    testTraductor()
