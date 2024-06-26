@@ -9,7 +9,7 @@ Personas:
 
  La clase es UNA -> múltiples personas u objetos
 
- crear una persona -> crea una instancia de la clase Persona.  CONSTRUCTOR: __init__
+ crear una persona -> crea una instancia de la clase Persona.  CONSTRUCTOR: __init__, DESTRUCTOR: __del__
 
  el objeto en curso --> self 
 
