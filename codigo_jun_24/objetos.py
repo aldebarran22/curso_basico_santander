@@ -15,6 +15,18 @@ class Candidato:
         self.emp = emp
         self.sup = sup
 
-if __name__ == '__main__':
+    def __str__(self):
+        return (
+            self.nombre
+            + " exp:"
+            + str(self.exp)
+            + " emp:"
+            + str(self.emp)
+            + " sup:"
+            + str(self.sup)
+        )
+
+
+if __name__ == "__main__":
     c1 = Candidato("Ana", 9, 3, True)
-    print(c1)
+    print(c1)  # print(str(c1)) # print(c1.__str__())
