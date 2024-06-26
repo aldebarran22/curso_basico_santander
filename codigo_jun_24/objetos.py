@@ -67,19 +67,24 @@ class Traductor(Candidato):
 
     def __str__(self):
         return super().__str__() + " " + ",".join(self.idiomas)
-    
+
     def generarCode(self):
         cod = super().generarCode()
         numIdiomas = len(self.idiomas)
-        nuevoCodigo = str(cod)+str(numIdiomas)
+        nuevoCodigo = str(cod) + str(numIdiomas)
         return int(nuevoCodigo)
-
 
 
 def testTraductor():
     t1 = Traductor("Sara", 10, 4, True, ["inglés", "italiano"])
+    t2 = Traductor("José", 9, 5, True, ["inglés", "italiano", "chino"])
     print(t1)
     print(t1.generarCode())
+
+    if t1 < t2:
+        print(t1.nombre, "puntuacion menor: ", t1.generarCode())
+    else:
+        print(t2.nombre, "puntuacion menor: ", t2.generarCode())
 
 
 def testCandidato():
