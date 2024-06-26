@@ -1,7 +1,16 @@
 """
 POO en Python
 """
+from string import ascii_letters
+from random import randint
 
+def generarDiccionarios():
+    candidatos = [{"nombre":letra * 5, \
+               "exp":randint(6,10), \
+               "emp":randint(4,6),
+               "sup": randint(1,10) % 2 == 0} \
+              for letra in ascii_letters]
+    return candidatos
 
 class Candidato:
     """
@@ -30,3 +39,6 @@ class Candidato:
 if __name__ == "__main__":
     c1 = Candidato("Ana", 9, 3, True)
     print(c1)  # print(str(c1)) # print(c1.__str__())
+
+    diccionarios = generarDiccionarios()
+    candidatos = []
