@@ -23,3 +23,10 @@ if __name__ == "__main__":
 
     mutables(L, c, d)
     print(L, c, d)
+
+    n = 1
+    t = (1,2,3)
+    cad = "hola"
+    inmutables(n, t, cad)
+
+    print(n, t, cad)
