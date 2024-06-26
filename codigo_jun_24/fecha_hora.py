@@ -7,7 +7,11 @@ class Time:
 
     def __add__(self, other):
         nuevo = Time(self.hh + other.hh, self.mm + other.mm, self.ss + other.ss)
+        nuevo.ajustar()
         return nuevo
+    
+    def ajustar(self):
+        pass
 
     def __str__(self):
         return "%02d:%02d:%02d" % (self.hh, self.mm, self.ss)
@@ -39,3 +43,4 @@ if __name__ == "__main__":
     print(t2)
 
     suma = t1 + t2  # suma = t1.__add__(t2)
+    print('suma: ', suma)
