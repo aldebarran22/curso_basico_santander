@@ -60,7 +60,11 @@ class Candidato:
 
 
 class Traductor(Candidato):
-    pass
+
+    def __init__(self, nombre="", exp=0, emp=0, sup=False, idiomas=[]):
+        Candidato.__init__(self, nombre, exp, emp, sup)
+        self.idiomas = idiomas
+
 
 def testCandidato():
     c1 = Candidato("Ana", 9, 3, True)
