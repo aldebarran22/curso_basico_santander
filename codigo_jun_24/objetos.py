@@ -45,16 +45,15 @@ class Candidato:
             + str(self.sup)
         )
 
-    def generarCode(self):
-        valores = list(c.values())
-        valores = tuple(valores[1:])
-        codigo = "%d%d%d" % valores
+    def generarCode(self):       
+        codigo = "%d%d%d" % (self.exp, self.emp, self.sup)
         return int(codigo)
 
 
 if __name__ == "__main__":
     c1 = Candidato("Ana", 9, 3, True)
     print(c1)  # print(str(c1)) # print(c1.__str__())
+    print("Código: ", c1.generarCode())
 
     diccionarios = generarDiccionarios()
     # print(diccionarios[:3])
