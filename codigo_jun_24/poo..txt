@@ -1,0 +1,44 @@
+Personas:
+
+ - características: peso, altura, color de pelo, color ojos, nombre ... --> atributos / propiedades
+
+ - acciones: correr(), andar(), saltar() ... --> métodos (def)
+
+ - 1 objeto -> 1 persona (instancia)
+
+
+ La clase es UNA -> múltiples personas u objetos
+
+ crear una persona -> crea una instancia de la clase Persona.  CONSTRUCTOR: __init__
+
+ el objeto en curso --> self 
+
+===========================================================================================
+
+Relaciones entre las clases:
+
+- Herencia: tenemos clases que tienen cosas en común
+   Empleado : programador, analista, administrativo, JefeProyecto
+   
+- Composición: una clase se desglosa en partes (atributos) que son objetos de otras clases
+  Coche: motor, radio, puertas
+
+- Asociación: dos objetos independientes (no herencia, no composición).
+  Coche c
+  SurtidorGas
+
+  c.repostar(surtidor)
+
+============================================================================================
+
+Python:
+- Herencia Simple y múltiple
+- Sobrecarga de operadores.
+  __lt__ 
+
+- No admite sobrecarga de método ni de constructores.
+
+
+ 
+
+
