@@ -41,4 +41,6 @@ if __name__ == "__main__":
     print(c1)  # print(str(c1)) # print(c1.__str__())
 
     diccionarios = generarDiccionarios()
-    candidatos = []
+    #print(diccionarios[:3])
+    candidatos = [Candidato(**d) for d in diccionarios]
+    print(f'Tenemos {len(candidatos)} candidatos')
