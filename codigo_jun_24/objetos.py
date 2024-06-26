@@ -31,6 +31,15 @@ class Candidato:
         self.emp = emp
         self.sup = sup
 
+    def __eq__(self, other):
+        return self.generarCode() == other.generarCode()
+
+    def __lt__(self, other):
+        cod1 = self.generarCode()
+        cod2 = other.generarCode()
+
+        return True if cod1 < cod2 else False
+
     def __repr__(self):
         return str(self)
 
@@ -45,7 +54,7 @@ class Candidato:
             + str(self.sup)
         )
 
-    def generarCode(self):       
+    def generarCode(self):
         codigo = "%d%d%d" % (self.exp, self.emp, self.sup)
         return int(codigo)
 
@@ -54,11 +63,28 @@ if __name__ == "__main__":
     c1 = Candidato("Ana", 9, 3, True)
     print(c1)  # print(str(c1)) # print(c1.__str__())
     print("Código: ", c1.generarCode())
+    c2 = Candidato("José", 7, 4, False)
+    print("Código: ", c2.generarCode())
+    c3 = Candidato("Raquel", 7, 4, False)
+
+    if c3 == c2:
+        print("Tienen la misma puntuación")
+    else:
+        print("no igual")
+
+    if c1 < c2:  # if c1.__lt__(c2):
+        print(c1.nombre, "tiene menos puntuación que", c2.nombre)
+    else:
+        print(c2.nombre, "tiene menos puntuación que", c1.nombre)
 
     diccionarios = generarDiccionarios()
     # print(diccionarios[:3])
     candidatos = [Candidato(**d) for d in diccionarios]
     print(f"Tenemos {len(candidatos)} candidatos")
-    candidatos.sort(key=lambda obj: obj.generarCode(), reverse=True)
-    for c in candidatos[:10]:
-        print(c)
+    # candidatos.sort(key=lambda obj: obj.generarCode(), reverse=True)
+    candidatos.sort(reverse=True)
+    print(candidatos[:3])
+
+    # Ordenar por nombre:
+    candidatos.sort(key=lambda obj: obj.nombre)
+    print(candidatos[:3])
