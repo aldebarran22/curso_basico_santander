@@ -67,6 +67,11 @@ class Traductor(Candidato):
 
     def __str__(self):
         return super().__str__() + " " + ",".join(self.idiomas)
+    
+    def generarCode(self):
+        cod = super().generarCode()
+        numIdiomas = len(self.idiomas)
+        
 
 
 def testTraductor():
