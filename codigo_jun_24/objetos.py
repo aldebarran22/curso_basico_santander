@@ -59,7 +59,10 @@ class Candidato:
         return int(codigo)
 
 
-if __name__ == "__main__":
+class Traductor(Candidato):
+    pass
+
+def testCandidato():
     c1 = Candidato("Ana", 9, 3, True)
     print(c1)  # print(str(c1)) # print(c1.__str__())
     print("Código: ", c1.generarCode())
@@ -88,3 +91,8 @@ if __name__ == "__main__":
     # Ordenar por nombre:
     candidatos.sort(key=lambda obj: obj.nombre)
     print(candidatos[:3])
+
+
+if __name__ == "__main__":
+    # testCandidato()
+    pass
