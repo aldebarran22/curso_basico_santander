@@ -71,7 +71,9 @@ class Traductor(Candidato):
     def generarCode(self):
         cod = super().generarCode()
         numIdiomas = len(self.idiomas)
-        
+        nuevoCodigo = str(cod)+str(numIdiomas)
+        return int(nuevoCodigo)
+
 
 
 def testTraductor():
