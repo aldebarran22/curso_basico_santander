@@ -18,8 +18,15 @@ txt3 = """id;nombre;cargo
 9;Dodsworth;Representante de ventas
 10;George;Representante de ventas"""
 
+
+def ordenar(fila):
+    print("fila: ", fila)
+    return fila
+
+
 c2 = set(txt2.split("\n"))
 c3 = set(txt3.split("\n"))
 todo = c2 | c3
-csv = "\n".join(todo)
+L = sorted(todo, key=ordenar)
+csv = "\n".join(L)
 print(csv)
