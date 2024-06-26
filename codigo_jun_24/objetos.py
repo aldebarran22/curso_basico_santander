@@ -65,6 +65,9 @@ class Traductor(Candidato):
         Candidato.__init__(self, nombre, exp, emp, sup)
         self.idiomas = idiomas
 
+    def __str__(self):
+        return super().__str__() + " " + ",".join(self.idiomas)
+
 
 def testTraductor():
     t1 = Traductor("Sara", 10, 4, True, ["inglés", "italiano"])
