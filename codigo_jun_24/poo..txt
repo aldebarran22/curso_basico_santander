@@ -38,6 +38,11 @@ Python:
 
 - No admite sobrecarga de método ni de constructores.
 
+============================================================================================
+
+str() --> __str__()
+repr() --> __repr__()
+
 
  
 

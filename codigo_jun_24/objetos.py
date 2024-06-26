@@ -24,6 +24,9 @@ class Candidato:
         self.emp = emp
         self.sup = sup
 
+    def __repr__(self):
+        return str(self)
+
     def __str__(self):
         return (
             self.nombre
@@ -44,3 +47,4 @@ if __name__ == "__main__":
     #print(diccionarios[:3])
     candidatos = [Candidato(**d) for d in diccionarios]
     print(f'Tenemos {len(candidatos)} candidatos')
+    print(candidatos)
