@@ -16,6 +16,13 @@ def inmutables(numero, tupla, cadena):
     cadena += "adios"
 
 
+def inmutables2(numero, tupla, cadena):
+    numero += 100
+    tupla += (100, 200)
+    cadena += "adios"
+    return numero, tupla, cadena
+
+
 if __name__ == "__main__":
     L = [1, 2, 3]
     c = {1, 2, 3}
@@ -25,8 +32,11 @@ if __name__ == "__main__":
     print(L, c, d)
 
     n = 1
-    t = (1,2,3)
+    t = (1, 2, 3)
     cad = "hola"
     inmutables(n, t, cad)
+    print(n, t, cad)
 
+    # Retornando los inmutables:
+    n, t, cad = inmutables2(n, t, cad)
     print(n, t, cad)
