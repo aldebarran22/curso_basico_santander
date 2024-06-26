@@ -47,4 +47,6 @@ if __name__ == "__main__":
     #print(diccionarios[:3])
     candidatos = [Candidato(**d) for d in diccionarios]
     print(f'Tenemos {len(candidatos)} candidatos')
-    print(candidatos)
+    candidatos.sort(key=lambda obj : obj.exp)
+    for c in candidatos[:5]:
+        print(c)
