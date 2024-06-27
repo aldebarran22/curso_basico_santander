@@ -80,3 +80,5 @@ if __name__ == "__main__":
 
     dt2 = DateTime2(27, 6, 2024, 9, 8, 10)
     print(dt2)
+
+    print(dt2.__class__.__name__)
