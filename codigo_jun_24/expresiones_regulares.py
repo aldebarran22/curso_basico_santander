@@ -13,8 +13,13 @@ def validar(patron, L):
 
 
 # Ejemplo con el .
-patron = ".ython$"
+patron = r".ython$"
 L = ["python", "python99", "jython", "2ython", "*ython", "cithon"]
+validar(patron, L)
+
+# 3 letras vocales que terminen en .
+patron = r"[AEIOU]{3}\."
+L = ["AEE.", "AEI..", "AA.", "aeI.", "UUO"]
 validar(patron, L)
 
 # Validar DNIs:
