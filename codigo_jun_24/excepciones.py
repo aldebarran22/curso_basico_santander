@@ -5,6 +5,8 @@ finally: liberar recursos
 raise: lanzar excepciones
 """
 
+from os import listdir
+
 
 def test1():
     """Capturar una excepcion"""
@@ -62,15 +64,16 @@ def test4():
         else:
             print(e.__class__.__name__, e)
 
+
 def test5():
     """Capturar dos excepciones concretas. Y después
     capturamos con la superclase exception por si
     falla otra cosa."""
     try:
-        d = {"a":1, "b":2}
+        d = {"a": 1, "b": 2}
         L = [1, 2, 3, 4, 5]
         n = 0
-        print(d['h'])
+        print(d["h"])
         print("La media: ", sum(L) / n)
         print(L[10])
         print("La suma es:", sum(L))
@@ -84,13 +87,13 @@ def test5():
 
 def test6(path):
     """Capturar una excepción al abrir un fichero
-    y liberar recursos (cerrar fichero) en 
+    y liberar recursos (cerrar fichero) en
     finally"""
     fich = None
     try:
         fich = open(path, "r")
         txt = fich.read()
-        print(txt)
+        print(txt / 2)
 
     except Exception as e:
         print(e.__class__.__name__, e)
@@ -100,6 +103,20 @@ def test6(path):
             fich.close()
 
 
+def procesarFichero(path):
+    if "cajero" in path:
+        raise Exception(f"Error en el fichero: {path}")
+    else:
+        print(f"procesando el fichero: {path}")
+
+
+def test7():
+    try:
+        for f in listdir():
+            procesarFichero(f)
+
+    except Exception as e:
+        print(e.__class__.__name__, e)
 
 
 if __name__ == "__main__":
@@ -108,4 +125,5 @@ if __name__ == "__main__":
     # test3()
     # test4()
     # test5()
-    test6("no_existe.txt")
+    # test6("cadenas.py")
+    test7()
