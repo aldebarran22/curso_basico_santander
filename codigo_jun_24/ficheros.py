@@ -10,7 +10,8 @@ def grabarFichero(path):
     try:
         fich = open(path, "a")
         for i in range(10):
-            print(f"fila {i+1}", file=fich)
+            # print(f"fila {i+1}", file=fich)
+            fich.write(f"fila {i+1}")
 
     except Exception as e:
         raise e
@@ -49,15 +50,16 @@ def exportarPais(path, pais, sep=";"):
         path_destino = f"../ficheros/{pais}.csv"
         fich = open(path, "r")
         fichPais = open(path_destino, "w")
+        print("filas: ", len(fich))
 
-        for fila in fich:            
+        for fila in fich:
             fila = fila.strip()  # ojo es inmutable!
 
             if cabs:
                 print(fila, file=fichPais)
                 cabs = False
                 continue
-            
+
             L = fila.split(sep)
             if L[-1] == pais:
                 print(fila, file=fichPais)
@@ -75,5 +77,5 @@ def exportarPais(path, pais, sep=";"):
 
 if __name__ == "__main__":
     # leerFichero("../ficheros_curso/pedidos.csv", "Suiza")
-    # grabarFichero("../ficheros/lineas.txt")
-    exportarPais("../ficheros_curso/pedidos.csv", "Suiza")
+    grabarFichero("../ficheros/lineas.txt")
+    # exportarPais("../ficheros_curso/pedidos.csv", "Suiza")
