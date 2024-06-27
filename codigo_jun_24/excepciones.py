@@ -111,12 +111,20 @@ def procesarFichero(path):
 
 
 def test7():
-    try:
-        for f in listdir():
+    errores = 0
+    fich_error = []
+    for f in listdir():
+        try:
             procesarFichero(f)
 
-    except Exception as e:
-        print(e.__class__.__name__, e)
+        except Exception as e:
+            fich_error.append(f)
+            errores += 1
+            print(e.__class__.__name__, e)
+
+    if errores > 0:
+        print(f"Han fallado: {errores} ficheros")
+        print(fich_error)
 
 
 if __name__ == "__main__":
