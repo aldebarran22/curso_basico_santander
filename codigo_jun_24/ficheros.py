@@ -43,22 +43,37 @@ def exportarPais(path, pais, sep=";"):
     """Grabar un fichero con las filas de los
     pedidos del pais indicado"""
     fich = None
+    fichPais = None
+    cabs = True
     try:
+        path_destino = f"../ficheros/{pais}.csv"
         fich = open(path, "r")
-        for fila in fich:
+        fichPais = open(path_destino, "w")
+
+        for fila in fich:            
             fila = fila.strip()  # ojo es inmutable!
+
+            if cabs:
+                print(fila, file=fichPais)
+                cabs = False
+                continue
+            
             L = fila.split(sep)
             if L[-1] == pais:
-                print(fila)
+                print(fila, file=fichPais)
 
     except Exception as e:
         raise e
 
     finally:
+        if fichPais:
+            fichPais.close()
+
         if fich:
             fich.close()
 
 
 if __name__ == "__main__":
     # leerFichero("../ficheros_curso/pedidos.csv", "Suiza")
-    grabarFichero("../ficheros/lineas.txt")
+    # grabarFichero("../ficheros/lineas.txt")
+    exportarPais("../ficheros_curso/pedidos.csv", "Suiza")
