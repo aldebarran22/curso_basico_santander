@@ -31,17 +31,32 @@ def cargaFichero(path):
             fich.close()
 
 
-if __name__ == "__main__":
+def fusion(origen1, origen2, destino):
+    fich = None
     try:
-        c2 = cargaFichero("../ficheros_curso/Empleados2.txt")
-        c3 = cargaFichero("../ficheros_curso/Empleados3.txt")
+        c2 = cargaFichero(origen1)
+        c3 = cargaFichero(origen2)
+        fich = open(destino, "w")
 
         todo = c2 | c3
-        L = [fila for fila in todo if "nombre" not in fila]
-        R = sorted(L, key=ordenar)
-        R.insert(0, "id;nombre;cargo")
+        # L = [fila for fila in todo if "nombre" not in fila]
+        R = sorted(todo, key=ordenar)
+        # R.insert(0, "id;nombre;cargo")
         csv = "\n".join(R)
-        print(csv)
+        print(csv, file=fich)
 
     except Exception as e:
         print(e.__class__.__name__, e)
+
+    finally:
+        if fich:
+            fich.close()
+
+
+if __name__ == "__main__":
+
+    fusion(
+        "../ficheros_curso/Empleados2.txt",
+        "../ficheros_curso/Empleados3.txt",
+        "../ficheros/Empleados.csv",
+    )
