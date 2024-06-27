@@ -41,6 +41,12 @@ class Date:
             return True
         else:
             return False
+        
+class DateTime(Date, Time):
+
+    def __init__(self, d=1, m=1, y=1970, hh=0, mm=0, ss=0):
+        Date.__init__(self, d,m,y)    
+        Time.__init__(self, hh,mm,ss)
 
 
 if __name__ == "__main__":
@@ -52,3 +58,6 @@ if __name__ == "__main__":
 
     suma = t1 + t2  # suma = t1.__add__(t2)
     print("suma: ", suma)
+
+    dt = DateTime(27,6,2024, 9,8,10)
+    print(dt)
