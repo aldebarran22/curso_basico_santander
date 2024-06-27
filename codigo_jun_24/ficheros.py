@@ -5,14 +5,17 @@ Procesamiento de ficheros en Python:
 """
 
 
-def leerFichero(path):
+def leerFichero(path, pais, sep=";"):
     """Leer el fichero por filas"""
     fich = None
     try:
         fich = open(path, "r")
         for fila in fich:
             fila = fila.strip()  # ojo es inmutable!
-            print(fila)
+            L = fila.split(sep)
+            if L[-1] == pais:
+                print(fila)
+
 
     except Exception as e:
         raise e
