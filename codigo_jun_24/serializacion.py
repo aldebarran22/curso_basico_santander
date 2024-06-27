@@ -58,8 +58,12 @@ def serializarShelve(path, *objetos):
 
 def deserializarShelve(path, clave):
     Shelf = s.open(path)
-    print(list(Shelf.keys()))
-    Shelf.close()
+    claves = list(Shelf.keys())
+    if clave in claves:
+        Shelf.close()
+        return Shelf[clave]
+    else:
+        raise ValueError(f"La clave: {clave} no existe")
 
 
 def testShelve():
