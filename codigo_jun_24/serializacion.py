@@ -56,6 +56,10 @@ def serializarShelve(path, *objetos):
     Shelf.close()
 
 
+def deserializarShelve(path, clave):
+    pass
+
+
 def testShelve():
     c1 = Candidato("Pedro", 10, 6, True)
     fecha = Date(23, 6, 2024)
@@ -64,7 +68,12 @@ def testShelve():
 
     serializarShelve("../ficheros/objetos", c1, fecha, hora, fechaHora)
 
+    obj1 = deserializarShelve("../ficheros/objetos", "K-2")
+    print(obj1)
+    obj2 = deserializarShelve("../ficheros/objetos", "K-4")
+    print(obj2)
+
 
 if __name__ == "__main__":
-    #testPickle()
+    # testPickle()
     testShelve()
