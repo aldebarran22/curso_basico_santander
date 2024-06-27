@@ -18,8 +18,14 @@ L = ["python", "python99", "jython", "2ython", "*ython", "cithon"]
 validar(patron, L)
 
 # 3 letras vocales que terminen en .
-patron = r"[AEIOU]{3}\."
+patron = r"[AEIOU]{3}\.$"
 L = ["AEE.", "AEI..", "AA.", "aeI.", "UUO"]
+validar(patron, L)
+
+# Cadenas que empiezan por 2 digitos, seguidas de un
+# tab y terminan en dos letras
+patron = ""
+L = []
 validar(patron, L)
 
 # Validar DNIs:
