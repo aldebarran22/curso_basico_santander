@@ -40,3 +40,6 @@ guión bajo y 6 números que no pueden empezar por 0.
 COD_AEE_800959
 S/N_UOO_958474
 """
+patron = ""
+L = ["COD_AEE_800959", " S/N_UOO_958474", "S/N_UOO_058474", "S/M_UOO_958474"]
+validar(patron, L)
