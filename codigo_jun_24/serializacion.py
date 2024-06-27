@@ -23,7 +23,8 @@ def serializarPickle(objeto, path):
 
 
 def deserializarPickle(path):
-    pass
+    # Abrir fichero en modo rb:
+    obj = p.load(fich)
 
 
 def testPickle():
