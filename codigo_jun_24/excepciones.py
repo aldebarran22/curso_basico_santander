@@ -22,7 +22,7 @@ def test2():
     try:
         L = [1, 2, 3, 4, 5]
         n = 0
-        print("La media: ", sum(L)/n)
+        print("La media: ", sum(L) / n)
         print(L[10])
         print("La suma es:", sum(L))
 
@@ -30,6 +30,22 @@ def test2():
         print(e.__class__.__name__, e)
 
 
+def test3():
+    """Capturar dos excepciones. Puede haber dos
+    except distinto o se pueden agrupar en el mismo
+    except en una tupla"""
+    try:
+        L = [1, 2, 3, 4, 5]
+        n = 0
+        print("La media: ", sum(L) / n)
+        print(L[10])
+        print("La suma es:", sum(L))
+
+    except (IndexError, ZeroDivisionError) as e:
+        print(e.__class__.__name__, e)
+
+
 if __name__ == "__main__":
-    #test1()
-    test2()
+    # test1()
+    # test2()
+    test3()
