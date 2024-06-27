@@ -19,7 +19,9 @@ def cargaFichero(path):
     try:
         fich = open(path, "r")
         txt = fich.read()
-       
+        c = set([fila for fila in txt.split("\n") if len(fila) > 0])  
+        return c
+         
     except Exception as e:
         print(e.__class__.__name__, e)
 
@@ -28,11 +30,13 @@ def cargaFichero(path):
             fich.close()
 
 
-c2 = set(txt2.split("\n"))
-c3 = set(txt3.split("\n"))
-todo = c2 | c3
-L = [fila for fila in todo if "nombre" not in fila]
-R = sorted(L, key=ordenar)
-R.insert(0, "id;nombre;cargo")
-csv = "\n".join(R)
-print(csv)
+if __name__ == "__main__":
+    c2 = cargaFichero("../ficheros_curso/Empleados2.txt")
+    c3 = cargaFichero("../ficheros_curso/Empleados3.txt")
+    
+    todo = c2 | c3
+    L = [fila for fila in todo if "nombre" not in fila]
+    R = sorted(L, key=ordenar)
+    R.insert(0, "id;nombre;cargo")
+    csv = "\n".join(R)
+    print(csv)
