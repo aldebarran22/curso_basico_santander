@@ -47,6 +47,7 @@ def fusion(origen1, origen2, destino):
         # R.insert(0, "id;nombre;cargo")
         csv = "\n".join(R)
         print(csv, file=fich)
+        print(f"Se ha generado el fichero: {destino}")
 
     except Exception as e:
         print(e.__class__.__name__, e)
