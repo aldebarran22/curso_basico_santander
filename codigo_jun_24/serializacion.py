@@ -6,6 +6,7 @@ import pickle as p
 import shelve as s
 
 from objetos import Candidato
+from fecha_hora import Date, Time, DateTime
 
 
 def serializarPickle(objeto, path):
@@ -36,7 +37,6 @@ def deserializarPickle(path):
     finally:
         if fich:
             fich.close()
-   
 
 
 def testPickle():
@@ -45,6 +45,24 @@ def testPickle():
     serializarPickle(c1, "../ficheros/candidato.bin")
     c2 = deserializarPickle("../ficheros/candidato.bin")
     print(c2)
+
+
+def serializarShelve(path, *objetos):
+    Shelf = open(path)
+    for pos, obj in enumerate(objetos):
+        clave = f"K-{pos+1}"
+        Shelf[clave] = obj
+
+    Shelf.close()
+
+
+def testShelve():
+    c1 = Candidato("Pedro", 10, 6, True)
+    fecha = Date(23, 6, 2024)
+    hora = Time(8, 55, 4)
+    fechaHora = DateTime(1, 3, 2000, 12, 34, 5)
+
+    serializarShelve("../ficheros/objetos", c1, fecha, hora, fechaHora)
 
 
 if __name__ == "__main__":
