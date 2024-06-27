@@ -8,7 +8,7 @@ Procesamiento de ficheros en Python:
 def grabarFichero(path):
     fich = None
     try:
-        fich = open(path, "w")
+        fich = open(path, "a")
         for i in range(10):
             print(f"fila {i+1}", file=fich)
 
@@ -22,6 +22,26 @@ def grabarFichero(path):
 
 def leerFichero(path, pais, sep=";"):
     """Leer el fichero por filas"""
+    fich = None
+    try:
+        fich = open(path, "r")
+        for fila in fich:
+            fila = fila.strip()  # ojo es inmutable!
+            L = fila.split(sep)
+            if L[-1] == pais:
+                print(fila)
+
+    except Exception as e:
+        raise e
+
+    finally:
+        if fich:
+            fich.close()
+
+
+def exportarPais(path, pais, sep=";"):
+    """Grabar un fichero con las filas de los
+    pedidos del pais indicado"""
     fich = None
     try:
         fich = open(path, "r")
