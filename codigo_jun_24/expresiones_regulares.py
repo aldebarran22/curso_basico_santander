@@ -13,8 +13,8 @@ def validar(patron, L):
 
 
 # Ejemplo con el .
-patron = ".ython"
-L = ["python", "jython", "2ython", "*ython", "cithon"]
+patron = ".ython$"
+L = ["python", "python99", "jython", "2ython", "*ython", "cithon"]
 validar(patron, L)
 
 # Validar DNIs:
