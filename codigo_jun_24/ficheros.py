@@ -8,10 +8,10 @@ Procesamiento de ficheros en Python:
 def grabarFichero(path):
     fich = None
     try:
-        fich = open(path, "a")
+        fich = open(path, "w")
         for i in range(10):
             # print(f"fila {i+1}", file=fich)
-            fich.write(f"fila {i+1}")
+            fich.write(f"fila {i+1}\n")
 
     except Exception as e:
         raise e
