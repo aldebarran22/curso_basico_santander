@@ -28,25 +28,28 @@ class Time:
 class Date:
 
     def __init__(self, dd, mm, yy):
-        self.dd = dd
-        self.mm = mm
-        self.yy = yy
+        self.d = dd
+        self.m = mm
+        self.y = yy
 
     def __str__(self):
-        return "%02d/%02d/%04d" % (self.dd, self.mm, self.yy)
+        return "%02d/%02d/%04d" % (self.d, self.m, self.y)
 
     def esBisiesto(self):
-        anyo = self.yy
+        anyo = self.y
         if (anyo % 4 == 0 and anyo % 100 != 0) or (anyo % 100 == 0 and anyo % 400 == 0):
             return True
         else:
             return False
         
-class DateTime(Date, Time):
+class DateTime(Time, Date):
 
     def __init__(self, d=1, m=1, y=1970, hh=0, mm=0, ss=0):
         Date.__init__(self, d,m,y)    
         Time.__init__(self, hh,mm,ss)
+
+    def __str__(self):
+        return Date.__str__(self) + " " + Time.__str__(self)
 
 
 if __name__ == "__main__":
