@@ -11,6 +11,7 @@ def leerFichero(path):
     try:
         fich = open(path, "r")
         for fila in fich:
+            fila = fila.strip()  # ojo es inmutable!
             print(fila)
 
     except Exception as e:
@@ -22,4 +23,4 @@ def leerFichero(path):
 
 
 if __name__ == "__main__":
-    leerFichero("diccionarios.py")
+    leerFichero("../ficheros_curso/pedidos.csv")
