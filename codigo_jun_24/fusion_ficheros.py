@@ -12,16 +12,17 @@ def ordenarNombre(fila):
         return "0"
     else:
         return nombre
-    
+
+
 def cargaFichero(path):
     """Leer el fichero y devuelve un conjunto con las filas"""
     fich = None
     try:
         fich = open(path, "r")
         txt = fich.read()
-        c = set([fila for fila in txt.split("\n") if len(fila.strip()) > 0])  
+        c = set([fila for fila in txt.split("\n") if len(fila.strip()) > 0])
         return c
-         
+
     except Exception as e:
         raise e
 
@@ -34,7 +35,7 @@ if __name__ == "__main__":
     try:
         c2 = cargaFichero("../ficheros_curso/Empleados2.txt")
         c3 = cargaFichero("../ficheros_curso/Empleados3.txt")
-        
+
         todo = c2 | c3
         L = [fila for fila in todo if "nombre" not in fila]
         R = sorted(L, key=ordenar)
