@@ -82,9 +82,30 @@ def test5():
         print(e.__class__.__name__, e)
 
 
+def test6(path):
+    """Capturar una excepción al abrir un fichero
+    y liberar recursos (cerrar fichero) en 
+    finally"""
+    fich = None
+    try:
+        fich = open(path, "r")
+        txt = fich.read()
+        print(txt)
+
+    except Exception as e:
+        print(e.__class__.__name__, e)
+
+    finally:
+        if fich:
+            fich.close()
+
+
+
+
 if __name__ == "__main__":
     # test1()
     # test2()
     # test3()
     # test4()
-    test5()
+    # test5()
+    test6("no_existe.txt")
