@@ -24,7 +24,19 @@ def serializarPickle(objeto, path):
 
 def deserializarPickle(path):
     # Abrir fichero en modo rb:
-    obj = p.load(fich)
+    fich = None
+    try:
+        fich = open(path, "rb")
+        objeto = p.load(fich)
+        return objeto
+
+    except Exception as e:
+        print(e)
+
+    finally:
+        if fich:
+            fich.close()
+   
 
 
 def testPickle():
