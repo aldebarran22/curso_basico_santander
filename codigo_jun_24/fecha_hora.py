@@ -41,15 +41,28 @@ class Date:
             return True
         else:
             return False
-        
+
+
 class DateTime(Time, Date):
+    """Implementación utilizando herencia múltiple"""
 
     def __init__(self, d=1, m=1, y=1970, hh=0, mm=0, ss=0):
-        Date.__init__(self, d,m,y)    
-        Time.__init__(self, hh,mm,ss)
+        Date.__init__(self, d, m, y)
+        Time.__init__(self, hh, mm, ss)
 
     def __str__(self):
         return Date.__str__(self) + " " + Time.__str__(self)
+
+
+class DateTime2:
+    """Implementación utilizando composición"""
+
+    def __init__(self, d=1, m=1, y=1970, hh=0, mm=0, ss=0):
+        self.fecha = Date(d, m, y)
+        self.hora = Time(hh, mm, ss)
+
+    def __str__(self):
+        return str(self.fecha) + " " + str(self.hora)
 
 
 if __name__ == "__main__":
@@ -62,5 +75,8 @@ if __name__ == "__main__":
     suma = t1 + t2  # suma = t1.__add__(t2)
     print("suma: ", suma)
 
-    dt = DateTime(27,6,2024, 9,8,10)
+    dt = DateTime(27, 6, 2024, 9, 8, 10)
     print(dt)
+
+    dt2 = DateTime2(27, 6, 2024, 9, 8, 10)
+    print(dt2)
