@@ -5,6 +5,21 @@ Procesamiento de ficheros en Python:
 """
 
 
+def grabarFichero(path):
+    fich = None
+    try:
+        fich = open(path, "w")
+        for i in range(10):
+            print(f"fila {i+1}", file=fich)
+
+    except Exception as e:
+        raise e
+
+    finally:
+        if fich:
+            fich.close()
+
+
 def leerFichero(path, pais, sep=";"):
     """Leer el fichero por filas"""
     fich = None
@@ -16,7 +31,6 @@ def leerFichero(path, pais, sep=";"):
             if L[-1] == pais:
                 print(fila)
 
-
     except Exception as e:
         raise e
 
@@ -26,4 +40,5 @@ def leerFichero(path, pais, sep=";"):
 
 
 if __name__ == "__main__":
-    leerFichero("../ficheros_curso/pedidos.csv")
+    # leerFichero("../ficheros_curso/pedidos.csv", "Suiza")
+    grabarFichero("../ficheros/lineas.txt")
