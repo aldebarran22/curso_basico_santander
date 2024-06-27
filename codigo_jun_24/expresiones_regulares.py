@@ -40,6 +40,16 @@ guión bajo y 6 números que no pueden empezar por 0.
 COD_AEE_800959
 S/N_UOO_958474
 """
-patron = ""
-L = ["COD_AEE_800959", " S/N_UOO_958474", "S/N_UOO_058474", "S/M_UOO_958474"]
+patron = r"(COD|S/N)_[AEIOU]{3}_[1-9][0-9]{5}$"
+L = ["COD_AEE_800959", "COD",  "S/N_UOO_958474", "S/N_UOO_058474", "S/M_UOO_958474"]
 validar(patron, L)
+
+
+# Objeto match
+patron = r"(COD|S/N)_[AEIOU]{3}_[1-9][0-9]{5}$"
+cad = "COD_AEE_800959"
+obj = re.match(patron, cad)
+if obj == None:
+    print('No cumple el patrón')
+else:
+    print(obj)
