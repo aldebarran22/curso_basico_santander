@@ -57,7 +57,9 @@ def serializarShelve(path, *objetos):
 
 
 def deserializarShelve(path, clave):
-    pass
+    Shelf = s.open(path)
+    print(list(Shelf.keys()))
+    Shelf.close()
 
 
 def testShelve():
