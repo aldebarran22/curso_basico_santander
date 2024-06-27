@@ -48,7 +48,7 @@ def testPickle():
 
 
 def serializarShelve(path, *objetos):
-    Shelf = open(path)
+    Shelf = s.open(path)
     for pos, obj in enumerate(objetos):
         clave = f"K-{pos+1}"
         Shelf[clave] = obj
@@ -66,4 +66,5 @@ def testShelve():
 
 
 if __name__ == "__main__":
-    testPickle()
+    #testPickle()
+    testShelve()
