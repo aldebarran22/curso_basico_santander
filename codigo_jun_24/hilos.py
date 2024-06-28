@@ -34,6 +34,9 @@ if __name__ == "__main__":
         # hilo.join() OJO, si lo colocamos aquí estamos secuencializando
         # el programa
 
+    print(list(threading.enumerate()))
+    print("Activos: ", activeCount())
+
     for hilo in L:
         hilo.join()
 
