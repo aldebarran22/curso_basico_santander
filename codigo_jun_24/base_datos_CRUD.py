@@ -114,8 +114,16 @@ if __name__ == "__main__":
         print("Empleados: ", len(L))
         print(L[:3])
 
-        emp = bd.read(1)
+        emp = bd.read(18)
         print(emp)
+
+        # Dar de alta un nuevo empleado:
+        emp2 = Empleado(0, "Miguel", "Representante de Ventas")
+        if bd.create(emp2):
+            print("Se ha grabado: ", emp2)
+        else:
+            print('No se ha creado')
+            
 
     except Exception as e:
         print(e)
