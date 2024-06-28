@@ -1,0 +1,17 @@
+Semáforo:
+Aforo: 20
+
+Entran	Aforo
+5	15
+3	12
+7	5
+5	0 
+-2	2
+1	1
+1	0
+
+acquire()  entrar cont -= 1
+
+release()  salir  cont += 1
+
+Lock: semáforo binario (modificar recursos en exclusión mutúa)
