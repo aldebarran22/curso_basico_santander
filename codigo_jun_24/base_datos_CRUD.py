@@ -108,7 +108,23 @@ class EmpleadoCRUD:
         return self.__delete_update(sql, t)
 
     def __delete_update(self, sql, t):
-        pass
+        cur = None
+        try:
+            cur = self.con.cursor()
+            cur.execute(sql, t)
+            n = cur.rowcount
+            if n == 0:
+                raise ValueError(f"No existe el empleado con clave: {id}")
+            else:
+                self.con.commit()
+                return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
 
     def create(self, emp):
         cur = None
