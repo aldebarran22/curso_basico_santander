@@ -12,6 +12,7 @@ from threading import Thread
 class HiloCliente(Thread):
 
     def __init__(self, s_client, addr):
+        Thread.__init__(self)
         self.s_client = s_client
         self.addr = addr
 
