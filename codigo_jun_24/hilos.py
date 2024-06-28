@@ -2,9 +2,10 @@
 Threads en Python
 """
 
-from threading import Thread
+from threading import Thread, activeCount
 from random import randint
 from time import sleep
+import threading
 
 
 class Hilo(Thread):

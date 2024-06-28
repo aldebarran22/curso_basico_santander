@@ -5,7 +5,6 @@ con hilos
 
 import socket as s
 import sys
-from datetime import datetime
 from threading import Thread
 
 
@@ -53,8 +52,7 @@ if len(sys.argv) == 2:
         s_server.bind(("localhost", puerto))
         print("Bind ok!")
 
-        # Comunicacion 1 a 1:
-        s_server.listen(1)
+        s_server.listen(10)
 
         while True:
             print("Servidor a la espera de clientes")
