@@ -58,6 +58,20 @@ class EmpleadoCRUD:
         else:
             self.con = db.connect(path)
 
+    def select(self, cargo=None):
+        cur = None
+        try:
+            sql = "select * from empleados"
+            cur = self.con.cursor()
+            cur.execute(sql)
+            return [Empleado(*t) for t in cur.fetchall()]
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             print("cerrando conexión...")
