@@ -86,7 +86,7 @@ class Consumidor(Thread):
             # Hacer un sleep
             sleep(randint(2, 5))
 
-    print(current_thread().name, " HA TERMINADO")
+        print(current_thread().name, " HA TERMINADO")
 
 
 class TBuffer:
