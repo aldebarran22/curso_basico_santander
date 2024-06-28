@@ -25,7 +25,7 @@ def testConexion(path):
             con.close()
 
 
-def listar(path, tabla):
+def listar(path, tabla, sep=";"):
     con = None
     cur = None
     try:
@@ -37,7 +37,8 @@ def listar(path, tabla):
             cur = con.cursor()
             cur.execute(sql)
 
-            print(cur.description)
+            cabs = sep.join([t[0] for t in cur.description])
+            print(cabs)
 
 
 
@@ -52,4 +53,5 @@ def listar(path, tabla):
 
 
 if __name__ == "__main__":
-    testConexion("../../bd/empresa3.db")
+    #testConexion("../../bd/empresa3.db")
+    listar("../../bd/empresa3.db", "pedidos")
