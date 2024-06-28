@@ -23,24 +23,33 @@ class Productor(Thread):
     def run(self):
         # Generar num_muestras:
         for i in range(self.num_muestras):
-            pass
 
             # Generar un item: número aleatorio
+            numero = randint(1, 50)
+            print(self.getName(), "PRODUCE:", numero)
 
             # Comprobar si hay huecos:
+            self.buffer.sem_huecos.acquire()
 
             # Capturar el lock para escribir en el buffer
             # en exclusión mutúa
+            with self.buffer.mutex:
+                # colocar el número en la casilla
+                self.buffer.buffer[self.buffer.ind_p] = numero
 
-            # colocar el número en la casilla
+                # actualizar el indice del productor
+                self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
 
-            # actualizar el indice del productor
+                # imprimir el buffer
+                print(self.getName(), self.buffer.buffer)
 
-            # imprimir el buffer
-
-            # Avisar que ya hay un item al consumidor
+            # Avisar que ya hay un item al consumidor:
+            self.buffer.sem_items.release()
 
             # Hacer un sleep
+            sleep(randint(2, 4))
+
+        print(self.getName(), " HA TERMINADO")
 
 
 class Consumidor(Thread):
