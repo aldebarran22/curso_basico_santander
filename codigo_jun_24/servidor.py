@@ -10,8 +10,7 @@ if len(sys.argv) == 2:
     puerto = int(sys.argv[1])
     print("Puerto: ", puerto)
 
-    s_server = s_client = None
-    fich = None
+    s_server = s_client = None    
     try:
        
         # Crear un socket TCP / AF_INET
