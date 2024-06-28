@@ -6,6 +6,7 @@ sql parametrizado
 
 import sqlite3 as db
 from os.path import isfile
+import sys
 
 
 def testConexion(path):
@@ -25,7 +26,7 @@ def testConexion(path):
             con.close()
 
 
-def listar(path, tabla, sep=";"):
+def listar(path, tabla, sep=";", file=sys.stdout):
     con = None
     cur = None
     try:
@@ -38,13 +39,11 @@ def listar(path, tabla, sep=";"):
             cur.execute(sql)
 
             cabs = sep.join([t[0] for t in cur.description])
-            print(cabs)
+            print(cabs, file=file)
 
             for t in cur.fetchall():
                 datos = sep.join([str(i) for i in t])
-                print(datos)
-
-
+                print(datos, file=file)
 
     except Exception as e:
         print(e.__class__.__name__, e)
@@ -57,5 +56,5 @@ def listar(path, tabla, sep=";"):
 
 
 if __name__ == "__main__":
-    #testConexion("../../bd/empresa3.db")
+    # testConexion("../../bd/empresa3.db")
     listar("../../bd/empresa3.db", "productos")
