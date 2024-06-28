@@ -100,14 +100,14 @@ class EmpleadoCRUD:
     def delete(self, id):
         sql = "delete from empleados where id = ?"
         t = (id,)
-        return self.__delete_update(sql, t)
+        return self.__delete_update(sql, t, id)
 
     def update(self, emp):
         sql = "update empleados set nombre=?, cargo=? where id=?"
         t = emp.getTupla2()
-        return self.__delete_update(sql, t)
+        return self.__delete_update(sql, t, emp.getId())
 
-    def __delete_update(self, sql, t):
+    def __delete_update(self, sql, t, id):
         cur = None
         try:
             cur = self.con.cursor()
@@ -178,7 +178,7 @@ if __name__ == "__main__":
         else:
             print("No se ha creado")
 
-        if bd.delete(17):
+        if bd.delete(170):
             print("registro eliminado")
         else:
             print("no se ha borrado")
