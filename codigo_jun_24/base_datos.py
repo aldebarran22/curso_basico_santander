@@ -42,7 +42,12 @@ def listar(path, tabla, sep=";", file=sys.stdout):
             print(cabs, file=file)
 
             for t in cur.fetchall():
-                datos = sep.join([str(i) for i in t])
+                datos = sep.join(
+                    [
+                        str(i).replace(".", ",") if type(i) == float else str(i)
+                        for i in t
+                    ]
+                )
                 print(datos, file=file)
 
     except Exception as e:
@@ -57,11 +62,12 @@ def listar(path, tabla, sep=";", file=sys.stdout):
 
 def exportar(path, tabla, sep=";"):
     pathfile = f"../ficheros/{tabla}.csv"
-    fich = open(pathfile,"w")
+    fich = open(pathfile, "w")
     listar(path, tabla, sep, fich)
     fich.close()
 
 
 if __name__ == "__main__":
     # testConexion("../../bd/empresa3.db")
-    listar("../../bd/empresa3.db", "productos")
+    # listar("../../bd/empresa3.db", "productos")
+    exportar("../../bd/empresa3.db", "productos")
