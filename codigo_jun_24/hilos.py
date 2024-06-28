@@ -40,4 +40,7 @@ if __name__ == "__main__":
     for hilo in L:
         hilo.join()
 
+    print(list(threading.enumerate()))
+    print("Activos: ", activeCount())
+
     print("MAIN TERMINA")
