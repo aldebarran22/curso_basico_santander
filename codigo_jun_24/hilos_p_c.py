@@ -3,7 +3,7 @@ Implementación del productor-consumidor en Python
 Solución M productores-N consumidores
 """
 
-from threading import Thread, Lock, Semaphore
+from threading import Thread, Lock, Semaphore, current_thread
 from random import randint
 from time import sleep
 
@@ -26,7 +26,7 @@ class Productor(Thread):
 
             # Generar un item: número aleatorio
             numero = randint(1, 50)
-            print(self.getName(), "PRODUCE:", numero)
+            print(current_thread().name, "PRODUCE:", numero)
 
             # Comprobar si hay huecos:
             self.buffer.sem_huecos.acquire()
@@ -41,7 +41,7 @@ class Productor(Thread):
                 self.buffer.ind_p = (self.buffer.ind_p + 1) % tam_buffer
 
                 # imprimir el buffer
-                print(self.getName(), self.buffer.buffer)
+                print(current_thread().name, self.buffer.buffer)
 
             # Avisar que ya hay un item al consumidor:
             self.buffer.sem_items.release()
@@ -49,7 +49,7 @@ class Productor(Thread):
             # Hacer un sleep
             sleep(randint(2, 4))
 
-        print(self.getName(), " HA TERMINADO")
+        print(current_thread().name, " HA TERMINADO")
 
 
 class Consumidor(Thread):
@@ -61,24 +61,32 @@ class Consumidor(Thread):
     def run(self):
         # Generar num_muestras:
         for i in range(self.num_muestras):
-            pass
 
             # Comprobar si tiene algún item para consumir
+            self.buffer.sem_items.acquire()
 
             # Capturar el lock para leer del buffer
             # en exclusión mutúa
+            with self.buffer.mutex:
+                # Recuperar un número del buffer:
+                numero = self.buffer.buffer[self.buffer.ind_c]
 
-            # Recuperar un número del buffer:
+                # Vaciar la casilla
+                self.buffer.buffer[self.buffer.ind_c] = -1
 
-            # Vaciar la casilla
-
-            # Actualizar el indice del consumidor
+                # Actualizar el indice del consumidor
+                self.buffer.ind_c = (self.buffer.ind_c + 1) % tam_buffer
 
             # Avisar de hay un hueco para el productor
+            self.buffer.sem_huecos.release()
 
             # Consumir el item
+            print(current_thread().name, "CONSUME: ", numero)
 
             # Hacer un sleep
+            sleep(randint(2, 5))
+
+    print(current_thread().name, " HA TERMINADO")
 
 
 class TBuffer:
