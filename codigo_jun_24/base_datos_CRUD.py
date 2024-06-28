@@ -62,14 +62,15 @@ class EmpleadoCRUD:
         cur = None
         try:
             cur = self.con.cursor()
-            if not cargo:
-                sql = "select * from empleados"            
+            sql = "select * from empleados"  
+
+            if not cargo:                          
                 cur.execute(sql)
             else:
                 param = f"%{cargo}%"
-                sql = "select * from empleados where cargo like ?"
+                sql += " where cargo like ?"
                 cur.execute(sql, (param,)) 
-                
+
             return [Empleado(*t) for t in cur.fetchall()]
 
         except Exception as e:
