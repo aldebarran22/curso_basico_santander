@@ -59,7 +59,26 @@ class Consumidor(Thread):
         self.num_muestras = num_muestras
 
     def run(self):
-        pass
+        # Generar num_muestras:
+        for i in range(self.num_muestras):
+            pass
+
+            # Comprobar si tiene algún item para consumir
+
+            # Capturar el lock para leer del buffer
+            # en exclusión mutúa
+
+            # Recuperar un número del buffer:
+
+            # Vaciar la casilla
+
+            # Actualizar el indice del consumidor
+
+            # Avisar de hay un hueco para el productor
+
+            # Consumir el item
+
+            # Hacer un sleep
 
 
 class TBuffer:
