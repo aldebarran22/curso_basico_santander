@@ -30,6 +30,9 @@ if __name__ == "__main__":
         L.append(hilo)
         hilo.start()
 
+        # hilo.join() OJO, si lo colocamos aquí estamos secuencializando
+        # el programa
+
     for hilo in L:
         hilo.join()
 
