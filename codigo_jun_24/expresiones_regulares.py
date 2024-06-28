@@ -60,3 +60,9 @@ else:
 cad = "mi codigo es COD_AEE_800959"
 obj = re.search(patron, cad)
 print(obj)
+
+print("-" * 20)
+patron = r"(COD|S/N)_[AEIOU]{3}_[1-9][0-9]{5}"
+cad = "mi codigo es COD_AEE_800959 y el otro: S/N_UOO_958474"
+L = re.findall(patron, cad)
+print(L)
