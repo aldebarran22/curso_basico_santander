@@ -7,8 +7,10 @@ D - Delete -> delete (pk)
 
 select 
 """
+
 import sqlite3 as db
 from os.path import isfile
+
 
 class ProductoCRUD:
     """Operaciones CRUD para un producto"""
@@ -19,12 +21,18 @@ class ProductoCRUD:
         else:
             self.con = db.connect(path)
 
-    def __del__(self):
-        self.con.close()
+    def __del__(self):       
+        if hasattr(self, "con"):
+            print("cerrando conexión...")
+            self.con.close()
+        else:
+            print('no existe el att con')
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     try:
         bd = ProductoCRUD("../../bd/empresa3.db")
+        # del(bd) -> lanza el destructor!
 
     except Exception as e:
         print(e)
