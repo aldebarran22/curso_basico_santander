@@ -97,6 +97,19 @@ class EmpleadoCRUD:
             if cur:
                 cur.close()
 
+    def delete(self, id):
+        sql = "delete from empleados where id = ?"
+        t = (id,)
+        return self.__delete_update(sql, t)
+
+    def update(self, emp):
+        sql = "update empleados set nombre=?, cargo=? where id=?"
+        t = emp.getTupla2()
+        return self.__delete_update(sql, t)
+
+    def __delete_update(self, sql, t):
+        pass
+
     def create(self, emp):
         cur = None
         try:
@@ -133,7 +146,7 @@ if __name__ == "__main__":
         print("Empleados: ", len(L))
         print(L[:3])
 
-        emp = bd.read(18)
+        emp = bd.read(1)
         print(emp)
 
         # Dar de alta un nuevo empleado:
