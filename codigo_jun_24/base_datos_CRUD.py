@@ -164,6 +164,12 @@ if __name__ == "__main__":
 
         emp = bd.read(1)
         print(emp)
+        emp.setNombre("Davolio S.")
+        emp.setCargo("Vicepresidente comercial")
+        if bd.update(emp):
+            print("Actualizado: ", emp)
+        else:
+            print("no actualizado")
 
         # Dar de alta un nuevo empleado:
         emp2 = Empleado(0, "Miguel", "Representante de Ventas")
@@ -171,6 +177,11 @@ if __name__ == "__main__":
             print("Se ha grabado: ", emp2)
         else:
             print("No se ha creado")
+
+        if bd.delete(17):
+            print("registro eliminado")
+        else:
+            print("no se ha borrado")
 
     except Exception as e:
         print(e)
