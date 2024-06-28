@@ -55,6 +55,13 @@ def listar(path, tabla, sep=";", file=sys.stdout):
             con.close()
 
 
+def exportar(path, tabla, sep=";"):
+    pathfile = f"../ficheros/{tabla}.csv"
+    fich = open(pathfile,"w")
+    listar(path, tabla, sep, fich)
+    fich.close()
+
+
 if __name__ == "__main__":
     # testConexion("../../bd/empresa3.db")
     listar("../../bd/empresa3.db", "productos")
