@@ -58,18 +58,36 @@ class EmpleadoCRUD:
         else:
             self.con = db.connect(path)
 
+    def read(self, id):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "select * from empleados where id=?"
+            cur.execute(sql, (id,))
+            t = cur.fetchone()
+            if t == None:
+                raise ValueError(f"No existe el empleado con clave: {id}")
+            else:
+                return Empleado(*t)
+
+        except Exception as e:
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def select(self, cargo=None):
         cur = None
         try:
             cur = self.con.cursor()
-            sql = "select * from empleados"  
+            sql = "select * from empleados"
 
-            if not cargo:                          
+            if not cargo:
                 cur.execute(sql)
             else:
                 param = f"%{cargo}%"
                 sql += " where cargo like ?"
-                cur.execute(sql, (param,)) 
+                cur.execute(sql, (param,))
 
             return [Empleado(*t) for t in cur.fetchall()]
 
@@ -92,9 +110,12 @@ if __name__ == "__main__":
         bd = EmpleadoCRUD("../../bd/empresa3.db")
         # del(bd) -> lanza el destructor!
 
-        L = bd.select("Gerente")
+        L = bd.select()
         print("Empleados: ", len(L))
         print(L[:3])
+
+        emp = bd.read(1)
+        print(emp)
 
     except Exception as e:
         print(e)
