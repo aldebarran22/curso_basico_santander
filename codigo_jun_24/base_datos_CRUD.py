@@ -61,9 +61,15 @@ class EmpleadoCRUD:
     def select(self, cargo=None):
         cur = None
         try:
-            sql = "select * from empleados"
             cur = self.con.cursor()
-            cur.execute(sql)
+            if not cargo:
+                sql = "select * from empleados"            
+                cur.execute(sql)
+            else:
+                param = f"%{cargo}%"
+                sql = "select * from empleados where cargo like ?"
+                cur.execute(sql, (param,)) 
+                
             return [Empleado(*t) for t in cur.fetchall()]
 
         except Exception as e:
