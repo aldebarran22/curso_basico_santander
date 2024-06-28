@@ -97,6 +97,25 @@ class EmpleadoCRUD:
             if cur:
                 cur.close()
 
+    def create(self, emp):
+        cur = None
+        try:
+            cur = self.con.cursor()
+            sql = "insert into empleados(nombre, cargo) values(?,?)"
+            cur.execute(sql, emp.getTupla())
+            n = cur.rowcount
+            nuevo_id = cur.lastrowid
+            emp.setId(nuevo_id)
+            self.con.commit()
+            return n == 1
+
+        except Exception as e:
+            self.con.rollback()
+            raise e
+        finally:
+            if cur:
+                cur.close()
+
     def __del__(self):
         if hasattr(self, "con"):
             print("cerrando conexión...")
@@ -122,8 +141,7 @@ if __name__ == "__main__":
         if bd.create(emp2):
             print("Se ha grabado: ", emp2)
         else:
-            print('No se ha creado')
-            
+            print("No se ha creado")
 
     except Exception as e:
         print(e)
