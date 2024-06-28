@@ -85,5 +85,9 @@ if __name__ == "__main__":
         bd = EmpleadoCRUD("../../bd/empresa3.db")
         # del(bd) -> lanza el destructor!
 
+        L = bd.select("Gerente")
+        print("Empleados: ", len(L))
+        print(L[:3])
+
     except Exception as e:
         print(e)
