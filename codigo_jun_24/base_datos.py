@@ -40,6 +40,10 @@ def listar(path, tabla, sep=";"):
             cabs = sep.join([t[0] for t in cur.description])
             print(cabs)
 
+            for t in cur.fetchall():
+                datos = sep.join([str(i) for i in t])
+                print(datos)
+
 
 
     except Exception as e:
@@ -54,4 +58,4 @@ def listar(path, tabla, sep=";"):
 
 if __name__ == "__main__":
     #testConexion("../../bd/empresa3.db")
-    listar("../../bd/empresa3.db", "pedidos")
+    listar("../../bd/empresa3.db", "productos")
