@@ -49,8 +49,8 @@ class Empleado:
         return str(self)
 
 
-class ProductoCRUD:
-    """Operaciones CRUD para un producto"""
+class EmpleadoCRUD:
+    """Operaciones CRUD para un empleado"""
 
     def __init__(self, path):
         if not isfile(path):
@@ -68,7 +68,7 @@ class ProductoCRUD:
 
 if __name__ == "__main__":
     try:
-        bd = ProductoCRUD("../../bd/empresa3.db")
+        bd = EmpleadoCRUD("../../bd/empresa3.db")
         # del(bd) -> lanza el destructor!
 
     except Exception as e:
